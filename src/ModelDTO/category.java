@@ -15,6 +15,19 @@ public class category implements Serializable {
 	private int parent_id;
 	private String cat_name;
 	private String cat_desc;
+	
+	public category(){}
+	
+	public category(int cat_id, String cat_code, int parent_id,
+			String cat_name, String cat_desc) {
+		super();
+		this.cat_id = cat_id;
+		this.cat_code = cat_code;
+		this.parent_id = parent_id;
+		this.cat_name = cat_name;
+		this.cat_desc = cat_desc;
+	}
+
 	public int getCat_id() {
 		return cat_id;
 	}

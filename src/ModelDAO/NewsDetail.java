@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import ModelDTO.category;
 import ModelDTO.newsdetail;
-
 import Utilities.DatabaseConnection;
 
 public class NewsDetail {
@@ -47,6 +47,25 @@ public class NewsDetail {
 			return pstm.executeUpdate()>0?true:false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			pstm.close();
+			con.close();
+		}
+		return false;
+	}
+	public boolean update(newsdetail nd) throws SQLException{
+		try {
+			pstm = con.prepareStatement("UPDATE tbnewsdetail SET news_id=?,SET news_content=? WHERE news_detail_id=?;");
+			pstm.setInt(1, nd.getNews_id());
+			pstm.setString(2, nd.getNew_content());
+			pstm.setInt(3, nd.getNews_detail_id());
+			
+			
+		
+			return pstm.executeUpdate()>0?true:false;
+		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
 		finally{

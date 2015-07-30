@@ -18,6 +18,22 @@ public class news implements Serializable {
 	private String news_path;
 	private String news_img;
 	private String news_date;
+	
+	public news(){}
+	
+	public news(int news_id, String cat_code, String user_info_code,
+			String news_title, String news_desc, String news_path,
+			String news_img, String news_date) {
+		super();
+		this.news_id = news_id;
+		this.cat_code = cat_code;
+		this.user_info_code = user_info_code;
+		this.news_title = news_title;
+		this.news_desc = news_desc;
+		this.news_path = news_path;
+		this.news_img = news_img;
+		this.news_date = news_date;
+	}
 
 	public int getNews_id() {
 		return news_id;
