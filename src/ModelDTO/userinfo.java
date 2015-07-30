@@ -10,6 +10,25 @@ import java.io.Serializable;
  *
  */
 public class userinfo  implements Serializable{
+	
+	public userinfo(){}
+	
+	public userinfo(int user_info_id, int user_id, String user_info_code,
+			String full_name, String com_name, String addr, String email,
+			String website, String phone, String logo) {
+		super();
+		this.user_info_id = user_info_id;
+		this.user_id = user_id;
+		this.user_info_code = user_info_code;
+		this.full_name = full_name;
+		this.com_name = com_name;
+		this.addr = addr;
+		this.email = email;
+		this.website = website;
+		this.phone = phone;
+		this.logo = logo;
+	}
+
 	private int user_info_id;
 	private int user_id;
 	private String user_info_code;
