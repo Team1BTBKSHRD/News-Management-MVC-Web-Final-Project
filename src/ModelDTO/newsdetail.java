@@ -12,6 +12,15 @@ import java.io.Serializable;
 public class newsdetail implements Serializable{
 private int news_detail_id;
 private int news_id;
+public newsdetail(){}
+
+public newsdetail(int news_detail_id, int news_id, String new_content) {
+	super();
+	this.news_detail_id = news_detail_id;
+	this.news_id = news_id;
+	this.new_content = new_content;
+}
+
 public int getNews_detail_id() {
 	return news_detail_id;
 }

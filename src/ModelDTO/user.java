@@ -14,6 +14,15 @@ public class user implements Serializable {
 	private String user_name;
 	private String user_pass;
 	private String user_type;
+public user(){}
+	public user(int user_id, String user_name, String user_pass,
+			String user_type) {
+		super();
+		this.user_id = user_id;
+		this.user_name = user_name;
+		this.user_pass = user_pass;
+		this.user_type = user_type;
+	}
 
 	public int getUser_id() {
 		return user_id;

@@ -10,6 +10,13 @@ public class userrole implements Serializable {
 	private int user_role_id;
 	private String user_type;
 	private String user_desc;
+	public userrole(){}
+	public userrole(int user_role_id, String user_type, String user_desc) {
+		super();
+		this.user_role_id = user_role_id;
+		this.user_type = user_type;
+		this.user_desc = user_desc;
+	}
 
 	public int getUser_role_id() {
 		return user_role_id;
