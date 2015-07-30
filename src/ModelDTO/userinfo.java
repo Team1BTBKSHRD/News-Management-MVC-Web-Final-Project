@@ -3,11 +3,13 @@
  */
 package ModelDTO;
 
+import java.io.Serializable;
+
 /**
  * @author Pisal
  *
  */
-public class userinfo {
+public class userinfo  implements Serializable{
 	private int user_info_id;
 	private int user_id;
 	private String user_info_code;

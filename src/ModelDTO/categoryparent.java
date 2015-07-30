@@ -3,11 +3,13 @@
  */
 package ModelDTO;
 
+import java.io.Serializable;
+
 /**
  * @author Pisal
  *
  */
-public class categoryparent {
+public class categoryparent implements Serializable {
 private int parent_id;
 private String parent_desc;
 public int getParent_id() {

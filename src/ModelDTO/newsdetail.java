@@ -3,11 +3,13 @@
  */
 package ModelDTO;
 
+import java.io.Serializable;
+
 /**
  * @author Pisal
  *
  */
-public class newsdetail {
+public class newsdetail implements Serializable{
 private int news_detail_id;
 private int news_id;
 public int getNews_detail_id() {

@@ -1,10 +1,12 @@
 package ModelDTO;
 
+import java.io.Serializable;
+
 /**
  * @author Pisal
  *
  */
-public class userrole {
+public class userrole implements Serializable {
 	private int user_role_id;
 	private String user_type;
 	private String user_desc;
