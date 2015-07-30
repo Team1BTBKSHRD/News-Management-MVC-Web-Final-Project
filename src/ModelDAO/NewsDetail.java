@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import ModelDTO.category;
 import ModelDTO.newsdetail;
 import Utilities.DatabaseConnection;
 
@@ -60,8 +58,7 @@ public class NewsDetail {
 			pstm = con.prepareStatement("UPDATE tbnewsdetail SET news_id=?,SET news_content=? WHERE news_detail_id=?;");
 			pstm.setInt(1, nd.getNews_id());
 			pstm.setString(2, nd.getNew_content());
-			pstm.setInt(3, nd.getNews_detail_id());
-			
+			pstm.setInt(3, nd.getNews_detail_id());			
 			
 		
 			return pstm.executeUpdate()>0?true:false;

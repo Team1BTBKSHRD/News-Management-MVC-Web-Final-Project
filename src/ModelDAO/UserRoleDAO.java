@@ -51,6 +51,26 @@ public class UserRoleDAO {
 		}
 		return false;
 	}
+	
+	public boolean update(userrole ur) throws SQLException{
+		try {
+			pstm = con.prepareStatement("UPDATE tbuser SET user_type=?,SET user_desc=? WHERE user_id=?;");
+			
+			pstm.setString(1, ur.getUser_type());
+			pstm.setString(2, ur.getUser_desc());
+			pstm.setInt(3, ur.getUser_role_id());
+			
+		
+			return pstm.executeUpdate()>0?true:false;
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+		finally{
+			pstm.close();
+			con.close();
+		}
+		return false;
+	}
 	public ArrayList<userrole> retrive() throws SQLException{
 		try {
 			Statement stm = con.createStatement();

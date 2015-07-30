@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import ModelDTO.user;
-
 import Utilities.DatabaseConnection;
 
 public class UserDAO {
@@ -47,6 +46,26 @@ public class UserDAO {
 			return pstm.executeUpdate()>0?true:false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			pstm.close();
+			con.close();
+		}
+		return false;
+	}
+	public boolean update(user u) throws SQLException{
+		try {
+			pstm = con.prepareStatement("UPDATE tbuser SET user_name=?,SET user_pass=?,SET user_type=? WHERE user_id=?;");
+			
+			pstm.setString(1, u.getUser_name());
+			pstm.setString(2, u.getUser_pass());
+			pstm.setString(3, u.getUser_type());
+			pstm.setInt(4, u.getUser_id());			
+			
+		
+			return pstm.executeUpdate()>0?true:false;
+		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
 		finally{

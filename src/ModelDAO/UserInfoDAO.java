@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import ModelDTO.userinfo;
-
 import Utilities.DatabaseConnection;
 
 public class UserInfoDAO {
@@ -51,6 +50,32 @@ public class UserInfoDAO {
 			return pstm.executeUpdate()>0?true:false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			pstm.close();
+			con.close();
+		}
+		return false;
+	}
+	public boolean update(userinfo ui) throws SQLException{
+		try {
+			pstm = con.prepareStatement("UPDATE tbuserinfo SET user_id=?,SET user_info_code=?,SET full_name=?,SET com_name=?,SET addr=?,SET email=?,SET website=?,SET phone=?,SET logo=? WHERE user_info_id=?;");
+			
+			pstm.setInt(1, ui.getUser_id());
+			pstm.setString(2, ui.getUser_info_code());
+			pstm.setString(3, ui.getFull_name());
+			pstm.setString(4, ui.getCom_name());
+			pstm.setString(5, ui.getAddr());
+			pstm.setString(6, ui.getEmail());
+			pstm.setString(7, ui.getWebsite());
+			pstm.setString(8, ui.getPhone());
+			pstm.setString(9, ui.getLogo());
+			pstm.setInt(10, ui.getUser_info_id());
+			
+		
+			return pstm.executeUpdate()>0?true:false;
+		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
 		finally{
