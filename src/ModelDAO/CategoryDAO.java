@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import ModelDTO.Category;
-
 import Utilities.DatabaseConnection;
 
 /**
@@ -96,14 +95,15 @@ public class CategoryDAO {
 	public boolean update(Category category) throws SQLException {
 		try {
 			/* Set PreparedStatement */
-			pstm = con.prepareStatement("UPDATE tbcategoryparent SET cat_code=?, parent_id=?, cat_name=?, cat_desc=? WHERE cat_id=?;");
+			pstm = con.prepareStatement("UPDATE tbcategory SET cat_code=?, parent_id=?, cat_name=?, cat_desc=? WHERE cat_id=?;");
+			
 			/* Initialize parameters for pstm object */
 			pstm.setString(1, category.getCat_code());
 			pstm.setInt(2, category.getParent_id());
 			pstm.setString(3, category.getCat_name());
 			pstm.setString(4, category.getCat_desc());
 			pstm.setInt(5, category.getCat_id());
-
+			System.out.println(pstm.toString());
 			return pstm.executeUpdate() > 0 ? true : false; /* return true for success and false if fail */
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -148,5 +148,16 @@ public class CategoryDAO {
 		}
 		return null; /* Return null if error */
 	}
+	
+}//End of class;
 
-}
+
+
+
+
+
+
+
+
+
+

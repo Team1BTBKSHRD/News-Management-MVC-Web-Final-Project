@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Pisal
  * 
  */
-public class NewDetail implements Serializable {
+public class NewsDetail implements Serializable {
 	/**
 	 * 
 	 */
@@ -17,10 +17,10 @@ public class NewDetail implements Serializable {
 	private int news_detail_id;
 	private int news_id;
 
-	public NewDetail() {
+	public NewsDetail() {
 	}
 
-	public NewDetail(int news_detail_id, int news_id, String new_content) {
+	public NewsDetail(int news_detail_id, int news_id, String new_content) {
 		super();
 		this.news_detail_id = news_detail_id;
 		this.news_id = news_id;

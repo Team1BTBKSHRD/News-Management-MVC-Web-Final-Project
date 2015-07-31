@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import ModelDTO.NewDetail;
+import ModelDTO.NewsDetail;
 import Utilities.DatabaseConnection;
 
-public class NewsDetail {
+public class NewsDetailDAO {
 	Connection con=null;
 	PreparedStatement pstm;
-	public NewsDetail(){
+	public NewsDetailDAO(){
 		try {
 			con=DatabaseConnection.getConnection();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -21,7 +21,7 @@ public class NewsDetail {
 		}
 		
 	}
-	public boolean insert(NewDetail nd) throws SQLException{
+	public boolean insert(NewsDetail nd) throws SQLException{
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbuser(news_id,news_content) VALUES(?,?)");
 			pstm.setInt(1, nd.getNews_id());
@@ -53,7 +53,7 @@ public class NewsDetail {
 		}
 		return false;
 	}
-	public boolean update(NewDetail nd) throws SQLException{
+	public boolean update(NewsDetail nd) throws SQLException{
 		try {
 			pstm = con.prepareStatement("UPDATE tbnewsdetail SET news_id=?,SET news_content=? WHERE news_detail_id=?;");
 			pstm.setInt(1, nd.getNews_id());
@@ -71,13 +71,13 @@ public class NewsDetail {
 		}
 		return false;
 	}
-	public ArrayList<NewDetail> retrive() throws SQLException{
+	public ArrayList<NewsDetail> retrive() throws SQLException{
 		try {
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM tbnewsdetail");
-			ArrayList<NewDetail> nds = new ArrayList<>();
+			ArrayList<NewsDetail> nds = new ArrayList<>();
 			while(rs.next()){
-				nds.add(new NewDetail(rs.getInt(0),rs.getInt(1),rs.getString(2)));
+				nds.add(new NewsDetail(rs.getInt(0),rs.getInt(1),rs.getString(2)));
 			}
 			stm.close();
 			rs.close();

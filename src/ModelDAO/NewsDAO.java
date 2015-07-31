@@ -11,9 +11,18 @@ import java.util.ArrayList;
 import ModelDTO.News;
 import Utilities.DatabaseConnection;
 
+/**
+ * Class NewsDAO
+ * Use For interact between Java and DBMS(tbnews). 
+ */
 public class NewsDAO {
-	Connection con;
-	PreparedStatement pstm;
+	Connection con; /* Connection object */
+	PreparedStatement pstm; /* Prepared Statement object */
+	
+	/**
+	 * Default Constructor
+	 * Initialize object con by using class DatabaseConnection.
+	 * */
 	public NewsDAO(){
 		try {
 			con = DatabaseConnection.getConnection();
@@ -21,81 +30,133 @@ public class NewsDAO {
 			e.printStackTrace();
 		}
 	}
-	public boolean insert(News n) throws SQLException{
+	
+	/**
+	 * Method insert()
+	 * Use for insert data into tbnews
+	 * @param news is an DTO object of class News 
+	 * @throws SQLException
+	 * @return true for success and false for fail 
+	 * */
+	public boolean insert(News news) throws SQLException{
 		try {
-			pstm = con.prepareStatement("INSERT INTO tbnews(cat_code,user_info_code,news_title,news_desc,news_path,news_img,news_date) VALUES(?,?,?,?,?,?,?)");
-			pstm.setString(1, n.getCat_code());
-			pstm.setString(2, n.getUser_info_code());
-			pstm.setString(3, n.getNews_title());
-			pstm.setString(4, n.getNews_desc());
-			pstm.setString(5, n.getNews_path());
-			pstm.setString(6, n.getNews_img());
-			pstm.setString(7, n.getNews_date());
-			return pstm.executeUpdate()>0?true:false;
+			/* Set PreparedStatement */
+			pstm = con.prepareStatement("INSERT INTO tbnews(cat_code, user_info_code, news_title, news_desc, news_path, news_img, news_date) VALUES(?, ?, ?, ?, ?, ?, ?);");
+			/* Initialize parameters for pstm object */
+			pstm.setString(1, news.getCat_code());
+			pstm.setString(2, news.getUser_info_code());
+			pstm.setString(3, news.getNews_title());
+			pstm.setString(4, news.getNews_desc());
+			pstm.setString(5, news.getNews_path());
+			pstm.setString(6, news.getNews_img());
+			pstm.setString(7, news.getNews_date());
+			
+			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally{
+			/* Close pstm and con */
 			pstm.close();
 			con.close();
 		}
-		return false;
+		return false; /* return false if insert unsuccessful */
 	}
 
-	public boolean delete(int nid) throws SQLException{
+	/**
+	 * Method delete()
+	 * Use for delete a record from tbnews
+	 * @param newsId is ID of News 
+	 * @throws SQLException
+	 * @return true for success and false for fail 
+	 * */
+	public boolean delete(int newsId) throws SQLException{
 		try {
+			/* Set PreparedStatement */
 			pstm = con.prepareStatement("DELETE FROM tbnews WHERE news_id = ?;");
-			pstm.setInt(1, nid);
-			return pstm.executeUpdate()>0?true:false;
+			/* Initialize parameter for pstm object */
+			pstm.setInt(1, newsId);
+			
+			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally{
+			/* Close pstm and con */
 			pstm.close();
 			con.close();
 		}
-		return false;
+		return false; /* return false if insert unsuccessful */
 	}
-	public boolean update(News n) throws SQLException{
+	
+	/**
+	 * Method update()
+	 * Use for update data into tbnews
+	 * @param news is an DTO object of class News 
+	 * @throws SQLException
+	 * @return true for success and false for fail 
+	 * */
+	public boolean update(News news) throws SQLException{
 		try {
-			pstm = con.prepareStatement("UPDATE tbnews SET cat_code=?, SET user_info_code=?, SET news_title=?,SET news_desc=?,SET news_path=?,SET news_img=?,SET news_date=? WHERE news_id=?;");
-			pstm.setString(1, n.getCat_code());
-			pstm.setString(2, n.getUser_info_code());
-			pstm.setString(3, n.getNews_title());
-			pstm.setString(4, n.getNews_desc());
-			pstm.setString(5, n.getNews_path());
-			pstm.setString(6, n.getNews_img());
-			pstm.setString(7, n.getNews_date());
-			pstm.setInt(8, n.getNews_id());
-			return pstm.executeUpdate()>0?true:false;
+			/* Set PreparedStatement */
+			pstm = con.prepareStatement("UPDATE tbnews SET cat_code=?, SET user_info_code=?, SET news_title=?, SET news_desc=?, SET news_path=?, SET news_img=?, SET news_date=? WHERE news_id=?;");
+			/* Initialize parameters for pstm object */
+			pstm.setString(1, news.getCat_code());
+			pstm.setString(2, news.getUser_info_code());
+			pstm.setString(3, news.getNews_title());
+			pstm.setString(4, news.getNews_desc());
+			pstm.setString(5, news.getNews_path());
+			pstm.setString(6, news.getNews_img());
+			pstm.setString(7, news.getNews_date());
+			pstm.setInt(8, news.getNews_id());
+			
+			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
 		finally{
+			/* Close pstm and con */
 			pstm.close();
 			con.close();
 		}
-		return false;
+		return false; /* return false if update unsuccessful */
 	}
-	public ArrayList<News> retrive() throws SQLException{
+	
+	/**
+	 * Method retrieve()
+	 * Use for retrieve all data from tbnews
+	 * @throws SQLException
+	 * @return ArrayList<News>
+	 * */
+	public ArrayList<News> retrieve() throws SQLException {
+		Statement stm = null; /* Statement for Query Data from DBMS */
+		ResultSet rs = null; /* rs stores all records of query */
+		ArrayList<News> news = null; /* news stores data of rs */
 		try {
-			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("SELECT * FROM tbnews");
-			ArrayList<News> ns = new ArrayList<>();
-			while(rs.next()){
-				ns.add(new News(rs.getInt(0), rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+			stm = con.createStatement(); /* Statement for Query Data from DBMS */
+			rs = stm.executeQuery("SELECT * FROM tbnews"); /* rs stores all records of query */
+			news = new ArrayList<>(); /* news stores data of rs */
+			while(rs.next()){ /* Add every record into news */
+				news.add(new News(rs.getInt("news_id"), 
+								rs.getString("cat_code"), 
+								rs.getString("user_info_code"), 
+								rs.getString("news_title"), 
+								rs.getString("news_desc"), 
+								rs.getString("news_path"), 
+								rs.getString("news_img"), 
+								rs.getString("news_date")));
 			}
-			stm.close();
-			rs.close();
-			return ns;
+			
+			return news; /* return news object */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		finally{
+			/* Close stm, rs and con */
+			stm.close();
+			rs.close();
 			con.close();
 		}
-		return null;
+		return null; /* Return null if error */
 	}
 }
