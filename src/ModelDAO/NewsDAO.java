@@ -50,7 +50,7 @@ public class NewsDAO {
 			pstm.setString(5, news.getNews_path());
 			pstm.setString(6, news.getNews_img());
 			pstm.setString(7, news.getNews_date());
-			
+			System.out.println(pstm.toString());
 			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -159,4 +159,30 @@ public class NewsDAO {
 		}
 		return null; /* Return null if error */
 	}
-}
+	//$$$$$$$$$$$$$$$$$$$$$ ERROR $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$//
+	public static void main(String[] args) throws SQLException {
+		NewsDAO dao = new NewsDAO();
+		dao.update(new News(0, "ci000003", "u0000001", "Klit", "Klit is Ktit boy", "/klit", "/klit.jpg", "10-10-10"));
+		//new News(news_id, cat_code, user_info_code, news_title, news_desc, news_path, news_img, news_date)
+		System.out.println("Success!");
+	}
+}//End of class;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

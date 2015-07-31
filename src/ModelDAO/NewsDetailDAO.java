@@ -9,79 +9,129 @@ import java.util.ArrayList;
 import ModelDTO.NewsDetail;
 import Utilities.DatabaseConnection;
 
+/**
+ * Class NewsDetailDAO
+ * Use For interact between Java and DBMS(tbnewsdetail). 
+ */
 public class NewsDetailDAO {
-	Connection con=null;
-	PreparedStatement pstm;
+	
+	Connection con=null; /* Connection object */
+	PreparedStatement pstm; /* Prepared Statement object */
+	
+	/**
+	 * Default Constructor
+	 * Initialize object con by using class DatabaseConnection.
+	 * */
 	public NewsDetailDAO(){
 		try {
 			con=DatabaseConnection.getConnection();
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
-	public boolean insert(NewsDetail nd) throws SQLException{
+	
+	/**
+	 * Method insert()
+	 * Use for insert data into tbnewsdetail
+	 * @param newsDetail is an DTO object of class NewDetail 
+	 * @throws SQLException
+	 * @return true for success and false for fail 
+	 * */
+	public boolean insert(NewsDetail newsDetail) throws SQLException{
 		try {
-			pstm = con.prepareStatement("INSERT INTO tbuser(news_id,news_content) VALUES(?,?)");
-			pstm.setInt(1, nd.getNews_id());
-			pstm.setString(2, nd.getNew_content());
+			/* Set PreparedStatement */
+			pstm = con.prepareStatement("INSERT INTO tbnewsdetail(news_id, news_content) VALUES(?, ?);");
+			/* Initialize parameters for pstm object */
+			pstm.setInt(1, newsDetail.getNews_id());
+			pstm.setString(2, newsDetail.getNew_content());
 			
-			return pstm.executeUpdate()>0?true:false;
+			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally{
+			/* Close pstm and con */
 			pstm.close();
 			con.close();
 		}
-		return false;
+		return false; /* return false if insert unsuccessful */
 	}
-	public boolean delete(int ndid) throws SQLException{
+	
+	/**
+	 * Method delete()
+	 * Use for delete a record from tbnewsDetail
+	 * @param newsDetailId is ID of category 
+	 * @throws SQLException
+	 * @return true for success and false for fail 
+	 * */
+	public boolean delete(int newsDetailId) throws SQLException{
 		try {
-			pstm = con.prepareStatement("DELETE FROM tbuser WHERE news_detail_id = ?;");
-			pstm.setInt(1, ndid);
-			return pstm.executeUpdate()>0?true:false;
+			/* Set PreparedStatement */
+			pstm = con.prepareStatement("DELETE FROM tbnewsdetail WHERE news_detail_id = ?;");
+			/* Initialize parameter for pstm object */
+			pstm.setInt(1, newsDetailId);
+			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally{
+			/* Close pstm and con */
 			pstm.close();
 			con.close();
 		}
-		return false;
+		return false; /* return false if insert unsuccessful */
 	}
-	public boolean update(NewsDetail nd) throws SQLException{
+	
+	/**
+	 * Method update()
+	 * Use for update data into tbnewsdetail
+	 * @param newsDetail is an DTO object of class NewsDetail 
+	 * @throws SQLException
+	 * @return true for success and false for fail 
+	 * */
+	public boolean update(NewsDetail newsDetail) throws SQLException{
 		try {
-			pstm = con.prepareStatement("UPDATE tbnewsdetail SET news_id=?,SET news_content=? WHERE news_detail_id=?;");
-			pstm.setInt(1, nd.getNews_id());
-			pstm.setString(2, nd.getNew_content());
-			pstm.setInt(3, nd.getNews_detail_id());			
-			
+			/* Set PreparedStatement */
+			pstm = con.prepareStatement("UPDATE tbnewsdetail SET news_id=?, news_content=? WHERE news_detail_id=?;");
+			/* Initialize parameters for pstm object */
+			pstm.setInt(1, newsDetail.getNews_id());
+			pstm.setString(2, newsDetail.getNew_content());
+			pstm.setInt(3, newsDetail.getNews_detail_id());			
+			System.out.println(pstm.toString());
 		
-			return pstm.executeUpdate()>0?true:false;
+			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
 		finally{
+			/* Close pstm and con */
 			pstm.close();
 			con.close();
 		}
-		return false;
+		return false; /* return false if update unsuccessful */
 	}
-	public ArrayList<NewsDetail> retrive() throws SQLException{
+	
+	/**
+	 * Method retrieve()
+	 * Use for retrieve all data from tbnewdetail
+	 * @throws SQLException
+	 * @return ArrayList<CategoryParent>
+	 * */
+	public ArrayList<NewsDetail> retrieve() throws SQLException{
+		Statement stm = null; /* Statement for Query Data from DBMS */
+		ResultSet rs = null; /* rs stores all records of query */
+		ArrayList<NewsDetail> newsDetails = null; /* newsDetails stores data of rs */
 		try {
-			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("SELECT * FROM tbnewsdetail");
-			ArrayList<NewsDetail> nds = new ArrayList<>();
-			while(rs.next()){
-				nds.add(new NewsDetail(rs.getInt(0),rs.getInt(1),rs.getString(2)));
+			stm = con.createStatement(); /* Statement for Query Data from DBMS */
+			rs = stm.executeQuery("SELECT * FROM tbnewsdetail"); /* rs stores all records of query */
+			newsDetails = new ArrayList<>();
+			while(rs.next()){ /* Add every record into newsDetail */
+				newsDetails.add(new NewsDetail(rs.getInt("news_detail_id"),rs.getInt("news_id"),rs.getString("news_content")));
 			}
 			stm.close();
 			rs.close();
-			return nds;
+			return newsDetails; /* return newDetail object */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -91,4 +141,16 @@ public class NewsDetailDAO {
 		return null;
 	}
 	
-}
+}//End of class;
+
+
+
+
+
+
+
+
+
+
+
+
