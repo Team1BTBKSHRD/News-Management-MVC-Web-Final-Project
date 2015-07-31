@@ -28,7 +28,7 @@ public class index extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("test1.jsp");
+		//response.sendRedirect("test1.jsp");
 	}
 
 	/**
@@ -37,8 +37,5 @@ public class index extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-	}
-	public void init(){
-		System.out.println(12211212);
 	}
 }

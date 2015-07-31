@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>121121</h1>
+<form action="NewFile.jsp" method="post">
+input : <input type="text" name="test" />
+<input type="submit" value="submit"/>
+</form>
 </body>
 </html>
