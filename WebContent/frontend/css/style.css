@@ -97,12 +97,12 @@ float:right;
 	}
 }
 
-.card .card-header h2 {
+/*.card .card-header h2 {
 	margin: 0;
 	line-height: 100%;
 	font-size: 17px;
 	font-weight: 400;
-}
+}*/
 
 .card .card-header h2 small {
 	display: block;

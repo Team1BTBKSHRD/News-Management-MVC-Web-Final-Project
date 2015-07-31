@@ -6805,9 +6805,6 @@ button.close {
 .navbar-brand {
   font-size: 24px;
 }
-.navbar-inverse {
-  border-bottom: 8px solid #7EB446;
-}
 .navbar-inverse .form-control {
   color: #fff;
 }
