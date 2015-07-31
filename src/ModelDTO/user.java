@@ -7,15 +7,22 @@ import java.io.Serializable;
 
 /**
  * @author Pisal
- *
+ * 
  */
-public class user implements Serializable {
+public class User implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int user_id;
 	private String user_name;
 	private String user_pass;
 	private String user_type;
-public user(){}
-	public user(int user_id, String user_name, String user_pass,
+
+	public User() {
+	}
+
+	public User(int user_id, String user_name, String user_pass,
 			String user_type) {
 		super();
 		this.user_id = user_id;

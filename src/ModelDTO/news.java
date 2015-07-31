@@ -7,9 +7,13 @@ import java.io.Serializable;
 
 /**
  * @author Pisal
- *
+ * 
  */
-public class news implements Serializable {
+public class News implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int news_id;
 	private String cat_code;
 	private String user_info_code;
@@ -18,10 +22,11 @@ public class news implements Serializable {
 	private String news_path;
 	private String news_img;
 	private String news_date;
-	
-	public news(){}
-	
-	public news(int news_id, String cat_code, String user_info_code,
+
+	public News() {
+	}
+
+	public News(int news_id, String cat_code, String user_info_code,
 			String news_title, String news_desc, String news_path,
 			String news_img, String news_date) {
 		super();

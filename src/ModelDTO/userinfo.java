@@ -7,13 +7,19 @@ import java.io.Serializable;
 
 /**
  * @author Pisal
- *
+ * 
  */
-public class userinfo  implements Serializable{
-	
-	public userinfo(){}
-	
-	public userinfo(int user_info_id, int user_id, String user_info_code,
+public class UserInfo implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8612275154457488242L;
+
+	public UserInfo() {
+	}
+
+	public UserInfo(int user_info_id, int user_id, String user_info_code,
 			String full_name, String com_name, String addr, String email,
 			String website, String phone, String logo) {
 		super();

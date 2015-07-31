@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import ModelDTO.userinfo;
+import ModelDTO.UserInfo;
 import Utilities.DatabaseConnection;
 
 public class UserInfoDAO {
@@ -20,7 +20,7 @@ public class UserInfoDAO {
 			e.printStackTrace();
 		}
 	}
-	public boolean insert(userinfo ui) throws SQLException{
+	public boolean insert(UserInfo ui) throws SQLException{
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbuserinfo(user_id,user_info_code,full_name,com_name,addr,email,website,phone,logo) VALUES(?,?,?,?,?,?,?,?,?)");
 			pstm.setInt(1, ui.getUser_id());
@@ -58,7 +58,7 @@ public class UserInfoDAO {
 		}
 		return false;
 	}
-	public boolean update(userinfo ui) throws SQLException{
+	public boolean update(UserInfo ui) throws SQLException{
 		try {
 			pstm = con.prepareStatement("UPDATE tbuserinfo SET user_id=?,SET user_info_code=?,SET full_name=?,SET com_name=?,SET addr=?,SET email=?,SET website=?,SET phone=?,SET logo=? WHERE user_info_id=?;");
 			
@@ -84,13 +84,13 @@ public class UserInfoDAO {
 		}
 		return false;
 	}
-	public ArrayList<userinfo> retrive() throws SQLException{
+	public ArrayList<UserInfo> retrive() throws SQLException{
 		try {
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM tbuserinfo");
-			ArrayList<userinfo> uis = new ArrayList<>();
+			ArrayList<UserInfo> uis = new ArrayList<>();
 			while(rs.next()){
-				uis.add(new userinfo(rs.getInt(0),rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9)));
+				uis.add(new UserInfo(rs.getInt(0),rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9)));
 			}
 			stm.close();
 			rs.close();

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import ModelDTO.newsdetail;
+import ModelDTO.NewDetail;
 import Utilities.DatabaseConnection;
 
 public class NewsDetail {
@@ -21,7 +21,7 @@ public class NewsDetail {
 		}
 		
 	}
-	public boolean insert(newsdetail nd) throws SQLException{
+	public boolean insert(NewDetail nd) throws SQLException{
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbuser(news_id,news_content) VALUES(?,?)");
 			pstm.setInt(1, nd.getNews_id());
@@ -53,7 +53,7 @@ public class NewsDetail {
 		}
 		return false;
 	}
-	public boolean update(newsdetail nd) throws SQLException{
+	public boolean update(NewDetail nd) throws SQLException{
 		try {
 			pstm = con.prepareStatement("UPDATE tbnewsdetail SET news_id=?,SET news_content=? WHERE news_detail_id=?;");
 			pstm.setInt(1, nd.getNews_id());
@@ -71,13 +71,13 @@ public class NewsDetail {
 		}
 		return false;
 	}
-	public ArrayList<newsdetail> retrive() throws SQLException{
+	public ArrayList<NewDetail> retrive() throws SQLException{
 		try {
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM tbnewsdetail");
-			ArrayList<newsdetail> nds = new ArrayList<>();
+			ArrayList<NewDetail> nds = new ArrayList<>();
 			while(rs.next()){
-				nds.add(new newsdetail(rs.getInt(0),rs.getInt(1),rs.getString(2)));
+				nds.add(new NewDetail(rs.getInt(0),rs.getInt(1),rs.getString(2)));
 			}
 			stm.close();
 			rs.close();

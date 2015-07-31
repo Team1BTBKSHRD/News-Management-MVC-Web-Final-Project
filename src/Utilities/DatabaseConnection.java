@@ -1,5 +1,8 @@
 package Utilities;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseConnection {
 	private static String DRIVER_NAME = "org.postgresql.Driver";
@@ -12,8 +15,9 @@ public class DatabaseConnection {
 	/**
 	 * Deny object initialization
 	 */
-	private DatabaseConnection() {}
-	
+	private DatabaseConnection() {
+	}
+
 	/**
 	 * connect to database
 	 * 
@@ -21,14 +25,15 @@ public class DatabaseConnection {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
-	public static Connection getConnection() throws SQLException, ClassNotFoundException {
+	public static Connection getConnection() throws SQLException,
+			ClassNotFoundException {
 		Class.forName(DRIVER_NAME);
 		Connection con = DriverManager.getConnection(URL + PORT_NUMBER + "/"
 				+ DB_NAME, USER_NAME, PASSWORD);
 		return con;
-	}	
-	
-	//###########################################setter&getter#######################################
+	}
+
+	//###########################################Setter & Getter#######################################
 	public static String getDRIVER_NAME() {
 		return DRIVER_NAME;
 	}
@@ -40,39 +45,39 @@ public class DatabaseConnection {
 	public static String getURL() {
 		return URL;
 	}
-	
+
 	public static void setURL(String uRL) {
 		URL = uRL;
 	}
-	
+
 	public static String getPORT_NUMBER() {
 		return PORT_NUMBER;
 	}
-	
+
 	public static void setPORT_NUMBER(String pORT_NUMBER) {
 		PORT_NUMBER = pORT_NUMBER;
 	}
-	
+
 	public static String getDB_NAME() {
 		return DB_NAME;
 	}
-	
+
 	public static void setDB_NAME(String dB_NAME) {
 		DB_NAME = dB_NAME;
 	}
-	
+
 	public static String getUSER_NAME() {
 		return USER_NAME;
 	}
-	
+
 	public static void setUSER_NAME(String uSER_NAME) {
 		USER_NAME = uSER_NAME;
 	}
-	
+
 	public static String getPASSWORD() {
 		return PASSWORD;
 	}
-	
+
 	public static void setPASSWORD(String pASSWORD) {
 		PASSWORD = pASSWORD;
 	}
