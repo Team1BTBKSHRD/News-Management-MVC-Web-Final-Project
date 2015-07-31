@@ -32,7 +32,9 @@ body{
 .clear-margin-bottom{
 	margin-bottom: 0 ! important;
 }
-
+.contain-area{
+	margin-top: 9%;
+}
 
 
 .footer{
