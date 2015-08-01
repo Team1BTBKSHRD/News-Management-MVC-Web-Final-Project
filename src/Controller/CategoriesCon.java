@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -36,7 +37,8 @@ public class CategoriesCon extends HttpServlet {
 	 *            respone doGet and doPost action merge
 	 */
 	public void process(HttpServletRequest request, HttpServletResponse response) {
-		switch (request.getParameter("test").toLowerCase()) {
+		category cate = null;
+		switch (request.getParameter("action").toLowerCase()) {
 		case "list":
 			try {
 				response.setContentType("application/json");
@@ -45,30 +47,61 @@ public class CategoriesCon extends HttpServlet {
 						.toJson(new Convertor().convertResultSetIntoJSON(new CategoryDAO().retrive()));
 
 				response.getWriter().write(article);
-				log.writeLogException(new ArithmeticException(), "list", "CategoriesCon");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				
+				log.writeLogException(new ArithmeticException(), "list", "CategoriesCon");
 			}
 			break;
 		case "add":
-			/*category cat=null;
+			cate = new category();
+			cate.setCat_id(Integer.parseInt(request.getParameter("cat_id")));
+			log.writeLogAdd(Integer.parseInt(request.getParameter("cat_id")));
+			cate.setCat_code(request.getParameter("cat_code"));
+			cate.setCat_name(request.getParameter("cat_name"));
+			cate.setCat_desc(request.getParameter("cat_desc"));
+
 			try {
-				new CategoryDAO().insert(new catego)
-			} catch (Exception e) {
-				// log.writeLogException(e, "list", "CategoriesCon");
+				if(new CategoryDAO().insert(cate)){
+					response.getWriter().write("success");
+				}else{
+					response.getWriter().write("faild");
+				}
+			} catch (SQLException |IOException e) {
+				// TODO Auto-generated catch block
+				log.writeLogException(e, "add", "CategoriesCon");
 			}
-			*/
 			break;
-		default:
-			break;
+		case "remove":
+			try {
+				int id = Integer.parseInt(request.getParameter("cat_id"));
+				new CategoryDAO().delete(id);
+				log.writeLogDelete(id);
+			} catch (NumberFormatException e) {
+				// TODO Auto-generated catch block
+				log.writeLogException(e, "remove", "CategoriesCon");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 
+				log.writeLogException(e, "remove", "CategoriesCon");
+			}
+			break;
+		case "edit":
+			try {
+				cate = new category();
+				int id = Integer.parseInt(request.getParameter("cat_id"));
+				String name=request.getParameter("cat_name");
+				String desc=request.getParameter("cat_desc");
+				log.writeLogUpdate(id, name+":"+desc);
+				cate.setCat_id(id);
+				cate.setCat_name(name);
+				cate.setCat_desc(desc);
+				new CategoryDAO().update(cate);
+			} catch (Exception e) {
+				// TODO: handle exception
+				log.writeLogException(e, "edit", "CategoriesCon");
+			}
+			break;
 		}
-		// response.setcon
-	}
-
-	String getGson(ArrayList arraylist) {
-		return new Gson().toJson(arraylist);
 	}
 
 	/**

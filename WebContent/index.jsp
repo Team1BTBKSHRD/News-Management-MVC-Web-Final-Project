@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="NewFile.jsp" method="post">
-input : <input type="text" name="test" />
+input : <input type="text" name="action" />
 <input type="submit" value="submit"/>
 </form>
 </body>

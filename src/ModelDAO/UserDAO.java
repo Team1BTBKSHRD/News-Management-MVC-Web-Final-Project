@@ -7,91 +7,95 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Controller.Logger;
 import ModelDTO.user;
 import Utilities.DatabaseConnection;
 
 public class UserDAO {
-	Connection con=null;
-	PreparedStatement pstm=null;
-	
-	public UserDAO(){
+	Connection con = null;
+	PreparedStatement pstm = null;
+
+	public UserDAO() {
 		try {
-			con=DatabaseConnection.getConnection();
+			con = DatabaseConnection.getConnection();
 		} catch (ClassNotFoundException | SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 	}
-	public boolean insert(user u) throws SQLException{
+
+	public boolean insert(user u) throws SQLException {
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbuser(user_name,user_pass,user_type) VALUES(?,?,?)");
 			pstm.setString(1, u.getUser_name());
 			pstm.setString(2, u.getUser_pass());
 			pstm.setString(3, u.getUser_type());
-			return pstm.executeUpdate()>0?true:false;
+			return pstm.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		finally{
+		} finally {
 			pstm.close();
 			con.close();
 		}
 		return false;
 	}
-	public boolean delete(int uid) throws SQLException{
+
+	public boolean delete(int uid) throws SQLException {
 		try {
 			pstm = con.prepareStatement("DELETE FROM tbuser WHERE user_id = ?;");
 			pstm.setInt(1, uid);
-			return pstm.executeUpdate()>0?true:false;
+			return pstm.executeUpdate() > 0 ? true : false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		finally{
+		} finally {
 			pstm.close();
 			con.close();
 		}
 		return false;
 	}
-	public boolean update(user u) throws SQLException{
+
+	public boolean update(user u) throws SQLException {
 		try {
-			pstm = con.prepareStatement("UPDATE tbuser SET user_name=?,SET user_pass=?,SET user_type=? WHERE user_id=?;");
-			
+			pstm = con
+					.prepareStatement("UPDATE tbuser SET user_name=?,SET user_pass=?,SET user_type=? WHERE user_id=?;");
+
 			pstm.setString(1, u.getUser_name());
 			pstm.setString(2, u.getUser_pass());
 			pstm.setString(3, u.getUser_type());
-			pstm.setInt(4, u.getUser_id());			
-			
-		
-			return pstm.executeUpdate()>0?true:false;
-		} catch (SQLException e) {			
+			pstm.setInt(4, u.getUser_id());
+
+			return pstm.executeUpdate() > 0 ? true : false;
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		finally{
+		} finally {
 			pstm.close();
 			con.close();
 		}
 		return false;
 	}
-	public ArrayList<user> retrive() throws SQLException{
-		try {
-			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("SELECT * FROM tbuser");
-			ArrayList<user> us = new ArrayList<>();
-			while(rs.next()){
-				us.add(new user(rs.getInt(0),rs.getString(1),rs.getString(2),rs.getString(3)));
-			}
+
+	/*
+	 * public ArrayList<user> retrive() throws SQLException{ try { Statement stm
+	 * = con.createStatement(); ResultSet rs = stm.executeQuery(
+	 * "SELECT * FROM tbuser"); ArrayList<user> us = new ArrayList<>();
+	 * while(rs.next()){ us.add(new
+	 * user(rs.getInt(0),rs.getString(1),rs.getString(2),rs.getString(3))); }
+	 * stm.close(); rs.close(); return us; } catch (SQLException e) {
+	 * e.printStackTrace(); } finally{ con.close(); } return null; }
+	 */
+	public ResultSet retrive() throws SQLException {
+
+		Statement stm = con.createStatement();
+		ResultSet rs = stm.executeQuery("SELECT * FROM tbuser");
+		if(rs!=null){
 			stm.close();
-			rs.close();
-			return us;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		finally{
 			con.close();
+			return rs;
 		}
+		rs.close();
 		return null;
 	}
-	
+
 }
