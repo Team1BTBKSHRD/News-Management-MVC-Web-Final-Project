@@ -50,7 +50,7 @@ public class NewsDAO {
 			pstm.setString(5, news.getNews_path());
 			pstm.setString(6, news.getNews_img());
 			pstm.setString(7, news.getNews_date());
-			System.out.println(pstm.toString());
+			
 			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -99,7 +99,7 @@ public class NewsDAO {
 	public boolean update(News news) throws SQLException{
 		try {
 			/* Set PreparedStatement */
-			pstm = con.prepareStatement("UPDATE tbnews SET cat_code=?, SET user_info_code=?, SET news_title=?, SET news_desc=?, SET news_path=?, SET news_img=?, SET news_date=? WHERE news_id=?;");
+			pstm = con.prepareStatement("UPDATE tbnews SET cat_code=?, user_info_code=?, news_title=?, news_desc=?, news_path=?, news_img=?, news_date=? WHERE news_id=?;");
 			/* Initialize parameters for pstm object */
 			pstm.setString(1, news.getCat_code());
 			pstm.setString(2, news.getUser_info_code());
@@ -159,13 +159,7 @@ public class NewsDAO {
 		}
 		return null; /* Return null if error */
 	}
-	//$$$$$$$$$$$$$$$$$$$$$ ERROR $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$//
-	public static void main(String[] args) throws SQLException {
-		NewsDAO dao = new NewsDAO();
-		dao.insert(new News(0, "ci000003", "u0000001", "Klit", "Klit is Ktit boy", "/klit", "/klit.jpg", "10-10-10"));
-		//new News(news_id, cat_code, user_info_code, news_title, news_desc, news_path, news_img, news_date)
-		System.out.println("Success!");
-	}
+	
 }//End of class;
 
 
