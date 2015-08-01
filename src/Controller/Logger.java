@@ -5,12 +5,10 @@ import java.io.BufferedWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
-
 public class Logger {   
 	private static Logger logger = null;
-	public static String logFileName = new File("").getAbsolutePath() + "/Log/article.log";
-	public static String errorLogFileName = new File("").getAbsolutePath() + "/Log/error.log";
+	public static String logFileName =  "article.log";
+	public static String errorLogFileName = "error.log";
 	private Logger() {}
 	public static Logger getLogger() {			
 		if(logger == null)	logger = new Logger();		
@@ -72,15 +70,22 @@ public class Logger {
 			e.printStackTrace();
 		}
 	}
-	public void writeLogException(Exception ex, String methodName, String className){
+	public static void  writeLogException(Exception ex, String methodName, String className){
 		try(BufferedWriter output = new BufferedWriter(new FileWriter(errorLogFileName, true))) 
 		{	output.write(currentDate() + ":\t" + ex + " in METHOD \"" + methodName + "\" CLASS \"" + className + "\"");
 			output.write(System.getProperty("line.separator"));			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}	
+	}		 
 	public static String currentDate() {
 		return new SimpleDateFormat("dd/MM/YYYY HH:mm:ss").format(new Date());
 	}
+  public static void main(String args[]){
+    try{
+      throw new Exception();
+    }catch(Exception ex){
+      writeLogException(ex,"sdf","asdafdsf");
+    }
+  }
 }
