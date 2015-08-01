@@ -15,7 +15,7 @@ import Utilities.DatabaseConnection;
  */
 public class NewsDetailDAO {
 	
-	Connection con=null; /* Connection object */
+	Connection con; /* Connection object */
 	PreparedStatement pstm; /* Prepared Statement object */
 	
 	/**
@@ -124,21 +124,25 @@ public class NewsDetailDAO {
 		ArrayList<NewsDetail> newsDetails = null; /* newsDetails stores data of rs */
 		try {
 			stm = con.createStatement(); /* Statement for Query Data from DBMS */
-			rs = stm.executeQuery("SELECT * FROM tbnewsdetail"); /* rs stores all records of query */
+			rs = stm.executeQuery("SELECT * FROM tbnewsdetail;"); /* rs stores all records of query */
 			newsDetails = new ArrayList<>();
 			while(rs.next()){ /* Add every record into newsDetail */
-				newsDetails.add(new NewsDetail(rs.getInt("news_detail_id"),rs.getInt("news_id"),rs.getString("news_content")));
+				newsDetails.add(new NewsDetail(rs.getInt("news_detail_id"),
+											   rs.getInt("news_id"),
+											   rs.getString("news_content")));
 			}
-			stm.close();
-			rs.close();
+			
 			return newsDetails; /* return newDetail object */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		finally{
+			/* Close stm, rs and con */
+			stm.close();
+			rs.close();
 			con.close();
 		}
-		return null;
+		return null; /* Return null if error */
 	}
 	
 }//End of class;
