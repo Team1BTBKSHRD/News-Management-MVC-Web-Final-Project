@@ -77,6 +77,7 @@ public class UserInfoDAO {
 			pstm = con.prepareStatement("DELETE FROM tbuserinfo WHERE user_info_id = ?;");
 			/* Initialize parameter for pstm object */
 			pstm.setInt(1, userInfoId);
+			
 			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {
 			e.printStackTrace();
