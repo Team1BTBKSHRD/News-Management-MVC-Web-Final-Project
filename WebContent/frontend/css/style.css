@@ -98,6 +98,7 @@ float:right;
 }
 .card-news h3{
 	font-size: 1.75em;
+	margin-top: 8px;
 }
 
 .card-body .lv-item {
