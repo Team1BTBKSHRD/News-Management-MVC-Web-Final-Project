@@ -131,14 +131,14 @@ public class UserInfoDAO {
 	 * @return ArrayList<News>
 	 * */
 	public ArrayList<UserInfo> retrive() throws SQLException{
-		Statement stm = null;
-		ResultSet rs = null;
-		ArrayList<UserInfo> userInfos = null;
+		Statement stm = null; /* Statement for Query Data from DBMS */
+		ResultSet rs = null; /* rs stores all records of query */
+		ArrayList<UserInfo> userInfos = null; /* users stores data of rs */
 		try {
-			stm = con.createStatement();
-			rs = stm.executeQuery("SELECT * FROM tbuserinfo;");
+			stm = con.createStatement(); /* Statement for Query Data from DBMS */
+			rs = stm.executeQuery("SELECT * FROM tbuserinfo;"); /* rs stores all records of query */
 			userInfos = new ArrayList<>();
-			while(rs.next()){
+			while(rs.next()){ /* Add every record into users */
 				userInfos.add(new UserInfo(rs.getInt("user_info_id"),
 										   rs.getInt("user_id"),
 										   rs.getString("user_info_code"),
@@ -151,16 +151,17 @@ public class UserInfoDAO {
 										   rs.getString("logo")));
 			}
 			
-			return userInfos;
+			return userInfos; /* return user object */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		finally{
+			/* Close stm, rs and con */
 			stm.close();
 			rs.close();
 			con.close();
 		}
-		return null;
+		return null; /* Return null if error */
 	}
 
 }//End of class;

@@ -11,8 +11,9 @@ import ModelDTO.UserRole;
 import Utilities.DatabaseConnection;
 
 public class UserRoleDAO {
-	Connection con=null;
+	Connection con;
 	PreparedStatement pstm;
+	
 	public UserRoleDAO(){
 		try {
 			con=DatabaseConnection.getConnection();
@@ -20,26 +21,12 @@ public class UserRoleDAO {
 			e.printStackTrace();
 		}
 	}
-	public boolean insert(UserRole ur) throws SQLException{
+	
+	public boolean insert(UserRole userRole) throws SQLException{
 		try {
-			pstm = con.prepareStatement("INSERT INTO tbuserrole(user_type,user_desc) VALUES(?,?)");
-			pstm.setString(1, ur.getUser_type());
-			pstm.setString(2, ur.getUser_desc());
-			return pstm.executeUpdate()>0?true:false;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		finally{
-			pstm.close();
-			con.close();
-		}
-		return false;
-	}
-	public boolean delete(int urid) throws SQLException{
-		try {
-			pstm = con.prepareStatement("DELETE FROM tbuserrole WHERE user_role_id = ?;");
-			pstm.setInt(1, urid);
+			pstm = con.prepareStatement("INSERT INTO tbuserrole(user_type, user_desc) VALUES(?, ?);");
+			pstm.setString(1, userRole.getUser_type());
+			pstm.setString(2, userRole.getUser_desc());
 			return pstm.executeUpdate()>0?true:false;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -52,13 +39,29 @@ public class UserRoleDAO {
 		return false;
 	}
 	
-	public boolean update(UserRole ur) throws SQLException{
+	public boolean delete(int userRoleId) throws SQLException{
 		try {
-			pstm = con.prepareStatement("UPDATE tbuser SET user_type=?,SET user_desc=? WHERE user_id=?;");
+			pstm = con.prepareStatement("DELETE FROM tbuserrole WHERE user_role_id = ?;");
+			pstm.setInt(1, userRoleId);
+			return pstm.executeUpdate()>0?true:false;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			pstm.close();
+			con.close();
+		}
+		return false;
+	}
+	
+	public boolean update(UserRole userRole) throws SQLException{
+		try {
+			pstm = con.prepareStatement("UPDATE tbuserrole SET user_type=?, user_desc=? WHERE user_role_id=?;");
 			
-			pstm.setString(1, ur.getUser_type());
-			pstm.setString(2, ur.getUser_desc());
-			pstm.setInt(3, ur.getUser_role_id());
+			pstm.setString(1, userRole.getUser_type());
+			pstm.setString(2, userRole.getUser_desc());
+			pstm.setInt(3, userRole.getUser_role_id());
 			
 		
 			return pstm.executeUpdate()>0?true:false;
@@ -72,23 +75,41 @@ public class UserRoleDAO {
 		return false;
 	}
 	public ArrayList<UserRole> retrive() throws SQLException{
+		Statement stm = null;
+		ResultSet rs = null;
+		ArrayList<UserRole> userRoles = null;
 		try {
-			Statement stm = con.createStatement();
-			ResultSet rs = stm.executeQuery("SELECT * FROM tbuserrole");
-			ArrayList<UserRole> urs = new ArrayList<>();
+			stm = con.createStatement();
+			rs = stm.executeQuery("SELECT * FROM tbuserrole");
+			userRoles = new ArrayList<>();
 			while(rs.next()){
-				urs.add(new UserRole(rs.getInt(0),rs.getString(1),rs.getString(2)));
+				userRoles.add(new UserRole(rs.getInt("user_role_id"),
+										   rs.getString("user_type"),
+										   rs.getString("user_desc")));
 			}
-			stm.close();
-			rs.close();
-			return urs;
+			
+			return userRoles;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		finally{
+			stm.close();
+			rs.close();
 			con.close();
 		}
 		return null;
 	}
 	
-}
+}//End of class;
+
+
+
+
+
+
+
+
+
+
+
+
