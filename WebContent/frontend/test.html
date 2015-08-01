@@ -23,7 +23,7 @@
 	<script>
 		$(document).ready(function() {
 			$("#owl-demo").owlCarousel({
-				items : 3,
+				items : 4,
 				lazyLoad : true,
 				autoPlay : true,
 				pagination : false,
@@ -63,8 +63,8 @@
 					<li id="top-search">
 						<a class="tm-search" href=""></a>
 					</li>
-					<li><a href="#">ពត៌មានថ្មីៗ</a></li>
-					<li class="active"><a href="#">ជីវិត និង សង្គម<span class="sr-only">(current)</span></a></li>
+					<li class="active"><a href="#">ពត៌មានថ្មីៗ</a></li>
+					<li><a href="#">ជីវិត និង សង្គម<span class="sr-only">(current)</span></a></li>
 					<li><a href="#">សេដ្ឋកិច្ច</a></li>
 					<li><a href="#">កីឡា</a></li>
 					<li><a href="#">កំសាន្ត</a></li>
@@ -83,10 +83,10 @@
 		</div>
 	</nav>
 
-	<div class="container contain-area">
+	<div class="container-fluid contain-area">
 		<div class="main-top">
 			<div class="main">
-				<div class="card gallery">
+				<div class="card">
 					<div class="card-header">
 						<h2 style="margin-left: 55px">Top Stories</h2>
 						<div id="owl-demo" class="owl-carousel center-block" style="width:90%;">
@@ -129,20 +129,33 @@
 					</div>					
 				</div>
 				<div class="content">
-					<div class="col-md-8 content-top clear-padding-left">
-						<div class="number">
-							<div class="card">
-								<div class="card-header">
-									<div class="feb">
-										<b>28</b>
-										<label>FEB</label>
+					<div class="col-sm-8 content-top clear-padding-left">
+						
+						<div class="card">
+							<a href="http://news.sabay.com.kh/article/298488" target="_new">
+								<div class="row card-header card-news clear-paddings clear-margins">
+									<div class="col-sm-4 clear-paddings">
+										<img src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167" class="col-sm-12 clear-paddings">											
+									</div>
+									<div class="col-sm-8 pull-right">
+										<h3 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​...</h3>
+										<time class="published-date relative-date" datetime="2015-08-01T00:05:00Z">20150307</time>											
+										<p class="synopsis">
+											<span class="free-text-label">Explained</span>
+											បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទែន​ គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ
+											បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទែន​ គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ
+											បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទ
+											
+										</p>
 									</div>
 								</div>
-							</div>
-							<div class="clearfix"></div>
+							</a>
 						</div>
+
+						<div class="clearfix"></div>
+
 					</div>
-					<div class="col-md-4 content-bottom card">
+					<div class="col-sm-4 content-bottom card">
 						<div class="card-header">
 							<div class="row">
 								<form role="search">

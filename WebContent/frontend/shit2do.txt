@@ -1,0 +1,15 @@
+add meu bar and dchange new sourc e
+fixed margin top gallery
+
+
+category		doch teachradar.com
+title				choose font							substring 0.55
+description	font nokora
+image				fixed image
+news path
+new img
+source			dk where eto tput
+date				
+
+javascaript libray like
+substring
