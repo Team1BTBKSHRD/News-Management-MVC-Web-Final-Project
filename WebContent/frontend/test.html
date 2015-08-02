@@ -31,20 +31,7 @@
 				navigationText :  true,          
 			});
 		});
-	</script>
-	<script>
-		$(document).ready(function() {
-	        /*
-	        var defaults = {
-	            containerID: 'toTop', // fading element id
-	          containerHoverID: 'toTopHover', // fading element hover id
-	          scrollSpeed: 1200,
-	          easingType: 'linear' 
-	          };
-	          */        
-	          $().UItoTop({ easingType: 'easeOutQuart' });        
-	        });
-	</script>            
+	</script>       
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -56,7 +43,10 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Brand</a>
+				<div class="navbar-brand clear-paddings">
+					<a href="#"><img src="images/logo.png" width="110px"></a>	
+				</div>
+				
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 				<ul class="nav navbar-nav navbar-right">
@@ -83,7 +73,7 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid contain-area">
+	<div class="container content-area">
 		<div class="main-top">
 			<div class="main">
 				<div class="card">
@@ -129,8 +119,7 @@
 					</div>					
 				</div>
 				<div class="content">
-					<div class="col-sm-8 content-top clear-padding-left">
-						
+					<div class="col-sm-8 content-left clear-padding-left">						
 						<div class="card">
 							<a href="http://news.sabay.com.kh/article/298488" target="_new">
 								<div class="row card-header card-news clear-paddings clear-margins">
@@ -153,20 +142,14 @@
 								</div>
 							</a>
 						</div>
-
 						<div class="clearfix"></div>
-
 					</div>
-					<div class="col-sm-4 content-bottom card">
+					<div class="col-sm-4 card content-right clear-paddings">
 						<div class="card-header">
 							<div class="row">
 								<form role="search">
-									<div class="col-sm-9">
-										<input type="text" class="col-sm-12 form-control" placeholder="Search">
-									</div>
-									<div class="col-sm-3" style="padding: 10px  10px;">
-										<button type="submit" class="btn btn-primary">Search</button>
-									</div>
+									<input type="text" class="col-sm-7 " style="margin-left: 15px" placeholder="Search">
+									<button type="submit" class="col-sm-3 btn btn-primary" style="margin-left: 15px">Search</button>									
 								</form>
 							</div>
 						</div>							
@@ -176,11 +159,12 @@
 		</div>
 	</div>
 
-	<div class="footer navbar navbar-inverse">
+	<div class="footer">
 		<div class="container">
-			<p>Copyright © 2015 Anhiora communication. Template By <a href="http://w3layouts.com/">W3layouts</a></p>
-			<a class="scroll" href="#home"><img src="images/4.png" alt=""></a>
-			<div class="clearfix"></div>
+			<p>Copyright © 2015 
+				<img src="http://www.kshrd.com.kh/jsp/img/logo.png" width="30px"/>
+				<a href="http://www.kshrd.com.kh/jsp/index.hrd">KSHRD</a>
+			</p>	
 		</div>
 	</div>
 </body>
