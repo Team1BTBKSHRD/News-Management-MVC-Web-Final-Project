@@ -81,11 +81,11 @@ public class Convertor {
 		return Math.round(number * 100.0) / 100.0;
 	}
 
-	/*public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 		Connection con = DatabaseConnection.getConnection();
 		ResultSet rs = con.createStatement().executeQuery("select * from tbcategory");
 		JSONArray a = convertResultSetIntoJSON(rs);
 		System.out.println(a.toString());
 
-	}*/
+	}
 }
