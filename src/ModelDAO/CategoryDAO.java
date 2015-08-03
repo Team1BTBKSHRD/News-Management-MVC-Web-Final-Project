@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import javax.naming.spi.DirStateFactory.Result;
 
-import ModelDTO.category;
+import ModelDTO.Category;
 
 import Utilities.DatabaseConnection;
 
@@ -27,7 +27,7 @@ public class CategoryDAO {
 		}
 	}
 
-	public boolean insert(category c) throws SQLException {
+	public boolean insert(Category c) throws SQLException {
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbcategory(cat_code,parent_id,cat_name,cat_desc) VALUES(?,?,?,?)");
 			pstm.setString(1, c.getCat_code());
@@ -60,7 +60,7 @@ public class CategoryDAO {
 		return false;
 	}
 
-	public boolean update(category c) throws SQLException {
+	public boolean update(Category c) throws SQLException {
 		try {
 			pstm = con.prepareStatement(
 					"UPDATE tbcategoryparent SET cat_code=?,parent_id=?,cat_name=?,cat_desc=? WHERE cat_id=?;");

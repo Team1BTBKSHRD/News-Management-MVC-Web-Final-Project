@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 
 import ModelDAO.CategoryDAO;
 import ModelDAO.UserDAO;
-import ModelDTO.user;
+import ModelDTO.User;
 import Utilities.Convertor;
 
 /**
@@ -21,7 +21,7 @@ import Utilities.Convertor;
  */
 @WebServlet("/UserCon")
 public class UserCon extends HttpServlet {
-	private user userdto = null;
+	private User userdto = null;
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -36,7 +36,7 @@ public class UserCon extends HttpServlet {
 	public void process(HttpServletRequest request, HttpServletResponse response) {
 		switch (request.getParameter("action").toLowerCase()) {
 		case "add":
-			userdto = new user();
+			userdto = new User();
 			int id = Integer.parseInt(request.getParameter("user_id"));
 			String name = request.getParameter("user_name");
 			String password = request.getParameter("user_pass");
@@ -63,7 +63,7 @@ public class UserCon extends HttpServlet {
 			}
 			break;
 		case "edit":
-			userdto = new user();
+			userdto = new User();
 			int eid = Integer.parseInt(request.getParameter("user_id"));
 			String ename = request.getParameter("user_name");
 			String epassword = request.getParameter("user_pass");

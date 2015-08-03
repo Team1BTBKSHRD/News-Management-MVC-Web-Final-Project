@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Pisal
  *
  */
-public class job implements Serializable {
+public class Job implements Serializable {
 	private int job_id;
 	private String cat_code;
 	private String user_info_code;

@@ -9,16 +9,16 @@ import java.io.Serializable;
  * @author Pisal
  *
  */
-public class category implements Serializable {
+public class Category implements Serializable {
 	private int cat_id;
 	private String cat_code;
 	private int parent_id;
 	private String cat_name;
 	private String cat_desc;
 	
-	public category(){}
+	public Category(){}
 	
-	public category(int cat_id, String cat_code, int parent_id,
+	public Category(int cat_id, String cat_code, int parent_id,
 			String cat_name, String cat_desc) {
 		super();
 		this.cat_id = cat_id;

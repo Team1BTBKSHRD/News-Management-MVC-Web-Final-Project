@@ -9,12 +9,12 @@ import java.io.Serializable;
  * @author Pisal
  *
  */
-public class newsdetail implements Serializable{
+public class NewDetail implements Serializable{
 private int news_detail_id;
 private int news_id;
-public newsdetail(){}
+public NewDetail(){}
 
-public newsdetail(int news_detail_id, int news_id, String new_content) {
+public NewDetail(int news_detail_id, int news_id, String new_content) {
 	super();
 	this.news_detail_id = news_detail_id;
 	this.news_id = news_id;

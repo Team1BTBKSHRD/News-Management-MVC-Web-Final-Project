@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import ModelDTO.userrole;
+import ModelDTO.UserRole;
 import Utilities.DatabaseConnection;
 
 public class UserRoleDAO {
@@ -20,7 +20,7 @@ public class UserRoleDAO {
 			e.printStackTrace();
 		}
 	}
-	public boolean insert(userrole ur) throws SQLException{
+	public boolean insert(UserRole ur) throws SQLException{
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbuserrole(user_type,user_desc) VALUES(?,?)");
 			pstm.setString(1, ur.getUser_type());
@@ -52,7 +52,7 @@ public class UserRoleDAO {
 		return false;
 	}
 	
-	public boolean update(userrole ur) throws SQLException{
+	public boolean update(UserRole ur) throws SQLException{
 		try {
 			pstm = con.prepareStatement("UPDATE tbuser SET user_type=?,SET user_desc=? WHERE user_id=?;");
 			
@@ -71,13 +71,13 @@ public class UserRoleDAO {
 		}
 		return false;
 	}
-	public ArrayList<userrole> retrive() throws SQLException{
+	public ArrayList<UserRole> retrive() throws SQLException{
 		try {
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM tbuserrole");
-			ArrayList<userrole> urs = new ArrayList<>();
+			ArrayList<UserRole> urs = new ArrayList<>();
 			while(rs.next()){
-				urs.add(new userrole(rs.getInt(0),rs.getString(1),rs.getString(2)));
+				urs.add(new UserRole(rs.getInt(0),rs.getString(1),rs.getString(2)));
 			}
 			stm.close();
 			rs.close();

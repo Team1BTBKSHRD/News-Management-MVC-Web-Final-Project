@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
-import ModelDTO.news;
+import ModelDTO.News;
 import Utilities.DatabaseConnection;
 
 public class NewsDAO {
@@ -21,7 +21,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		}
 	}
-	public boolean insert(news n) throws SQLException{
+	public boolean insert(News n) throws SQLException{
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbnews(cat_code,user_info_code,news_title,news_desc,news_path,news_img,news_date) VALUES(?,?,?,?,?,?,?)");
 			pstm.setString(1, n.getCat_code());
@@ -58,7 +58,7 @@ public class NewsDAO {
 		}
 		return false;
 	}
-	public boolean update(news n) throws SQLException{
+	public boolean update(News n) throws SQLException{
 		try {
 			pstm = con.prepareStatement("UPDATE tbnews SET cat_code=?, SET user_info_code=?, SET news_title=?,SET news_desc=?,SET news_path=?,SET news_img=?,SET news_date=? WHERE news_id=?;");
 			pstm.setString(1, n.getCat_code());
@@ -79,13 +79,13 @@ public class NewsDAO {
 		}
 		return false;
 	}
-	public ArrayList<news> retrive() throws SQLException{
+	public ArrayList<News> retrive() throws SQLException{
 		try {
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM tbnews");
-			ArrayList<news> ns = new ArrayList<>();
+			ArrayList<News> ns = new ArrayList<>();
 			while(rs.next()){
-				ns.add(new news(rs.getInt(0), rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+				ns.add(new News(rs.getInt(0), rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
 			}
 			stm.close();
 			rs.close();

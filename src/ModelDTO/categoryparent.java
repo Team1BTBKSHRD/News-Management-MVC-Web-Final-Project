@@ -9,14 +9,14 @@ import java.io.Serializable;
  * @author Pisal
  * 
  */
-public class categoryparent implements Serializable {
+public class CategoryParent implements Serializable {
 	private int parent_id;
 	private String parent_desc;
 
-	public categoryparent() {
+	public CategoryParent() {
 	}
 
-	public categoryparent(int parent_id, String parent_desc) {
+	public CategoryParent(int parent_id, String parent_desc) {
 		super();
 		this.parent_id = parent_id;
 		this.parent_desc = parent_desc;

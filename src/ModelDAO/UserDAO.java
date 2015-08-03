@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Controller.Logger;
-import ModelDTO.user;
+import ModelDTO.User;
 import Utilities.DatabaseConnection;
 
 public class UserDAO {
@@ -24,7 +24,7 @@ public class UserDAO {
 		}
 	}
 
-	public boolean insert(user u) throws SQLException {
+	public boolean insert(User u) throws SQLException {
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbuser(user_name,user_pass,user_type) VALUES(?,?,?)");
 			pstm.setString(1, u.getUser_name());
@@ -56,7 +56,7 @@ public class UserDAO {
 		return false;
 	}
 
-	public boolean update(user u) throws SQLException {
+	public boolean update(User u) throws SQLException {
 		try {
 			pstm = con
 					.prepareStatement("UPDATE tbuser SET user_name=?,SET user_pass=?,SET user_type=? WHERE user_id=?;");

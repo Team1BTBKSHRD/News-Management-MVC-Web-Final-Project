@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import ModelDTO.categoryparent;
+import ModelDTO.CategoryParent;
 import Utilities.DatabaseConnection;
 
 public class CategoryParentDAO {
@@ -20,7 +20,7 @@ public class CategoryParentDAO {
 			e.printStackTrace();
 		}
 	}
-	public boolean insert(categoryparent cp) throws SQLException{
+	public boolean insert(CategoryParent cp) throws SQLException{
 		try {
 			pstm = con.prepareStatement("INSERT INTO tbcategoryparent(parent_desc) VALUES(?)");
 			pstm.setString(1, cp.getParent_desc());
@@ -51,7 +51,7 @@ public class CategoryParentDAO {
 		}
 		return false;
 	}
-	public boolean update(categoryparent cp) throws SQLException{
+	public boolean update(CategoryParent cp) throws SQLException{
 		try {
 			pstm = con.prepareStatement("UPDATE tbcategoryparent SET parent_desc=? WHERE parent_id=?;");
 			pstm.setString(1, cp.getParent_desc());
@@ -66,13 +66,13 @@ public class CategoryParentDAO {
 		}
 		return false;
 	}
-	public ArrayList<categoryparent> retrive() throws SQLException{
+	public ArrayList<CategoryParent> retrive() throws SQLException{
 		try {
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM tbcategoryparent");
-			ArrayList<categoryparent> cps = new ArrayList<>();
+			ArrayList<CategoryParent> cps = new ArrayList<>();
 			while(rs.next()){
-				cps.add(new categoryparent(rs.getInt("parent_id"), rs.getString("parent_desc")));
+				cps.add(new CategoryParent(rs.getInt("parent_id"), rs.getString("parent_desc")));
 			}
 			stm.close();
 			rs.close();
