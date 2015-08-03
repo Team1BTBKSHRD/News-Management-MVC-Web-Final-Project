@@ -5,8 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.get("/index", function(data){
+	    alert(data);
+	});
+});
+alert(data);
+</script>
 </head>
 <body>
-<h1>dddd</h1>
 </body>
 </html>
