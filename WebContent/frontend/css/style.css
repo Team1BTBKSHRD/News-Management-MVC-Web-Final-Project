@@ -48,6 +48,9 @@ body{
 .content-right, .content-left{
 	margin-bottom: 2%;	
 }
+.news-source{
+	float: right;
+}
 /*###################################clear style*/
 .clear-paddings{
 	padding: 0 ! important;
