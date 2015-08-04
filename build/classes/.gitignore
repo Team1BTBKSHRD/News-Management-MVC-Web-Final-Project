@@ -4,3 +4,5 @@
 /NewsController
 /Utilities
 /NewsDetailController
+/CategoryController
+/CategoryParentController
