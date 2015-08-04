@@ -85,7 +85,7 @@ public class UserCon extends HttpServlet {
 			response.setCharacterEncoding("UTF-8");
 			String article;
 			try {
-				article = new Gson().toJson(new Convertor().convertResultSetIntoJSON(new UserDAO().retrive()));
+				article = new Gson().toJson(new Convertor().convertResultSetIntoJSON(new UserDAO().retrieve()));
 				response.getWriter().write(article);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
