@@ -10,6 +10,10 @@ import java.io.Serializable;
  * 
  */
 public class CategoryParent implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int parent_id;
 	private String parent_desc;
 

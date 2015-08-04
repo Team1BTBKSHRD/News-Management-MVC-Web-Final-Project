@@ -4,13 +4,20 @@ import java.io.Serializable;
 
 /**
  * @author Pisal
- *
+ * 
  */
 public class UserRole implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int user_role_id;
 	private String user_type;
 	private String user_desc;
-	public UserRole(){}
+
+	public UserRole() {
+	}
+
 	public UserRole(int user_role_id, String user_type, String user_desc) {
 		super();
 		this.user_role_id = user_role_id;
