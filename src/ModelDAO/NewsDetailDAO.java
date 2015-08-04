@@ -144,7 +144,30 @@ public class NewsDetailDAO {
 		}
 		return null; /* Return null if error */
 	}
-	
+	/**
+	 * Method retrieveRS()
+	 * Use for retrieve all data from tbnewdetail
+	 * @throws SQLException
+	 * @return ArrayList<CategoryParent>
+	 * */
+	public ResultSet retrieveRS() throws SQLException{
+		Statement stm = null; /* Statement for Query Data from DBMS */
+		ResultSet rs = null; /* rs stores all records of query */
+		try {
+			stm = con.createStatement(); /* Statement for Query Data from DBMS */
+			rs = stm.executeQuery("SELECT * FROM tbnewsdetail;"); /* rs stores all records of query */
+			return rs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			/* Close stm, rs and con */
+			stm.close();
+			rs.close();
+			con.close();
+		}
+		return null; /* Return null if error */
+	}
 }//End of class;
 
 
