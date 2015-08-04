@@ -1,29 +1,29 @@
-/*package Controller;
-
-import java.util.ArrayList;
+package Controller.sub;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.ObjectDAO;
-import Model.ObjectDTO;
-
 import com.google.gson.Gson;
 
-public class universityList implements Action {
+import Controller.Action;
+import Controller.ActionForward;
+import ModelDAO.CategoryDAO;
+import Utilities.Convertor;
+
+public class newsCategory implements Action {
+
+	@Override
 	public ActionForward execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		
-		ObjectDAO dao = new ObjectDAO();
-		ArrayList<ObjectDTO> objectlist = dao.universityList();
-		
+
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		String obj= new Gson().toJson(objectlist);
-		
+		@SuppressWarnings("static-access")
+		String obj = new Gson().toJson(new Convertor()
+				.convertResultSetIntoJSON(new CategoryDAO().retrive()));
+		System.out.println(obj);
 		response.getWriter().write(obj);
-		System.out.println(objectlist.size());
 		return null;
 	}
+
 }
-*/

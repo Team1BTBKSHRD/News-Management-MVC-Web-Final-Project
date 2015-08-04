@@ -80,12 +80,11 @@ public class Logger {
 	}		 
 	public static String currentDate() {
 		return new SimpleDateFormat("dd/MM/YYYY HH:mm:ss").format(new Date());
-	}
-  public static void main(String args[]){
+ /* public static void main(String args[]){
     try{
       throw new Exception();
     }catch(Exception ex){
       writeLogException(ex,"sdf","asdafdsf");
-    }
+    }*/
   }
 }

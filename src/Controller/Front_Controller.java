@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controller.sub.newsCategory;
+
 @WebServlet("*.news")
 public class Front_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,9 +29,9 @@ public class Front_Controller extends HttpServlet {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String RequestURI = request.getRequestURI();
 		
-		System.out.println(RequestURI);
+		//System.out.println(RequestURI);
 		String contextPath = request.getContextPath();
-		System.out.println(contextPath);
+		//System.out.println(contextPath);
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
@@ -37,16 +39,17 @@ public class Front_Controller extends HttpServlet {
 		System.out.println(command);
 			
 		switch(command){
-			/*case "/listobject.hrd":
-				action = new ListObject();
+			case "/newsCategory.news":
+	
+				action = new newsCategory();
 				try {
 					forward = action.execute(request, response);
-					System.out.println(forward);
+					//System.out.println(forward);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				break;*/
-			/*case "/classlist.hrd":
+				break;
+		/*	case "/classlist.hrd":
 				action = new classList();
 				try {
 					forward = action.execute(request, response);
@@ -54,8 +57,8 @@ public class Front_Controller extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				break;
-			case "/universitylist.hrd":
+				break;*/
+			/*case "/universitylist.hrd":
 				action = new universityList();
 				try {
 					forward = action.execute(request, response);
