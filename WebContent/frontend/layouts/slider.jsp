@@ -1,3 +1,4 @@
+         <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
             <div id="owl-demo" class="owl-carousel owl-theme">
               <div class="item">
                 <img src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167" alt="The Last of us">
