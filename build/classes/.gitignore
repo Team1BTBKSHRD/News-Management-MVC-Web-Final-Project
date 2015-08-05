@@ -1,8 +1,7 @@
 /CategoryController/
 /CategoryParentController/
-/Controller/
 /ModelDAO/
 /ModelDTO/
 /NewsController/
 /NewsDetailController/
-/Utilities/
+/Controller/
