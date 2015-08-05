@@ -1,7 +1,7 @@
-/CategoryController
-/CategoryParentController
-/ModelDAO
-/ModelDTO
-/NewsController
-/NewsDetailController
-/Controller
+/CategoryController/
+/CategoryParentController/
+/Controller/
+/ModelDAO/
+/NewsController/
+/NewsDetailController/
+/ModelDTO/
