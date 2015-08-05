@@ -5,13 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="WebContent/WEB-INF/assets/js/lib/jquery-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
-	<form>
+	<form method="post">
 		input : <input type="text" id="txtinput" />
-		<button id="btnclick">submit</button>
-		<!-- <input type="submit"
-			value="submit" id="btnclick" /> -->
+		<input type="button"
+			value="submit" id="btnclick" />
 	</form>
+	<script>
+		$("#btnclick").click(function(){
+			alert(12112);
+		});
+	</script>
 </body>
 </html>
