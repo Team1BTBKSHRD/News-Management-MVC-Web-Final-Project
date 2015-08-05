@@ -1,0 +1,38 @@
+      #owl-demo .item {
+        margin: 3px;
+      }
+
+      #owl-demo .item img {
+        display: block;
+        width: 100%;
+        height: 280px;
+        border-radius: 4px;
+      }
+
+      #owl-demo .item .news-title-background {
+        background-color: black;
+        opacity: 0.3;
+        height: 98%;
+        width: 38%;
+        position: absolute;
+        right: 0.3%;
+        top: 1%;
+        border-radius: 4px;
+      }
+      #owl-demo .item a .news-title {
+        text-indent: 1vw;
+        color: white; !important
+        height: 98%;
+        width: 38%;
+        position: absolute;
+        right: 0.3%;
+        top: 1%;
+        padding: 10px;
+      }
+      #owl-demo .item a .news-title strong{
+        float: right;
+      }
+      #owl-demo .item a .news-title h3{
+        font-size: 20px;
+        color: white;
+      }
