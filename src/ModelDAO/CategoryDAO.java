@@ -164,12 +164,12 @@ public class CategoryDAO {
 			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			/* Close stm, rs and con */
+		}/* finally {
+			 Close stm, rs and con 
 			stm.close();
 			rs.close();
 			con.close();
-		}
+		}*/
 		return null; /* Return null if error */
 	}
 	

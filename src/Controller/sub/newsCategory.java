@@ -21,7 +21,6 @@ public class newsCategory implements Action {
 		@SuppressWarnings("static-access")
 		String obj = new Gson().toJson(new Convertor()
 				.convertResultSetIntoJSON(new CategoryDAO().retrieveRS()));
-		System.out.println(obj);
 		response.getWriter().write(obj);
 		return null;
 	}

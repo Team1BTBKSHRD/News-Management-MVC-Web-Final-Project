@@ -9,10 +9,10 @@ import com.google.gson.Gson;
 
 import Controller.Action;
 import Controller.ActionForward;
-import Controller.Logger;
 import ModelDAO.UserDAO;
 import ModelDTO.User;
 import Utilities.Convertor;
+import Utilities.Logger;
 
 public class AddUser implements Action {
 

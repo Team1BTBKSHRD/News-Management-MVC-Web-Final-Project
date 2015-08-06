@@ -5,18 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<script type="text/javascript" src="WebContent/WEB-INF/assets/js/lib/jquery-min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript"
+	src="WebContent/WEB-INF/assets/js/lib/jquery-min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
-	<form method="post">
-		input : <input type="text" id="txtinput" />
-		<input type="button"
+	<form>
+		input : <input type="text" id="txtinput" /> <input type="button"
 			value="submit" id="btnclick" />
 	</form>
 	<script>
-		$("#btnclick").click(function(){
-			alert(12112);
+		$("#btnclick").click(function() {
+			$.post("newsCategory.news", function(data, status) {
+				//
+				alert(data.myArrayList[1].map.cat_name + "||" + status);
+				//alert(1212);
+			});
 		});
 	</script>
 </body>

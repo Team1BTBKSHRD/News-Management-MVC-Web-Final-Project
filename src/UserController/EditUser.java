@@ -18,6 +18,7 @@ public class EditUser implements Action {
 		String name = request.getParameter("user_name");
 		String password = request.getParameter("user_pass");
 		String usertype = request.getParameter("user_type");
+		request.getContextPath();
 		userdto.setUser_id(id);
 		userdto.setUser_name(name);
 		userdto.setUser_pass(password);

@@ -78,6 +78,7 @@ public class DatabaseConnection {
 	}
 	
 	/*public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		System.out.println(DatabaseConnection.getConnection().getMetaData().getDatabaseProductName());
+	//	System.out.println(DatabaseConnection.getConnection().getMetaData().getDatabaseProductName());
+		
 	}*/
 }

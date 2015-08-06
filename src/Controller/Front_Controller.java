@@ -1,5 +1,6 @@
 package Controller;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,9 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.sub.newsCategory;
-
+import Utilities.Logger;
+/**
+ * importance 
+ * Logger.setPath(request.getServletContext().getRealPath("\\"));
+ * */
 @WebServlet("*.news")
 public class Front_Controller extends HttpServlet {
+	private String logfilePath=null;
 	private static final long serialVersionUID = 1L;
 
 	public Front_Controller() {
@@ -19,20 +25,24 @@ public class Front_Controller extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doProcess(request, response);
-		System.out.println("doGet");
+		doProcess(request, response);
+		//System.out.println("doGet");
+		//System.out.println(request.getServletContext().getRealPath(""));
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doProcess(request, response);
+		doProcess(request, response);
 	}
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		logfilePath=request.getServletContext().getRealPath("\\"); // it is for setting Logger File path
+		
 		String RequestURI = request.getRequestURI();
 		
-		//System.out.println(RequestURI);
+		System.out.println(RequestURI);
 		String contextPath = request.getContextPath();
-		//System.out.println(contextPath);
+		System.out.println(contextPath);
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
@@ -41,13 +51,11 @@ public class Front_Controller extends HttpServlet {
 			
 		switch(command){
 			case "/newsCategory.news":
-	
 				action = new newsCategory();
 				try {
 					forward = action.execute(request, response);
-					//System.out.println(forward);
 				} catch (Exception e) {
-					e.printStackTrace();
+					Logger.writeLogException(e, command, "newsCategory.news");
 				}
 				break;
 		/*	case "/classlist.hrd":
