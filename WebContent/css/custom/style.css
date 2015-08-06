@@ -39,12 +39,15 @@ body{
   cursor: default;
 }
 .panel{
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	
 	border-radius: 4px;
 }
 .panel-heading {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
+}
+ul.list-group > .list-group-items{
+	border-left: none;
 }
 /*h2{
 	font-size: 3em ! important;
@@ -126,13 +129,20 @@ text-decoration:none;
 
 /*############################################card style*/
 
+.card-2 *{
+	color: #444444;
+}
+.card-2 kbd, .card-2 time{
+	color: #fff;
+}
+.card-2{
+	margin-bottom: 1.5%;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+}
 .card a:hover{
 	text-decoration: none;
 }
-.card-news {
-	color: #444444;
-}
-
 .card-body .lv-item {
 	padding: 12px 20px;
 }
@@ -140,7 +150,7 @@ text-decoration:none;
 	border-radius: 4px;
 	position: relative;
 	background: #fff;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 	margin-bottom: 1.5%;
 }
 
