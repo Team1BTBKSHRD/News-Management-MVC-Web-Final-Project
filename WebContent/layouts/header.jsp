@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="navbar-brand clear-paddings">
-          <a href="#"><img src="images/logo.png" width="110px"></a>
+          <a href="#"><img src="img/logo.png" width="110px"></a>
         </div>
 
       </div>

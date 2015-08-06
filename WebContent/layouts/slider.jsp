@@ -13,7 +13,7 @@
                   </div>
                 </a>
               </div>
-              <div class="item"><img src="images/news002.jpg" alt="GTA V">
+              <div class="item"><img src="img/news002.jpg" alt="GTA V">
                 <div class="news-title-background"></div>
                 <a href="http://news.sabay.com.kh/article/298488">
                   <div class="news-title">
@@ -25,7 +25,7 @@
                   </div>
                 </a>
               </div>
-              <div class="item"><img src="images/news001.jpg" alt="Mirror Edge">
+              <div class="item"><img src="img/news001.jpg" alt="Mirror Edge">
                 <div class="news-title-background"></div>
                 <a href="http://news.sabay.com.kh/article/298488">
                   <div class="news-title">
@@ -37,7 +37,7 @@
                   </div>
                 </a>
               </div>
-              <div class="item"><img src="images/news002.jpg" alt="GTA V">
+              <div class="item"><img src="img/news002.jpg" alt="GTA V">
                 <div class="news-title-background"></div>
                 <a href="http://news.sabay.com.kh/article/298488">
                   <div class="news-title">
@@ -49,7 +49,7 @@
                   </div>
                 </a>
               </div>
-              <div class="item"><img src="images/news001.jpg" alt="Mirror Edge">
+              <div class="item"><img src="img/news001.jpg" alt="Mirror Edge">
                 <div class="news-title-background"></div>
                 <a href="http://news.sabay.com.kh/article/298488">
                   <div class="news-title">
