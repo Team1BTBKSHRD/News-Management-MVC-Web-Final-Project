@@ -15,9 +15,9 @@
         
         <section>
             <div class="mainwrapper">
+            
             <jsp:include page="include/menu_left.html"></jsp:include>
-               
-                
+            
                 <div class="mainpanel">
                     <div class="pageheader">
                         <div class="media">
@@ -118,26 +118,10 @@
                                 </div><!-- panel -->
                             </div><!-- col-md-4 -->
                         </div><!-- row -->
-                        
-                        
-
-                        
-                        
-                       
-                        
-                        <div class="row row-dashboard">
-                            
-                            
-                            
-                        </div><!-- row -->
-                        
                     </div><!-- contentpanel -->
-                    
                 </div><!-- mainpanel -->
             </div><!-- mainwrapper -->
         </section>
-
-
      <jsp:include page="include/jsfile.html" ></jsp:include>
 
     </body>

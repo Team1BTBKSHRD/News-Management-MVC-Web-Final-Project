@@ -1,3 +1,5 @@
+$('#list').dataTable({	
+		});
 function createTable(data) {
 	 var str="";
 	 for (var i = 0; i < data.myArrayList.length; i++) {
