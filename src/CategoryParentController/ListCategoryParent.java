@@ -13,15 +13,15 @@ import Utilities.Convertor;
 public class ListCategoryParent implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* categoryList stores records of news as JSON data */
-		String categoryParentList = new Gson().toJson(Convertor.convertResultSetIntoJSON(new CategoryParentDAO().retrieveRS())); 
+		String categoryParentList = Convertor.convertResultSetIntoJSON(new CategoryParentDAO().retrieveRS()).toString(); 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */
 		response.getWriter().write(categoryParentList);
-		return null;
+	
 	}
 
 }

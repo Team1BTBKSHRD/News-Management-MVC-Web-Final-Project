@@ -10,7 +10,7 @@ import ModelDTO.Category;
 
 public class UpdateCategory implements Action {
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* Get data from client request */
 		int catId = 0;
@@ -27,6 +27,6 @@ public class UpdateCategory implements Action {
 			response.getWriter().write("Category Update Unsuccessfuly"); /* Update Unsuccessful */
 		}
 		
-		return null;
+		
 	}
 }

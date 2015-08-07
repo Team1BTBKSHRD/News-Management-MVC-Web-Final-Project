@@ -13,16 +13,15 @@ import Utilities.Convertor;
 public class newsCategory implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		@SuppressWarnings("static-access")
-		String obj = new Gson().toJson(new Convertor()
-				.convertResultSetIntoJSON(new CategoryDAO().retrieveRS()));
+		String obj = new Convertor().convertResultSetIntoJSON(new CategoryDAO().retrieveRS()).toString();
 		response.getWriter().write(obj);
-		return null;
+	
 	}
 
 }

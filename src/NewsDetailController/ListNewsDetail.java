@@ -13,15 +13,14 @@ import Controller.ActionForward;
 
 public class ListNewsDetail implements Action {
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
 		/* newsList stores records of news as JSON data */
-		String newsList = new Gson().toJson(Convertor.convertResultSetIntoJSON(new NewsDetailDAO().retrieveRS())); 
+		String newsList = Convertor.convertResultSetIntoJSON(new NewsDetailDAO().retrieveRS()).toString(); 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */
 		response.getWriter().write(newsList);
-		return null;
 	}
 }

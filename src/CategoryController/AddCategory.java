@@ -11,14 +11,14 @@ import ModelDTO.Category;
 public class AddCategory implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* Get data from client request */
 		int catId = 0;
-		String catCode = "";
-		int parentId = 0;
-		String catName = "";
-		String catDesc = "";
+		String catCode = "C00401";
+		int parentId = 1;
+		String catName = request.getParameter("cat_name");
+		String catDesc = request.getParameter("cat_desc");
 		CategoryDAO dao = new CategoryDAO(); /* Instantiate DAO object */
 
 		if(dao.insert(new Category(catId, catCode, parentId, catName, catDesc))){
@@ -28,7 +28,6 @@ public class AddCategory implements Action {
 			response.getWriter().write("Category Add Unsuccessfuly"); /* Add Unsuccessful */
 		}
 		
-		return null;
 	}
 
 }

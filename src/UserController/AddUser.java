@@ -17,7 +17,7 @@ import Utilities.Logger;
 public class AddUser implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		User userdto=new User();
 		String name = request.getParameter("user_name");
@@ -35,6 +35,5 @@ public class AddUser implements Action {
 		}else{
 			response.getWriter().write("inserted Fail");
 		}
-		return null;
 	}
 }

@@ -163,13 +163,20 @@ public class UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally{
-			/* Close stm, rs and con */
+		/*finally{
+			 Close stm, rs and con 
 			stm.close();
 			rs.close();
 			con.close();
-		}
+		}*/
 		return null; /* Return null if error */
+	}
+
+	public ResultSet uFind(int id) throws SQLException {
+		String sql="select * from tbuser where user_id=?";
+		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm.setInt(1,id);
+		return pstm.executeQuery() ;
 	}
 }//End of class;
 

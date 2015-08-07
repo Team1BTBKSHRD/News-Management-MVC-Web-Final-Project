@@ -5,7 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import Controller.Action;
 import Controller.ActionForward;
+import ModelDAO.CategoryDAO;
 import ModelDAO.NewsDAO;
+import ModelDAO.UserInfoDAO;
 import ModelDTO.News;
 
 /**
@@ -16,28 +18,28 @@ import ModelDTO.News;
 public class AddNews implements Action{
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		
 		/* Get data from client request */
-		int newsId = 1000;
-		String catCode = "";
-		String userInfoCode = "";
-		String newsTittle = "";
-		String newsDesc = "";
-		String newsPath = "";
-		String newsImg = "";
-		String newsDate = "";
-		NewsDAO dao = new NewsDAO(); /* Instantiate DAO object */
-
-		if(dao.insert(new News(newsId, catCode, userInfoCode, 
-				newsTittle, newsDesc, newsPath, newsImg, newsDate))){
-			response.getWriter().write("News Added"); /* Add Successful */
+		int newsId = 0;
+		String catCode = new CategoryDAO().returnCateCode(request.getParameter("cat_name"));
+		String userInfoCode = new UserInfoDAO().returnUserInfoCode(request.getParameter("user_info_code")) ;
+		String newsTittle = request.getParameter("news_title");
+		String newsDesc = request.getParameter("news_desc");
+		String newsPath = request.getParameter("news_path");
+		String newsImg = request.getParameter("news_img");
+		String newsDate = request.getParameter("news_date");
+		NewsDAO dao = new NewsDAO();  //Instantiate DAO object 
+		System.out.println(userInfoCode+"--"+catCode);
+		if(dao.insert(new News(newsId, catCode, userInfoCode,newsTittle, newsDesc, newsPath, "", ""))){
+			response.getWriter().write("News Added");  //Add Successful 
 		}
 		else{
-			response.getWriter().write("New Add Unsuccessfuly"); /* Add Unsuccessful */
+			response.getWriter().write("New Add Unsuccessfuly");  //Add Unsuccessful 
 		}
 		
-		return null;
+		
 	}
 
 }//End of class;

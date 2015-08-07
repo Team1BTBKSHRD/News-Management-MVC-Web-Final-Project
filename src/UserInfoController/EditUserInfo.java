@@ -11,7 +11,7 @@ import ModelDTO.User;
 public class EditUserInfo implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		User userdto = new User();
 		int id = Integer.parseInt(request.getParameter("user_id"));
@@ -31,6 +31,6 @@ public class EditUserInfo implements Action {
 			System.err.println("Update FAIL");
 			response.getWriter().write("fail");
 		}
-		return null;
+		
 	}
 }

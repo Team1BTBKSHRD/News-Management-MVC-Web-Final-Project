@@ -21,7 +21,7 @@ public class RemoveUserInfo implements Action {
 	 * @see Controller.Action#execute(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		int id=Integer.parseInt(request.getParameter("user_id"));
 		/*String name = "Acer123";
 		String password = "121212";
@@ -33,7 +33,7 @@ public class RemoveUserInfo implements Action {
 		}else{
 			response.getWriter().write("deleted Fail");
 		}
-		return null;
+		
 	}
 
 }

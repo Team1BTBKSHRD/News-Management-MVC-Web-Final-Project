@@ -23,13 +23,13 @@ public class ListUserInfo implements Action {
 	 * @see Controller.Action#execute(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		String obj= new Gson().toJson(new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()));
-		
+		//String obj= new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
+		String obj=new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
 		response.getWriter().write(obj);		
-		return null;
+		System.out.println(obj);
 	}
 
 }

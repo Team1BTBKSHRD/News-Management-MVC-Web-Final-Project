@@ -10,7 +10,7 @@ import ModelDTO.CategoryParent;
 
 public class UpdateCategoryParent implements Action {
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* Get data from client request */
 		int parentId = 0;
@@ -25,6 +25,6 @@ public class UpdateCategoryParent implements Action {
 			response.getWriter().write("Category Parent Updated Unsuccessfuly"); /* Add Unsuccessful */
 		}
 		
-		return null;
+		
 	}
 }

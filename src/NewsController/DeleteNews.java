@@ -10,7 +10,7 @@ import ModelDAO.NewsDAO;
 public class DeleteNews implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* Get data from client request */
 		int newsId = 0;
@@ -20,7 +20,7 @@ public class DeleteNews implements Action {
 		else{
 			response.getWriter().write("Delete Unsuccessful"); /* Delete Unsuccessful */
 		}
-		return null;
+		
 	}
 
 }

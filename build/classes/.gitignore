@@ -1,10 +1,8 @@
-/CategoryController/
-/CategoryParentController/
-/ModelDAO/
 /ModelDTO/
-/NewsController/
-/NewsDetailController/
-/Controller/
-/Utilities/
+/ModelDAO/
+/ArticleController/
 /UserController/
 /UserInfoController/
+/Controller/
+/CategoryController/
+/NewsController/

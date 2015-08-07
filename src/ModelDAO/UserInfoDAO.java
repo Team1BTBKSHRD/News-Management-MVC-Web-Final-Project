@@ -1,5 +1,6 @@
 package ModelDAO;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -164,7 +165,17 @@ public class UserInfoDAO {
 		}
 		return null; /* Return null if error */
 	}
-
+	/* return user info code*/
+	public String returnUserInfoCode(String data) throws SQLException{
+		
+		CallableStatement clsm=con.prepareCall("{call user_info_code(?)}");
+		clsm.setString(1, data);
+		ResultSet rs=clsm.executeQuery();
+		if(rs.next()){
+			return rs.getString(1).toString();
+		}
+		return null;
+	}
 }//End of class;
 
 

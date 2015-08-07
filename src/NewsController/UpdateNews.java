@@ -11,7 +11,7 @@ import ModelDTO.News;
 public class UpdateNews implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* Get data from client request */
 		int newsId = 1000;
@@ -33,7 +33,7 @@ public class UpdateNews implements Action {
 		}
 		
 
-		return null;
+	
 	}
 
 }

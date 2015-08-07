@@ -10,7 +10,7 @@ import ModelDAO.CategoryParentDAO;
 public class DeleteCategoryParent implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* Get data from client request */
 		int categoryParentId = 0;
@@ -20,7 +20,7 @@ public class DeleteCategoryParent implements Action {
 		else{
 			response.getWriter().write("Category Parent Delete Unsuccessful"); /* Delete Unsuccessful */
 		}
-		return null;
+		
 	}
 
 }

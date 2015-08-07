@@ -10,7 +10,7 @@ import ModelDTO.NewsDetail;
 
 public class UpdateNewsDetail implements Action {
 	@Override
-	public ActionForward execute(HttpServletRequest request,
+	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		/* Get data from client request */
 		int newsDetailId = 0;
@@ -25,6 +25,6 @@ public class UpdateNewsDetail implements Action {
 			response.getWriter().write("New Add Unsuccessfuly"); /* Updated Unsuccessful */
 		}
 		
-		return null;
+		
 	}
 }
