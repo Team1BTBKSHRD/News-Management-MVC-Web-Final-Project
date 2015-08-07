@@ -3,6 +3,12 @@
 @import url(http://fonts.googleapis.com/css?family=Nokora:400,700);
 
 /*######################################bootstrap modify classes*/
+img{
+	border-radius: 4px;
+}
+hr{
+	border: 1.5px solid #eeeeee;
+}
 .navbar-brand{
 	margin-left: 1% ! important ;
 }
@@ -38,9 +44,15 @@ body{
   border-color: #50a253;
   cursor: default;
 }
-.panel{
-	
+.panel{	
 	border-radius: 4px;
+}
+.panel-body{
+	padding-left: 1.5% ! important;
+}
+.panel-body hr{
+	margin-top: 1.5%;
+	margin-bottom: 1.5%;
 }
 .panel-heading {
   border-top-right-radius: 4px;
@@ -53,11 +65,63 @@ ul.list-group > .list-group-items{
 	font-size: 3em ! important;
 }*/
 /*#####################################custom classes*/
-img{
-	border-radius: 4px;
+
+/*
+limit line 
+.giveMeEllipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: N;    				number line to show
+   line-height: X;        
+   max-height: X x N;     
 }
-hr{
-	border: 1.5px solid #eeeeee;
+*/
+.text-1 {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 16px;      /* fallback */
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+.text-h3-2 {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 23px;     /* fallback */
+   max-height: 46px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+.text-3 {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 48px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+.text-4 {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 20px;     /* fallback */
+   max-height: 80px;      /* fallback */
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+.text-5 {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 20px;     /* fallback */
+   max-height: 100px;      /* fallback */
+   -webkit-line-clamp: 5; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 
 .content-area-aritcle, .content-area{
@@ -144,6 +208,11 @@ text-decoration:none;
 	margin-bottom: 1.5%;
 	border: 1px solid #dddddd;
 	border-radius: 4px;
+	width: 48.5%;
+}
+.card, .card-2{
+	/*margin-right: 15px;*/
+	margin-right: 1.5%;
 }
 .card a:hover{
 	text-decoration: none;
@@ -161,6 +230,9 @@ text-decoration:none;
 
 .card .card-header {
 	position: relative;
+}
+.card-right{
+	margin-bottom: 5.5%;
 }
 
 @media screen and (min-width: 768px) {

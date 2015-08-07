@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="col-sm-3 card content-right clear-paddings pull-right">
-	<div class="card-header">
-		<hr width="95%">
+<div class="col-sm-3 content-right clear-paddings clear-margins pull-right">
+	
 		<!-- search form -->
-		<div class="container-fluid">
+		<div class="card card-right container-fluid">
 			<form role="search">
 				<div class="col-sm-12 form-group">
 					<div class="col-sm-8 clear-paddings">
@@ -45,9 +44,8 @@
 			</form>
 		</div>
 		<!-- end search form -->
-		<hr width="95%">
 		<!-- popular article -->
-		<ul class="list-group">
+		<ul class="card card-right list-group">
 			<a href="" class="list-group-item">
 				<h5 class="list-group-item-heading">ពត៌មានពេញនិយម</h5>
 			</a>
@@ -74,9 +72,8 @@
 
 		</ul>
 		<!-- end popular article -->
-		<hr width="95%">
 		<!-- recommend article -->
-		<ul class="list-group">
+		<ul class="card card-right list-group">
 			<a href="" class="list-group-item">
 				<h5 class="list-group-item-heading">ពត៌មានគួរអាន</h5>
 			</a>
@@ -103,6 +100,5 @@
 
 		</ul>
 		<!-- end recommend article -->
-		<hr width="95%">
-	</div>
+	
 </div>
