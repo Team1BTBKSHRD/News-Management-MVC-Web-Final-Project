@@ -59,9 +59,14 @@ img{
 hr{
 	border: 1.5px solid #eeeeee;
 }
-.content-area{
-	margin-top: 80px;
+
+.content-area-aritcle, .content-area{
+	margin-top: 55px;
 }
+.content-area-aritcle {	
+	width: 90%;
+}
+
 .content-right, .content-left{
 	margin-bottom: 2%;	
 }

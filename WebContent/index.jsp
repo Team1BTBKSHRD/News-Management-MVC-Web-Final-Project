@@ -3,163 +3,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>asdkfjas;d</title>
+<title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- #####################stylesheet#################### -->	​​
 <!-- lib css -->
-<link rel="stylesheet" href="css/font-google-open-sans.css">
-<link rel="stylesheet" href="css/font-google-roboto-condensed.css">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/owl.transitions.css">
-<link rel="stylesheet" href="css/responsive.css">
-<!--     
-    <link rel="stylesheet" href="http://192.185.228.226/projects/ma/v1-4-1/jQuery/css/app.min.1.css">
-    <link rel="stylesheet" href="http://192.185.228.226/projects/ma/v1-4-1/jQuery/css/app.min.2.css"> 
-    <link  type="text/css" href="css/bootstrap.min.css"> 
-  -->
+	<link rel="stylesheet" href="css/font-google-open-sans.css">
+	<link rel="stylesheet" href="css/font-google-roboto-condensed.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.transitions.css">
+	<link rel="stylesheet" href="css/responsive.css">
 <!-- end lib css -->
 <!-- custom css -->
-<link rel="stylesheet" type="text/css" href="css/custom/style.css">
-<link rel="stylesheet" type="text/css" href="css/custom/owl.css">
+	<link rel="stylesheet" type="text/css" href="css/custom/index.css">
+	<link rel="stylesheet" type="text/css" href="css/custom/owl.css">
 <!-- end custom css -->
+<!-- #####################end stylesheet#################### -->	​​
 </head>
-<body>
-	​​
+<body>​​
+	<!-- header -->
 	<jsp:include page="layouts/header.jsp" />
+	<!-- end header -->
 	<!-- content area -->
-	<div class="container-fluid content-area">
-		<!-- left panel -->
-		<div class="col-sm-3 card content-right clear-paddings pull-right">
-			<div class="card-header">
-				<hr width="95%">
-				<!-- search form -->
-				<div class="container-fluid">
-					<form role="search">
-						<div class="col-sm-12 form-group">
-							<div class="col-sm-8 clear-paddings">
-								<input type="text" placeholder="Search">
-							</div>
-							<div class="col-sm-4 clear-paddings">
-								<button type="submit" class="btn btn-primary">Search</button>
-							</div>
-						</div>
-						<div class=" form-group">
-							<label for="Category" class="">Category</label>
-							<div class="btn-group ">
-								<a href="#" class="btn btn-default ">Default</a> <a href="#"
-									class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span
-									class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Action</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li><a href="#">Separated link</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class=" form-group">
-							<label for="Category" class="">Category</label>
-							<div class="btn-group ">
-								<a href="#" class="btn btn-default ">Default</a> <a href="#"
-									class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span
-									class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Action</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li><a href="#">Separated link</a></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</div>
-				<!-- end search form -->
-				<hr width="95%">
-				<!-- popular article -->
-				<ul class="list-group">
-					<a href="" class="list-group-item">
-						<h5 class="list-group-item-heading">ពត៌មានពេញនិយម</h5>
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">1</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">2</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">3</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">4</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">5</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">6</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">7</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">8</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">9</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">10</span>asdfasdfasdf
-					</a>
-
-				</ul>
-				<!-- end popular article -->
-				<hr width="95%">
-				<!-- recommend article -->
-				<ul class="list-group">
-					<a href="" class="list-group-item">
-						<h5 class="list-group-item-heading">ពត៌មានគួរអាន</h5>
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">1</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">2</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">3</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">4</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">5</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">6</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">7</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">8</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">9</span>asdfasdfasdf
-					</a>
-					<a href="" class="list-group-item"> <span
-						class="badge pull-left">10</span>asdfasdfasdf
-					</a>
-
-				</ul>
-				<!-- end recommend article -->
-				<hr width="95%">
-			</div>
-		</div>
-		<!-- end left panel -->
+	<div class="container content-area">
 		<!-- right panel -->
-		<div class="col-sm-9 content-left clear-padding-left">
+		<jsp:include page="layouts/right-panel.jsp" />
+		<!-- end right panel -->
+		<!-- left panel -->
+		<div class="col-sm-9 content-left clear-padding-left clear-margin-bottom">
 			<jsp:include page="layouts/slider.jsp" />
 			<!-- local news -->
 			<div class="panel panel-primary">
@@ -168,55 +41,137 @@
 				</div>
 				<div class="panel-body">
 					<div class="card">
-						<a href="http://news.sabay.com.kh/article/298488" target="_new">
+						<a href="http://kohsantepheapdaily.com.kh/article/124906.html"
+							target="_new">
 							<div
 								class="row card-header card-news clear-paddings clear-margins">
 								<div class="col-sm-6 clear-paddings">
 									<img
-										src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
+										src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"
 										class="col-sm-12 clear-paddings">
 								</div>
 								<div class="col-sm-6 pull-right">
-									<h5 class="article-name">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​...</h5>
+									<h5 class="article-name">សុគន្ធ នី​សា
+										ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
+										«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»</h5>
 									<strong> ផ្សាយថ្ងៃ <kbd>
 											<time>2015/03/07</time>
 										</kbd>
 									</strong>
 									<p class="clear-margin-bottom">
-										បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទែន​
-										គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-										កាពីទែន​ គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ
-										បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-										កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-										កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទ <strong
-											class="news-source">ប្រភពពត៌មាន<kbd>Sabay</kbd></strong> <strong
-											class="news-source">ចំនួនអ្នកអាន<kbd>10នាក់</kbd></strong>
+										រាជធានី​ភ្នំពេញ ៖ កម្មវិធី​ស្តាប់​បទ​ចម្រៀង​ថ្មី​ដែល «mJams
+										Pleng និង​ឡូយ​ជាងគេ​» ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
+										បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
+										ដោយ​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន<strong
+											class="news-source">ប្រភពពត៌មាន<kbd>kohsantepheap</kbd></strong>
+										<strong class="news-source">ចំនួនអ្នកអាន<kbd>10នាក់</kbd></strong>
 									</p>
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="card-2 col-sm-6 clear-paddings">
-						<a href="http://news.sabay.com.kh/article/298488" target="_new">
+						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
+							target="_new">
 							<div
 								class="row card-header card-news clear-paddings clear-margins">
 								<div class="col-sm-5 clear-paddings">
 									<figure>
 										<img
-											src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
+											src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
 											class="col-sm-12 clear-paddings" height="90px" width="80px">
 										<figcaption>
 											<center>
-												<img
-													src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/themes/sabaynews/images/favicon.ico?498d09"
-													alt=""> Sabay
+												<img src="http://kohsantepheapdaily.com.kh/img/logo.png"
+													width="48px">
 											</center>
 										</figcaption>
 									</figure>
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ា​បញ្ជូន​កូន​ស្រី​ទៅ​</h6>
+									<h6 class="article-name clear-margin-top">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+
+									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
+									<div class="col-sm-7 clear-paddings">
+										<kbd>
+											<time>2015/03/07</time>
+										</kbd>
+									</div>
+									<div class="col-sm-5 clear-paddings">ចំនួនអ្នកអាន</div>
+									<div class="col-sm-7 clear-paddings">
+										<kbd>Sabay</kbd>
+									</div>
+
+
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="card-2 col-sm-6 clear-paddings">
+						<a href="http://kohsantepheapdaily.com.kh/article/120920.html"
+							target="_new">
+							<div
+								class="row card-header card-news clear-paddings clear-margins">
+								<div class="col-sm-5 clear-paddings">
+									<figure>
+										<img
+											src="http://i.kspg.co/2015/5/358beba5-bfa4-4ded-8000-637d13a19648.jpg?w=285&amp;h=170&amp;mode=carve"
+											class="col-sm-12 clear-paddings" height="90px" width="80px">
+										<figcaption>
+											<center>
+												<img src="http://kohsantepheapdaily.com.kh/img/logo.png"
+													width="48px">
+											</center>
+										</figcaption>
+									</figure>
+
+								</div>
+								<div class="col-sm-7 pull-right ">
+									<h6 class="article-name clear-margin-top">Lenovo
+										បញ្ចេញ​ទ្រនាប់ជើង​ឆ្លាត​វៃ​ត្រួតពិនិត្យ​សុខភាព</h6>
+
+									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
+									<div class="col-sm-7 clear-paddings">
+										<kbd>
+											<time>2015/03/07</time>
+										</kbd>
+									</div>
+									<div class="col-sm-5 clear-paddings">ចំនួនអ្នកអាន</div>
+									<div class="col-sm-7 clear-paddings">
+										<kbd>Sabay</kbd>
+									</div>
+
+
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="card-2 col-sm-6 clear-paddings">
+						<a
+							href="http://www.dap-news.com/2011-06-14-02-43-39/95689-2015-07-22-08-06-21.html"
+							target="_new">
+							<div
+								class="row card-header card-news clear-paddings clear-margins">
+								<div class="col-sm-5 clear-paddings">
+									<figure>
+										<img
+											src="http://image.dap-news.com:81/dap-news/dap-images/2015/July/id-014/that-0562.jpg"
+											class="col-sm-12 clear-paddings" height="90px" width="80px">
+										<figcaption>
+											<center>
+												<img
+													src="http://www.khmerlook.com/site/images/logos/dap-news.png"
+													width="28px">
+											</center>
+										</figcaption>
+									</figure>
+
+								</div>
+								<div class="col-sm-7 pull-right ">
+									<h6 class="article-name clear-margin-top">ផលិតផល
+										បរិក្ខារបន្ទប់ទឹក លំដាប់ពិភពលោក ផ្ដល់ការ សន្សំសំចៃខ្ពស់
+										មកដល់កម្ពុជាហើយ</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
@@ -241,20 +196,21 @@
 								<div class="col-sm-5 clear-paddings">
 									<figure>
 										<img
-											src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
+											src="http://image.dap-news.com:81/dap-news/dap-images/2015/July/id-014/that-0845.jpg"
 											class="col-sm-12 clear-paddings" height="90px" width="80px">
 										<figcaption>
 											<center>
 												<img
-													src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/themes/sabaynews/images/favicon.ico?498d09"
-													alt=""> Sabay
+													src="http://www.khmerlook.com/site/images/logos/dap-news.png"
+													width="28px">
 											</center>
 										</figcaption>
 									</figure>
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ា​បញ្ជូន​កូន​ស្រី​ទៅ​</h6>
+									<h6 class="article-name clear-margin-top">កាហ្វេ និងតែ
+										ប្រហែលជាអាច ជួយការពារ ជំងឺខ្លាញ់ក្នុងថ្លើម</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
@@ -273,26 +229,30 @@
 						</a>
 					</div>
 					<div class="card-2 col-sm-6 clear-paddings">
-						<a href="http://news.sabay.com.kh/article/298488" target="_new">
+						<a
+							href="http://www.dap-news.com/morokatmagazine/96368-2015-08-03-03-43-49.html"
+							target="_new">
 							<div
 								class="row card-header card-news clear-paddings clear-margins">
 								<div class="col-sm-5 clear-paddings">
 									<figure>
 										<img
-											src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
+											src="http://image.lookingtoday.com:81/lookingtoday/looking-images/news/2015/August/ID-140/hour-00417.jpg"
 											class="col-sm-12 clear-paddings" height="90px" width="80px">
 										<figcaption>
 											<center>
 												<img
-													src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/themes/sabaynews/images/favicon.ico?498d09"
-													alt=""> Sabay
+													src="http://www.khmerlook.com/site/images/logos/dap-news.png"
+													width="28px">
 											</center>
 										</figcaption>
 									</figure>
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ា​បញ្ជូន​កូន​ស្រី​ទៅ​</h6>
+									<h6 class="article-name clear-margin-top">លោក វ៉ាត់ ចំរើន៖
+										មុនឆ្នាំ១៩៧០ មាតាបិតាសិស្ស ស្ម័គ្របង់វិភាគទាន ១០រៀល
+										ដើម្បីទិញឧបករណ៍ កីឡាឲ្យសិស្ស</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
@@ -311,102 +271,29 @@
 						</a>
 					</div>
 					<div class="card-2 col-sm-6 clear-paddings">
-						<a href="http://news.sabay.com.kh/article/298488" target="_new">
+						<a
+							href="http://www.dap-news.com/2011-06-14-02-43-39/95184--aeon-mall-.html"
+							target="_new">
 							<div
 								class="row card-header card-news clear-paddings clear-margins">
 								<div class="col-sm-5 clear-paddings">
 									<figure>
 										<img
-											src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
+											src="http://image.dap-news.com:81/dap-news/dap-images/2015/July/id-010/chanroth015-july-156.jpg"
 											class="col-sm-12 clear-paddings" height="90px" width="80px">
 										<figcaption>
 											<center>
 												<img
-													src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/themes/sabaynews/images/favicon.ico?498d09"
-													alt=""> Sabay
+													src="http://www.khmerlook.com/site/images/logos/dap-news.png"
+													width="28px">
 											</center>
 										</figcaption>
 									</figure>
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ា​បញ្ជូន​កូន​ស្រី​ទៅ​</h6>
-
-									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>
-											<time>2015/03/07</time>
-										</kbd>
-									</div>
-									<div class="col-sm-5 clear-paddings">ចំនួនអ្នកអាន</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>Sabay</kbd>
-									</div>
-
-
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="card-2 col-sm-6 clear-paddings">
-						<a href="http://news.sabay.com.kh/article/298488" target="_new">
-							<div
-								class="row card-header card-news clear-paddings clear-margins">
-								<div class="col-sm-5 clear-paddings">
-									<figure>
-										<img
-											src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
-											class="col-sm-12 clear-paddings" height="90px" width="80px">
-										<figcaption>
-											<center>
-												<img
-													src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/themes/sabaynews/images/favicon.ico?498d09"
-													alt=""> Sabay
-											</center>
-										</figcaption>
-									</figure>
-
-								</div>
-								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ា​បញ្ជូន​កូន​ស្រី​ទៅ​</h6>
-
-									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>
-											<time>2015/03/07</time>
-										</kbd>
-									</div>
-									<div class="col-sm-5 clear-paddings">ចំនួនអ្នកអាន</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>Sabay</kbd>
-									</div>
-
-
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="card-2 col-sm-6 clear-paddings">
-						<a href="http://news.sabay.com.kh/article/298488" target="_new">
-							<div
-								class="row card-header card-news clear-paddings clear-margins">
-								<div class="col-sm-5 clear-paddings">
-									<figure>
-										<img
-											src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
-											class="col-sm-12 clear-paddings" height="90px" width="80px">
-										<figcaption>
-											<center>
-												<img
-													src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/themes/sabaynews/images/favicon.ico?498d09"
-													alt=""> Sabay
-											</center>
-										</figcaption>
-									</figure>
-
-								</div>
-								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ា​បញ្ជូន​កូន​ស្រី​ទៅ​</h6>
+									<h6 class="article-name clear-margin-top">បើមានបុណ្យទាន
+										ក្នុងមួយថ្ងៃ Aeon Mall ទទួលបានអតិថិជន ៥-៦ម៉ឺននាក់</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
@@ -425,8 +312,11 @@
 						</a>
 					</div>
 				</div>
+				<!-- end local news -->
+
+				<%-- <jsp:include page="layouts/pagination.jsp" /> --%>
+				<div class="clearfix"></div>
 			</div>
-			<!-- end local news -->
 			<!-- local news -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -1756,34 +1646,28 @@
 					</div>
 				</div>
 			</div>
-			<!-- end local news -->
-			<%-- <jsp:include page="layouts/pagination.jsp" /> --%>
-			<div class="clearfix"></div>
+			<!-- end local news -->			
 		</div>
-		<!-- end right panel -->
+		<!-- end left panel -->
 	</div>
 	<!-- end content area -->
-	​​
+	<!-- footer -->
 	<jsp:include page="layouts/footer.jsp" />
+	<!-- end footer -->
 	
-	<!-- #####################javascript#################### -->​​
+	<!-- #####################javascript#################### -->	​​
 	<!-- lib js -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.js"></script>
-	<script>
-		document.write('<script src="http://'
-				+ (location.host || 'localhost').split(':')[0]
-				+ ':35729/livereload.js?snipver=2"></' + 'script>')
-	</script>
-	<!-- 
-    <script src="js/easing.js"></script>
-    <script src="js/move-top.js"></script>
-  	-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/owl.carousel.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
-	<script src="js/custom/owl.js"></script>
+		<script src="js/custom/owl.js"></script>
+		<script>
+			document.write('<script src="http://'+ (location.host || 'localhost')
+				.split(':')[0]	+ ':35729/livereload.js?snipver=2"></' + 'script>');
+		</script>
 	<!-- end custom js -->
-
+	<!-- #####################end javascript#################### -->	​​	
 </body>
 </html>

@@ -4,14 +4,14 @@
 
       #owl-demo .item img {
         display: block;
-        width: 100%;
+        width: 61.76%;
         height: 280px;
         border-radius: 4px;
       }
 
       #owl-demo .item .news-title-background {
         background-color: black;
-        opacity: 0.85;
+        opacity: 0.7;
         height: 98%;
         width: 38%;
         position: absolute;
