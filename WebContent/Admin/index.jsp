@@ -1,0 +1,1 @@
+<jsp:include page="page_dashboard.jsp"></jsp:include>

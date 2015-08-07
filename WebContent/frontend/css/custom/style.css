@@ -1,0 +1,250 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700);
+@import url(http://fonts.googleapis.com/css?family=Koulen);
+@import url(http://fonts.googleapis.com/css?family=Nokora:400,700);
+
+/*######################################bootstrap modify classes*/
+.navbar-brand{
+	margin-left: 1% ! important ;
+}
+.navbar-brand a img{
+	margin-top: 4px ! important ;
+}
+html{
+	position: relative;
+  min-height: 100%;
+}
+body{
+	background-color: #EDECEC;
+	margin-bottom: 60px;
+	font-family: 'Lato', Calibri, Arial, sans-serif, 'Nokora', serif;
+}
+@media (max-width: 768px) {
+	.col-sm-8{
+		padding-right: 0px;
+	}
+}
+.navbar{
+	font-family: 'Lato', Calibri, Arial, sans-serif, 'Koulen', cursive;
+}
+.pager > .active > a,
+.pager > .active > span,
+.pager > .active > a:hover,
+.pager > .active > span:hover,
+.pager > .active > a:focus,
+.pager > .active > span:focus {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #50a253;
+  border-color: #50a253;
+  cursor: default;
+}
+/*h2{
+	font-size: 3em ! important;
+}*/
+/*#####################################custom classes*/
+hr{
+	color: black;
+}
+.content-area{
+	margin-top: 80px;
+}
+.content-right, .content-left{
+	margin-bottom: 2%;	
+}
+.news-source{
+	float: right;
+}
+/*###################################clear style*/
+.clear-paddings{
+	padding: 0 ! important;
+}
+.clear-padding-left{
+	padding-left: 0 ! important;
+}
+.clear-padding-right{
+	padding-right: 0 ! important;
+}
+.clear-padding-top{
+	padding-top: 0 ! important;
+}
+.clear-padding-bottom{
+	padding-bottom: 0 ! important;
+}
+
+.clear-margins{
+	margin: 0 ! important;
+}
+.clear-margin-left{
+	margin-left: 0 ! important;
+}
+.clear-margin-right{
+	margin-right: 0 ! important;
+}
+.clear-margin-top{
+	margin-top: 0 ! important;
+}
+.clear-margin-bottom{
+	margin-bottom: 0 ! important;
+}
+
+/*#######################################footer style*/
+.footer{	
+	position: absolute;
+  bottom: 0px;
+  width: 100%;
+	height: 60px;
+	border: none;
+	-webkit-box-shadow: 0px -1px 4px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px -1px 4px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px -1px 4px 0px rgba(0,0,0,0.3);
+	background: #50a253;
+}
+.footer p{
+color:#ffffff;
+float:left;
+width: 96%;
+margin: 2% 0 2% 0;
+font-size:14px;
+text-align:center;
+}
+.footer p a{
+color:#ffffff;
+text-decoration:none;
+}
+
+
+/*############################################card style*/
+.card-grey{
+	background-color: #EDECEC;
+}
+.card-news{
+	margin-bottom: 2% !important;
+}
+.card a:hover{
+	text-decoration: none;
+}
+.card-news h3{
+	font-size: 1.75em;
+	margin-top: 8px;
+}
+.card-news {
+	color: #444444;
+}
+
+.card-body .lv-item {
+	padding: 12px 20px;
+}
+.card {
+	position: relative;
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	margin-bottom: 1.5%;
+}
+
+.card .card-header {
+	position: relative;
+}
+
+@media screen and (min-width: 768px) {
+	.card .card-header:not(.ch-alt) {
+		padding: 23px 26px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.card .card-header:not(.ch-alt) {
+		padding: 18px;
+	}
+}
+
+/*.card .card-header h2 {
+	margin: 0;
+	line-height: 100%;
+	font-size: 17px;
+	font-weight: 400;
+}*/
+
+.card .card-header h2 small {
+	display: block;
+	margin-top: 8px;
+	color: #AEAEAE;
+	line-height: 160%;
+}
+
+@media screen and (min-width: 768px) {
+	.card .card-header.ch-alt {
+		padding: 23px 26px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.card .card-header.ch-alt {
+		padding: 18px 18px 28px;
+	}
+}
+
+.card .card-header.ch-alt:not([class*="bgm-"]) {
+	background-color: #f7f7f7;
+}
+
+.card .card-header[class*="bgm-"] h2,
+.card .card-header[class*="bgm-"] h2 small {
+	color: #fff;
+}
+
+.card .card-header .actions {
+	position: absolute;
+	right: 10px;
+	z-index: 2;
+	top: 15px;
+}
+
+.card .card-header .btn-float {
+	right: 25px;
+	bottom: -23px;
+	z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+	.card .card-body.card-padding {
+		padding: 23px 26px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.card .card-body.card-padding {
+		padding: 18px;
+	}
+}
+
+.card .card-body.card-padding-sm {
+	padding: 15px;
+}
+
+
+
+.go-social .card-body {
+	padding: 0 15px 20px;
+}
+
+.go-social .card-body [class*="col-"] {
+	padding: 12px;
+}
+
+.go-social .card-body [class*="col-"] img {
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all;
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.go-social .card-body [class*="col-"]:hover img {
+	-webkit-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
