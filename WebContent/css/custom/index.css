@@ -228,7 +228,10 @@ text-decoration:none;
 .card-right{
 	margin-bottom: 5.5%;
 }
-
+.card-left{
+	margin-left: 8.35%;
+	margin-right: 8.35%;
+}
 @media screen and (min-width: 768px) {
 	.card .card-header:not(.ch-alt) {
 		padding: 23px 26px;

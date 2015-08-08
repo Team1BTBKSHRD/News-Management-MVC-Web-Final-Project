@@ -6,8 +6,7 @@
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- #####################stylesheet#################### -->
-​​
+<!-- #####################stylesheet#################### -->​​
 <!-- lib css -->
 <link rel="stylesheet" href="css/font-google-open-sans.css">
 <link rel="stylesheet" href="css/font-google-roboto-condensed.css">
@@ -40,7 +39,7 @@
 			<!-- slider -->
 			<jsp:include page="layouts/slider.jsp" />
 			<!-- end slider -->
-			<!-- local news -->
+			<!-- news sections -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">Local news</h3>
@@ -69,7 +68,7 @@
 										Pleng និង​ឡូយ​ជាងគេ​» ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
 										បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
 										ដោយ​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន
-<!-- 										<strong
+										<!-- 										<strong
 											class="news-source">ប្រភពពត៌មាន<kbd>kohsantepheap</kbd></strong>
 										<strong class="news-source">ចំនួនអ្នកអាន<kbd>10នាក់</kbd></strong> -->
 									</p>
@@ -213,8 +212,8 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="text-h6-2 article-name clear-margin-top">កាហ្វេ និងតែ
-										ប្រហែលជាអាច ជួយការពារ ជំងឺខ្លាញ់ក្នុងថ្លើម</h6>
+									<h6 class="text-h6-2 article-name clear-margin-top">កាហ្វេ
+										និងតែ ប្រហែលជាអាច ជួយការពារ ជំងឺខ្លាញ់ក្នុងថ្លើម</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
@@ -254,9 +253,9 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="text-h6-2 article-name clear-margin-top">លោក វ៉ាត់ ចំរើន៖
-										មុនឆ្នាំ១៩៧០ មាតាបិតាសិស្ស ស្ម័គ្របង់វិភាគទាន ១០រៀល
-										ដើម្បីទិញឧបករណ៍ កីឡាឲ្យសិស្ស</h6>
+									<h6 class="text-h6-2 article-name clear-margin-top">លោក
+										វ៉ាត់ ចំរើន៖ មុនឆ្នាំ១៩៧០ មាតាបិតាសិស្ស ស្ម័គ្របង់វិភាគទាន
+										១០រៀល ដើម្បីទិញឧបករណ៍ កីឡាឲ្យសិស្ស</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
@@ -318,7 +317,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
-
+			<!-- end news sections -->
 		</div>
 		<!-- end left panel -->
 	</div>
@@ -327,8 +326,7 @@
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
 
-	<!-- #####################javascript#################### -->
-	​​
+	<!-- #####################javascript#################### -->	​​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
