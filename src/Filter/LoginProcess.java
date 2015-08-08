@@ -19,11 +19,9 @@ public class LoginProcess extends HttpServlet {
 		doPost(req, resp);
 	}
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Login Process");
-		//req.getRequestDispatcher("admin/editor/editor.html").forward(req, resp);
-		req.getRequestDispatcher("/login.jsp").forward(req, resp);
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
 	}
 }//End of class;
 

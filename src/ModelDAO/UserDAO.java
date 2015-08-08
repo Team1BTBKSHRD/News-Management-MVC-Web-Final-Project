@@ -174,9 +174,20 @@ public class UserDAO {
 
 	public ResultSet uFind(int id) throws SQLException {
 		String sql="select * from tbuser where user_id=?";
-		PreparedStatement pstm=con.prepareStatement(sql);
+		pstm = con.prepareStatement(sql);
 		pstm.setInt(1,id);
 		return pstm.executeQuery() ;
+	}
+	
+	public boolean userLogin(String userName, String password) throws SQLException{
+		pstm = con.prepareStatement("SELECT login_user (?, ?);");
+		pstm.setString(1, userName);
+		pstm.setString(2, password);
+		System.err.println("PSTM "+pstm.toString());
+		ResultSet rs = pstm.executeQuery();
+		rs.next();
+		System.out.println("Get Rows:" + rs.getRow());
+		return rs.getRow()>0?true:false;
 	}
 }//End of class;
 
