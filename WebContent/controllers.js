@@ -85,7 +85,7 @@ function categoryDropList(data) {
  */
 function resourceDropList(data) {
 	var str = "";
-	str += "<option value=''>All University</option>;";
+	str += "<option value=''>All</option>;";
 	for (var i = 0; i < data.length; i++) {
 		str += "<option value=" + data[i].full_name + ">" + data[i].full_name;
 	}
@@ -108,27 +108,77 @@ function droplist() {
 		$.post("sourceDropList.news", function(data) {
 			$("#newsUserinfo").html(resourceDropList(data));
 		});
-		
 	});
+	$.post("sourceDropList.news", function(data) {
+		$("#newsUserinfo1").html(resourceDropList(data));
+	});
+	funCount();
 }
 /* Add News by own user */
-$("#btnNewsAdd").click(function() {
-	var newstitle = $("#txtnewstitle").val();
-	var newsUserinfo = $("#newsUserinfo option:selected").val();
-	var newstitlecategory = $("#newsTitlecategory option:selected").val();
-	var newscontent = $("#txtnewsContent").val();
-	var newsdesc = $("#txtnewsDesc").val();
-	var newspath = $("#txtnewsPath").val();
-	alert(newstitle+" | "+newsUserinfo+" | "+newstitlecategory+" | "+newscontent +" | "+ newsdesc +" | "+ newspath);
-	$.post("newsarticleadd.news", {
-		user_info_code:newsUserinfo,
-		news_title : newstitle,
-		cat_name : newstitlecategory,
-		news_content : newscontent,
-		news_desc : newsdesc,
-		news_path : newspath
-	}, function(data, status) {
-		alert(data + "<----->" + status);
+$("#btnNewsAdd")
+		.click(
+				function() {
+					var newstitle = $("#txtnewstitle").val();
+					var newsUserinfo = $("#newsUserinfo option:selected").val();
+					var newstitlecategory = $(
+							"#newsTitlecategory option:selected").val();
+					var newscontent = $("#txtnewsContent").val();
+					var newsdesc = $("#txtnewsDesc").val();
+					var newspath = $("#txtnewsPath").val();
+					alert(newstitle + " | " + newsUserinfo + " | "
+							+ newstitlecategory + " | " + newscontent + " | "
+							+ newsdesc + " | " + newspath);
+					$.post("newsarticleadd.news", {
+						user_info_code : newsUserinfo,
+						news_title : newstitle,
+						cat_name : newstitlecategory,
+						news_content : newscontent,
+						news_desc : newsdesc,
+						news_path : newspath
+					}, function(data, status) {
+						alert(data + "<----->" + status);
+					});
+				});
+/* List Article in Table */
+/*
+ * create tag <tr><td> value </td></tr> follow data
+ */
+function listobjectdetails(data) {
+	var str = "";
+	for (var i = 0; i < data.length; i++) {
+
+		str += "<tr>" + "<td>" + (i + 1) + "</td>" + "<td>"
+				+ data[i].news_title + "</td>" + "<td>" + data[i].news_date
+				+ "</td>" + "</tr>";
+	}
+
+	str += "</table>";
+
+	return str;
+}
+function listArticle() {
+	var fullname = $("#newsUserinfo1 option:selected").val();
+	// alert(fullname);
+	$.post("listarticle.news", {
+		full_name : fullname
+	}, function(data) {
+		$("#tblist").html(listobjectdetails(data));
 	});
-});
+
+}
+function funCount() {
+	$.post("counts.news", function(data) {
+		// alert(data.length);
+		for (var i = 0; i < data.length; i++) {
+			if (i == 0) {
+				$("#lblcategories").text(data[i].count);
+			} else if (i == 1) {
+				$("#lblaccounts").text(data[i].count);
+			} else if (i == 2) {
+				$("#lblarticles").text(data[i].count);
+			}
+		}
+	});
+}
+/* Load function */
 droplist();

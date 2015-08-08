@@ -43,16 +43,33 @@
 	<h1>Sarin Add Article Block</h1>
 	<form>
 		News Title : <input type="text" id="txtnewstitle"
-			placeholder="news title" /><br/>
-		Sponsor by : <select id="newsUserinfo"></select><br/>
-		News Category : <select	id="newsTitlecategory"></select><br/>
-		News Content : <textarea rows="4" cols="7" id="txtnewsContent"></textarea><br/>
-		News Description : <input type="text" id="txtnewsDesc"/><br/>
-		News Path : <input type="text" id="txtnewsPath"/><br/>
-		<input type="button" value="Add News" id="btnNewsAdd"/>
+			placeholder="news title" /><br /> Sponsor by : <select
+			id="newsUserinfo"></select><br /> News Category : <select
+			id="newsTitlecategory"></select><br /> News Content :
+		<textarea rows="4" cols="7" id="txtnewsContent"></textarea>
+		<br /> News Description : <input type="text" id="txtnewsDesc" /><br />
+		News Path : <input type="text" id="txtnewsPath" /><br /> <input
+			type="button" value="Add News" id="btnNewsAdd" />
 	</form>
-	<script type="text/javascript" src="controllers.js">
-		
-	</script>
+	<h1>Sarin </h1>
+	<form>
+		Number of Categories :<label id="lblcategories"></label><br />
+		Number of Account :<label id="lblaccounts"></label><br />
+		Number of Article :<label id="lblarticles"></label><br />
+		User by : <select id="newsUserinfo1" onchange="listArticle()"></select><br />
+		<table border=1>
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Title</th>
+							<th>Date</th>
+							
+						</tr>
+					</thead>
+					<tbody id="tblist">
+					</tbody>
+				</table>
+	</form>
+	<script type="text/javascript" src="controllers.js"></script>
 </body>
 </html>

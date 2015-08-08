@@ -14,6 +14,8 @@ import CategoryController.ListCategory;
 import CategoryController.dropListCategory;
 import CategoryController.dropListSource;
 import NewsController.AddNews;
+import NewsController.ListNews;
+import NewsController.countNews;
 import NewsDetailController.AddNewsDetail;
 import UserController.AddUser;
 import UserController.EditUser;
@@ -85,13 +87,7 @@ public class Front_Controller extends HttpServlet {
 		case "/userinfoedit.news":
 			action = new EditUserInfo();
 			break;
-		/* access to article url */
-		/*
-		 * case "/articlelist.news": action = new ArticleList(); break; case
-		 * "/articleremove.news": action = new ArticleRemove(); break;
-		 * 
-		 * case "/articleinsert.news": action = new ArticleInset(); break;
-		 */
+	
 		/* access to category url */
 		case "/listcategory.news":
 			action = new ListCategory();
@@ -112,6 +108,13 @@ public class Front_Controller extends HttpServlet {
 		case "/newsarticleadd.news":
 			System.out.println("newsarticleadd****");
 			action = new AddNews();
+			break;
+		case "/listarticle.news":
+			//System.out.println("listarticle");
+			action = new ListNews();
+			break;
+		case "/counts.news":
+			action = new countNews(); 
 			break;
 		default:
 			/*
