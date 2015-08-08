@@ -31,7 +31,9 @@
 	<!-- content area -->
 	<div class="container content-area">
 		<!-- right panel -->
-		<jsp:include page="layouts/right-panel-search.jsp" />
+		<div class="col-sm-3 content-right clear-paddings clear-margins pull-right">
+			<jsp:include page="layouts/topfive.jsp" />
+		</div>
 		<!-- end right panel -->
 		<!-- left panel -->
 		<div

@@ -67,7 +67,51 @@ ul.list-group > .list-group-items{
 /*h2{
 	font-size: 3em ! important;
 }*/
-/*#####################################custom classes*/
+/*#####################################background color class */
+.bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1{
+	
+}
+/* #primary */
+.bg-primary{
+	background-color: #50a253;
+}
+/* # */
+.bg-1{
+	background-color: #50a253;
+}
+/* #primary */
+.bg-2{
+	background-color: #50a253
+}
+/* #primary */
+.bg-3{
+	background-color: #50a253
+}
+/* #primary */
+.bg-4{
+	background-color: #50a253
+}
+/* #primary */
+.bg-5{
+	background-color: #50a253
+}
+/* #primary */
+.bg-6{
+	background-color: #50a253
+}
+/* #primary */
+.bg-7{
+	background-color: #50a253
+}
+/* #primary */
+.bg-8{
+	background-color: #50a253
+}
+/* #primary */
+.bg-9{
+	background-color: #50a253
+}
+/*#####################################text classes*/
 
 /*
 limit line 
@@ -117,7 +161,7 @@ limit line
    max-height: 100px;      /* fallback */
    -webkit-line-clamp: 5; /* number of lines to show */
 }
-
+/* ###################################### other class*/
 .content-area-aritcle, .content-area{
 	margin-top: 55px;
 }
