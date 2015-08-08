@@ -183,7 +183,6 @@ public class UserDAO {
 		pstm = con.prepareStatement("SELECT login_user (?, ?);");
 		pstm.setString(1, userName);
 		pstm.setString(2, password);
-		System.err.println("PSTM "+pstm.toString());
 		ResultSet rs = pstm.executeQuery();
 		rs.next();
 		System.out.println("Get Rows:" + rs.getRow());

@@ -29,7 +29,6 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
-		System.out.println("User Name:" + userName + ", Password:"+ password);
 		try {
 			if(new UserDAO().userLogin(userName, password)){
 				HttpSession session = request.getSession();
@@ -41,7 +40,6 @@ public class Login extends HttpServlet {
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
