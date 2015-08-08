@@ -46,17 +46,17 @@
 					<h3 class="panel-title">Local news</h3>
 				</div>
 				<div class="panel-body clear-padding-right clear-padding-bottom">
-					<div class="card">
+					<div>
 						<a href="http://kohsantepheapdaily.com.kh/article/124906.html"
 							target="_new">
 							<div
 								class="row card-header card-news clear-paddings clear-margins">
-								<div class="col-sm-6 clear-paddings">
+								<div class="col-sm-4 clear-paddings">
 									<img
 										src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"
 										class="col-sm-12 clear-paddings">
 								</div>
-								<div class="col-sm-6 pull-right">
+								<div class="col-sm-8 pull-right">
 									<h5 class="article-name">សុគន្ធ នី​សា
 										ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 										«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»</h5>
@@ -68,9 +68,10 @@
 										រាជធានី​ភ្នំពេញ ៖ កម្មវិធី​ស្តាប់​បទ​ចម្រៀង​ថ្មី​ដែល «mJams
 										Pleng និង​ឡូយ​ជាងគេ​» ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
 										បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
-										ដោយ​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន<strong
+										ដោយ​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន
+<!-- 										<strong
 											class="news-source">ប្រភពពត៌មាន<kbd>kohsantepheap</kbd></strong>
-										<strong class="news-source">ចំនួនអ្នកអាន<kbd>10នាក់</kbd></strong>
+										<strong class="news-source">ចំនួនអ្នកអាន<kbd>10នាក់</kbd></strong> -->
 									</p>
 								</div>
 							</div>
@@ -97,7 +98,7 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+									<h6 class="text-h6-2 article-name clear-margin-top">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
@@ -135,7 +136,7 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+									<h6 class="text-h6-2 article-name clear-margin-top">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
 									<div class="col-sm-7 clear-paddings">
 										<kbd>
@@ -172,7 +173,7 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">ផលិតផល
+									<h6 class="text-h6-2 article-name clear-margin-top">ផលិតផល
 										បរិក្ខារបន្ទប់ទឹក លំដាប់ពិភពលោក ផ្ដល់ការ សន្សំសំចៃខ្ពស់
 										មកដល់កម្ពុជាហើយ</h6>
 
@@ -212,7 +213,7 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">កាហ្វេ និងតែ
+									<h6 class="text-h6-2 article-name clear-margin-top">កាហ្វេ និងតែ
 										ប្រហែលជាអាច ជួយការពារ ជំងឺខ្លាញ់ក្នុងថ្លើម</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
@@ -253,7 +254,7 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">លោក វ៉ាត់ ចំរើន៖
+									<h6 class="text-h6-2 article-name clear-margin-top">លោក វ៉ាត់ ចំរើន៖
 										មុនឆ្នាំ១៩៧០ មាតាបិតាសិស្ស ស្ម័គ្របង់វិភាគទាន ១០រៀល
 										ដើម្បីទិញឧបករណ៍ កីឡាឲ្យសិស្ស</h6>
 
@@ -295,7 +296,7 @@
 
 								</div>
 								<div class="col-sm-7 pull-right ">
-									<h6 class="article-name clear-margin-top">បើមានបុណ្យទាន
+									<h6 class="text-h6-2 article-name clear-margin-top">បើមានបុណ្យទាន
 										ក្នុងមួយថ្ងៃ Aeon Mall ទទួលបានអតិថិជន ៥-៦ម៉ឺននាក់</h6>
 
 									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>

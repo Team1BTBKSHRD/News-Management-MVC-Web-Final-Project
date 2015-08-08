@@ -22,12 +22,10 @@
         top: 1%;
         border-radius: 4px;
       }
-      #owl-demo .item a .news-title {
+      #owl-demo .item a .news-title, .news-source {
         text-indent: 1vw;
-        color: white; !important
-        height: 98%;
-        width: 38%;
-        position: absolute;
+        color: white !important;
+        position: relative;
         right: 0.3%;
         top: 1%;
         padding: 10px;
@@ -35,7 +33,6 @@
       #owl-demo .item a .news-title strong{
         float: right;
       }
-      #owl-demo .item a .news-title h3{
-        font-size: 20px;
+      #owl-demo .item a .news-title h5{
         color: white;
       }

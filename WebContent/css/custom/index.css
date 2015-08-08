@@ -6,6 +6,9 @@
 img{
 	border-radius: 4px;
 }
+a:hover{
+	text-decoration: none;
+}
 hr{
 	border: 1.5px solid #eeeeee;
 }
@@ -78,50 +81,41 @@ limit line
    max-height: X x N;     
 }
 */
-.text-1 {
+.text-1, .text-3, .text-4, .text-5, .text-h5-2, .text-h6-2{
    overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
+   -webkit-box-orient: vertical;
+}
+.text-1 {
    line-height: 16px;     /* fallback */
    max-height: 16px;      /* fallback */
    -webkit-line-clamp: 1; /* number of lines to show */
-   -webkit-box-orient: vertical;
 }
-.text-h3-2 {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 23px;     /* fallback */
-   max-height: 46px;      /* fallback */
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
+.text-h5-2 {
+   line-height: 30px;     /* fallback */
+   max-height: 60px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+}
+.text-h6-2 {
+   line-height: 20px;     /* fallback */
+   max-height: 41px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
 }
 .text-3 {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
    line-height: 16px;     /* fallback */
    max-height: 48px;      /* fallback */
    -webkit-line-clamp: 3; /* number of lines to show */
-   -webkit-box-orient: vertical;
 }
 .text-4 {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
    line-height: 20px;     /* fallback */
    max-height: 80px;      /* fallback */
    -webkit-line-clamp: 4; /* number of lines to show */
-   -webkit-box-orient: vertical;
 }
 .text-5 {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
    line-height: 20px;     /* fallback */
    max-height: 100px;      /* fallback */
    -webkit-line-clamp: 5; /* number of lines to show */
-   -webkit-box-orient: vertical;
 }
 
 .content-area-aritcle, .content-area{
