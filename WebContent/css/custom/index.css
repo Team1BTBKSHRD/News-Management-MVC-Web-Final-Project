@@ -68,8 +68,8 @@ ul.list-group > .list-group-items{
 	font-size: 3em ! important;
 }*/
 /*#####################################background color class */
-.bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1, .bg-1{
-	
+.bg-primary, .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9{
+	color: #fff;
 }
 /* #primary */
 .bg-primary{

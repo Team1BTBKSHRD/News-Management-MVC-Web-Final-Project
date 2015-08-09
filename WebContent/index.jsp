@@ -6,7 +6,8 @@
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- #####################stylesheet#################### -->​​
+<!-- #####################stylesheet#################### -->
+​​
 <!-- lib css -->
 <link rel="stylesheet" href="css/font-google-open-sans.css">
 <link rel="stylesheet" href="css/font-google-roboto-condensed.css">
@@ -115,83 +116,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="card-2 col-sm-6 clear-paddings">
-						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
-							target="_new">
-							<div
-								class="row card-header card-news clear-paddings clear-margins">
-								<div class="col-sm-5 clear-paddings">
-									<figure>
-										<img
-											src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
-											class="col-sm-12 clear-paddings" height="90px" width="80px">
-										<figcaption>
-											<center>
-												<img src="http://kohsantepheapdaily.com.kh/img/logo.png"
-													width="48px">
-											</center>
-										</figcaption>
-									</figure>
-
-								</div>
-								<div class="col-sm-7 pull-right ">
-									<h6 class="text-h6-2 article-name clear-margin-top">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>
-											<time>2015/03/07</time>
-										</kbd>
-									</div>
-									<div class="col-sm-5 clear-paddings">ចំនួនអ្នកអាន</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>Sabay</kbd>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="card-2 col-sm-6 clear-paddings">
-						<a
-							href="http://www.dap-news.com/2011-06-14-02-43-39/95689-2015-07-22-08-06-21.html"
-							target="_new">
-							<div
-								class="row card-header card-news clear-paddings clear-margins">
-								<div class="col-sm-5 clear-paddings">
-									<figure>
-										<img
-											src="http://image.dap-news.com:81/dap-news/dap-images/2015/July/id-014/that-0562.jpg"
-											class="col-sm-12 clear-paddings" height="90px" width="80px">
-										<figcaption>
-											<center>
-												<img
-													src="http://www.khmerlook.com/site/images/logos/dap-news.png"
-													width="28px">
-											</center>
-										</figcaption>
-									</figure>
-
-								</div>
-								<div class="col-sm-7 pull-right ">
-									<h6 class="text-h6-2 article-name clear-margin-top">ផលិតផល
-										បរិក្ខារបន្ទប់ទឹក លំដាប់ពិភពលោក ផ្ដល់ការ សន្សំសំចៃខ្ពស់
-										មកដល់កម្ពុជាហើយ</h6>
-
-									<div class="col-sm-5 clear-paddings">ផ្សាយថ្ងៃ</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>
-											<time>2015/03/07</time>
-										</kbd>
-									</div>
-									<div class="col-sm-5 clear-paddings">ចំនួនអ្នកអាន</div>
-									<div class="col-sm-7 clear-paddings">
-										<kbd>Sabay</kbd>
-									</div>
-
-
-								</div>
-							</div>
-						</a>
-					</div>
+					
 					<div class="card-2 col-sm-6 clear-paddings">
 						<a href="http://news.sabay.com.kh/article/298488" target="_new">
 							<div
@@ -326,7 +251,8 @@
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
 
-	<!-- #####################javascript#################### -->	​​
+	<!-- #####################javascript#################### -->
+	​​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
