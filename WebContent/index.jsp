@@ -36,7 +36,7 @@
 		<!-- end right panel -->
 		<!-- left panel -->
 		<div
-			class="col-sm-9 content-left clear-padding-left clear-margin-bottom">
+			class="col-sm-9 clear-padding-left">
 			<!-- slider -->
 			<jsp:include page="layouts/slider.jsp" />
 			<!-- end slider -->
@@ -45,7 +45,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Local news</h3>
 				</div>
-				<div class="panel-body clear-padding-right clear-padding-bottom">
+				<div class="panel-body">
 					<div>
 						<a href="http://kohsantepheapdaily.com.kh/article/124906.html"
 							target="_new">
