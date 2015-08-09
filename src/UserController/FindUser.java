@@ -15,7 +15,7 @@ public class FindUser implements Action  {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("user_id"));
-		String obj=new Convertor().convertResultSetIntoJSON(new UserDAO().uFind(id)).toString();
+		String obj=Convertor.convertResultSetIntoJSON(new UserDAO().uFind(id)).toString();
 		 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

@@ -102,15 +102,17 @@ function droplist() {
 	$.post("categoryDropList.news", function(data) {
 		$("#selectEcategory").html(categoryDropList(data));
 		$("#newsTitlecategory").html(categoryDropList(data));
-		$.post("sourceDropList.news", function(data) {
-			$("#selectEsource").html(resourceDropList(data));
-		});
-		$.post("sourceDropList.news", function(data) {
-			$("#newsUserinfo").html(resourceDropList(data));
-		});
+
 	});
 	$.post("sourceDropList.news", function(data) {
+		$("#selectEsource").html(resourceDropList(data));
+	});
+	$.post("sourceDropList.news", function(data, status) {
+		alert(status);
 		$("#newsUserinfo1").html(resourceDropList(data));
+	});
+	$.post("sourceDropList.news", function(data) {
+		$("#newsUserinfo").html(resourceDropList(data));
 	});
 	funCount();
 }
@@ -171,11 +173,14 @@ function funCount() {
 		// alert(data.length);
 		for (var i = 0; i < data.length; i++) {
 			if (i == 0) {
-				$("#lblcategories").text(data[i].count);
-			} else if (i == 1) {
+
 				$("#lblaccounts").text(data[i].count);
-			} else if (i == 2) {
+			} else if (i == 1) {
+
 				$("#lblarticles").text(data[i].count);
+			} else if (i == 2) {
+
+				$("#lblcategories").text(data[i].count);
 			}
 		}
 	});

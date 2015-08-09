@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 //import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -50,83 +51,161 @@ public class Front_Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String RequestURI = request.getRequestURI();
 
-		System.out.println(RequestURI);
+		//System.out.println(RequestURI);
 		String contextPath = request.getContextPath();
-		System.out.println(contextPath);
+		//System.out.println(contextPath);
 		String command = RequestURI.substring(contextPath.length());
+		ActionForward forward = null;
 		Action action = null;
 
-		System.out.println("Implementing " + command);
+		System.out.println(command);
 		switch (command) {
 		/* access to user url */
 		case "/useradd.news":
 			action = new AddUser();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 		case "/userlist.news":
 			action = new ListUser();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 		case "/useredit.news":
 			action = new EditUser();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 		case "/userremove.news":
 			action = new RemoveUser();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 
 		case "/userfind.news":
 			action = new FindUser();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
-			
-			
-			
-			
-		/* access to userinfo url */
+
+		// access to userinfo url
 		case "/userinfolist.news":
 			action = new ListUserInfo();
-			System.out.println("liseet");
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 		case "/userinfoedit.news":
 			action = new EditUserInfo();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
-	
-		/* access to category url */
+
+		// access to category url 
 		case "/listcategory.news":
+			//System.err.println("List category");
 			action = new ListCategory();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 
 		case "/addcategory.news":
 			action = new AddCategory();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 		case "/categoryDropList.news":
+			System.err.println(12112);
 			action = new dropListCategory();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
-			
+
 		case "/sourceDropList.news":
+			System.err.println("source drop list");
 			action = new dropListSource();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
-		
-			/* Article Control news*/
+
+		// Article Control news
 		case "/newsarticleadd.news":
-			System.out.println("newsarticleadd****");
+
 			action = new AddNews();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 		case "/listarticle.news":
-			//System.out.println("listarticle");
+
 			action = new ListNews();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
 		case "/counts.news":
-			action = new countNews(); 
+			action = new countNews();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
+		/*
+		 * case "/admin": System.out.println("admin"); break;
+		 */
 		default:
-			/*
-			 * forward = new ActionForward(); forward.setPath("404.jsp");
-			 * forward.setRedirect(true);
-			 */
+
+			forward = new ActionForward();
+			forward.setPath("404.jsp");
+			forward.setRedirect(true);
+
 			break;
 		}// End of switch;
-		try {
-			action.execute(request, response);
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (forward != null) {
+			if (forward.isRedirect()) {
+				response.sendRedirect(forward.getPath());
+			} else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
+				dispatcher.forward(request, response);
+			}
+
 		}
 	}
 }

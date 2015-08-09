@@ -27,7 +27,7 @@ public class ListUserInfo implements Action {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		//String obj= new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
-		String obj=new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
+		String obj=Convertor.convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
 		response.getWriter().write(obj);		
 		System.out.println(obj);
 	}

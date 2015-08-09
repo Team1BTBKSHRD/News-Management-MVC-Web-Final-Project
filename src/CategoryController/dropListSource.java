@@ -13,7 +13,7 @@ public class dropListSource implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		/* categoryList stores records of news as JSON data */
-		String droplistsource = Convertor.convertResultSetIntoJSON(new CategoryDAO().resourceList()).toString(); 
+		String droplistsource =Convertor.convertResultSetIntoJSON(new CategoryDAO().resourceList()).toString(); 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */

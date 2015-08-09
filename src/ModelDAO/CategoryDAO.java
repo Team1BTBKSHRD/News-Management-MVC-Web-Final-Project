@@ -218,7 +218,7 @@ public class CategoryDAO {
 		return catecode;
 		//return data; 
 	}
-	/*public static void main(String[] args) throws SQLException {
-		System.out.println(new CategoryDAO().returnCateCode("កីឡាជាតិ"));
+	/*public static void main(String[] args) throws Exception {
+		System.out.println(Convertor.convertResultSetIntoJSON(new CategoryDAO().resourceList()));
 	}*/
 }// End of class;
