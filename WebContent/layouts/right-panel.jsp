@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div
-	class="col-sm-3 content-right clear-paddings clear-margins pull-right">
+	class="col-md-3 col-sm-3 col-xs-3 content-right clear-paddings clear-margins pull-right">
 	<!-- search form -->
 	<div class="card card-right container-fluid">
 		<form role="search">
-			<div class="col-sm-12 form-group clear-paddings search-wrapper">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group clear-paddings search-wrapper">
 				<input type="text" placeholder="Search">
 				<button type="submit" class="btn btn-primary btn-sm pull-right">Search</button>
 			</div>
