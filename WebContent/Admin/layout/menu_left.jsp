@@ -1,5 +1,5 @@
 
-<%@page import="java.nio.channels.SeekableByteChannel"%>
+
 <%
 	String userType = session.getAttribute("userType").toString();
 %>
