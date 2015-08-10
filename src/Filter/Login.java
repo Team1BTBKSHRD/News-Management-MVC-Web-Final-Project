@@ -29,10 +29,13 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
+		String userType;
 		try {
-			if(new UserDAO().userLogin(userName, password)){
+			userType = new UserDAO().userLogin(userName, password);
+			if(userType != null){
 				HttpSession session = request.getSession();
 				session.setAttribute("admin", userName);
+				session.setAttribute("userType", userType);
 				response.sendRedirect("/articleManagement/Admin/index.jsp");
 			}
 			

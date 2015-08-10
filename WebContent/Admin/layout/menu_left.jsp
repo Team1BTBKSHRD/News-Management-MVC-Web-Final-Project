@@ -1,8 +1,11 @@
 
-<%--  <%if(Sesssion.getSession("")!=null){
-	User usr= sess;
-	
-}  %>  --%>
+<%@page import="java.nio.channels.SeekableByteChannel"%>
+<%
+	String userType = session.getAttribute("userType").toString();
+%>
+<%="HI, How are you?" %>
+<%=userType%>
+
  
  <div class="leftpanel">
                     <div class="media profile-left">

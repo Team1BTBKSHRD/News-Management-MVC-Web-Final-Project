@@ -179,14 +179,18 @@ public class UserDAO {
 		return pstm.executeQuery() ;
 	}
 	
-	public boolean userLogin(String userName, String password) throws SQLException{
-		pstm = con.prepareStatement("SELECT login_user (?, ?);");
+	public String userLogin(String userName, String password) throws SQLException{
+		pstm = con.prepareStatement("SELECT * FROM tbuser WHERE user_name=? and user_pass=?;");
 		pstm.setString(1, userName);
 		pstm.setString(2, password);
 		ResultSet rs = pstm.executeQuery();
 		rs.next();
-		System.out.println("Get Rows:" + rs.getRow());
-		return rs.getRow()>0?true:false;
+		if(rs.getRow()>0){
+			return rs.getString("user_type");
+		}
+		//System.out.println("Get Rows:" + rs.getString("user_type"));
+		//return rs.getRow()>0?true:false;
+		return null;
 	}
 }//End of class;
 
