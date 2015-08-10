@@ -6,7 +6,7 @@
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- #####################stylesheet#################### -->
+
 ​​
 <!-- lib css -->
 <link rel="stylesheet" href="css/font-google-open-sans.css">
@@ -21,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
 <link rel="stylesheet" type="text/css" href="css/custom/owl.css">
 <!-- end custom css -->
-<!-- #####################end stylesheet#################### -->
+
 ​​
 </head>
 <body>
@@ -42,7 +42,7 @@
 			<!-- news sections -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title">Local news</h3>
+					<h3 class="panel-title">ពត៌មានក្នុងស្រុក</h3>
 				</div>
 				<div class="panel-body">
 					<div class="card-1">
@@ -77,7 +77,7 @@
 
 						</a>
 					</div>
-					<hr width="95%">
+					<hr >
 					<div class="card-2 col-sm-6 clear-paddings">
 						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
 							target="_new">

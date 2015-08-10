@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 		<!-- popular article -->
 		<ul class="card card-right list-group">
-			<a href="" class="list-group-item">
+			<a href="" class="list-group-item bg-primary">
 				<h5 class="list-group-item-heading">ពត៌មានពេញនិយម</h5>
 			</a>
 			<a href="" class="list-group-item"> <span class="badge pull-left">1</span>asdfasdfasdf
