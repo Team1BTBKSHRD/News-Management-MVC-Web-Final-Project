@@ -97,11 +97,11 @@
 						</a>
 					</div>
 					<div class="clearfix"></div>
-				</div>
-				<!-- end news sections -->
+				</div>				
 			</div>
-			<!-- end left panel -->
+			<!-- end news sections -->
 		</div>
+		<!-- end left panel -->
 	</div>
 	<!-- end content area -->
 	<!-- footer -->
