@@ -21,7 +21,9 @@ public class LoginProcess extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/login.jsp").forward(request, response);
+		//request.getRequestDispatcher("/Login/page_login.jsp").forward(request, response);
+		response.sendRedirect("/articleManagement/Login/page_login.jsp");
+		System.out.println("Login Process");
 	}
 }//End of class;
 

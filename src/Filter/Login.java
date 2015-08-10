@@ -37,7 +37,8 @@ public class Login extends HttpServlet {
 			}
 			
 			else{
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				//request.getRequestDispatcher("/Login/page_login.jsp").forward(request, response);
+				response.sendRedirect("/articleManagement/Login/page_login.jsp");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
