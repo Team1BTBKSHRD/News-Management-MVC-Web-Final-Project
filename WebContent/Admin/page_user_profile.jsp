@@ -9,7 +9,9 @@
         <link href="css/style.default.css" rel="stylesheet">
         <link href="css/morris.css" rel="stylesheet">
         <link href="css/select2.css" rel="stylesheet" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
+        <link href="https://bootswatch.com/paper/bootstrap.min.css" rel="stylesheet" />
+         
         <link rel="stylesheet" href="css/dataTables.bootstrap.css"/>
         <!-- #####################end stylesheet#################### -->
 <title>Manage Profile</title>
@@ -18,8 +20,16 @@
 #usermenu {
 	display: none;
 }
+ input[type="text"]:disabled {
+  background: #FFFFFF;
+  cursor:text;
+}
+#path_image{
+background: #FFFFFF;
+  cursor:text;
+}
 
- input[type=file] {
+ input[type=file]{
 	background-color: red;
     width: 92px;
     height: 40px;
@@ -66,36 +76,43 @@
 								<table class="table">
 									<thead>
 										<tr>
-											<th colspan="2">CONTACT INFORMATION <button class="btn btn-success btn-xs delete" data-toggle="modal"
-								data-target="#myModal" style="margin-left: 60px;">
-								<i class="fa fa-user"></i>&nbsp;&nbsp;Edit Profile
-							</button></th>
+											<th colspan="2">CONTACT INFORMATION 
+											<button class="btn btn-success btn-xs delete" id="edit"  style="margin-left: 60px;">
+								           <i class="fa fa-user"></i>&nbsp;&nbsp;Edit Profile
+							          </button>
+											</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>UserName *</td>
-											<td id="listusername">UserName *</td>
+											<td id="listusername"><input type="text" id="fullname" name="fullname"
+											class="form-control" disabled required /></td>
 										</tr>
 										<tr>
 											<td>CompanyName *</td>
-											<td id="listcompanyname">UserName *</td>
+											<td id="listcompanyname"><input type="text" id="companyname" name="companyname"
+											class="form-control"  disabled required /></td>
 										</tr>
 										<tr>
 											<td>Email *</td>
-											<td id="listemail">UserName *</td>
+											<td id="listemail"><input type="text" id="email" name="email"
+											class="form-control" disabled required /></td>
 										</tr>
 										<tr>
 											<td>Phone *</td>
-											<td id="listphone">UserName *</td>
+											<td id="listphone"><input type="text" id="phone" name="phone"
+											class="form-control"  disabled required /></td>
 										</tr>
 										<tr>
 											<td>Address *</td>
-											<td id="listaddress">UserName *</td>
+											<td id="listaddress"><input type="text" id="address" name="address"
+											class="form-control"  disabled required /></td>
 										</tr>
 										<tr>
 											<td>Website *</td>
-											<td id="listwebsite">UserName *</td>
+											<td id="listwebsite"><input type="text" id="website" name="website"
+											class="form-control"  disabled required /></td>
 										</tr>
 									</tbody>
 								</table>
@@ -106,15 +123,21 @@
 									<img class="img-responsive" id="img_thumnail" 
 										src="img/stickerprofile.png" style="width:200px;height:150px;border: 3px solid rgba(76, 71, 71, 0.38);"><br /> <span
 										style="display: inline-flex;"> <input type="text"
-										class="form-control" /> <span
-										class="btn btn-default btn-file"> Browse ... <input
+										class="form-control" id="path_image" readonly="readonly" /> <span
+										class="btn btn-primary mr5 btn-file"> Browse ... <input
 											type="file" name="photo" id="file_image">
 									</span>
 									</span>
 								</div>
 							</div>
 							<!-- col-sm-4 -->
-							
+							<div class="col-sm-4 col-sm-offset-8">
+									<input type="submit" class="btn btn-primary mr5" id="update_profile"
+										value="Update"> <input type="button"
+										class="btn btn-danger mr5" id="cancle" 
+										value="Cancle">
+
+								</div>
 						</div>
 						<!--  panel-body -->
 					</div>
@@ -129,7 +152,7 @@
 	<!-- mainwrapper --> </section>
 
 
-	<!--Modal Page User ADD-->
+<!-- 	Modal Page User ADD
 	<div class="modal fade" id="myModal" role="dialog">
 		<div class="modal-dialog modal-md">
 			<div class="modal-content">
@@ -149,7 +172,7 @@
 											class="form-control" required />
 									</div>
 								</div>
-								<!-- form-group -->
+								form-group
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label">CompanyName <span
@@ -159,7 +182,7 @@
 											class="form-control" required />
 									</div>
 								</div>
-								<!-- form-group -->
+								form-group
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Email <span
@@ -169,7 +192,7 @@
 											class="form-control" required />
 									</div>
 								</div>
-								<!-- form-group -->
+								form-group
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Phone <span
@@ -179,7 +202,7 @@
 											class="form-control" required />
 									</div>
 								</div>
-								<!-- form-group -->
+								form-group
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label">Address <span
@@ -189,7 +212,7 @@
 											class="form-control" required />
 									</div>
 								</div>
-								<!-- form-group -->
+								form-group
 
 								<div class="form-group">
 									<label class="col-sm-3 control-label">WebSite <span
@@ -199,7 +222,7 @@
 											class="form-control" required />
 									</div>
 								</div>
-								<!-- form-group -->
+								form-group
 
 
 								<div class="form-group">
@@ -210,7 +233,7 @@
 											name="currentpassword" class="form-control" required />
 									</div>
 								</div>
-								<!-- form-group -->
+								form-group
 
 								<div class="col-sm-9 col-sm-offset-8">
 									<input type="submit" class="btn btn-primary mr5" id="adduser"
@@ -220,22 +243,23 @@
 
 								</div>
 							</div>
-							<!-- row -->
+							row
 						</div>
-						<!-- panel-body -->
+						panel-body
 					</form>
 				</div>
-				<!-- modal-body -->
+				modal-body
 			</div>
-			<!-- modal-content -->
+			modal-content
 		</div>
 	</div>
-	<!--End Modal Page User ADD-->
+	End Modal Page User ADD -->
 
 
 <!---------------------------Load Script-------------------------->
-        <!--  <script src="js/dashboard.js"></script>  -->
+         <script src="js/dashboard.js"></script> 
          <script src="js/jquery-1.11.1.min.js"></script>
+		 <!-- <script src="js/bootstrap.min.js"></script> -->
 		 <script src="js/bootstrap.min.js"></script>
 		 <script src="js/custom.js"></script>
 		 <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
@@ -249,6 +273,17 @@
 		src="js/custom/profile_user_validate_and_edit.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			$("#edit").click(function(){
+				    $("input[type='text']").attr("disabled",false);
+			
+			});
+			$("#update_profile").click(function(){
+				$("input[type='text']").attr("disabled",true);
+			});
+			
+			$("#cancle").click(function(){
+				$("input[type='text']").attr("disabled",true);
+			});
 			
 			// Basic Form
 			/*  $("#basicForm").validate({
