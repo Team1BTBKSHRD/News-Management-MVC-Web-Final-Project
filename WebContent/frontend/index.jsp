@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>asdkfjas;d</title>
+<title>NewsBox of Knowledge and Opportunity</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <jsp:include page="layouts/linkcss.jsp" />

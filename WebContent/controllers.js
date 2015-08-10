@@ -108,7 +108,7 @@ function droplist() {
 		$("#selectEsource").html(resourceDropList(data));
 	});
 	$.post("sourceDropList.news", function(data, status) {
-		alert(status);
+
 		$("#newsUserinfo1").html(resourceDropList(data));
 	});
 	$.post("sourceDropList.news", function(data) {
@@ -170,17 +170,23 @@ function listArticle() {
 }
 function funCount() {
 	$.post("counts.news", function(data) {
-		// alert(data.length);
+
+		/*
+		 * $("#lblarticles").text(data[0].tbnews);
+		 * $("#lblaccounts").text(data[1].tbnews);
+		 * $("#lblcategories").text(data[2].tbnews);
+		 */
+
 		for (var i = 0; i < data.length; i++) {
-			if (i == 0) {
-
+			if (data[i].tbnews == "user_id") {
 				$("#lblaccounts").text(data[i].count);
-			} else if (i == 1) {
 
-				$("#lblarticles").text(data[i].count);
-			} else if (i == 2) {
-
+			} else if (data[i].tbnews == "cat_id") {
 				$("#lblcategories").text(data[i].count);
+
+			} else {
+				$("#lblarticles").text(data[i].count);
+
 			}
 		}
 	});

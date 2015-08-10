@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-    
+	alert("dashboard.js");
     "use strict";
 
     function showTooltip(x, y, contents) {
