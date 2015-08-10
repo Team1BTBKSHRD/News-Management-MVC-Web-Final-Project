@@ -18,7 +18,7 @@
                         </div>
                     </div><!-- media -->
                     
-                    <h5 class="leftpanel-title">Navigation</h5>
+                    <h5 class="leftpanel-title"><%=userType%></h5>
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="index.jsp"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
                        <!--  <li><a href="messages.html"><span class="pull-right badge">5</span><i class="fa fa-envelope-o"></i> <span>Messages</span></a></li> -->
@@ -29,7 +29,7 @@
                             </ul>
                         </li>
                         
-                      <%--  <%if(usr.getType=='4' ){  %> --%>
+                       <%if(userType.equals("editor")){ %> 
                         <li id="usermenu"><a href="page_user_add.jsp"><i class="fa fa-user"></i> <span>User</span></a></li>
                        <!--  <li class="parent"><a href="#"><i class="fa fa-align-justify"></i> <span>Menus</span></a>
                             <ul class="children">
@@ -39,5 +39,5 @@
                         </li> -->
                        <!--  <li><a href="#"><i class="fa fa-align-justify"></i> <span>Menus</span></a></li> -->
                     </ul>
-                  <%-- <%}%>  --%>
+                  <%}%>  
                 </div><!--  leftpanel --> 
