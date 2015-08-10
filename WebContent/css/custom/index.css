@@ -123,43 +123,55 @@ limit line
    -webkit-box-orient: vertical;
    -webkit-line-clamp: N;    				number line to show
    line-height: X;        
-   max-height: X x N;     
+   height: X x N;     
 }
 */
-.text-1, .text-3, .text-4, .text-5, .text-h5-2, .text-h6-2{
+.text-1, .text-2, .text-3, .text-4, .text-5, .text-h5-2, .text-h5-2-slider, .text-h6-2{
    overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
    -webkit-box-orient: vertical;
 }
+
 .text-1 {
    line-height: 16px;     /* fallback */
-   max-height: 16px;      /* fallback */
+   height: 16px;      /* fallback */
    -webkit-line-clamp: 1; /* number of lines to show */
 }
-.text-h5-2 {
-   line-height: 30px;     /* fallback */
-   max-height: 60px;      /* fallback */
-   -webkit-line-clamp: 3; /* number of lines to show */
+.text-2 {
+   line-height: 20px;     /* fallback */
+   height: 40px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+}
+.text-h5-2-slider{
+   line-height: 27px;
+   height: 55px;
+   -webkit-line-clamp: 2;
+}
+.text-h5-2{
+	line-height: 22px;
+  height: 44px; 
+  -webkit-line-clamp: 2;
+  font-size: 18px;
 }
 .text-h6-2 {
    line-height: 20px;     /* fallback */
-   max-height: 41px;      /* fallback */
-   -webkit-line-clamp: 3; /* number of lines to show */
+   height: 41px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
 }
 .text-3 {
    line-height: 16px;     /* fallback */
-   max-height: 48px;      /* fallback */
+   height: 48px;      /* fallback */
    -webkit-line-clamp: 3; /* number of lines to show */
 }
 .text-4 {
    line-height: 20px;     /* fallback */
-   max-height: 80px;      /* fallback */
+   height: 80px;      /* fallback */
    -webkit-line-clamp: 4; /* number of lines to show */
 }
 .text-5 {
    line-height: 20px;     /* fallback */
-   max-height: 100px;      /* fallback */
+   height: 100px;      /* fallback */
    -webkit-line-clamp: 5; /* number of lines to show */
 }
 /* ###################################### other class*/
@@ -172,6 +184,16 @@ limit line
 
 .news-source{
 	float: right;
+}
+.search-filter{
+	margin-right: 1px; 
+	width: 90px;
+}
+.search-wrapper{
+	margin-top: 15px;
+}
+.search-wrapper input{
+  width: 115px;
 }
 /*###################################clear style*/
 .clear-paddings{
@@ -233,20 +255,47 @@ text-decoration:none;
 
 
 /*############################################card style*/
+.card-detail{
+	border: 1px solid #eee;
+}
+.card-detail h5{
+	margin: 0 0 10px 10px;
+}
+.card-detail p{     
+  margin-bottom: 5px;    
+  padding-left: 10px; 
+  border-top: 1px solid #eee;
+  padding-right: 10px;
+}
+.card-detail .news-source, .news-date, .news-count{
+	border-top: 1px solid #eee;
+}
+.card-detail .news-date{	 
+  border-right: 1px solid #eee;
+}
 
-.card-2 *{
+
+.card-1 *, .card-2 *{
 	color: #444444;
 }
-.card-2 kbd, .card-2 time{
-	color: #fff;
+.card, .card-1, .card-2{
+	border-radius: 4px;
+}
+.card-1{
+	margin-right: 10px;
+
+	content: " ";
+  display: table;
 }
 .card-2{
-	border: 1px solid #dddddd;
-	border-radius: 4px;
-	width: 48.5%;
+	/* width: 48.5%; */
+	width: 330px; 
+}
+.card-2 kbd, .card-2 time{
+  color: #fff;
 }
 .card, .card-2{
-	/*margin-right: 15px;*/
+	/* margin-right: 1.5%; */
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
@@ -257,7 +306,6 @@ text-decoration:none;
 	padding: 12px 20px;
 }
 .card {
-	border-radius: 4px;
 	position: relative;
 	background: #fff;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);

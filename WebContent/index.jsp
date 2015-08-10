@@ -35,8 +35,7 @@
 		<jsp:include page="layouts/right-panel.jsp" />
 		<!-- end right panel -->
 		<!-- left panel -->
-		<div
-			class="col-sm-9 clear-padding-left">
+		<div class="col-sm-9 clear-padding-left">
 			<!-- slider -->
 			<jsp:include page="layouts/slider.jsp" />
 			<!-- end slider -->
@@ -46,35 +45,37 @@
 					<h3 class="panel-title">Local news</h3>
 				</div>
 				<div class="panel-body">
-					<div>
+					<div class="card-1">
 						<a href="http://kohsantepheapdaily.com.kh/article/124906.html"
 							target="_new">
-							<div
-								class="row card-header card-news clear-paddings clear-margins">
 								<div class="col-sm-4 clear-paddings">
 									<img
 										src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"
-										class="col-sm-12 clear-paddings">
+										class="col-sm-12 clear-paddings"
+										height="148px">
 								</div>
-								<div class="col-sm-8 pull-right">
-									<h5 class="article-name">សុគន្ធ នី​សា
-										ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
-										«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»</h5>
-									<strong> ផ្សាយថ្ងៃ <kbd>
-											<time>2015/03/07</time>
-										</kbd>
-									</strong>
-									<p class="clear-margin-bottom">
+								<div class="col-sm-8 pull-right card-detail clear-paddings">
+									<h5 class="text-h5-2 article-name ">
+									      សុគន្ធ	នី​សា ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
+										«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
+                    «​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
+                    «​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជា</h5>
+									<p class="text-2">
 										រាជធានី​ភ្នំពេញ ៖ កម្មវិធី​ស្តាប់​បទ​ចម្រៀង​ថ្មី​ដែល «mJams
 										Pleng និង​ឡូយ​ជាងគេ​» ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
 										បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
-										ដោយ​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន
-										<!-- 										<strong
-											class="news-source">ប្រភពពត៌មាន<kbd>kohsantepheap</kbd></strong>
-										<strong class="news-source">ចំនួនអ្នកអាន<kbd>10នាក់</kbd></strong> -->
-									</p>
+										ដោយ​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន</p>
+									<div class="col-sm-6 clear-paddings news-source">
+										<center>ដោយ Sabay</center>
+									</div>
+									<div class="col-sm-6 clear-paddings news-date">
+										<center>ថ្ងៃ 2015/03/07</center>
+									</div>
+									<div class="col-sm-12 clear-paddings news-count">
+										<center>អាន១០០០ដង</center>
+									</div>
 								</div>
-							</div>
+							
 						</a>
 					</div>
 					<hr width="95%">
@@ -116,7 +117,7 @@
 							</div>
 						</a>
 					</div>
-					
+
 					<div class="card-2 col-sm-6 clear-paddings">
 						<a href="http://news.sabay.com.kh/article/298488" target="_new">
 							<div
