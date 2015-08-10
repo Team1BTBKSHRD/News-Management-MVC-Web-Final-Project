@@ -10,7 +10,7 @@ pageEncoding="ISO-8859-1"%>
     <link href="css/style.default.css" rel="stylesheet">
     <style>
     body{
-     background-image: url(myimage/wizard-city.jpg);
+     background-image: url(img/wizard-city.jpg);
  }
  </style>
 </head>
@@ -53,7 +53,16 @@ pageEncoding="ISO-8859-1"%>
 </section>
 
 
-<jsp:include page="include/jsfile.html" ></jsp:include>
+<!---------------------------Load Script-------------------------->
+         <script src="js/jquery-1.11.1.min.js"></script>
+		 <script src="js/bootstrap.min.js"></script>
+		 <script src="js/custom.js"></script>
+		 <script src="js/dashboard.js"></script>
+		 <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+		 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+		 <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+
+<!-- -------------------------Custom Javascript---------------- -->
 
 </body>
 
