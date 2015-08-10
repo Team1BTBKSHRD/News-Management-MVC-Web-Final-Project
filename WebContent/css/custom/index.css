@@ -54,6 +54,9 @@ body{
 .panel-body{
 	padding: 10px 0 0 10px;
 }
+.panel-title{
+	font-size: 20px;
+}
 .panel-body hr{
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -69,6 +72,9 @@ ul.list-group > .list-group-items{
 }
 .list-group-item-heading{
 	color: #fff ! important;
+}
+button.btn-sm{
+	width: 100px;
 }
 /*h2{
 	font-size: 3em ! important;
@@ -152,8 +158,10 @@ limit line
    line-height: 27px;
    height: 55px;
    -webkit-line-clamp: 2;
+   font-weight: bold;
 }
 .text-h5-2{
+	font-weight: bold;
 	line-height: 22px;
   height: 44px; 
   -webkit-line-clamp: 2;
@@ -166,8 +174,8 @@ limit line
    -webkit-line-clamp: 2; /* number of lines to show */
 }
 .text-3 {
-   line-height: 16px;     /* fallback */
-   height: 48px;      /* fallback */
+   line-height: 20px;     /* fallback */
+   height: 60px;      /* fallback */
    -webkit-line-clamp: 3; /* number of lines to show */
 }
 .text-4 {
@@ -262,26 +270,22 @@ text-decoration:none;
 
 /*############################################card style*/
 .card-detail{
-	border: 1px solid #FFE3CB;
+/* 	border: 1px solid #FFE3CB; */
 }
 .card-detail h5{
 	margin: 0 0 10px 10px;
 }
-.card-detail h6{
-	margin-bottom: 3px; 
-	padding: 0px 10px 0px 10px;
-}
 .card-detail p{     
   margin-bottom: 5px;    
   padding-left: 10px; 
-  border-top: 1px solid #FFE3CB;
+  /* border-top: 1px solid #FFE3CB; */
   padding-right: 10px;
 }
 .card-detail .news-source, .news-date, .news-count{
-	border-top: 1px solid #FFE3CB;
+	/* border-top: 1px solid #FFE3CB; */
 }
 .card-detail .news-date{	 
-  border-right: 1px solid #FFE3CB;
+  /* border-right: 1px solid #FFE3CB; */
 }
 
 

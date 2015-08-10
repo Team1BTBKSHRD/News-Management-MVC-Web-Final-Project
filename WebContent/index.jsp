@@ -59,147 +59,69 @@
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជា</h5>
-								<p class="text-2">រាជធានី​ភ្នំពេញ ៖
+								<p class="text-3">រាជធានី​ភ្នំពេញ ៖
 									កម្មវិធី​ស្តាប់​បទ​ចម្រៀង​ថ្មី​ដែល «mJams Pleng និង​ឡូយ​ជាងគេ​»
 									ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
 									បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
-									ដោយ​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន</p>
-								<div class="col-sm-6 clear-paddings news-source">
-									<center>ដោយ Sabay</center>
-								</div>
-								<div class="col-sm-6 clear-paddings news-date">
-									<center>ថ្ងៃ 2015/03/07</center>
-								</div>
+									កម្មវិធី​ស្តាប់​បទ​ចម្រៀង​ថ្មី​ដែល «mJams Pleng និង​ឡូយ​ជាងគេ​»
+									ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
+									បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
+									​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន
+									​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន</p>
 								<div class="col-sm-12 clear-paddings news-count">
-									<center>អាន១០០០ដង</center>
+									<center style="font-size: 12px;">អាន១០០០ដង | ថ្ងៃ
+										2015/03/07 | Sabay</center>
 								</div>
 							</div>
 
 						</a>
 					</div>
-					<hr >
+					<hr>
 					<div class="card-2 col-sm-6 clear-paddings">
 						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
 							target="_new">
 							<div class="col-sm-4 clear-paddings">
 								<img
 									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
-									class="col-sm-12 clear-paddings" height="93px" width="80px">
+									class="col-sm-12 clear-paddings" height="85px" width="80px">
 							</div>
-							<div class="col-sm-8 pull-right card-detail clear-paddings">
-								<h6 class="text-h6-2 article-name clear-margin-top">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-								<div class="col-sm-6 clear-paddings news-source">
-									<center>ដោយ Sabay</center>
-								</div>
-								<div class="col-sm-6 clear-paddings news-date">
-									<center>ថ្ងៃ 2015/03/07</center>
-								</div>
-								<div class="col-sm-12 clear-paddings news-count">
-									<center>អាន១០០០ដង</center>
-								</div>
+							<div class="col-sm-8 " style="">
+								<h6
+									class="text-h6-2 article-name clear-margin-top clear-margin-bottom"
+									style="font-weight: bold;">ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+								<div class="col-sm-12 news-info"
+									style="padding: 10px 0 10px 0; font-size: 12px;">
+									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
 							</div>
 						</a>
 					</div>
-					<div class="card-2 col-sm-6 clear-paddings">
-						<a href="http://news.sabay.com.kh/article/298488" target="_new">
-							<div class="col-sm-4 clear-paddings">
-								<img
-									src="http://image.dap-news.com:81/dap-news/dap-images/2015/July/id-014/that-0845.jpg"
-									class="col-sm-12 clear-paddings" height="93px" width="80px">
-							</div>
-							<div class="col-sm-8 pull-right card-detail clear-paddings">
-								<h6 class="text-h6-2 article-name clear-margin-top">កាហ្វេ
-									និងតែ ប្រហែលជាអាច ជួយការពារ ជំងឺខ្លាញ់ក្នុងថ្លើម</h6>
-								<div class="col-sm-6 clear-paddings news-source">
-									<center>ដោយ Sabay</center>
-								</div>
-								<div class="col-sm-6 clear-paddings news-date">
-									<center>ថ្ងៃ 2015/03/07</center>
-								</div>
-								<div class="col-sm-12 clear-paddings news-count">
-									<center>អាន១០០០ដង</center>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<div class="card-2 col-sm-6 clear-paddings">
-						<a
-							href="http://www.dap-news.com/morokatmagazine/96368-2015-08-03-03-43-49.html"
-							target="_new">
-							<div class="col-sm-4 clear-paddings">
-								<img
-									src="http://image.lookingtoday.com:81/lookingtoday/looking-images/news/2015/August/ID-140/hour-00417.jpg"
-									class="col-sm-12 clear-paddings" height="93px" width="80px">
-							</div>
-							<div class="col-sm-8 pull-right card-detail clear-paddings">
-								<h6 class="text-h6-2 article-name clear-margin-top">លោក
-									វ៉ាត់ ចំរើន៖ មុនឆ្នាំ១៩៧០ មាតាបិតាសិស្ស ស្ម័គ្របង់វិភាគទាន
-									១០រៀល ដើម្បីទិញឧបករណ៍ កីឡាឲ្យសិស្ស</h6>
-								<div class="col-sm-6 clear-paddings news-source">
-									<center>ដោយ Sabay</center>
-								</div>
-								<div class="col-sm-6 clear-paddings news-date">
-									<center>ថ្ងៃ 2015/03/07</center>
-								</div>
-								<div class="col-sm-12 clear-paddings news-count">
-									<center>អាន១០០០ដង</center>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="card-2 col-sm-6 clear-paddings">
-						<a
-							href="http://www.dap-news.com/2011-06-14-02-43-39/95184--aeon-mall-.html"
-							target="_new">
-							<div class="col-sm-4 clear-paddings">
-								<img
-									src="http://image.dap-news.com:81/dap-news/dap-images/2015/July/id-010/chanroth015-july-156.jpg"
-									class="col-sm-12 clear-paddings" height="93px" width="80px">
-							</div>
-							<div class="col-sm-8 pull-right card-detail clear-paddings">
-								<h6 class="text-h6-2 article-name clear-margin-top">បើមានបុណ្យទាន
-									ក្នុងមួយថ្ងៃ Aeon Mall ទទួលបានអតិថិជន ៥-៦ម៉ឺននាក់</h6>
-								<div class="col-sm-6 clear-paddings news-source">
-									<center>ដោយ Sabay</center>
-								</div>
-								<div class="col-sm-6 clear-paddings news-date">
-									<center>ថ្ងៃ 2015/03/07</center>
-								</div>
-								<div class="col-sm-12 clear-paddings news-count">
-									<center>អាន១០០០ដង</center>
-								</div>
-							</div>
-						</a>
-					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="clearfix"></div>
+				<!-- end news sections -->
 			</div>
-			<!-- end news sections -->
+			<!-- end left panel -->
 		</div>
-		<!-- end left panel -->
-	</div>
-	<!-- end content area -->
-	<!-- footer -->
-	<jsp:include page="layouts/footer.jsp" />
-	<!-- end footer -->
+		<!-- end content area -->
+		<!-- footer -->
+		<jsp:include page="layouts/footer.jsp" />
+		<!-- end footer -->
 
-	<!-- #####################javascript#################### -->
-	​​
-	<!-- lib js -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.js"></script>
-	<!-- end lib js -->
-	<!-- custom js -->
-	<script src="js/custom/owl.js"></script>
-	<script>
-		document.write('<script src="http://'
-				+ (location.host || 'localhost').split(':')[0]
-				+ ':35729/livereload.js?snipver=2"></' + 'script>');
-	</script>
-	<!-- end custom js -->
-	<!-- #####################end javascript#################### -->
-	​​
+		<!-- #####################javascript#################### -->
+		​​
+		<!-- lib js -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/owl.carousel.js"></script>
+		<!-- end lib js -->
+		<!-- custom js -->
+		<script src="js/custom/owl.js"></script>
+		<script>
+			document.write('<script src="http://'
+					+ (location.host || 'localhost').split(':')[0]
+					+ ':35729/livereload.js?snipver=2"></' + 'script>');
+		</script>
+		<!-- end custom js -->
+		<!-- #####################end javascript#################### -->
+		​​
 </body>
 </html>
