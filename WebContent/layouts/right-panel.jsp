@@ -5,9 +5,10 @@
 	<!-- search form -->
 	<div class="panel panel-primary container-fluid">
 		<form role="search">
-			<div class="col-md-12 col-sm-12 col-xs-12 form-group clear-paddings search-wrapper">
+			<div
+				class="col-md-12 col-sm-12 col-xs-12 form-group clear-paddings search-wrapper">
 				<input class="col-sm-8" type="text" placeholder="ស្វែងរក">
-				<button type="submit" class="btn btn-primary btn-sm pull-right col-sm-4">ស្វែងរក</button>
+				<button type="submit" class="btn btn-primary pull-right col-sm-4">ស្វែងរក</button>
 			</div>
 			<!-- <div class=" form-group col-sm-12">
 				
@@ -50,4 +51,39 @@
 	</div>
 	<!-- end search form -->
 	<jsp:include page="topfive.jsp" />
+	<div class="panel panel-primary clear-paddings container-fluid">
+		<table style="width: 100%; text-align: center;">
+			<thead class="panel-heading"
+				style="background-color: #50a253; color: #fff;">
+
+				<tr style="">
+					<td class="panel-title" style="border-right: 2px solid white;">a</td>
+					<td class="panel-title" style="border-right: 2px solid white;">b</td>
+					<td class="panel-title" style="">c</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>a</td>
+					<td>b</td>
+					<td>c</td>
+				</tr>
+				<tr>
+					<td>a</td>
+					<td>b</td>
+					<td>c</td>
+				</tr>
+				<tr>
+					<td>a</td>
+					<td>b</td>
+					<td>c</td>
+				</tr>
+				<tr>
+					<td>a</td>
+					<td>b</td>
+					<td>c</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

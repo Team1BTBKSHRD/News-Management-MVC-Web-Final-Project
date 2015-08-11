@@ -37,5 +37,14 @@ hr under card
 ###############################8/10/2015 1:00:23 AM
 fix footer
 fix nav bar height 
+find font
+style card big
 
 khmer font unicode conflict with css 'letter-spacing'
+
+
+#####################################8/11/2015 7:38:20 PM
+id for js
+link category
+delete count 
+

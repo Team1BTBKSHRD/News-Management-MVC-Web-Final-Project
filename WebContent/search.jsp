@@ -6,6 +6,8 @@
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- #####################stylesheet#################### -->
+​​
 <!-- lib css -->
 <link rel="stylesheet" href="css/font-google-open-sans.css">
 <link rel="stylesheet" href="css/font-google-roboto-condensed.css">
@@ -17,8 +19,10 @@
 <!-- end lib css -->
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
+<link rel="stylesheet" type="text/css" href="css/custom/search.css">
 <link rel="stylesheet" type="text/css" href="css/custom/owl.css">
-<!-- end custom css -->​​
+<!-- end custom css -->
+<!-- #####################end stylesheet#################### -->
 </head>
 <body>
 	​​
@@ -28,7 +32,8 @@
 	<!-- content area -->
 	<div class="container content-area">
 		<!-- right panel -->
-		<div class="col-sm-3 content-right clear-paddings clear-margins pull-right">
+		<div
+			class="col-sm-3 content-right clear-paddings clear-margins pull-right">
 			<jsp:include page="layouts/topfive.jsp" />
 		</div>
 		<!-- end right panel -->
@@ -36,125 +41,93 @@
 		<div
 			class="col-sm-9 content-left clear-padding-left clear-margin-bottom">
 			<!-- search form -->
-			<div class="card container-fluid clear-margin-right">
+			<div class="panel panel-primary container-fluid clear-margin-right">
 				<form role="search">
-					<div class="col-sm-12 form-group">
-						<div class="col-sm-8 clear-paddings">
-							<input type="text" placeholder="Search">
-						</div>
-						<div class="col-sm-4 clear-paddings">
-							<button type="submit" class="btn btn-primary">Search</button>
-						</div>
+					<div class="col-sm-7 form-group clear-paddings search-wrapper">
+						<input type="text" placeholder="ស្វែងរក..." id="txtSearch">
+						<button type="submit" class="btn btn-primary ">ស្វែងរក</button>
 					</div>
-					<div class=" form-group">
-						<label for="Category" class="">Category</label>
-						<div class="btn-group ">
-							<a href="#" class="btn btn-default ">Default</a> <a href="#"
-								class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span
+					<div class=" form-group col-sm-5">
+						<div class="btn-group combo-news">
+							<a href="#" class="btn btn-default  search-filter">ប្រភេទព័ត៌មាន</a>
+							<a href="#" class="btn btn-default  dropdown-toggle"
+								data-toggle="dropdown" aria-expanded="false"><span
 								class="caret"></span></a>
+							<!-- category news-->
 							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="#">ជីវិត&amp;សង្គម</a></li>
+								<li><a href="#">សេដ្ឋកិច្ច</a></li>
+								<li><a href="#">កីឡា</a></li>
+								<li><a href="#">កំសាន្ត</a></li>
+								<li><a href="#">បច្ចេកវីទ្យា</a></li>
+								<li><a href="#">អាហារូបករណ៍</a></li>
+
 							</ul>
+							<!--end category news-->
 						</div>
-					</div>
-					<div class=" form-group">
-						<label for="Category" class="">Category</label>
-						<div class="btn-group ">
-							<a href="#" class="btn btn-default ">Default</a> <a href="#"
-								class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span
+						<div class="btn-group combo-news">
+							<a href="#" class="btn btn-default search-filter">ប្រភពព័ត៌មាន</a>
+							<a href="#" class="btn btn-default dropdown-toggle"
+								data-toggle="dropdown" aria-expanded="false"><span
 								class="caret"></span></a>
+							<!--news source-->
 							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="#">sabay news</a></li>
+								<li><a href="#">kohsantepheab</a></li>
+								<li><a href="#">daps-news</a></li>
+								<li><a href="#">news box</a></li>
 							</ul>
+							<!--end news source-->
 						</div>
 					</div>
+					<div class="clearfix"></div>
 				</form>
 			</div>
 			<!-- end search form -->
+
 			<!-- result list -->
-			<div class="card card-left col-sm-10">
-				<a href="http://news.sabay.com.kh/article/298488" target="_new">
-					<div class="row card-header card-news clear-paddings clear-margins">
-						<div class="col-sm-4 clear-paddings">
-							<img
-								src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
-								class="col-sm-12 clear-paddings">
-						</div>
-						<div class="col-sm-8 pull-right">
-							<h5 class="article-name">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​...</h5>
-							<strong> ផ្សាយថ្ងៃ <kbd>
-									<time>2015/03/07</time>
-								</kbd>
-							</strong>
-							<p class="clear-margin-bottom">
-								បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទែន​
-								គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទែន​ គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ
-								បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទ <strong class="news-source">ប្រភពពត៌មាន<kbd>Sabay</kbd></strong>
-							</p>
-						</div>
-					</div>
+			<div class="panel panel-primary col-sm-10 search-result-wrapper">
+				<div class="col-sm-12 search-result-count">
+					<strong><h6>
+							លទ្ធផលស្វែងរកឃើញចំនួន<span id="news-result-search">157</span>
+						</h6></strong>
+
+				</div>
+
+
+				<div class="col-sm-12 search-result">
+					<a href="#">
+						<h5 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​...</h5>
+						<strong> ផ្សាយថ្ងៃ <kbd> 2015/03/07 </kbd>
+					</strong>
+						<p class="clear-margin-bottom text-2">
+							បន្ទាប់​ពី​ភរិយា​ស្លាsdfgsdfgsdfgsdfgdfgsdfgsdfgប់​ទៅ កាពីទែន​
+							បន្ទាប់​ពី​ភរិយា​ស្លាsdfgsdfgsdfgsdfgdfgsdfgsdfgប់​ទៅ កាពីទែន​
+							បន្ទាប់​ពី​ភរិយា​ស្លាsdfgsdfgsdfgsdfgdfgsdfgsdfgប់​ទៅ កាពីទែន​
+							គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
+							កាពីទែន​ គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ
+							បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
+							កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
+							កាពីទបន្ទាdfgsdfgsdfgsdfgsdfgsdប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទ
+							&lt;strong class="news-source"&gt;ប្រភពពត៌មាន&lt;ky&lt;/</p> <strong
+						class="news-source">ប្រភពពត៌មាន<kbd>Sabay</kbd></strong>
+						<div class="clearfix"></div>
+					</a>
+				</div>
+
+
+				<ul class="pager  clear-padding-right">
+					<li class="previous"><a href="#">Previous</a></li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li class="next"><a href="#">Next</a></li>
+				</ul>
 			</div>
-			<div class="card card-left col-sm-10">
-				<a href="http://news.sabay.com.kh/article/298488" target="_new">
-					<div class="row card-header card-news clear-paddings clear-margins">
-						<div class="col-sm-4 clear-paddings">
-							<img
-								src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
-								class="col-sm-12 clear-paddings">
-						</div>
-						<div class="col-sm-8 pull-right">
-							<h5 class="article-name">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​...</h5>
-							<strong> ផ្សាយថ្ងៃ <kbd>
-									<time>2015/03/07</time>
-								</kbd>
-							</strong>
-							<p class="clear-margin-bottom">
-								បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទែន​
-								គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទែន​ គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ
-								បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទ <strong class="news-source">ប្រភពពត៌មាន<kbd>Sabay</kbd></strong>
-							</p>
-						</div>
-					</div>
-			</div>
-			<div class="card card-left col-sm-10">
-				<a href="http://news.sabay.com.kh/article/298488" target="_new">
-					<div class="row card-header card-news clear-paddings clear-margins">
-						<div class="col-sm-4 clear-paddings">
-							<img
-								src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
-								class="col-sm-12 clear-paddings">
-						</div>
-						<div class="col-sm-8 pull-right">
-							<h5 class="article-name">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​...</h5>
-							<strong> ផ្សាយថ្ងៃ <kbd>
-									<time>2015/03/07</time>
-								</kbd>
-							</strong>
-							<p class="clear-margin-bottom">
-								បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទែន​
-								គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទែន​ គ្រូវី​ដែល​ល្បី​ល្បាញ​ថា​ជា​សេ
-								បន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ កាពីទបន្ទាប់​ពី​ភរិយា​ស្លាប់​ទៅ
-								កាពីទ <strong class="news-source">ប្រភពពត៌មាន<kbd>Sabay</kbd></strong>
-							</p>
-						</div>
-					</div>
-			</div>
-			<jsp:include page="layouts/pagination.jsp" />
-			<!-- result list -->
+			<!--end result list -->
+
 		</div>
 		<!-- end left panel -->
 	</div>
@@ -163,7 +136,8 @@
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
 
-	<!-- #####################javascript#################### -->	​​
+	<!-- #####################javascript#################### -->
+	​​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
