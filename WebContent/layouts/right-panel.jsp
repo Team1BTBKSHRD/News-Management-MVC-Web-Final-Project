@@ -52,37 +52,32 @@
 	<!-- end search form -->
 	<jsp:include page="topfive.jsp" />
 	<div class="panel panel-primary clear-paddings container-fluid">
-		<table style="width: 100%; text-align: center;">
-			<thead class="panel-heading"
-				style="background-color: #50a253; color: #fff;">
+		<div class="panel-heading">
+			<h3 class="panel-title">ហាងឆេងប្តូរតំលៃ</h3>
+		</div>
+		<table class="table table-striped table-hover ">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Column heading</th>
+					<th>Column heading</th>
 
-				<tr style="">
-					<td class="panel-title" style="border-right: 2px solid white;">a</td>
-					<td class="panel-title" style="border-right: 2px solid white;">b</td>
-					<td class="panel-title" style="">c</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>a</td>
-					<td>b</td>
-					<td>c</td>
+					<td>1</td>
+					<td>Column content</td>
+					<td>Column content</td>
+
 				</tr>
 				<tr>
-					<td>a</td>
-					<td>b</td>
-					<td>c</td>
+					<td>2</td>
+					<td>Column content</td>
+					<td>Column content</td>
+
 				</tr>
-				<tr>
-					<td>a</td>
-					<td>b</td>
-					<td>c</td>
-				</tr>
-				<tr>
-					<td>a</td>
-					<td>b</td>
-					<td>c</td>
-				</tr>
+
 			</tbody>
 		</table>
 	</div>
