@@ -6,7 +6,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">ពត៌មានពេញនិយម</h3>
 	</div>
-	<div class="panel-body clear-paddings ">
+	<div class="panel-body-right">
 		<ul class="list-group clear-margin-bottom">
 			<a href="" class="list-group-item  clear-paddings"> <img
 				src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"
@@ -53,7 +53,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">ពត៌មានដែលគួរអាន</h3>
 	</div>
-	<div class="panel-body clear-paddings ">
+	<div class="panel-body-right">
 		<ul class="list-group clear-margin-bottom">
 			<a href="" class="list-group-item  clear-paddings"> <img
 				src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"

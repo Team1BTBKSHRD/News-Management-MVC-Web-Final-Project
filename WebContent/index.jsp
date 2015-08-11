@@ -9,12 +9,8 @@
 
 ​​
 <!-- lib css -->
-<link rel="stylesheet" href="css/font-google-open-sans.css">
-<link rel="stylesheet" href="css/font-google-roboto-condensed.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/owl.transitions.css">
 <link rel="stylesheet" href="css/responsive.css">
 <!-- end lib css -->
 <!-- custom css -->
@@ -52,9 +48,9 @@
 								<img
 									src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="151px">
+									height="153px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8  pull-right ">
+							<div class="col-md-8 col-sm-8 col-xs-8 card-details pull-right ">
 								<h5 class="text-h5-2 article-title">សុគន្ធ នី​សា
 									ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
@@ -87,7 +83,7 @@
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
 									height="85px" width="80px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 ">
+							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
 								<h6 class="text-h6-2 article-title">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 								<div
@@ -105,7 +101,7 @@
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
 									height="85px" width="80px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 ">
+							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
 								<h6 class="text-h6-2 article-title">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 								<div
@@ -123,7 +119,7 @@
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
 									height="85px" width="80px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 ">
+							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
 								<h6 class="text-h6-2 article-title">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 								<div
@@ -141,7 +137,7 @@
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
 									height="85px" width="80px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 ">
+							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
 								<h6 class="text-h6-2 article-title">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 								<div
@@ -159,7 +155,7 @@
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
 									height="85px" width="80px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 ">
+							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
 								<h6 class="text-h6-2 article-title">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 								<div
@@ -177,7 +173,7 @@
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
 									height="85px" width="80px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 ">
+							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
 								<h6
 									class="text-h6-2 article-title">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>

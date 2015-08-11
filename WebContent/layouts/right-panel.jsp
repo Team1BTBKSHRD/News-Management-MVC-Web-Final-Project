@@ -3,7 +3,7 @@
 <div
 	class="col-md-3 col-sm-3 col-xs-3 content-right clear-paddings clear-margins pull-right">
 	<!-- search form -->
-	<div class="card card-right container-fluid">
+	<div class="panel panel-primary container-fluid">
 		<form role="search">
 			<div class="col-md-12 col-sm-12 col-xs-12 form-group clear-paddings search-wrapper">
 				<input type="text" placeholder="ស្វែងរក">

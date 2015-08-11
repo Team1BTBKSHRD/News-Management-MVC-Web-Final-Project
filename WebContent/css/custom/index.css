@@ -1,6 +1,5 @@
 @import url(../../font/fonts.css);
 
-
 /*######################################bootstrap modify classes*/
 img {
 	border-radius: 4px;
@@ -9,20 +8,21 @@ img {
 a:hover {
 	text-decoration: none;
 }
+
 body {
-    letter-spacing: 0px;
+	letter-spacing: 0px;
 }
+
 hr {
 	border: 1.5px solid #eeeeee;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,h2,h3,h4,h5,h6 {
 	
 }
 .navbar-brand {
 	margin-left: 1% ! important;
 }
-as
-
 .navbar-brand a img {
 	margin-top: 4px ! important;
 }
@@ -45,7 +45,7 @@ body {
 }
 
 .navbar {
-	font-family: Arial, sans-serif,  'KhmerOSKoulen', cursive;
+	font-family: Arial, sans-serif, 'KhmerOSKoulen', cursive;
 }
 
 .pager>.active>a,.pager>.active>span,.pager>.active>a:hover,.pager>.active>span:hover,.pager>.active>a:focus,.pager>.active>span:focus
@@ -56,14 +56,16 @@ body {
 	border-color: #50a253;
 	cursor: default;
 }
-
+.panel-body-right{
+	padding-top: 5px;
+}
 .panel {
 	border-radius: 4px;
 	margin-bottom: 15px;
 }
 
 .panel-body {
-	padding: 10px 0 0 10px;
+	padding: 15px 0 5px 15px;
 }
 
 .panel-title {
@@ -71,10 +73,7 @@ body {
 }
 
 .panel-body hr {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	margin-left: 25px;
-	margin-right: 35px;
+    margin: 15px 15px 15px 0;
 }
 
 .panel-heading {
@@ -87,7 +86,7 @@ body {
 	margin: 10px 10px 20px 10px !important;
 }
 
-.list-group-item h6{
+.list-group-item h6 {
 	padding-left: 7px;
 }
 
@@ -98,9 +97,6 @@ body {
 button.btn-sm {
 	width: 100px;
 }
-/*h2{
-	font-size: 3em ! important;
-}*/
 /*#####################################background color class */
 /* .bg-primary, .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9 h5{
 	color: #fff;
@@ -146,19 +142,12 @@ button.btn-sm {
 	background-color: #50a253
 }
 /*#####################################text classes*/
-
 /*
-limit line 
-.giveMeEllipsis {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: N;    				number line to show
+   -webkit-line-clamp: N;    				
    line-height: X;        
    height: X x N;     
-}
 */
+
 .text-1,.text-2,.text-3,.text-4,.text-5,.text-h5-2,.text-h5-2-slider,.text-h5-2-14,.text-h6-2
 	{
 	overflow: hidden;
@@ -168,15 +157,15 @@ limit line
 }
 
 .text-1 {
-	line-height: 16px; /* fallback */
-	height: 16px; /* fallback */
-	-webkit-line-clamp: 1; /* number of lines to show */
+	line-height: 16px;
+	height: 16px;
+	-webkit-line-clamp: 1; 
 }
 
 .text-2 {
-	line-height: 20px; /* fallback */
-	height: 40px; /* fallback */
-	-webkit-line-clamp: 2; /* number of lines to show */
+	line-height: 20px;
+	height: 40px;
+	-webkit-line-clamp: 2; 
 }
 
 .text-h5-2-slider {
@@ -193,30 +182,31 @@ limit line
 	-webkit-line-clamp: 2;
 	font-size: 18px;
 }
+
 .text-h6-2 {
 	font-size: 15px;
-	line-height: 23px; /* fallback */
-	height: 46px; /* fallback */
-	-webkit-line-clamp: 2; /* number of lines to show */
+	line-height: 23px;
+	height: 46px;
+	-webkit-line-clamp: 2; 
 	font-weight: bold;
 }
 
 .text-3 {
-	line-height: 20px; /* fallback */
-	height: 60px; /* fallback */
-	-webkit-line-clamp: 3; /* number of lines to show */
+	line-height: 20px;
+	height: 60px;
+	-webkit-line-clamp: 3; 
 }
 
 .text-4 {
-	line-height: 20px; /* fallback */
-	height: 80px; /* fallback */
-	-webkit-line-clamp: 4; /* number of lines to show */
+	line-height: 20px;
+	height: 80px;
+	-webkit-line-clamp: 4; 
 }
 
 .text-5 {
-	line-height: 20px; /* fallback */
-	height: 100px; /* fallback */
-	-webkit-line-clamp: 5; /* number of lines to show */
+	line-height: 25px;
+	height: 125px;
+	-webkit-line-clamp: 5; 
 }
 /* ###################################### other class*/
 .badge {
@@ -320,19 +310,23 @@ limit line
 .article-title:hover {
 	color: #2C8332;
 }
-.news-description{
+
+.news-description {
 	margin-bottom: 10px;
 }
+
 .news-info {
 	font-size: 12px;
 	padding: 10px 0 10px 0;
 }
-
+.card-details{
+	padding-left: 10px;
+}
 .card-1 *,.card-2 * {
 	color: #444444;
 }
 
-.card,.card-1,.card-2 {
+.card-1,.card-2 {
 	border-radius: 4px;
 }
 
@@ -351,231 +345,8 @@ limit line
 	color: #fff;
 }
 
-.card,.card-2 {
+.card-2 {
 	/* margin-right: 1.5%; */
 	/* margin-right: 10px; */
 	margin-bottom: 10px;
-}
-
-.card a:hover {
-	text-decoration: none;
-}
-
-.card-body .lv-item {
-	padding: 12px 20px;
-}
-
-.card {
-	position: relative;
-	background: #fff;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-.card .card-header {
-	position: relative;
-}
-
-.card-right {
-	margin-bottom: 15px;
-}
-
-.card-left {
-	margin-left: 8.35%;
-	margin-right: 8.35%;
-}
-
-@media screen and (min-width: 768px) {
-	.card
-	
-	 
-	
-	.card-header
-	
-	
-	:not
-	
-	 
-	
-	(
-	.ch-alt
-	
-	 
-	
-	)
-	{
-	padding
-	
-	
-	:
-	
-	 
-	
-	23
-	px
-	
-	 
-	
-	26
-	px
-	
-	
-	;
-}
-
-}
-@media screen and (max-width: 991px) {
-	.card
-	
-	 
-	
-	.card-header
-	
-	
-	:not
-	
-	 
-	
-	(
-	.ch-alt
-	
-	 
-	
-	)
-	{
-	padding
-	
-	
-	:
-	
-	 
-	
-	18
-	px
-	
-	
-	;
-}
-
-}
-
-/*.card .card-header h2 {
-	margin: 0;
-	line-height: 100%;
-	font-size: 17px;
-	font-weight: 400;
-}*/
-.card .card-header h2 small {
-	display: block;
-	margin-top: 8px;
-	color: #AEAEAE;
-	line-height: 160%;
-}
-
-@media screen and (min-width: 768px) {
-	.card .card-header.ch-alt {
-		padding: 23px 26px;
-	}
-}
-
-@media screen and (max-width: 991px) {
-	.card .card-header.ch-alt {
-		padding: 18px 18px 28px;
-	}
-}
-
-.card
-
- 
-
-.card-header
-
-
-.ch-alt
-
-
-:not
-
- 
-
-(
-[
-class
-*=
-"bgm-"
-]
-
- 
-
-)
-{
-background-color
-
-
-:
-
- 
-
-#f7f7f7
-
-
-;
-}
-.card .card-header[class*="bgm-"] h2,.card .card-header[class*="bgm-"] h2 small
-	{
-	color: #fff;
-}
-
-.card .card-header .actions {
-	position: absolute;
-	right: 10px;
-	z-index: 2;
-	top: 15px;
-}
-
-.card .card-header .btn-float {
-	right: 25px;
-	bottom: -23px;
-	z-index: 1;
-}
-
-@media screen and (min-width: 768px) {
-	.card .card-body.card-padding {
-		padding: 23px 26px;
-	}
-}
-
-@media screen and (max-width: 991px) {
-	.card .card-body.card-padding {
-		padding: 18px;
-	}
-}
-
-.card .card-body.card-padding-sm {
-	padding: 15px;
-}
-
-.go-social .card-body {
-	padding: 0 15px 20px;
-}
-
-.go-social .card-body [class*="col-"] {
-	padding: 12px;
-}
-
-.go-social .card-body [class*="col-"] img {
-	-webkit-transition: all;
-	-o-transition: all;
-	transition: all;
-	-webkit-transition-duration: 200ms;
-	transition-duration: 200ms;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.go-social .card-body [class*="col-"]:hover img {
-	-webkit-transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	-o-transform: scale(1.2);
-	transform: scale(1.2);
 }
