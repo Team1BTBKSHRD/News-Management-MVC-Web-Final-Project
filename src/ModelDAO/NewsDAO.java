@@ -216,7 +216,15 @@ public class NewsDAO {
 		return rs;
 	}
 
-	/*public static void main(String[] args) throws Exception {
-		System.out.println(new Convertor().convertResultSetIntoJSON(new NewsDAO().countOfRecords()));
-	}*/
+	public ResultSet articlepost(String data) throws SQLException {
+		// TODO Auto-generated method stub
+		CallableStatement clstm=con.prepareCall("{call count_user_role_news(?)}");
+		clstm.setString(1, data);
+		ResultSet rs=clstm.executeQuery();
+		return rs;
+	}
+
+	public static void main(String[] args) throws Exception {
+		System.out.println(new Convertor().convertResultSetIntoJSON(new NewsDAO().articlepost("dap-news")));
+	}
 }// End of class;

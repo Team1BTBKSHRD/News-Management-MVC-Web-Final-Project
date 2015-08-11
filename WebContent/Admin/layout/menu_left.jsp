@@ -1,21 +1,22 @@
+<%String usr="",adm="";
 
-<%--  <%if(Sesssion.getSession("")!=null){
-	User usr= sess;
-	
-}  %>  --%>
- 
+if(session.getAttribute("admin")!=null){
+	 usr= session.getAttribute("admin").toString();
+	 adm = session.getAttribute("userType").toString();
+}  %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <div class="leftpanel">
                     <div class="media profile-left">
                         <a class="pull-left profile-thumb" href="page_user_profile.jsp">
-                            <img class="img-circle" src="img/stickerprofile.png" id="pic_profile" alt="">
+                            <img class="img-circle" src=""  id="pic_profile" alt="">
                         </a>
                         <div class="media-body">
-                            <h4 class="media-heading" id="username_profile">Hem Sarin</h4><!-- Title Name for user  -->
-                            <small class="text-muted" id="user_type_profile">Admin</small>
+                            <h4 class="media-heading" id="username_profile"><%=usr %></h4><!-- Title Name for user  -->
+                            <small class="text-muted" id="user_type_profile"><%=adm %></small>
                         </div>
                     </div><!-- media -->
                     
-                    <h5 class="leftpanel-title">Navigation</h5>
+                    <h5 class="leftpanel-title" id="d">Navigation</h5>
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="index.jsp"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
                        <!--  <li><a href="messages.html"><span class="pull-right badge">5</span><i class="fa fa-envelope-o"></i> <span>Messages</span></a></li> -->
@@ -38,3 +39,9 @@
                     </ul>
                   <%-- <%}%>  --%>
                 </div><!--  leftpanel --> 
+<script type="text/javascript">
+	var obj=<%=session.getAttribute("userinfo")%>
+	$("#pic_profile").attr("src",obj[0].logo);
+	$("#img_thumnail").attr("src",obj[0].logo);
+	//alert(obj[0].logo);
+</script>

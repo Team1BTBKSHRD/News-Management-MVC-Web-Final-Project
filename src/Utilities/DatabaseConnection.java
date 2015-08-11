@@ -4,15 +4,17 @@ import java.sql.*;
 public class DatabaseConnection {
 	private static String DRIVER_NAME = "org.postgresql.Driver";
 	private static String URL = "jdbc:postgresql://localhost:";
+	//private static String URL = "jdbc:postgresql://192.168.178.155:";
 	private static String PORT_NUMBER = "5432";
 	private static String DB_NAME = "newsmanagement";
 	private static String USER_NAME = "postgres";
 	private static String PASSWORD = "0231";
+	//private static String PASSWORD = "123";
 
 	/**
 	 * Deny object initialization
 	 */
-	private DatabaseConnection() {}
+	private DatabaseConnection() {System.out.println("{Connting to localhost}");}
 	
 	/**
 	 * connect to database

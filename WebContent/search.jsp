@@ -6,7 +6,6 @@
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- #####################stylesheet#################### -->​​
 <!-- lib css -->
 <link rel="stylesheet" href="css/font-google-open-sans.css">
 <link rel="stylesheet" href="css/font-google-roboto-condensed.css">
@@ -19,9 +18,7 @@
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
 <link rel="stylesheet" type="text/css" href="css/custom/owl.css">
-<!-- end custom css -->
-<!-- #####################end stylesheet#################### -->
-​​
+<!-- end custom css -->​​
 </head>
 <body>
 	​​

@@ -57,6 +57,8 @@ body{
 .panel-body hr{
 	margin-top: 15px;
 	margin-bottom: 15px;
+	margin-left: 25px;
+    margin-right: 35px;
 }
 .panel-heading {
   border-top-right-radius: 4px;
@@ -65,13 +67,16 @@ body{
 ul.list-group > .list-group-items{
 	border-left: none;
 }
+.list-group-item-heading{
+	color: #fff ! important;
+}
 /*h2{
 	font-size: 3em ! important;
 }*/
 /*#####################################background color class */
-.bg-primary, .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9{
+/* .bg-primary, .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9 h5{
 	color: #fff;
-}
+} */
 /* #primary */
 .bg-primary{
 	background-color: #50a253;
@@ -155,6 +160,7 @@ limit line
   font-size: 18px;
 }
 .text-h6-2 {
+	font-size: 15px;
    line-height: 20px;     /* fallback */
    height: 41px;      /* fallback */
    -webkit-line-clamp: 2; /* number of lines to show */
@@ -175,25 +181,25 @@ limit line
    -webkit-line-clamp: 5; /* number of lines to show */
 }
 /* ###################################### other class*/
+.badge{
+	background-color: #BBBBEB;
+}
 .content-area-aritcle, .content-area{
 	margin-top: 55px;
-}
-.content-area-aritcle {	
 	width: 90%;
 }
-
 .news-source{
 	float: right;
 }
 .search-filter{
 	margin-right: 1px; 
-	width: 90px;
+	width: 135px;
 }
 .search-wrapper{
 	margin-top: 15px;
 }
 .search-wrapper input{
-  width: 115px;
+  width: 60%;
 }
 /*###################################clear style*/
 .clear-paddings{
@@ -256,22 +262,26 @@ text-decoration:none;
 
 /*############################################card style*/
 .card-detail{
-	border: 1px solid #eee;
+	border: 1px solid #FFE3CB;
 }
 .card-detail h5{
 	margin: 0 0 10px 10px;
 }
+.card-detail h6{
+	margin-bottom: 3px; 
+	padding: 0px 10px 0px 10px;
+}
 .card-detail p{     
   margin-bottom: 5px;    
   padding-left: 10px; 
-  border-top: 1px solid #eee;
+  border-top: 1px solid #FFE3CB;
   padding-right: 10px;
 }
 .card-detail .news-source, .news-date, .news-count{
-	border-top: 1px solid #eee;
+	border-top: 1px solid #FFE3CB;
 }
 .card-detail .news-date{	 
-  border-right: 1px solid #eee;
+  border-right: 1px solid #FFE3CB;
 }
 
 
@@ -282,14 +292,12 @@ text-decoration:none;
 	border-radius: 4px;
 }
 .card-1{
-	margin-right: 10px;
-
-	content: " ";
+  margin-right: 10px;
   display: table;
 }
 .card-2{
-	/* width: 48.5%; */
-	width: 330px; 
+	width:  48.85%; 
+	display: table;
 }
 .card-2 kbd, .card-2 time{
   color: #fff;

@@ -14,10 +14,11 @@ import CategoryController.AddCategory;
 import CategoryController.ListCategory;
 import CategoryController.dropListCategory;
 import CategoryController.dropListSource;
+import Filter.MyLogin;
 import NewsController.AddNews;
 import NewsController.ListNews;
 import NewsController.countNews;
-import NewsDetailController.AddNewsDetail;
+//import NewsDetailController.AddNewsDetail;
 import UserController.AddUser;
 import UserController.EditUser;
 import UserController.FindUser;
@@ -36,13 +37,14 @@ public class Front_Controller extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+		//System.out.println(request.getContextPath());
 		doProcess(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//System.out.println(request.getContextPath());
 		doProcess(request, response);
 
 	}
@@ -51,16 +53,21 @@ public class Front_Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String RequestURI = request.getRequestURI();
 
-		//System.out.println(RequestURI);
+		System.out.println(RequestURI);
 		String contextPath = request.getContextPath();
-		//System.out.println(contextPath);
+		System.out.println(contextPath);
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-
-		System.out.println(command);
+		
+		System.out.println("--"+command);
+		/*if(command.split("/")[0].equals("Admin")){
+			if(request.getSession().getAttribute("admin")==null){
+				response.sendRedirect("../Login/page_login.jsp");
+			}
+		}*/
 		switch (command) {
-		/* access to user url */
+		 //access to user url 
 		case "/useradd.news":
 			action = new AddUser();
 			try {
@@ -150,8 +157,7 @@ public class Front_Controller extends HttpServlet {
 			}
 			break;
 
-		case "/sourceDropList.news":
-			System.err.println("source drop list");
+		case "/Admin/sourceDropList.news":
 			action = new dropListSource();
 			try {
 				action.execute(request, response);
@@ -170,7 +176,7 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/listarticle.news":
+		case "/Admin/listarticle.news":
 
 			action = new ListNews();
 			try {
@@ -179,7 +185,7 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/counts.news":
+		case "/Admin/counts.news":
 			action = new countNews();
 			try {
 				action.execute(request, response);
@@ -187,15 +193,31 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		/*
-		 * case "/admin": System.out.println("admin"); break;
-		 */
+		case "/Admin/selectTypeArticles.news":
+			System.out.println("selectTypeArticles");
+			action = new typeofarticlespost();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		case "/Login/Login.news":
+			System.out.println("Login!");
+			action = new MyLogin();
+			//response.sendRedirect("/index.jsp");
+			System.out.println("He");
+			try {
+				System.out.println("in try");
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 		default:
-
 			forward = new ActionForward();
 			forward.setPath("404.jsp");
 			forward.setRedirect(true);
-
 			break;
 		}// End of switch;
 		if (forward != null) {

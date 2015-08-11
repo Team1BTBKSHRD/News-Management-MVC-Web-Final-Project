@@ -7,10 +7,11 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+@WebFilter("/Admin/*")
 public class Authentication implements Filter {
 
 	@Override
@@ -24,7 +25,8 @@ public class Authentication implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		if(session.getAttribute("admin") == null){// || session.getAttribute("editor") == null){
-			((HttpServletResponse)response).sendRedirect("/articleManagement/LoginProcess");
+			((HttpServletResponse) response).sendRedirect("/articleManagement/Login/page_login.jsp");
+
 		}
 		else{
 			chain.doFilter(request, response);
