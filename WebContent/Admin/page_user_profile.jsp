@@ -279,12 +279,29 @@ background: #FFFFFF;
 			});
 			$("#update_profile").click(function(){
 				$("input[type='text']").attr("disabled",true);
+			
 			});
 			
 			$("#cancle").click(function(){
 				$("input[type='text']").attr("disabled",true);
 			});
 			
+			
+			$("#file_image").change(function(){
+			    readURL(this);
+			    getPath();
+			});
+
+			function readURL(input) {
+			    if (input.files && input.files[0]) {
+			        var reader = new FileReader();
+			        reader.onload = function (e) {
+			        	$('#img_thumnail').attr('src', e.target.result).fadeIn('slow');
+			        };
+			        reader.readAsDataURL(input.files[0]);
+			    }
+			}
+		    /* alert($("#file_image").val()); */
 			// Basic Form
 			/*  $("#basicForm").validate({
 			     highlight: function(element) {
@@ -294,8 +311,10 @@ background: #FFFFFF;
 			        $(element).closest('.form-group').removeClass('has-error');
 			     }
 			 }); */
-
+		function getPath(){
+			$("#path_image").val($("#file_image").val()); 
+			 }
 		});
 	</script>
-</body>
+	</body>
 </html>
