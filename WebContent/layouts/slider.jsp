@@ -7,7 +7,7 @@
 			src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/03/feature-cover.jpg?0bb167"
 			alt="The Last of us">
 		<div class="news-title-background">
-			<a href="http://news.sabay.com.kh/article/298488">
+			<a href="http://news.sabay.com.kh/article/298488" target="_new">
 				<div class="owl-news-title">
 					<h5 class="text-h5-2-slider clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌាបញ្ជូ​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​</h5>
 					<p class="text-5 clear-margin-bottom ">
@@ -30,7 +30,7 @@
 	<div class="item">
 		<img src="img/news002.jpg" alt="GTA V">
 		<div class="news-title-background">
-			<a href="http://news.sabay.com.kh/article/298488">
+			<a href="http://news.sabay.com.kh/article/298488" target="_new">
 				<div class="owl-news-title">
 					<h5 class="text-h5-2-slider clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌាបញ្ជូ​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​</h5>
 					<p class="text-5 clear-margin-bottom ">
@@ -53,7 +53,7 @@
 	<div class="item">
 		<img src="img/news001.jpg" alt="Mirror Edge">
 		<div class="news-title-background">
-			<a href="http://news.sabay.com.kh/article/298488">
+			<a href="http://news.sabay.com.kh/article/298488" target="_new">
 				<div class="owl-news-title">
 					<h5 class="text-h5-2-slider clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌាបញ្ជូ​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​</h5>
 					<p class="text-5 clear-margin-bottom ">
@@ -76,7 +76,7 @@
 	<div class="item">
 		<img src="img/news002.jpg" alt="GTA V">
 		<div class="news-title-background">
-			<a href="http://news.sabay.com.kh/article/298488">
+			<a href="http://news.sabay.com.kh/article/298488" target="_new">
 				<div class="owl-news-title">
 					<h5 class="text-h5-2-slider clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌាបញ្ជូ​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​</h5>
 					<p class="text-5 clear-margin-bottom ">
@@ -99,7 +99,7 @@
 	<div class="item">
 		<img src="img/news001.jpg" alt="Mirror Edge">
 		<div class="news-title-background">
-			<a href="http://news.sabay.com.kh/article/298488">
+			<a href="http://news.sabay.com.kh/article/298488" target="_new">
 				<div class="owl-news-title">
 					<h5 class="text-h5-2-slider clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌាបញ្ជូ​ស្រី​ទៅ​ធ្វើ​ព្រះ​សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​</h5>
 					<p class="text-5 clear-margin-bottom ">

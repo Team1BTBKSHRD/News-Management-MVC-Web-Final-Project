@@ -26,7 +26,7 @@ public class ListUser implements Action {
 	@Override
 	public  void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		/* categoryList stores records of news as JSON data */
-	    String userList = Convertor.convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString(); 
+	    String userList = Convertor.convertResultSetIntoJSON(new UserDAO().listTypeUser()).toString(); 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */

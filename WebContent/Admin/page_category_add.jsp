@@ -3,16 +3,17 @@
 <!DOCTYPE html >
 <html>
 <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-      	<!-- -----------Load Style reponsive----------- -->
-        <link href="css/style.default.css" rel="stylesheet">
-        <link href="css/morris.css" rel="stylesheet">
-        <link href="css/select2.css" rel="stylesheet" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/dataTables.bootstrap.css"/>
-        <!-- #####################end stylesheet#################### -->
-        
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<!-- -----------Load Style reponsive----------- -->
+<link href="css/style.default.css" rel="stylesheet">
+<link href="css/morris.css" rel="stylesheet">
+<link href="css/select2.css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/dataTables.bootstrap.css" />
+<!-- #####################end stylesheet#################### -->
+
 <title>Manage Category</title>
 
 <!-- <link
@@ -33,8 +34,8 @@
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
 
 	<section>
-	<div class="mainwrapper">
-		<jsp:include page="layout/menu_left.jsp"></jsp:include>
+		<div class="mainwrapper">
+			<jsp:include page="layout/menu_left.jsp"></jsp:include>
 			<div class="mainpanel">
 				<div class="pageheader">
 					<div class="media">
@@ -69,19 +70,8 @@
 												<th>Action</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td>Mark</td>											
-												<td>Otto</td>
-												<td>
-													<button class="btn btn-success btn-xs">
-														<i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;Edit
-													</button>
-													<button class="btn btn-danger btn-xs delete">
-														<i class="fa fa-trash-o"></i>&nbsp;&nbsp;Delete
-													</button>
-												</td>
-											</tr>
+										<tbody id="show">
+
 										</tbody>
 									</table>
 									<button class="btn btn-success btn-xs delete"
@@ -99,27 +89,30 @@
 												<div class="panel-body">
 													<div class="row">
 														<div class="form-group">
-															<label class="col-sm-2 control-label">NewCategory <span
-																class="asterisk">*</span></label>
+															<label class="col-sm-2 control-label">NewCategory
+																<span class="asterisk">*</span>
+															</label>
 															<div class="col-sm-5">
 																<input type="text" id="newcategory" name="newcategory"
-																	class="form-control" placeholder="categoryname" required />
+																	class="form-control" placeholder="categoryname"
+																	required />
 															</div>
 														</div>
-														<!-- form-group -->		
-														
+														<!-- form-group -->
+
 														<div class="form-group">
-															<label class="col-sm-2 control-label">Description <span
-																class="asterisk">*</span></label>
+															<label class="col-sm-2 control-label">Description
+																<span class="asterisk">*</span>
+															</label>
 															<div class="col-sm-5">
 																<input type="text" id="cate_desc" name="cate_desc"
 																	class="form-control" placeholder="description" required />
 															</div>
 														</div>
-														<!-- form-group -->	
-																									
+														<!-- form-group -->
+
 														<div class="col-sm-9 col-sm-offset-2">
-															<button class="btn btn-primary mr5" id="adduser">Add</button>
+															<button class="btn btn-primary mr5" id="adduser" onClick="addNewCategory();">Add</button>
 														</div>
 													</div>
 													<!-- row -->
@@ -130,11 +123,11 @@
 										</div>
 										<!--  row  form -->
 									</div>
-										<!--  panel-body -->
+									<!--  panel-body -->
 								</div>
 								<!-- panel panel-info -->
 							</div>
-						<!-- col-md-12 -->
+							<!-- col-md-12 -->
 						</div>
 						<!-- row -->
 					</div>
@@ -145,19 +138,51 @@
 			<!-- mainwrapper -->
 		</div>
 	</section>
-	
-	
-	<!---------------------------Load Script-------------------------->
-         <script src="js/dashboard.js"></script> 
-         <script src="js/jquery-1.11.1.min.js"></script>
-		 <script src="js/bootstrap.min.js"></script>
-		 <script src="js/custom.js"></script>
-		 <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
-		 <script type="text/javascript" src="js/bootstrapValidator.min.js"></script> 
 
-       <!-- -------------------------Custom Javascript---------------- -->
-     <script src="js/custom/script_category_add.js"></script> 
+
+	<!---------------------------Load Script-------------------------->
+	<script src="js/dashboard.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript">
+	
+		var name='<%=session.getAttribute("admin")%>';
+		alert(name + "List cat_name, cat_desc by user");	
+		$, post("pg_cate_tblistcategory.news", {
+			full_name : name
+		}, function(data) {
+			//$("#show").html(tblistArticle(data));
+		});
+		function tblistArticle(data) {
+			var str = "";
+			for (var i = 0; i < data.length; i++) {
+
+				str += "<tr>" + "<td id=cat_code" + data[i].cat_code + ">"
+						+ data[i].cat_name + "</td>" + "<td>"
+						+ data[i].cat_desc + "</td>"+ "<td>" + btnAction(i)
+						+ "</td>" + "</tr>";
+			}
+			return str;
+		}
+		function btnAction(i) {
+			var btn = "<button class='btn btn-success btn-xs' id='btnedit"+i+"'>"
+					+ "<i class=fa fa-pencil-square-o></i>"
+					+ "&nbsp;&nbsp;Edit</button>"
+					+ "<button class='btn btn-danger btn-xs delete' id='btnremove"+i+"'>"
+					+ "<i class=fa fa-trash-o></i>&nbsp;&nbsp;Delete</button>";
+			return btn;
+		}
+		/* Action Add New Category */
+		function addNewCategory(){
+			alert("Add Category");
+		}
+	</script>
+	<!-- -------------------------Custom Javascript---------------- -->
+	<script src="js/custom/script_category_add.js"></script>
 	<!-- <script type="text/javascript">
 			$("#main_menu_article").removeClass("parent" ).addClass("parent parent-focus" );
 			$("#sub_menu_managecategory").addClass("active" );

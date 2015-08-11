@@ -3,29 +3,30 @@
 <!DOCTYPE html >
 <html>
 <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-      	<!-- -----------Load Style reponsive----------- -->
-        <link href="css/style.default.css" rel="stylesheet">
-        <link href="css/morris.css" rel="stylesheet">
-        <link href="css/select2.css" rel="stylesheet" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/dataTables.bootstrap.css"/>
-        <!-- #####################end stylesheet#################### -->
-        
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<!-- -----------Load Style reponsive----------- -->
+<link href="css/style.default.css" rel="stylesheet">
+<link href="css/morris.css" rel="stylesheet">
+<link href="css/select2.css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/dataTables.bootstrap.css" />
+<!-- #####################end stylesheet#################### -->
+
 <title>Manage Article</title>
 <link href="css/summernote.css" rel="stylesheet">
 <!-- style for laout profile -->
 <style>
- input[type=file] {
+input[type=file] {
 	background-color: red;
-    width: 92px;
-    height: 40px;
-    position: absolute;
-    margin-top: -33px;
-    margin-left: -13px;
-    opacity: 0; 
-    cursor: inherit;
+	width: 92px;
+	height: 40px;
+	position: absolute;
+	margin-top: -33px;
+	margin-left: -13px;
+	opacity: 0;
+	cursor: inherit;
 }
 </style>
 </head>
@@ -34,8 +35,8 @@
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
 
 	<section>
-	<div class="mainwrapper">
-		<jsp:include page="layout/menu_left.jsp"></jsp:include>
+		<div class="mainwrapper">
+			<jsp:include page="layout/menu_left.jsp"></jsp:include>
 			<div class="mainpanel">
 				<div class="pageheader">
 					<div class="media">
@@ -72,21 +73,8 @@
 												<th>Action</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>Otto</td>
-												<td>Otto</td>
-												<td>
-													<button class="btn btn-success btn-xs">
-														<i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;Edit
-													</button>
-													<button class="btn btn-danger btn-xs delete">
-														<i class="fa fa-trash-o"></i>&nbsp;&nbsp;Delete
-													</button>
-												</td>
-											</tr>
+										<tbody id="show">
+
 										</tbody>
 									</table>
 									<button class="btn btn-success btn-xs delete"
@@ -165,26 +153,29 @@
 														</div>
 														<!-- form-group -->
 
-														
+
 														<div class="form-group">
-															<label class="col-sm-2 control-label">Image Thumnail <span
-																class="asterisk">*</span></label>
-																<div class="col-sm-4">
-															<div class="col-sm-12">
-																<img class="img-responsive" id="img_thumnail" src="img/no_img_available_atricle.png"><br /> 																	
-																<span style="display: inline-flex;">
-																	<input type="text" class="form-control" /> 
-																	<span class="btn btn-default btn-file"> Browse ... 
-																		<input type="file" name="photo" id="file_image">
+															<label class="col-sm-2 control-label">Image
+																Thumnail <span class="asterisk">*</span>
+															</label>
+															<div class="col-sm-4">
+																<div class="col-sm-12">
+																	<img class="img-responsive" id="img_thumnail"
+																		src="img/no_img_available_atricle.png"><br /> <span
+																		style="display: inline-flex;"> <input
+																		type="text" class="form-control" /> <span
+																		class="btn btn-default btn-file"> Browse ... <input
+																			type="file" name="photo" id="file_image">
 																	</span>
-																</span>
+																	</span>
+																</div>
 															</div>
-														</div><!-- col-sm-4 -->
+															<!-- col-sm-4 -->
 														</div>
 														<!-- form-group -->
-														
+
 														<div class="col-sm-9 col-sm-offset-10">
-														<br />
+															<br />
 															<button class="btn btn-primary mr5" id="adduser">Add</button>
 														</div>
 													</div>
@@ -211,41 +202,69 @@
 			<!-- mainwrapper -->
 		</div>
 	</section>
-	
-	<!---------------------------Load Script-------------------------->
-         <script src="js/dashboard.js"></script> 
-         <script src="js/jquery-1.11.1.min.js"></script>
-		 <script src="js/bootstrap.min.js"></script>
-		 <script src="js/custom.js"></script>
-		 <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
-		 <script type="text/javascript" src="js/bootstrapValidator.min.js"></script> 
 
-    <!-- -------------------------Custom Javascript---------------- -->
+	<!---------------------------Load Script-------------------------->
+	<script src="js/dashboard.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+
+	<!-- -------------------------Custom Javascript---------------- -->
 
 	<script src="js/custom/script_article_add.js"></script>
-	
+
 	<script type="text/javascript">
-	jQuery("#file_image").change(function(){
-	    readURL(this);
-	    alert(jQuery('#img_thumnail').attr('src'));
-	});
+		jQuery("#file_image").change(function() {
+			readURL(this);
+			alert(jQuery('#img_thumnail').attr('src'));
+		});
 
-	function readURL(input) {
-	    if (input.files && input.files[0]) {
-	        var reader = new FileReader();
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
 
-	        reader.onload = function (e) {
-	        	jQuery('#img_thumnail').attr('src', e.target.result).fadeIn('slow');
-	        };
-	        reader.readAsDataURL(input.files[0]);
-	    }
-	}
-	
+				reader.onload = function(e) {
+					jQuery('#img_thumnail').attr('src', e.target.result)
+							.fadeIn('slow');
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
 	</script>
-	<script type="text/javascript">
-		alert(222);
 	
+	<script type="text/javascript">
+		var name='<%=session.getAttribute("admin")%>';
+		$.post("listarticle.news", {
+			full_name : name
+		}, function(data) {
+			$("#show").html(tblistArticle(data));
+			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
+		}); 
+	
+		function tblistArticle(data) {
+			var str = "";
+			for (var i = 0; i < data.length; i++) {
+
+				str += "<tr>" + "<td id=news_id" + data[i].news_id + ">"
+						+ data[i].news_title + "</td>" + "<td>"
+						+ data[i].cat_code + "</td>" + "<td>"
+						+ data[i].news_img + "</td>" + "<td>"
+						+ data[i].news_date + "</td>" + "<td>" + btnAction(i)
+						+ "</td>" + "</tr>";
+			}
+			return str;
+		}
+		function btnAction(i) {
+			var btn = "<button class='btn btn-success btn-xs' id='btnedit"+i+"'>"
+					+ "<i class=fa fa-pencil-square-o></i>"
+					+ "&nbsp;&nbsp;Edit</button>"
+					+ "<button class='btn btn-danger btn-xs delete' id='btnremove"+i+"'>"
+					+ "<i class=fa fa-trash-o></i>&nbsp;&nbsp;Delete</button>";
+			return btn;
+		}
 	</script>
 </body>
 </html>

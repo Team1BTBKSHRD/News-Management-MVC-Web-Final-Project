@@ -120,32 +120,17 @@ public class UserDAO {
 	 * @throws SQLException
 	 * @return ArrayList<CategoryParent>
 	 * */
-	public ArrayList<User> retrieve() throws SQLException{
+	public ResultSet listTypeUser() throws SQLException{
 		Statement stm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
-		ArrayList<User> users = null; /* users stores data of rs */
 		try {
 			stm = con.createStatement(); /* Statement for Query Data from DBMS */
-			rs = stm.executeQuery("SELECT * FROM tbuser;"); /* rs stores all records of query */
-			users = new ArrayList<>();
-			while(rs.next()){ /* Add every record into users */
-				users.add(new User(rs.getInt("user_id"), 
-								rs.getString("user_name"), 
-								rs.getString("user_pass"), 
-								rs.getString("user_type")));
-			}
-			
-			return users; /* return user object */
+			rs = stm.executeQuery("SELECT distinct user_type FROM tbuser;"); /* rs stores all records of query */
+			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally{
-			/* Close stm, rs and con */
-			stm.close();
-			rs.close();
-			con.close();
-		}
-		return null; /* Return null if error */
+		return null;
 	}
 	/**
 	 * Method retrieveRS()

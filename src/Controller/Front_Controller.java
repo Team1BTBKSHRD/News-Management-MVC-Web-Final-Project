@@ -68,7 +68,7 @@ public class Front_Controller extends HttpServlet {
 		}*/
 		switch (command) {
 		 //access to user url 
-		case "/useradd.news":
+		case "/Admin/useradd.news":
 			action = new AddUser();
 			try {
 				action.execute(request, response);
@@ -76,7 +76,7 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/userlist.news":
+		case "/Admin/usertypelist.news":
 			action = new ListUser();
 			try {
 				action.execute(request, response);
@@ -111,7 +111,7 @@ public class Front_Controller extends HttpServlet {
 			break;
 
 		// access to userinfo url
-		case "/userinfolist.news":
+		case "/Admin/userinfolist.news":
 			action = new ListUserInfo();
 			try {
 				action.execute(request, response);
@@ -214,6 +214,16 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			
+		case "/listexchange.news":
+			action = new listexchange();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");
