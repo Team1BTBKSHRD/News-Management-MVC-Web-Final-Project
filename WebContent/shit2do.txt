@@ -35,10 +35,7 @@ show crop image center boostap
 split card-2 column
 hr under card
 ###############################8/10/2015 1:00:23 AM
-card/panel
-big-card style
-small-card style
-search style
-topfive style
 fix footer
 fix nav bar height 
+
+khmer font unicode conflict with css 'letter-spacing'

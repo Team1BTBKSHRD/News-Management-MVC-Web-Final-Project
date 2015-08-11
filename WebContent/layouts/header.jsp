@@ -25,14 +25,6 @@
           <li><a href="#">កំសាន្ត</a></li>
           <li><a href="#">បចេ្ចកវិទ្យា</a></li>
           <li><a href="#">អាហារូបករណ៍</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ប្រភពពត៌មាន<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">HRD</a></li>
-              <li><a href="#">Sabay</a></li>
-              <li><a href="#">Nika</a></li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>

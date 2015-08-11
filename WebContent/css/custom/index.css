@@ -1,9 +1,5 @@
-/* @import url(../../font/Koulen.css);
-@import url(../../font/Nokora.css); */
+@import url(../../font/fonts.css);
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700);
-@import url(http://fonts.googleapis.com/css?family=Koulen);
-@import url(http://fonts.googleapis.com/css?family=Nokora:400,700);
 
 /*######################################bootstrap modify classes*/
 img {
@@ -12,16 +8,20 @@ img {
 
 a:hover {
 	text-decoration: none;
-	color: #50a253;
 }
-
+body {
+    letter-spacing: 0px;
+}
 hr {
 	border: 1.5px solid #eeeeee;
 }
-
+h1,h2,h3,h4,h5,h6{
+	
+}
 .navbar-brand {
 	margin-left: 1% ! important;
 }
+as
 
 .navbar-brand a img {
 	margin-top: 4px ! important;
@@ -35,7 +35,7 @@ html {
 body {
 	background-color: #EDECEC;
 	margin-bottom: 60px;
-	font-family: Arial, sans-serif, 'Nokora', serif;
+	font-family: Arial, sans-serif, 'NotoSansKhmer', serif;
 }
 
 @media ( max-width : 768px) {
@@ -45,7 +45,7 @@ body {
 }
 
 .navbar {
-	font-family: Arial, sans-serif, 'Koulen', cursive;
+	font-family: Arial, sans-serif,  'KhmerOSKoulen', cursive;
 }
 
 .pager>.active>a,.pager>.active>span,.pager>.active>a:hover,.pager>.active>span:hover,.pager>.active>a:focus,.pager>.active>span:focus
@@ -67,7 +67,7 @@ body {
 }
 
 .panel-title {
-	font-size: 20px;
+	font-size: 19px;
 }
 
 .panel-body hr {
@@ -81,16 +81,20 @@ body {
 	border-top-right-radius: 4px;
 	border-top-left-radius: 4px;
 }
-.list-group-item{
+
+.list-group-item {
 	border: 0px;
-	margin: 2px 0 2px 0;
+	margin: 10px 10px 20px 10px !important;
 }
-.list-group-item :hover{
-	background-color: black;
+
+.list-group-item h6{
+	padding-left: 7px;
 }
-.list-group-item img{
+
+.list-group-item img {
 	float: left;
 }
+
 button.btn-sm {
 	width: 100px;
 }
@@ -155,7 +159,8 @@ limit line
    height: X x N;     
 }
 */
-.text-1,.text-2,.text-3,.text-4,.text-5,.text-h5-2,.text-h5-2-slider, .text-h5-2-14, .text-h6-2	{
+.text-1,.text-2,.text-3,.text-4,.text-5,.text-h5-2,.text-h5-2-slider,.text-h5-2-14,.text-h6-2
+	{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
@@ -175,30 +180,23 @@ limit line
 }
 
 .text-h5-2-slider {
-	line-height: 27px;
-	height: 55px;
+	line-height: 30px;
+	height: 60px;
 	-webkit-line-clamp: 2;
 	font-weight: bold;
 }
 
 .text-h5-2 {
 	font-weight: bold;
-	line-height: 22px;
-	height: 44px;
+	line-height: 25px;
+	height: 50px;
 	-webkit-line-clamp: 2;
 	font-size: 18px;
 }
-.text-h5-2-14{
-	 
-	line-height: 22px;
-	height: 44px; 
-	-webkit-line-clamp: 2; 
-	font-size: 14px;
-}
 .text-h6-2 {
 	font-size: 15px;
-	line-height: 20px; /* fallback */
-	height: 41px; /* fallback */
+	line-height: 23px; /* fallback */
+	height: 46px; /* fallback */
 	-webkit-line-clamp: 2; /* number of lines to show */
 	font-weight: bold;
 }
@@ -315,6 +313,16 @@ limit line
 }
 
 /*############################################card style*/
+.article-title {
+	margin: 0px 0px 10px 0px !important;
+}
+
+.article-title:hover {
+	color: #2C8332;
+}
+.news-description{
+	margin-bottom: 10px;
+}
 .news-info {
 	font-size: 12px;
 	padding: 10px 0 10px 0;
@@ -336,6 +344,7 @@ limit line
 .card-2 {
 	width: 48.85%;
 	display: table;
+	margin-right: 10px;
 }
 
 .card-2 kbd,.card-2 time {
@@ -376,15 +385,77 @@ limit line
 }
 
 @media screen and (min-width: 768px) {
-	.card .card-header:not (.ch-alt ) {
-		padding: 23px 26px;
-	}
+	.card
+	
+	 
+	
+	.card-header
+	
+	
+	:not
+	
+	 
+	
+	(
+	.ch-alt
+	
+	 
+	
+	)
+	{
+	padding
+	
+	
+	:
+	
+	 
+	
+	23
+	px
+	
+	 
+	
+	26
+	px
+	
+	
+	;
 }
 
+}
 @media screen and (max-width: 991px) {
-	.card .card-header:not (.ch-alt ) {
-		padding: 18px;
-	}
+	.card
+	
+	 
+	
+	.card-header
+	
+	
+	:not
+	
+	 
+	
+	(
+	.ch-alt
+	
+	 
+	
+	)
+	{
+	padding
+	
+	
+	:
+	
+	 
+	
+	18
+	px
+	
+	
+	;
+}
+
 }
 
 /*.card .card-header h2 {
@@ -412,10 +483,43 @@ limit line
 	}
 }
 
-.card .card-header.ch-alt:not ([class*="bgm-"] ) {
-	background-color: #f7f7f7;
-}
+.card
 
+ 
+
+.card-header
+
+
+.ch-alt
+
+
+:not
+
+ 
+
+(
+[
+class
+*=
+"bgm-"
+]
+
+ 
+
+)
+{
+background-color
+
+
+:
+
+ 
+
+#f7f7f7
+
+
+;
+}
 .card .card-header[class*="bgm-"] h2,.card .card-header[class*="bgm-"] h2 small
 	{
 	color: #fff;

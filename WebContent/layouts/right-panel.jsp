@@ -6,8 +6,8 @@
 	<div class="card card-right container-fluid">
 		<form role="search">
 			<div class="col-md-12 col-sm-12 col-xs-12 form-group clear-paddings search-wrapper">
-				<input type="text" placeholder="Search">
-				<button type="submit" class="btn btn-primary btn-sm pull-right">Search</button>
+				<input type="text" placeholder="ស្វែងរក">
+				<button type="submit" class="btn btn-primary btn-sm pull-right">ស្វែងរក</button>
 			</div>
 			<div class=" form-group">
 				<label for="Category" class="">ប្រភេទពត៌មាន</label>

@@ -52,15 +52,15 @@
 								<img
 									src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="148px">
+									height="151px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 pull-right ">
-								<h5 class="text-h5-2 article-name clear-margin-top">សុគន្ធ
-									នី​សា ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
+							<div class="col-md-8 col-sm-8 col-xs-8  pull-right ">
+								<h5 class="text-h5-2 article-title">សុគន្ធ នី​សា
+									ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជា</h5>
-								<p class="text-3">រាជធានី​ភ្នំពេញ ៖
+								<p class="text-3 news-description">រាជធានី​ភ្នំពេញ ៖
 									កម្មវិធី​ស្តាប់​បទ​ចម្រៀង​ថ្មី​ដែល «mJams Pleng និង​ឡូយ​ជាងគេ​»
 									ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
 									បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
@@ -87,17 +87,107 @@
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
 									height="85px" width="80px">
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8">
-								<h6
-									class="text-h6-2 article-name clear-margin-top clear-margin-bottom">
+							<div class="col-md-8 col-sm-8 col-xs-8 ">
+								<h6 class="text-h6-2 article-title">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-								<div class="col-md-12 col-sm-12 col-xs-12 news-info">
+								<div
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
+									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
+							</div>
+						</a>
+					</div>
+					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
+						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
+							target="_new">
+							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
+								<img
+									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
+									height="85px" width="80px">
+							</div>
+							<div class="col-md-8 col-sm-8 col-xs-8 ">
+								<h6 class="text-h6-2 article-title">
+									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+								<div
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
+									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
+							</div>
+						</a>
+					</div>
+					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
+						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
+							target="_new">
+							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
+								<img
+									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
+									height="85px" width="80px">
+							</div>
+							<div class="col-md-8 col-sm-8 col-xs-8 ">
+								<h6 class="text-h6-2 article-title">
+									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+								<div
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
+									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
+							</div>
+						</a>
+					</div>
+					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
+						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
+							target="_new">
+							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
+								<img
+									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
+									height="85px" width="80px">
+							</div>
+							<div class="col-md-8 col-sm-8 col-xs-8 ">
+								<h6 class="text-h6-2 article-title">
+									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+								<div
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
+									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
+							</div>
+						</a>
+					</div>
+					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
+						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
+							target="_new">
+							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
+								<img
+									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
+									height="85px" width="80px">
+							</div>
+							<div class="col-md-8 col-sm-8 col-xs-8 ">
+								<h6 class="text-h6-2 article-title">
+									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+								<div
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
+									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
+							</div>
+						</a>
+					</div>
+										<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
+						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
+							target="_new">
+							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
+								<img
+									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
+									height="85px" width="80px">
+							</div>
+							<div class="col-md-8 col-sm-8 col-xs-8 ">
+								<h6
+									class="text-h6-2 article-title">
+									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
+								<div class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
 									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
 							</div>
 						</a>
 					</div>
 					<div class="clearfix"></div>
-				</div>				
+				</div>
 			</div>
 			<!-- end news sections -->
 		</div>
