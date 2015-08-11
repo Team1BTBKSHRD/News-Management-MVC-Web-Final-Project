@@ -27,11 +27,9 @@
 	<!-- end header -->
 	<!-- content area -->
 	<div class="container content-area">
+		
 		<!-- right panel -->
-		<jsp:include page="layouts/right-panel.jsp" />
-		<!-- end right panel -->
-		<!-- left panel -->
-		<div class="col-md-9 col-sm-9 col-xs-9 clear-padding-left">
+		<div class="col-md-9 col-sm-9 col-xs-9 clear-padding-left left-panel">
 			<!-- slider -->
 			<jsp:include page="layouts/slider.jsp" />
 			<!-- end slider -->
@@ -187,6 +185,10 @@
 			</div>
 			<!-- end news sections -->
 		</div>
+		<!-- end right panel -->
+		
+		<!-- left panel -->
+		<jsp:include page="layouts/right-panel.jsp" />
 		<!-- end left panel -->
 	</div>
 	<!-- end content area -->

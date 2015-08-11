@@ -37,13 +37,6 @@ body {
 	margin-bottom: 60px;
 	font-family: Arial, sans-serif, 'NotoSansKhmer', serif;
 }
-
-@media ( max-width : 768px) {
-	.col-sm-8 {
-		padding-right: 0px;
-	}
-}
-
 .navbar {
 	font-family: Arial, sans-serif, 'KhmerOSKoulen', cursive;
 }
@@ -95,7 +88,7 @@ body {
 }
 
 button.btn-sm {
-	width: 100px;
+	/* width: 100px; */
 }
 /*#####################################background color class */
 /* .bg-primary, .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9 h5{
@@ -338,7 +331,7 @@ button.btn-sm {
 .card-2 {
 	width: 48.85%;
 	display: table;
-	margin-right: 10px;
+	/* margin-right: 10px; */
 }
 
 .card-2 kbd,.card-2 time {
@@ -350,3 +343,71 @@ button.btn-sm {
 	/* margin-right: 10px; */
 	margin-bottom: 10px;
 }
+
+/* searching style */
+
+    .combo-news{
+        /* padding-top: 15px;  */
+        width: 100%;
+    }
+     .combo-news a:first-child{
+        width: 84%;   
+    }
+    #txtSearch{
+         width: 84%;   
+    }
+    #news-result-search{
+         padding-left: 0.5em;   
+    }
+    .pop-news{
+    	width:100% !important;
+    	float:none;
+    }
+    .rec-news{
+    	width:100% !important;
+    	float:none;
+    }
+    .left-panel{
+    	width:75% !important;
+    }
+    .right-panel{
+    	width:25% !important;
+    }
+
+/*---------Responsive Screen ----------- */
+@media (max-width : 1200px){
+	.content-area{
+		width:100% !important;
+		margin-top:54px;
+	}
+}
+@media (max-width : 960px){
+	.left-panel{
+    	width:100% !important;
+    	padding-right:0px;
+    }
+    .right-panel{
+    	width:100% !important;
+    	margin-left:0.5% !important;
+    }
+    .pop-news{
+    	width: 49.5% !important;
+float: left;
+margin-right: 0.5% !important;
+    }
+    .rec-news{
+    	width:49.5% !important;
+    	float:left;
+    	margin-left:0.5% !important;
+    }
+}
+@media ( max-width : 768px) {
+	.col-sm-8 {
+		padding-right: 0px;
+	}
+	.card-2{
+		width:100% !important;
+		padding-right:5px !important;
+	}
+}
+
