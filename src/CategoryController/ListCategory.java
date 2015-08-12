@@ -17,7 +17,9 @@ public class ListCategory implements Action {
 			HttpServletResponse response) throws Exception {
 		
 		/* categoryList stores records of news as JSON data */
-		String categoryList = Convertor.convertResultSetIntoJSON(new CategoryDAO().retrieveRS()).toString(); 
+		String fullname=request.getParameter("full_name");
+		System.out.println(fullname);
+		String categoryList = Convertor.convertResultSetIntoJSON(new CategoryDAO().manageCatUser(fullname)).toString(); 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */

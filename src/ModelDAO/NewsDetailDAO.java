@@ -139,7 +139,7 @@ public class NewsDetailDAO {
 		finally{
 			/* Close stm, rs and con */
 			stm.close();
-			rs.close();
+			//rs.close();
 			con.close();
 		}
 		return null; /* Return null if error */
@@ -163,7 +163,7 @@ public class NewsDetailDAO {
 		finally{
 			/* Close stm, rs and con */
 			stm.close();
-			rs.close();
+			//rs.close();
 			con.close();
 		}
 		return null; /* Return null if error */

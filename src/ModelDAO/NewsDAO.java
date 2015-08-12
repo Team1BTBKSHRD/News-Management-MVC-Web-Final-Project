@@ -157,7 +157,7 @@ public class NewsDAO {
 		} finally {
 			/* Close stm, rs and con */
 			stm.close();
-			rs.close();
+			//rs.close();
 			con.close();
 		}
 		return null; /* Return null if error */
@@ -224,7 +224,7 @@ public class NewsDAO {
 		return rs;
 	}
 
-	public static void main(String[] args) throws Exception {
+	/*public static void main(String[] args) throws Exception {
 		System.out.println(new Convertor().convertResultSetIntoJSON(new NewsDAO().articlepost("dap-news")));
-	}
+	}*/
 }// End of class;

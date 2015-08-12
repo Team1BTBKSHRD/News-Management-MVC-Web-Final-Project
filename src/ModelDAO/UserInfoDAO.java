@@ -163,7 +163,7 @@ public class UserInfoDAO {
 		} finally {
 			/* Close stm, rs and con */
 			stm.close();
-			rs.close();
+			//rs.close();
 			con.close();
 		}
 		return null; /* Return null if error */
@@ -202,8 +202,8 @@ public class UserInfoDAO {
 		return rs;
 	}*/
 
-	public static void main(String[] args) throws SQLException, Exception {
+	/*public static void main(String[] args) throws SQLException, Exception {
 		System.out.println(Convertor.convertResultSetIntoJSON(new UserInfoDAO().returnUserInformation("sabay")));
-	}
+	}*/
 
 }// End of class;

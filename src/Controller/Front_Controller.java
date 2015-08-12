@@ -129,8 +129,8 @@ public class Front_Controller extends HttpServlet {
 			break;
 
 		// access to category url 
-		case "/listcategory.news":
-			//System.err.println("List category");
+		case "/Admin/pg_cate_tblistcategory.news":
+			System.err.println("pg_cate_tblistcategory");
 			action = new ListCategory();
 			try {
 				action.execute(request, response);

@@ -112,7 +112,8 @@
 														<!-- form-group -->
 
 														<div class="col-sm-9 col-sm-offset-2">
-															<button class="btn btn-primary mr5" id="adduser" onClick="addNewCategory();">Add</button>
+															<button class="btn btn-primary mr5" id="adduser"
+																onClick="addNewCategory();">Add</button>
 														</div>
 													</div>
 													<!-- row -->
@@ -148,45 +149,44 @@
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-	<script type="text/javascript">
+	<!-- -------------------------Custom Javascript---------------- -->
 	
-		var name='<%=session.getAttribute("admin")%>';
-		alert(name + "List cat_name, cat_desc by user");	
-		$, post("pg_cate_tblistcategory.news", {
+	<script src="js/custom/script_category_add.js"></script>
+	<script type="text/javascript">
+	var name='<%=session.getAttribute("admin")%>';
+	//alert(name);
+	/* list categories on page_category_add.jsp */
+	$(document).ready(function() {
+		$.post("pg_cate_tblistcategory.news", {
 			full_name : name
 		}, function(data) {
-			//$("#show").html(tblistArticle(data));
+			$("#show").html(tblistArticle(data));
+			//alert(data[0].c_desc);
 		});
-		function tblistArticle(data) {
-			var str = "";
-			for (var i = 0; i < data.length; i++) {
+	});
+	function tblistArticle(data) {
+		var str = "";
+		for (var i = 0; i < data.length; i++) {
 
-				str += "<tr>" + "<td id=cat_code" + data[i].cat_code + ">"
-						+ data[i].cat_name + "</td>" + "<td>"
-						+ data[i].cat_desc + "</td>"+ "<td>" + btnAction(i)
-						+ "</td>" + "</tr>";
-			}
-			return str;
+			str += "<tr>" + "<td id=cat_code" + data[i].c_desc + ">"
+					+ data[i].c_code + "</td>" + "<td>" + data[i].c_name
+					+ "</td>" + "<td>" + btnAction(i) + "</td>" + "</tr>";
 		}
-		function btnAction(i) {
-			var btn = "<button class='btn btn-success btn-xs' id='btnedit"+i+"'>"
-					+ "<i class=fa fa-pencil-square-o></i>"
-					+ "&nbsp;&nbsp;Edit</button>"
-					+ "<button class='btn btn-danger btn-xs delete' id='btnremove"+i+"'>"
-					+ "<i class=fa fa-trash-o></i>&nbsp;&nbsp;Delete</button>";
-			return btn;
-		}
-		/* Action Add New Category */
-		function addNewCategory(){
-			alert("Add Category");
-		}
-	</script>
-	<!-- -------------------------Custom Javascript---------------- -->
-	<script src="js/custom/script_category_add.js"></script>
-	<!-- <script type="text/javascript">
-			$("#main_menu_article").removeClass("parent" ).addClass("parent parent-focus" );
-			$("#sub_menu_managecategory").addClass("active" );
-	</script> -->
+		return str;
+	}
+	function btnAction(i) {
+		var btn = "<button class='btn btn-success btn-xs' id='btnedit"+i+"'>"
+				+ "<i class=fa fa-pencil-square-o></i>"
+				+ "&nbsp;&nbsp;Edit</button>"
+				+ "<button class='btn btn-danger btn-xs delete' id='btnremove"+i+"'>"
+				+ "<i class=fa fa-trash-o></i>&nbsp;&nbsp;Delete</button>";
+		return btn;
+	}
+	/* Action Add New Category */
+	function addNewCategory() {
+		alert("Add new Category")
+	}
+	</script> 
 
 </body>
 </html>

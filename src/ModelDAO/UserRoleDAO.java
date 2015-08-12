@@ -140,7 +140,7 @@ public class UserRoleDAO {
 		finally{
 			/* Close stm, rs and con */
 			stm.close();
-			rs.close();
+			//rs.close();
 			con.close();
 		}
 		return null; /* Return null if error */
