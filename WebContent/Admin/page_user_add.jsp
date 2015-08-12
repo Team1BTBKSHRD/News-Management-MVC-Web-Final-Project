@@ -176,7 +176,7 @@
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	<!-- script for add and list all user -->
-	<script type="text/javascript" src="js/custom/useradd.js"></script>
+	
 	<!-- script for validate data strength the password  -->
 	<script type="text/javascript" src="js/validate/useradd_validate.js"></script>
 	<script type="text/javascript" src="js/validate/pwstrength.js"></script>

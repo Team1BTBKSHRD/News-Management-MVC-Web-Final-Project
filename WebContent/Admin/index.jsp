@@ -1,7 +1,7 @@
 <%@page import="java.nio.channels.SeekableByteChannel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -175,8 +175,7 @@
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-user"></i></span> <select
 										class="form-control" style="display: inline; width: 200px;"
-										id="usertype" name="usertype" onChange="selectchanged()"
-										required>
+										id="usertype" name="usertype" required>
 
 									</select>
 								</div>
@@ -279,17 +278,24 @@
 			str += "</optiont>";
 			return str;
 		}
-
+		$("#usertype").on('change', function() {
+			selectchanged();
+		});
 		/* Select Change by User */
 		function selectchanged() {
 			$('#article_list_dasborad').dataTable().fnDestroy();
 			var user = $("#usertype").val();
-			alert(user);
-			 $.post("selectTypeArticles.news", {
+			$.post("selectTypeArticles.news", {
 				full_name : user
 			}, function(data) {
-				$("#summery_count_of_article").text(data[0].total);
-				$("#summery_show_usertype").text(data[0].u_type);
+				if(data.length>0){
+					$("#summery_count_of_article").text(data[0].count);
+					$("#summery_show_usertype").text(data[0].user_type);
+				}else{
+					$("#summery_count_of_article").text("");
+					$("#summery_show_usertype").text("");
+				}
+				
 			});
 
 			$.post("listarticle.news", {

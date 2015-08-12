@@ -59,7 +59,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
+			//pstm.close();
 			con.close();
 		}
 		return false; /* return false if insert unsuccessful */
@@ -86,7 +86,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
+			//pstm.close();
 			con.close();
 		}
 		return false; /* return false if insert unsuccessful */
@@ -121,7 +121,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
+			//pstm.close();
 			con.close();
 		}
 		return false; /* return false if update unsuccessful */
@@ -156,7 +156,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		} finally {
 			/* Close stm, rs and con */
-			stm.close();
+			//stm.close();
 			//rs.close();
 			con.close();
 		}
@@ -183,10 +183,11 @@ public class NewsDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		/*
-		 * finally{ Close stm, rs and con stm.close(); rs.close(); con.close();
-		 * }
-		 */
+		
+		 finally{ //Close stm, rs and con stm.close(); rs.close(); 
+			 con.close();
+		  }
+		 
 		return null; /* Return null if error */
 	}
 
@@ -204,27 +205,65 @@ public class NewsDAO {
 			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}
 
 	/* return number of users, categories, news */
-	public ResultSet countOfRecords() throws SQLException {
-		CallableStatement clstm = con.prepareCall("{call vw_count_news_cat_user}");
+	public ResultSet countOfRecords(){
+		CallableStatement clstm=null;
+		ResultSet rs=null;
+		try {
+			clstm = con.prepareCall("{call vw_count_news_cat_user}");
+			rs=clstm.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
-		ResultSet rs=clstm.executeQuery();
+		
 		return rs;
 	}
 
-	public ResultSet articlepost(String data) throws SQLException {
+	public ResultSet articlepost(String data) {
 		// TODO Auto-generated method stub
-		CallableStatement clstm=con.prepareCall("{call count_user_role_news(?)}");
-		clstm.setString(1, data);
-		ResultSet rs=clstm.executeQuery();
+		PreparedStatement clstm=null;
+		ResultSet rs=null;
+		try {
+			clstm = con.prepareStatement("SELECT user_type,count FROM vw_user_role_count WHERE full_name=?");
+			clstm.setString(1, data);
+			rs=clstm.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			} catch (SQLException e2) {
+				// TODO: handle exception
+			}
+		}
+		
+		
 		return rs;
 	}
 
 	/*public static void main(String[] args) throws Exception {
-		System.out.println(new Convertor().convertResultSetIntoJSON(new NewsDAO().articlepost("dap-news")));
+		System.out.println(new Convertor().convertResultSetIntoJSON(new NewsDAO().articlepost("sabay")).toString());
 	}*/
 }// End of class;
+

@@ -152,6 +152,7 @@
 	<!-- -------------------------Custom Javascript---------------- -->
 	
 	<script src="js/custom/script_category_add.js"></script>
+	<script src="js/validate/page_category_validate.js"></script><!--  script for validate form add category sarin -->
 	<script type="text/javascript">
 	var name='<%=session.getAttribute("admin")%>';
 	//alert(name);

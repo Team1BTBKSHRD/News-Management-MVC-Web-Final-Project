@@ -28,6 +28,12 @@ input[type=file] {
 	opacity: 0;
 	cursor: inherit;
 }
+
+@media screen and (max-width: 1000px) {
+		.table_respone {
+			overflow: scroll;
+		}
+	}/* class for responsive table scrollbar */
 </style>
 </head>
 <body>
@@ -60,7 +66,8 @@ input[type=file] {
 					<div class="row row-stat">
 						<div class="col-md-12">
 							<div class="panel panel-info">
-								<div class="panel-body" id="tablerepone">
+								<div class="panel-body" >
+									<div class="table_respone">
 									<table id="listarticle"
 										class="table table-striped table-bordered table-primary mb30"
 										cellspacing="0" width="100%">
@@ -77,6 +84,7 @@ input[type=file] {
 
 										</tbody>
 									</table>
+									</div><!-- table_respone -->
 									<button class="btn btn-success btn-xs delete"
 										data-toggle="collapse" data-target="#demo">
 										<i class="fa fa-plus"></i>&nbsp;&nbsp;AddNewArticle
@@ -88,7 +96,7 @@ input[type=file] {
 										<div
 											style="width: 100%; height: 1px; background-color: #BCE8F1;"></div>
 										<div id="demo" class="collapse">
-											<form id="basicForm">
+											<form id="form_article_add">
 												<div class="panel-body">
 													<div class="row">
 														<div class="form-group">
@@ -174,9 +182,9 @@ input[type=file] {
 														</div>
 														<!-- form-group -->
 
-														<div class="col-sm-9 col-sm-offset-10">
+														<div class="col-sm-4 col-sm-offset-8">
 															<br />
-															<button class="btn btn-primary mr5" id="adduser">Add</button>
+															<button class="btn btn-primary " id="addaticle">Add</button>
 														</div>
 													</div>
 													<!-- row -->
@@ -215,6 +223,7 @@ input[type=file] {
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	<script src="js/custom/script_article_add.js"></script>
+	<script src="js/validate/page_article_validate.js"></script><!--  script for validate add aticle sarin -->
 
 	<script type="text/javascript">
 		jQuery("#file_image").change(function() {
@@ -240,7 +249,11 @@ input[type=file] {
 		$.post("listarticle.news", {
 			full_name : name
 		}, function(data) {
+			$('#listarticle').dataTable().fnDestroy();
 			$("#show").html(tblistArticle(data));
+			$('#listarticle').dataTable({
+				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]   /* Sarin add datatable */
+			});
 			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
 		}); 
 	
@@ -248,22 +261,31 @@ input[type=file] {
 			var str = "";
 			for (var i = 0; i < data.length; i++) {
 
-				str += "<tr>" + "<td id=news_id" + data[i].news_id + ">"
-						+ data[i].news_title + "</td>" + "<td>"
-						+ data[i].cat_code + "</td>" + "<td>"
-						+ data[i].news_img + "</td>" + "<td>"
-						+ data[i].news_date + "</td>" + "<td>" + btnAction(i)
-						+ "</td>" + "</tr>";
+				str += "<tr>" 
+					+ "<td style='padding-top:29px' id=news_id" + data[i].news_id + ">"
+					 +"<a href="+data[i].news_path+" target='_blank' style='text-decoration:none;'>" 
+					+ data[i].news_title + "</a></td>" + "<td>"
+					+ data[i].cat_code + "</td>" + "<td>"
+					+ getimage(data[i].news_img ) + "</td>" + "<td>"
+					+ data[i].news_date + "</td>" + "<td style='text-align: center;'>" + btnAction(i)
+					+ "</td>" + "</tr>";
 			}
 			return str;
 		}
-		function btnAction(i) {
-			var btn = "<button class='btn btn-success btn-xs' id='btnedit"+i+"'>"
-					+ "<i class=fa fa-pencil-square-o></i>"
-					+ "&nbsp;&nbsp;Edit</button>"
-					+ "<button class='btn btn-danger btn-xs delete' id='btnremove"+i+"'>"
-					+ "<i class=fa fa-trash-o></i>&nbsp;&nbsp;Delete</button>";
+		function btnAction(i) {/* sarin edit button to disable and enable*/
+			var btn = "<button class='btn btn-success btn-xs' id='btnenable" + i + "'>"
+					+ "<i class='fa fa-thumbs-up'></i>"
+					+ "&nbsp;&nbsp;Enable</button>&nbsp;"
+					+ "<button class='btn btn-danger btn-xs delete' id='btndisable" + i
+					+ "'>" + "<i class='fa fa-thumbs-down'></i>&nbsp;&nbsp;Disable</button>";
 			return btn;
+		}
+		
+		/* ------------Sarin fucntion get image-------- */
+		function getimage(data){
+			var str="";
+			str+="<img src="+data+" width=100px/>";
+			return str;
 		}
 	</script>
 </body>

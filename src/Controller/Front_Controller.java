@@ -223,7 +223,15 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		
+		/* File Upload */
+		case "/Admin/UploadServlet.news":
+			action = new fileUpload();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");

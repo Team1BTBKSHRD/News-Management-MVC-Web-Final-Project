@@ -51,11 +51,11 @@ public class UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally{
-			/* Close pstm and con */
+		/*finally{
+			 Close pstm and con 
 			pstm.close();
 			con.close();
-		}
+		}*/
 		return false; /* return false if insert unsuccessful */
 	}
 	
@@ -76,11 +76,11 @@ public class UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally{
-			/* Close pstm and con */
+		/*finally{
+			 Close pstm and con 
 			pstm.close();
 			con.close();
-		}
+		}*/
 		return false; /* return false if insert unsuccessful */
 	}
 	
@@ -106,11 +106,11 @@ public class UserDAO {
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
-		finally{
-			/* Close pstm and con */
+		/*finally{
+			 Close pstm and con 
 			pstm.close();
 			con.close();
-		}
+		}*/
 		return false; /* return false if update unsuccessful */
 	}
 	
@@ -148,12 +148,12 @@ public class UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally{
+		/*finally{
 			 //Close stm, rs and con 
 			stm.close();
 			//rs.close();
 			con.close();
-		}
+		}*/
 		return null; /* Return null if error */
 	}
 

@@ -128,24 +128,24 @@ input[type=file] {
 								<!-- col-sm-8 -->
 								<div class="col-sm-4">
 									<div class="col-sm-9">
-										<img class="img-responsive" id="img_thumnail" src=" "
-											style="width: 200px; height: 150px; border: 3px solid rgba(76, 71, 71, 0.38);"><br />
-										<span style="display: inline-flex;"> <input type="text"
-											class="form-control" id="path_image" readonly="readonly" />
-											<span class="btn btn-primary mr5 btn-file"> Browse ...
-												<input type="file" name="photo" id="file_image">
-										</span>
-										</span>
+										<form method="post" action="UploadServlet" enctype="multipart/form-data">
+											<img class="img-responsive" id="img_thumnail" src=" "
+												style="width: 200px; height: 150px; border: 3px solid rgba(76, 71, 71, 0.38);"><br />
+											<span style="display: inline-flex;"> <input
+												type="text" class="form-control" id="path_image"
+												readonly="readonly" /> <span
+												class="btn btn-primary mr5 btn-file"> Browse ... <input
+													type="file" name="dataFile" id="file_image" />
+											</span>
+											</span> <input type="submit" class="btn btn-primary mr5"
+												id="update_profile" value="Update" > <input
+												type="button" class="btn btn-danger mr5" id="cancle"
+												value="Cancle">
+										</form>
 									</div>
 								</div>
 								<!-- col-sm-4 -->
-								<div class="col-sm-4 col-sm-offset-8">
-									<input type="submit" class="btn btn-primary mr5"
-										id="update_profile" value="Update"> <input
-										type="button" class="btn btn-danger mr5" id="cancle"
-										value="Cancle">
-
-								</div>
+								<div class="col-sm-4 col-sm-offset-8"></div>
 							</div>
 							<!--  panel-body -->
 						</div>
@@ -280,75 +280,86 @@ input[type=file] {
 	<script type="text/javascript"
 		src="js/custom/profile_user_validate_and_edit.js"></script>
 	<script type="text/javascript">
-	
-	
-		jQuery(document).ready(function() {
-							 jQuery("#edit").click(
-									function() {
-										jQuery("input[type='text']").attr(
-												"disabled", false);
+		var fileuploadname;
+		jQuery(document).ready(
+				function() {
+					jQuery("#edit").click(function() {
+						jQuery("input[type='text']").attr("disabled", false);
 
-									});
-							 jQuery("#update_profile").click(function() {
-								 jQuery("input[type='text']").attr("disabled", true);
+					});
+					jQuery("#update_profile").click(function() {
+						jQuery("input[type='text']").attr("disabled", true);
+						
+					});
 
-							});
+					jQuery("#cancle").click(function() {
+						jQuery("input[type='text']").attr("disabled", true);
+					});
 
-							 jQuery("#cancle").click(function() {
-								 jQuery("input[type='text']").attr("disabled", true);
-							}); 
+					$("#file_image").change(function() {
+						readURL(this);
+						getPath();
+						fileuploadname = $("#path_image").val();
+						//alert(fileuploadname);
+					});
 
-							$("#file_image").change(function() {
-								readURL(this);
-								getPath();
-							});
+					function readURL(input) {
+						if (input.files && input.files[0]) {
+							var reader = new FileReader();
+							reader.onload = function(e) {
+								$('#img_thumnail').attr('src', e.target.result)
+										.fadeIn('slow');
+							};
+							reader.readAsDataURL(input.files[0]);
+						}
+					}
+					/* alert($("#file_image").val()); */
+					// Basic Form
+					/*  $("#basicForm").validate({
+					     highlight: function(element) {
+					         $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+					     },
+					     success: function(element) {
+					        $(element).closest('.form-group').removeClass('has-error');
+					     }
+					 }); */
+					function getPath() {
+						$("#path_image").val($("#file_image").val());
 
-							function readURL(input) {
-								if (input.files && input.files[0]) {
-									var reader = new FileReader();
-									reader.onload = function(e) {
-										$('#img_thumnail').attr('src',
-												e.target.result).fadeIn('slow');
-									};
-									reader.readAsDataURL(input.files[0]);
-								}
-							}
-							/* alert($("#file_image").val()); */
-							// Basic Form
-							/*  $("#basicForm").validate({
-							     highlight: function(element) {
-							         $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-							     },
-							     success: function(element) {
-							        $(element).closest('.form-group').removeClass('has-error');
-							     }
-							 }); */
-							function getPath() {
-								$("#path_image").val($("#file_image").val());
-
-							}
-						});
+					}
+				});
 		/*Add data to User Detail Profile */
-		var userinfo =<%=request.getSession().getAttribute("userinfo")%>;
+		var userinfo =
+	<%=request.getSession().getAttribute("userinfo")%>
+		;
 		$("#fullname").val(userinfo[0].full_name);
 		$("#companyname").val(userinfo[0].com_name);
 		$("#email").val(userinfo[0].email);
 		$("#phone").val(userinfo[0].phone);
 		$("#address").val(userinfo[0].addr);
 		$("#website").val(userinfo[0].website);
+		/* $("#file_image").click(function(){
+			alert($("#path_image").val());
+		}); */
+
 		/* Add data to User Detail Profile*/
-		
+		/* $("#file_image").click(function(){
+				
+		}); */
+
+		/* Update User Info */
+
 		/* function edit(){
 		alert("heldfre")
 		jQuery("input[type='text']").attr("disabled", false);
 		
-	}
-	function update(){
+		}
+		function update(){
 		jQuery("input[type='text']").attr("disabled", true);
-	}
-	function cancle(){
+		}
+		function cancle(){
 		jQuery("input[type='text']").attr("disabled", true);
-	} */
+		} */
 	</script>
 </body>
 </html>

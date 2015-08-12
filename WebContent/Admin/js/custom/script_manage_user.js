@@ -5,6 +5,11 @@ $("#usermenu").removeClass("parent").addClass("parent parent-focus");
 $.post("userinfolist.news", function(data) {
 	$("#listdetial").html(tblistArticle(data));
 	
+	/*sarin load data table*/
+	$('#list').dataTable({
+		  "lengthMenu": [[5, 10, 30, -1], [5, 10, 30, "All"]] 
+	});
+	
 });
 $.post("usertypelist.news",function(data){
 	$("#usertype").html(usertypeDropList(data));
@@ -26,16 +31,16 @@ function tblistArticle(data) {
 
 		str += "<tr>" + "<td id=cat_code" + data[i].user_id + ">"
 				+ data[i].user_name + "</td>" + "<td>" + data[i].user_type
-				+ "</td>" + "<td>" + btnAction(i) + "</td>" + "</tr>";
+				+ "</td>" + "<td style='text-align: center;' >" + btnAction(i) + "</td>" + "</tr>";
 	}
 	return str;
 }
-function btnAction(i) {
-	var btn = "<button class='btn btn-success btn-xs' id='btnedit" + i + "'>"
-			+ "<i class=fa fa-pencil-square-o></i>"
-			+ "&nbsp;&nbsp;Edit</button>"
-			+ "<button class='btn btn-danger btn-xs delete' id='btnremove" + i
-			+ "'>" + "<i class=fa fa-trash-o></i>&nbsp;&nbsp;Delete</button>";
+function btnAction(i) {  /* sarin edit button to disable and enable*/
+	var btn = "<button class='btn btn-success btn-xs' id='btnenable" + i + "'>"
+			+ "<i class='fa fa-thumbs-up'></i>"
+			+ "&nbsp;&nbsp;Enable</button>&nbsp;"
+			+ "<button class='btn btn-danger btn-xs delete' id='btndisable" + i
+			+ "'>" + "<i class='fa fa-thumbs-down'></i>&nbsp;&nbsp;Disable</button>";
 	return btn;
 }
 /* Add New User */

@@ -1,3 +1,12 @@
+<style>
+ .mainwrapper {
+	font-family:'NotoSansKhmer',Sans-Serif;
+	color:black;
+	font-size:13px;
+} 
+</style>
+ <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" />
+
 <header>
             <div class="headerwrapper" style="background-color: #5CB85C;">
                 <div class="header-left">

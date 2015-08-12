@@ -25,6 +25,7 @@ public class typeofarticlespost implements Action {
 		String countList=Convertor.convertResultSetIntoJSON(new NewsDAO().articlepost(fullname)).toString();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
+		System.out.println(countList);
 		response.getWriter().write(countList);
 		
 	}

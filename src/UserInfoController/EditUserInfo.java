@@ -13,7 +13,7 @@ public class EditUserInfo implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		User userdto = new User();
+		/*User userdto = new User();
 		int id = Integer.parseInt(request.getParameter("user_id"));
 		String name = request.getParameter("user_name");
 		String password = request.getParameter("user_pass");
@@ -30,7 +30,7 @@ public class EditUserInfo implements Action {
 		} else {
 			System.err.println("Update FAIL");
 			response.getWriter().write("fail");
-		}
+		}*/
 		
 	}
 }
