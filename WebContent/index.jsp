@@ -36,25 +36,25 @@
 			<!-- news sections -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title">ពត៌មានក្នុងស្រុក</h3>
+					<h3 class="panel-title" id="title-panel">ពត៌មានក្នុងស្រុក</h3>
 				</div>
 				<div class="panel-body">
-					<div class="card-1">
+					<div class="card-1" id="card-1">
 						<a href="http://kohsantepheapdaily.com.kh/article/124906.html"
-							target="_new">
+							target="_blank" id="link-1">
 							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
 								<img
 									src="http://i.kspg.co/2015/7/9521cdb9-7d0a-424e-a8af-1f42e4b604bd.jpg?w=285&amp;h=170&amp;mode=carve"
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="153px">
+									height="153px" id="img-1">
 							</div>
 							<div class="col-md-8 col-sm-8 col-xs-8 card-details pull-right ">
-								<h5 class="text-h5-2 article-title">សុគន្ធ នី​សា
+								<h5 class="text-h5-2 article-title" id="title-1">សុគន្ធ នី​សា
 									ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាងគេ​»ក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជាក្លាយជា​អគ្គរាជទូត​នៃ​កម្មវិធី
 									«​ស្តាប់​បទ​ចម្រៀង​ថ្មី​និង​ឡូយ​ជា</h5>
-								<p class="text-3 news-description">រាជធានី​ភ្នំពេញ ៖
+								<p class="text-3 news-description" id="des-1">រាជធានី​ភ្នំពេញ ៖
 									កម្មវិធី​ស្តាប់​បទ​ចម្រៀង​ថ្មី​ដែល «mJams Pleng និង​ឡូយ​ជាងគេ​»
 									ធ្វើ​ឡើង​សម្រាប់​ប្រទេស​កម្ពុជា
 									បាន​សម្ពោធ​ដាក់​ឱ្យ​ប្រើប្រាស់​នៅ​លើ Google Play Store
@@ -64,7 +64,7 @@
 									​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន
 									​ឥត​គិតថ្លៃ​ជាមួយ​តន្ត្រី​គ្មាន​ដែន</p>
 								<div
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info" id="info-1">
 									<center>អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</center>
 								</div>
 							</div>
@@ -74,112 +74,23 @@
 					<hr>
 					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
 						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
-							target="_new">
+							target="_blank" id="link-2">
 							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
 								<img
 									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
 									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="85px" width="80px">
+									height="85px" width="80px" id="img-2">
 							</div>
 							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
-								<h6 class="text-h6-2 article-title">
+								<h6 class="text-h6-2 article-title" id="title-2">
 									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
 								<div
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
+									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info" id="info-2">
 									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
 							</div>
 						</a>
 					</div>
-					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
-						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
-							target="_new">
-							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
-								<img
-									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="85px" width="80px">
-							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
-								<h6 class="text-h6-2 article-title">
-									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-								<div
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
-									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
-							</div>
-						</a>
-					</div>
-					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
-						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
-							target="_new">
-							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
-								<img
-									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="85px" width="80px">
-							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
-								<h6 class="text-h6-2 article-title">
-									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-								<div
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
-									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
-							</div>
-						</a>
-					</div>
-					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
-						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
-							target="_new">
-							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
-								<img
-									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="85px" width="80px">
-							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
-								<h6 class="text-h6-2 article-title">
-									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-								<div
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
-									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
-							</div>
-						</a>
-					</div>
-					<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
-						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
-							target="_new">
-							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
-								<img
-									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="85px" width="80px">
-							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
-								<h6 class="text-h6-2 article-title">
-									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-								<div
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
-									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
-							</div>
-						</a>
-					</div>
-										<div class="card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings">
-						<a href="http://kohsantepheapdaily.com.kh/article/118448.html"
-							target="_new">
-							<div class="col-md-4 col-sm-4 col-xs-4 clear-paddings">
-								<img
-									src="http://i.kspg.co/2015/4/e3740c58-e381-4a40-9353-57a8576efa59.jpg?w=285&amp;h=170&amp;mode=carve"
-									class="col-md-12 col-sm-12 col-xs-12 clear-paddings"
-									height="85px" width="80px">
-							</div>
-							<div class="col-md-8 col-sm-8 col-xs-8 card-details ">
-								<h6
-									class="text-h6-2 article-title">
-									ព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិព្រះ​វិហារ​បុរាណ​អាយុ​ជាង​300​ឆ្នាំ​នៅ​វត្ត​សំរោង​ក្នុង​គ្រោង​អភិរក្ស​ជា​បេតិកភណ្ឌ​ជាតិ</h6>
-								<div class="col-md-12 col-sm-12 col-xs-12 clear-paddings news-info">
-									អាន១០០០ដង | ថ្ងៃ 2015/03/07 | Sabay</div>
-							</div>
-						</a>
-					</div>
+					
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -205,11 +116,6 @@
 	<!-- end lib js -->
 	<!-- custom js -->
 	<script src="js/custom/owl.js"></script>
-	<script>
-		document.write('<script src="http://'
-				+ (location.host || 'localhost').split(':')[0]
-				+ ':35729/livereload.js?snipver=2"></' + 'script>');
-	</script>
 	<!-- end custom js -->
 	<!-- #####################end javascript#################### -->
 	​​
