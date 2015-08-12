@@ -285,12 +285,12 @@
 			$('#article_list_dasborad').dataTable().fnDestroy();
 			var user = $("#usertype").val();
 			alert(user);
-			/* $.post("selectTypeArticles.news", {
+			 $.post("selectTypeArticles.news", {
 				full_name : user
 			}, function(data) {
 				$("#summery_count_of_article").text(data[0].total);
 				$("#summery_show_usertype").text(data[0].u_type);
-			}); */
+			});
 
 			$.post("listarticle.news", {
 				full_name : user

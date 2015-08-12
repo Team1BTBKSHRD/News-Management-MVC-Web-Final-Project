@@ -1,5 +1,4 @@
-/Controller/
-/Utilities/
-/ModelDAO/
-/Filter/
-/UserController/
+/Filter
+/UserController
+/UserInfoController
+/Utilities

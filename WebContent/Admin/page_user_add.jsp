@@ -87,7 +87,7 @@
 										<h4 class="modal-title">AddNewUser</h4>
 									</div>
 									<div class="modal-body">
-										<form id="useradd">
+										<form id="useradd" method="post">
 											<div class="panel-body">
 												<div class="row">
 													<div class="form-group">
@@ -137,7 +137,7 @@
 														</div>
 													</div>
 													<div class="col-sm-9 col-sm-offset-9">
-														<input type="button" class="btn btn-primary mr5"
+														<input type="submit" class="btn btn-primary mr5"
 															id="adduser" value="Add">
 													</div>
 												</div>

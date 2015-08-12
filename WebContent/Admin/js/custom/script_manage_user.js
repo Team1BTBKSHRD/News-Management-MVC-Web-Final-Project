@@ -8,7 +8,7 @@ $.post("userinfolist.news", function(data) {
 });
 $.post("usertypelist.news",function(data){
 	$("#usertype").html(usertypeDropList(data));
-})
+});
 /* Function Add option to select tag */
 function usertypeDropList(data) {
 	var str = "";
