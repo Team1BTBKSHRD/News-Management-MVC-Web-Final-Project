@@ -210,8 +210,7 @@ public class NewsDAO {
 
 	/* return number of users, categories, news */
 	public ResultSet countOfRecords() throws SQLException {
-		CallableStatement clstm = con.prepareCall("{call vw_count_news_cat_user}");
-		
+		CallableStatement clstm = con.prepareCall("{call vw_count_news_cat_user}");		
 		ResultSet rs=clstm.executeQuery();
 		return rs;
 	}
@@ -223,8 +222,39 @@ public class NewsDAO {
 		ResultSet rs=clstm.executeQuery();
 		return rs;
 	}
-
-	/*public static void main(String[] args) throws Exception {
+	
+	public ResultSet listRecentNews(int data) throws SQLException {
+		// TODO Auto-generated method stub
+		CallableStatement clstm=con.prepareCall("{call news_slider(?)}");
+		clstm.setInt(1, data);
+		ResultSet rs=clstm.executeQuery();
+		rs.next();
+		return rs;
+	}
+/*EEEEEE**/
+	public ResultSet listAllNews() throws SQLException {
+		CallableStatement clstm = null; /* Statement for Query Data from DBMS */
+		ResultSet rs = null; /* rs stores all records of query */
+		try {
+			clstm=con.prepareCall("{call vw_news_show}"); /* Statement for Query Data from DBMS */
+			rs = clstm.executeQuery(); /*
+															 * rs stores all
+															 * records of query
+															 */
+			return rs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		/*
+		 * finally{ Close stm, rs and con stm.close(); rs.close(); con.close();
+		 * }
+		 */
+		return null; /* Return null if error */
+	}
+/*	public static void main(String[] args) throws Exception {
+		con = DatabaseConnection.getConnection();
 		System.out.println(new Convertor().convertResultSetIntoJSON(new NewsDAO().articlepost("dap-news")));
+		System.out.println(getSliderContent(5).getString(1));
+		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().listallnews()).toString());
 	}*/
 }// End of class;

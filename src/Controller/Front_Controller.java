@@ -16,7 +16,9 @@ import CategoryController.dropListCategory;
 import CategoryController.dropListSource;
 import Filter.MyLogin;
 import NewsController.AddNews;
+import NewsController.ListAllNews;
 import NewsController.ListNews;
+import NewsController.ListRecentNews;
 import NewsController.countNews;
 //import NewsDetailController.AddNewsDetail;
 import UserController.AddUser;
@@ -37,20 +39,21 @@ public class Front_Controller extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		//System.out.println(request.getContextPath());
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		// System.out.println(request.getContextPath());
 		doProcess(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		//System.out.println(request.getContextPath());
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		// System.out.println(request.getContextPath());
 		doProcess(request, response);
 
 	}
 
-	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doProcess(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		String RequestURI = request.getRequestURI();
 
 		System.out.println(RequestURI);
@@ -59,15 +62,15 @@ public class Front_Controller extends HttpServlet {
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-		
-		System.out.println("--"+command);
-		/*if(command.split("/")[0].equals("Admin")){
-			if(request.getSession().getAttribute("admin")==null){
-				response.sendRedirect("../Login/page_login.jsp");
-			}
-		}*/
+
+		System.out.println("--" + command);
+		/*
+		 * if(command.split("/")[0].equals("Admin")){
+		 * if(request.getSession().getAttribute("admin")==null){
+		 * response.sendRedirect("../Login/page_login.jsp"); } }
+		 */
 		switch (command) {
-		 //access to user url 
+		// access to user url
 		case "/Admin/useradd.news":
 			action = new AddUser();
 			try {
@@ -128,7 +131,7 @@ public class Front_Controller extends HttpServlet {
 			}
 			break;
 
-		// access to category url 
+		// access to category url
 		case "/Admin/pg_cate_tblistcategory.news":
 			System.err.println("pg_cate_tblistcategory");
 			action = new ListCategory();
@@ -205,7 +208,7 @@ public class Front_Controller extends HttpServlet {
 		case "/Login/Login.news":
 			System.out.println("Login!");
 			action = new MyLogin();
-			//response.sendRedirect("/index.jsp");
+			// response.sendRedirect("/index.jsp");
 			System.out.println("He");
 			try {
 				System.out.println("in try");
@@ -214,7 +217,7 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-			
+
 		case "/listexchange.news":
 			action = new listexchange();
 			try {
@@ -223,7 +226,40 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		
+		/* list of all news */
+		case "/listallnews.news":
+			action = new ListAllNews();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		/* list recent news for slider */
+		case "/recentnews.news":
+			action = new ListRecentNews();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+/*		case "/getUserInfoName.news":
+			//System.out.println("getUserInfoName111");
+			action = new returnUserInfoName();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		case "/listpopular.news":
+			action = new ListPopular();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}*/
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");
@@ -234,7 +270,8 @@ public class Front_Controller extends HttpServlet {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
 			} else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
 
