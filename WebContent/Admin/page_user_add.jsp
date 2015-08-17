@@ -132,12 +132,12 @@
 														<div class="col-sm-5">
 															<select class="form-control" id="usertype"
 																name="usertype" required>
-																
+
 															</select>
 														</div>
 													</div>
 													<div class="col-sm-9 col-sm-offset-9">
-														<input type="submit" class="btn btn-primary mr5"
+														<input type="button" class="btn btn-primary mr5"
 															id="adduser" value="Add">
 													</div>
 												</div>
@@ -176,10 +176,14 @@
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	<!-- script for add and list all user -->
+	<script type="text/javascript">
+	/* Add New User */
 	
+	</script>
 	<!-- script for validate data strength the password  -->
 	<script type="text/javascript" src="js/validate/useradd_validate.js"></script>
 	<script type="text/javascript" src="js/validate/pwstrength.js"></script>
 	<script src="js/custom/script_manage_user.js"></script>
+
 </body>
 </html>

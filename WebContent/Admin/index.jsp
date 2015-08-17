@@ -17,11 +17,6 @@
 <!-- #####################end stylesheet#################### -->
 
 <title>index</title>
-
-
-
-
-
 </head>
 <body>
 
@@ -283,21 +278,23 @@
 		});
 		/* Select Change by User */
 		function selectchanged() {
+
 			$('#article_list_dasborad').dataTable().fnDestroy();
-			var user = $("#usertype").val();
+			var user = $("#usertype").val(); //Globel
 			$.post("selectTypeArticles.news", {
 				full_name : user
 			}, function(data) {
-				if(data.length>0){
+				alert(data.length);
+				if (data.length > 0) {
 					$("#summery_count_of_article").text(data[0].count);
 					$("#summery_show_usertype").text(data[0].user_type);
-				}else{
+
+				} else {
 					$("#summery_count_of_article").text("");
 					$("#summery_show_usertype").text("");
 				}
-				
-			});
 
+			});
 			$.post("listarticle.news", {
 				full_name : user
 			}, function(data) {
@@ -311,18 +308,19 @@
 					"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
 				});
 			});
+
 		}
 
 		/* Creating Table for article post */
 		function listobjectdetails(data) {
 			var str = "";
 			for (var i = 0; i < data.length; i++) {
-
+			
 				str += "<tr>" + "	<td>" + (i + 1) + "</td>" + "<td>"
 						+ data[i].news_title + "</td>" + "<td>"
 						+ data[i].news_date + "</td>" + "</tr>";
+			
 			}
-
 			/* str += "</table>"; */
 
 			return str;

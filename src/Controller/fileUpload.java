@@ -55,7 +55,7 @@ public class fileUpload implements Action {
 		// Set overall request size constraint
 		upload.setSizeMax(MAX_REQUEST_SIZE);
 
-		// System.out.println("Here it is : "+uploadFolder);
+		System.out.println("Here it is : "+uploadFolder);
 		String fileName = null;
 		String filePath = null;
 		try {
@@ -73,6 +73,7 @@ public class fileUpload implements Action {
 					// saves the file to upload directory
 					item.write(uploadedFile);
 					// response.getWriter().write(fileName);
+					System.out.println(fileName);
 				}
 			}
 			//response.getWriter().write(fileName);
