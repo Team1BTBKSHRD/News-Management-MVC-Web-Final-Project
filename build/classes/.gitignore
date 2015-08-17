@@ -1,3 +1,5 @@
+/Utilities/
+/CategoryController/
 /CategoryParentController/
 /Controller/
 /Filter/
@@ -7,5 +9,3 @@
 /NewsDetailController/
 /UserController/
 /UserInfoController/
-/Utilities/
-/CategoryController/
