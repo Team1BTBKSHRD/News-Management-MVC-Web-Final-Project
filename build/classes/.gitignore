@@ -1,6 +1,5 @@
 /CategoryController
 /CategoryParentController
-/Controller
 /Filter
 /ModelDAO
 /ModelDTO
@@ -8,4 +7,4 @@
 /NewsDetailController
 /UserController
 /UserInfoController
-/Utilities
+/Controller
