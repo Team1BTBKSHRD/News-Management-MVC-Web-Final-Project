@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.BackEndDAO.NewsDAO;
-import Utilities.Convertor;
 
 public class updateStatus implements Action {
 

@@ -168,7 +168,7 @@ public class Front_Controller extends HttpServlet {
 			break;
 		case "/Login/Login.news":
 
-			action = new MyLogin();
+			action = new Login();
 
 			System.out.println("He");
 			try {
@@ -254,6 +254,17 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+		/*----------------------Bo New Case------------------------*/
+		case "/category.news":
+			action = new ListNewsByCategoryCode();
+			System.out.println("-------List New Category By Cat Code------");
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		/*---------------------End of Bo New Case----------------*/
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");

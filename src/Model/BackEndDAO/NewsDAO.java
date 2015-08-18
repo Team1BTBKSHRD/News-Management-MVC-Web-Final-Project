@@ -226,6 +226,21 @@ public class NewsDAO {
 		return null;
 	}
 
+	/*--------------------------Bo New Method--------------------------------*/
+	public ResultSet listNewsByCategoryCode(String catCode) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstm = null; /* Statement for Query Data from DBMS */
+		try {
+			pstm = con.prepareStatement("SELECT * FROM tbnews where cat_code=?");
+			pstm.setString(1, catCode);
+			return pstm.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/*-------------------------End of Bo New Method-----------------------*/
 	/* return number of users, categories, news */
 	public ResultSet countOfRecords() throws SQLException {
 		CallableStatement clstm = con.prepareCall("{call vw_count_news_cat_user}");
