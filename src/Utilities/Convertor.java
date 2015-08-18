@@ -3,12 +3,7 @@ package Utilities;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.google.gson.JsonArray;
-
-import java.awt.image.DataBufferUShort;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
