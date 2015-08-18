@@ -284,7 +284,6 @@
 			$.post("selectTypeArticles.news", {
 				full_name : user
 			}, function(data) {
-				alert(data.length);
 				if (data.length > 0) {
 					$("#summery_count_of_article").text(data[0].count);
 					$("#summery_show_usertype").text(data[0].user_type);

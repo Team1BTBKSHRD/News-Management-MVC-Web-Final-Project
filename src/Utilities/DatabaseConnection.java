@@ -8,8 +8,8 @@ public class DatabaseConnection {
 	private static String PORT_NUMBER = "5432";
 	private static String DB_NAME = "newsmanagement";
 	private static String USER_NAME = "postgres";
-	private static String PASSWORD = "0231";
-	//private static String PASSWORD = "123";
+	//private static String PASSWORD = "0231";
+	private static String PASSWORD = "123";
 
 	/**
 	 * Deny object initialization

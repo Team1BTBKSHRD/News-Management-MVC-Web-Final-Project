@@ -20,11 +20,11 @@
           <li id="hdnews"><a href="index.jsp">ពត៌មានថ្មីៗ</a></li>
           <li id="hdsport"><a  href="sport.jsp">កីឡា</a></li>
           <li id="hdknowledge"><a  href="knowledge.jsp">ចំនេះដឺង</a></li>
-          <li id="hdtechnolgoy"><a   href="#">បចេ្ចកវិទ្យា</a></li>
-          <li id="hdscholarship"><a  href="#">អាហារូបករណ៍</a></li>
-          <li id="hdjob"><a  href="#">ការងារ</a></li>
-          <li id="hdlocalnews"><a  href="#">ពត៌មានក្នុងស្រុក</a></li>
-          <li id="hdinternews"><a  href="#">ពត៌មានក្រៅស្រុក</a></li>
+          <li id="hdtechnology"><a   href="technology.jsp">បចេ្ចកវិទ្យា</a></li>
+          <li id="hdscholarship"><a  href="404.jsp">អាហារូបករណ៍</a></li>
+          <li id="hdjob"><a  href="job.jsp">ការងារ</a></li>
+          <li id="hdlocalnews"><a  href="localnews.jsp">ពត៌មានក្នុងស្រុក</a></li>
+          <li id="hdinternews"><a  href="int_news.jsp">ពត៌មានក្រៅស្រុក</a></li>
         </ul>
       </div>
     </div>

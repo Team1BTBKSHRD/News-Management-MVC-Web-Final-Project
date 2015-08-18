@@ -136,7 +136,9 @@
 							var technology = "";
 							var sport = "";
 							var knowledge="";
+							
 							for (var i = 1; i < news.length; i++) {
+								//if(news[i].news_status==true)
 								if (news[i].parent_desc == "ពត៌មានជាតិ"
 										&& news[i].count_visited >= 7000) {
 									panel += "<div class='card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings'>"

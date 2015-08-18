@@ -157,7 +157,7 @@ public class NewsDAO {
 		} finally {
 			/* Close stm, rs and con */
 			stm.close();
-			//rs.close();
+			// rs.close();
 			con.close();
 		}
 		return null; /* Return null if error */
@@ -208,48 +208,71 @@ public class NewsDAO {
 		return null;
 	}
 
+	public ResultSet showartilcebyname(String full_name) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstm = null; /* Statement for Query Data from DBMS */
+		try {
+			pstm = con.prepareStatement("SELECT * FROM vw_show_all where full_name=?");
+			pstm.setString(1, full_name);
+			ResultSet rs = pstm.executeQuery();
+			/*
+			 * int i=0; while(rs.next()){ i++; } System.out.println(i);
+			 * rs.next(); System.out.println(rs.getString(1));
+			 */
+			return rs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	/* return number of users, categories, news */
 	public ResultSet countOfRecords() throws SQLException {
-		CallableStatement clstm = con.prepareCall("{call vw_count_news_cat_user}");		
-		ResultSet rs=clstm.executeQuery();
+		CallableStatement clstm = con.prepareCall("{call vw_count_news_cat_user}");
+		ResultSet rs = clstm.executeQuery();
 		return rs;
 	}
 
 	public ResultSet articlepost(String data) throws SQLException {
 		// TODO Auto-generated method stub
-		//CallableStatement clstm=con.prepareCall("{call count_user_role_news(?)}");
-		PreparedStatement clstm=con.prepareStatement("SELECT user_type,count FROM vw_user_role_count WHERE full_name=?");
+		// CallableStatement clstm=con.prepareCall("{call
+		// count_user_role_news(?)}");
+		PreparedStatement clstm = con
+				.prepareStatement("SELECT user_type,count FROM vw_user_role_count WHERE full_name=?");
 		clstm.setString(1, data);
-		ResultSet rs=clstm.executeQuery();
+		ResultSet rs = clstm.executeQuery();
 		return rs;
 	}
-	
+
 	public ResultSet listRecentNews(int data) throws SQLException {
 		// TODO Auto-generated method stub
-		CallableStatement clstm=con.prepareCall("{call news_slider(?)}");
+		CallableStatement clstm = con.prepareCall("{call news_slider(?)}");
 		clstm.setInt(1, data);
-		ResultSet rs=clstm.executeQuery();
+		ResultSet rs = clstm.executeQuery();
 		rs.next();
 		return rs;
 	}
-	//counting each article view
+
+	// counting each article view
 	public void countView(int newid, int count) throws SQLException {
 		// TODO Auto-generated method stub
-		CallableStatement clstm=con.prepareCall("{call add_counter(?, ?)}");
+		CallableStatement clstm = con.prepareCall("{call add_counter(?, ?)}");
 		clstm.setInt(1, newid);
 		clstm.setInt(2, count);
-		ResultSet rs=clstm.executeQuery();
+		ResultSet rs = clstm.executeQuery();
 	}
-/*EEEEEE**/
+
+	/* EEEEEE **/
 	public ResultSet listAllNews() throws SQLException {
-		CallableStatement clstm = null; /* Statement for Query Data from DBMS */
+		Statement stm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
-			clstm=con.prepareCall("{call vw_show_all}"); /* Statement for Query Data from DBMS */
-			rs = clstm.executeQuery(); /*
-															 * rs stores all
-															 * records of query
-															 */
+			stm = con.createStatement(); /*
+											 * Statement for Query Data from DBMS
+											 */
+			rs = stm.executeQuery("select * from vw_show_all where news_status='true'"); /*
+										 * rs stores all records of query
+										 */
 			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -260,17 +283,21 @@ public class NewsDAO {
 		 */
 		return null; /* Return null if error */
 	}
+
 	public ResultSet listAllNews(String parameter) {
 		System.out.println(parameter);
 		CallableStatement clstm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
-			clstm=con.prepareCall("{call show_news_userinfo(?)}"); /* Statement for Query Data from DBMS */
+			clstm = con.prepareCall(
+					"{call show_news_userinfo(?)}"); /*
+														 * Statement for Query Data
+														 * from DBMS
+														 */
 			clstm.setString(1, parameter);
 			rs = clstm.executeQuery(); /*
-															 * rs stores all
-															 * records of query
-															 */
+										 * rs stores all records of query
+										 */
 			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -280,9 +307,55 @@ public class NewsDAO {
 		 * }
 		 */
 		return null; /* Return null if error */
-		
+
 	}
-	/*public static void main(String[] args) throws Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().articlepost("dap-news")).toString());
+
+	public boolean updateNewstatus(int news_id, boolean news_status) throws SQLException {
+		pstm = con.prepareStatement("update tbnews SET news_status = ? where news_id = ? ");
+
+		pstm.setBoolean(1, news_status);
+		pstm.setInt(2, news_id);
+		System.out.println(news_id + " " + news_status);
+		if (pstm.executeUpdate() > 0) {
+			return true;
+		}
+		return false;
+		// TODO Auto-generated method stub
+
+	}
+	/*
+	 * public static void main(String[] args) throws Exception {
+	 * System.out.println(Convertor.convertResultSetIntoJSON(new
+	 * NewsDAO().articlepost("dap-news")).toString()); }
+	 */
+
+	public boolean insert(News news, String content) throws SQLException {
+		try {
+			/* Set PreparedStatement */
+			CallableStatement cstm = con.prepareCall("{call add_news_content(?, ?, ?, ?, ?, ?, ?, ?)}");
+			//pstm = con.prepareStatement("INSERT INTO tbnews(cat_code, user_info_code, news_title, news_desc, news_path, news_img, news_date) VALUES(?, ?, ?, ?, ?, ?, ?);");
+			/* Initialize parameters for pstm object */
+			cstm.setString(1, news.getCat_code());
+			cstm.setString(2, news.getUser_info_code());
+			cstm.setString(3, news.getNews_title());
+			cstm.setString(4, news.getNews_desc());
+			cstm.setString(5, news.getNews_path());
+			cstm.setString(6, news.getNews_img());
+			cstm.setString(7, news.getNews_date());
+			cstm.setString(8, content);
+			System.out.println(cstm.toString());
+			return cstm.executeUpdate() > 0 ? true
+					: false; /* return true for success and false if fail */
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			/* Close pstm and con */
+			//pstm.close();
+			con.close();
+		}
+		return false; /* return false if insert unsuccessful */
+	}
+	/*public static void main(String[] args) throws SQLException, Exception {
+		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().listAllNews()));
 	}*/
 }// End of class;

@@ -1,5 +1,8 @@
 package NewsController;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,17 +25,19 @@ public class AddNews implements Action{
 			HttpServletResponse response) throws Exception {
 		
 		/* Get data from client request */
-		int newsId = 0;
-		String catCode = new CategoryDAO().returnCateCode(request.getParameter("cat_name"));
-		String userInfoCode = new UserInfoDAO().returnUserInfoCode(request.getParameter("user_info_code")) ;
+		String catCode = request.getParameter("cat_name");
+		String userInfoCode = request.getParameter("user_info_code");
 		String newsTittle = request.getParameter("news_title");
 		String newsDesc = request.getParameter("news_desc");
 		String newsPath = request.getParameter("news_path");
 		String newsImg = request.getParameter("news_img");
-		String newsDate = request.getParameter("news_date");
-		NewsDAO dao = new NewsDAO();  //Instantiate DAO object 
-		System.out.println(userInfoCode+"--"+catCode);
-		if(dao.insert(new News(newsId, catCode, userInfoCode,newsTittle, newsDesc, newsPath, "", ""))){
+		
+		String newsDate = new SimpleDateFormat().format(new Date());
+		
+		String newsConDetail = request.getParameter("news_con_detail");
+		
+		NewsDAO dao = new NewsDAO();
+		if(dao.insert(new News(0, catCode, userInfoCode,newsTittle, newsDesc, newsPath, newsImg, newsDate), newsConDetail)){
 			response.getWriter().write("News Added");  //Add Successful 
 		}
 		else{

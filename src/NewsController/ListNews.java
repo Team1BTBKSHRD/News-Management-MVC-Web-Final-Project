@@ -16,8 +16,9 @@ public class ListNews implements Action {
 	@Override
 	public void execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		String code=new UserInfoDAO().returnUserInfoCode(request.getParameter("full_name"));
-		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().retrieveRS(code)).toString();
+		String name=request.getParameter("full_name");
+		
+		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().showartilcebyname(name)).toString();
 		System.out.println(newsList);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

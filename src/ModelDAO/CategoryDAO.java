@@ -215,7 +215,7 @@ public class CategoryDAO {
 
 	public ResultSet categoryNameList() throws SQLException {
 		Statement stm = con.createStatement();
-		ResultSet rs = stm.executeQuery("select cat_name from tbcategory");
+		ResultSet rs = stm.executeQuery("select distinct(cat_name), cat_code from tbcategory");
 		return rs;
 
 	}

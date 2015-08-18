@@ -210,10 +210,18 @@ public class UserInfoDAO {
 	 * rs; }
 	 */
 
-	/*
-	 * public static void main(String[] args) throws SQLException, Exception {
-	 * System.out.println(Convertor.convertResultSetIntoJSON(new
-	 * UserInfoDAO().returnUserInformation("sabay"))); }
-	 */
+	
+	  public static void main(String[] args) throws SQLException, Exception {
+	 
+		  String str = "";
+			CallableStatement clsm = DatabaseConnection.getConnection().prepareCall("{call user_info_code(?)}");
+			clsm.setString(1, "sabay");
+			ResultSet rs = clsm.executeQuery();
+			if (rs.next()) {
+				str = rs.getString(1).toString();
+			}
+			System.err.println(str);
+	  }
+	 
 
 }// End of class;

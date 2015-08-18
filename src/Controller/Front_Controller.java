@@ -148,7 +148,7 @@ public class Front_Controller extends HttpServlet {
 			}
 			break;
 		/* End Case : Category Insert */
-		case "/categoryDropList.news":
+		case "/Admin/categoryDropList.news":
 
 			action = new dropListCategory();
 			try {
@@ -177,6 +177,16 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			/*for update status sarin*/
+		case "/Admin/updateStatus.news":
+			action = new updateStatus();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
 		case "/Admin/listarticle.news":
 
 			action = new ListNews();
@@ -223,6 +233,14 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+		case "/joblist.news":
+			action = new listjobs();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 		/* list of all news */
 		case "/listallnews.news":
 			action = new ListAllNews();
@@ -251,7 +269,7 @@ public class Front_Controller extends HttpServlet {
 			break;
 			
 		/*
-		 * case "/getUserInfoName.news":
+		 * case "/getUcategoryDropListserInfoName.news":
 		 * //System.out.println("getUserInfoName111"); action = new
 		 * returnUserInfoName(); try { action.execute(request, response); }
 		 * catch (Exception e) { e.printStackTrace(); } break; case
@@ -259,9 +277,23 @@ public class Front_Controller extends HttpServlet {
 		 * action.execute(request, response); } catch (Exception e) {
 		 * e.printStackTrace(); }
 		 */
+		/* Add Article */
+		case "/Admin/addarticle.news":
+			action = new AddNews();
+			
+			try {
+				System.out.println("------Add-------");
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			break;
+		
 			/* File Upload */
 		case "/Admin/UploadServlet.news":
-			action = new fileUpload();
+			action = new FileUpload();
+			System.out.println("-------Upload Photo------");
 			try {
 				action.execute(request, response);
 			} catch (Exception e) {
