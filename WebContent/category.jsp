@@ -21,9 +21,7 @@
 ​​
 </head>
 <body>
-	<%
-		session.removeAttribute("admin");
-	%>
+
 	<!-- header -->
 	<jsp:include page="layouts/header.jsp" />
 	<!-- end header -->

@@ -1,4 +1,4 @@
-package Controller.BackEnd;
+package Controller.FrontEnd.News;
 
 
 import java.util.ArrayList;
@@ -10,6 +10,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import Controller.BackEnd.Action;
 import Model.DTO.jobDTO;
 
 import com.google.gson.Gson;
