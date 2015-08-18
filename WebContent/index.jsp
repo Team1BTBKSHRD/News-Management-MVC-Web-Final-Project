@@ -23,7 +23,8 @@
 ​​
 </head>
 <body>
-	<%
+	<%	
+		System.out.println(session.getAttribute("admin"));
 		session.removeAttribute("admin");
 	%>​​
 	<!-- header -->
