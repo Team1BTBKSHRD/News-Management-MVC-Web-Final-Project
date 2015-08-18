@@ -47,6 +47,8 @@
 		%>
 		<li id="usermenu"><a href="page_user_add.jsp"><i
 				class="fa fa-user"></i> <span>User</span></a></li>
+		<li id="usermenu"><a href="page_user_add.jsp"><i
+				class="fa fa-user"></i> <span>User</span></a></li>
 		<!--  <li class="parent"><a href="#"><i class="fa fa-align-justify"></i> <span>Menus</span></a>
                             <ul class="children">
                                 <li><a href="#">Addmenu</a></li>
