@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class BeerAppServlet
  */
-public class Home extends HttpServlet {
+public class Search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Home() {
+    public Search() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,8 +39,8 @@ public class Home extends HttpServlet {
 		doProcess( request,  response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Home Controller");
-		RequestDispatcher view=request.getRequestDispatcher("home.jsp");
+		System.out.println("Search Controller");
+		RequestDispatcher view=request.getRequestDispatcher("search.jsp");
 		view.forward(request,response);
 	}
 

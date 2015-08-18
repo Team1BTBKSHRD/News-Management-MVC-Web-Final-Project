@@ -1,12 +1,3 @@
-/BackEnd
 /Controller
-/FrontEnd
-/Filter
-/NewsController
-/CategoryController
-/CategoryParentController
-/UserInfoController
-/UserController
-/NewsDetailController
 /Model
 /Utilities

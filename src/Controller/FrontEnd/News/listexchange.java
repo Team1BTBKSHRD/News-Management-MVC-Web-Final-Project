@@ -40,7 +40,7 @@ public class listexchange implements Action {
 			response.setCharacterEncoding("UTF-8");
 	      
 		String obj = new Gson().toJson(e);
-		System.out.println(obj);
+		/*System.out.println(obj);*/
 		response.getWriter().write(obj);
 
 	}
