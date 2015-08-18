@@ -6,10 +6,15 @@ import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
+import java.sql.CallableStatement;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import com.mysql.jdbc.PreparedStatement;
 
 public class DateConverter {
 	/* Format "ថ្ងៃទី៣ខែធ្នូ ឆ្នាំ២០១៥ ម៉ោង ១០:៥៥" */
@@ -278,6 +283,7 @@ public class DateConverter {
 		String year = date.substring(iyear + 5, iyear + 9);
 		return (dayConverter(day) + "/" + monthConverter(month) + "/" + yearConverter(year));
 	}
+
 	@SuppressWarnings("unused")
 	private static boolean isUTF8MisInterpreted(String input) {
 		// convenience overload for the most common UTF-8 misinterpretation
@@ -301,18 +307,19 @@ public class DateConverter {
 			return false;
 		}
 	}
+
 	@SuppressWarnings("unused")
-	private static String dateConverter(String input){
-		if(!isUTF8MisInterpreted(input)){
+	private static String dateConverter(String input) {
+		if (!isUTF8MisInterpreted(input)) {
 			input = sabayConvertDate(input);
-		}else{
-			try{
+		} else {
+			try {
 				@SuppressWarnings("deprecation")
 				long date = java.util.Date.parse(input);
 				Date d = new Date(date);
 				SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 				input = df.format(d);
-			}catch(Exception e){
+			} catch (Exception e) {
 				DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 				java.util.Date utilDate = null;
 				try {
@@ -326,23 +333,57 @@ public class DateConverter {
 		}
 		return input;
 	}
-	public static java.sql.Date converter(String input){
+
+	public static java.sql.Date converter(String input) {
 		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		java.util.Date oUtilDate = null;
 		java.sql.Date sqlDate = null;
 		try {
-			 oUtilDate = formatter.parse(dateConverter(input));
-			 sqlDate = new java.sql.Date(oUtilDate.getTime());
+			oUtilDate = formatter.parse(dateConverter(input));
+			sqlDate = new java.sql.Date(oUtilDate.getTime());
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		return sqlDate;
 	}
-	public static void main(String[] args) {
-		System.out.println(converter("Wednesday, 29 July 2015 15:10"));
-		System.out.println(converter("8/14/15 11:09 AM"));
-		System.out.println(converter("5 August, 2015"));
-		System.out.println(converter("ថ្ងៃអាទិត្យ ទី៩ ខែសីហា ឆ្នាំ២០១៥ ម៉ោង ២៣:១៨"));
-		System.out.println(converter("2015-8-29"));
+
+	protected boolean convertStringToSqlDate() throws ClassNotFoundException,
+			SQLException {
+		java.sql.Connection con = DatabaseConnection.getConnection();
+		CallableStatement clstm = con.prepareCall("{call s_vw_convert_date}");
+
+		try (ResultSet rs = clstm.executeQuery();) {
+			java.sql.PreparedStatement pstm = null;
+			while (rs.next()) {
+
+				pstm = con
+						.prepareStatement("update tbnews set news_published_date=? where news_id=?");
+				pstm.setDate(1, converter(rs.getString("news_date")));
+				pstm.setInt(2, rs.getInt("news_id"));
+				pstm.executeUpdate();
+			}
+
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception\
+			e.printStackTrace();
+		} finally {
+			con.close();
+		}
+		return false;
 	}
+
+	public static void main(String[] args) throws ClassNotFoundException,
+			SQLException {
+		System.out.println(new DateConverter().convertStringToSqlDate());
+	}
+	/*
+	 * public static void main(String[] args) {
+	 * System.out.println(converter("Wednesday, 29 July 2015 15:10"));
+	 * System.out.println(converter("8/14/15 11:09 AM"));
+	 * System.out.println(converter("05 August, 2015"));
+	 * System.out.println(converter
+	 * ("ថ្ងៃអាទិត្យ ទី៩ ខែសីហា ឆ្នាំ២០១៥ ម៉ោង ២៣:១៨"));
+	 * System.out.println(converter("2015-8-29")); }
+	 */
 }
