@@ -30,12 +30,13 @@ function tblistArticle(data) {
 
 		str += "<tr>" + "<td id=cat_code" + data[i].user_id + ">"
 				+ data[i].user_name + "</td>" + "<td>" + data[i].user_type
-				+ "</td>" + "<td style='text-align: center;' >" + btnAction(i)
+				/*+ "</td>" + "<td style='text-align: center;' >" + btnAction(i)*/
+				+ "</td>" + "<td style='text-align: center;' >" + changestatus(data[i].user_status,data[i].user_id)
 				+ "</td>" + "</tr>";
 	}
 	return str;
 }
-function btnAction(i) { /* sarin edit button to disable and enable */
+/*function btnAction(i) {  sarin edit button to disable and enable 
 	var btn = "<button class='btn btn-success btn-xs' id='btnenable" + i + "'>"
 			+ "<i class='fa fa-thumbs-up'></i>"
 			+ "&nbsp;&nbsp;Enable</button>&nbsp;"
@@ -43,19 +44,71 @@ function btnAction(i) { /* sarin edit button to disable and enable */
 			+ "'>"
 			+ "<i class='fa fa-thumbs-down'></i>&nbsp;&nbsp;Disable</button>";
 	return btn;
-}
+}*/
 $("#adduser").click(function() {
 	var name = $("#username").val();
 	var pwd = $("#repassword").val();
 	var usrtype = $("#usertype option:selected").val();
-	alert(name+"||"+pwd+"||"+usrtype);
+	if(name == "" || pwd == "" || usrtype==""){return;}
+	else{
 	$.post("useradd.news", {
 		user_name : name,
 		user_pass : pwd,
 		user_type : usrtype
 	}, function(data, status) {
-		alert(status);
+		
 	});
+	}
 	//alert(222);
 
 });
+
+
+
+
+/* method changestatus for change value to Icon Active  Or Deactive  sarin */	
+/* Sarin */
+function changestatus(data,id){ 
+	var str="";
+	if(data){
+		str+="<a style=' cursor:pointer;'><img src='img/t.png' style='width:30px;height:30px' id="+id+" status='"+data+"' user_id='"+id+"' onclick='checkstatus(this)' /></a>";
+		
+	}
+	else{
+		str+="<a style='cursor:pointer;'><img src='img/f.png' style='width:30px;height:30px' id="+id+" status='"+data+"'  user_id='"+id+"' onclick='checkstatus(this)' /></a>";
+		
+	}
+	return str;
+} 
+
+
+/*method checkstatus for  upadate status on databases*/
+var statusAction=true;
+function checkstatus(data){
+	
+	 var status=$(data).attr("status");			 
+	  var userid=$(data).attr("user_id");
+	  if(status=="true"){
+		  $("#"+$(data).attr("id")).attr("src","img/f.png"); 
+		  $(data).attr("status","false");	
+		  status="flase";
+	  }else{
+		  $("#"+$(data).attr("id")).attr("src","img/t.png");
+		  $(data).attr("status","true");
+		  status="true";
+	  }
+	 /* if(status){
+		 status=0;
+	 }
+	else{
+		 status=1;
+	 } */
+	//alert(statusAction);
+	  $.post("editUserstatus.news", {
+		    user_id : userid,
+			user_status : status,
+		}, function(data2,status) {
+			
+		});    
+} 
+

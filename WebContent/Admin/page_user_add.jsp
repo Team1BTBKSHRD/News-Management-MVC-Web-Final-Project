@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html >
+
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -137,7 +140,7 @@
 														</div>
 													</div>
 													<div class="col-sm-9 col-sm-offset-9">
-														<input type="button" class="btn btn-primary mr5"
+														<input type="submit" class="btn btn-primary mr5"
 															id="adduser" value="Add">
 													</div>
 												</div>
@@ -184,6 +187,27 @@
 	<script type="text/javascript" src="js/validate/useradd_validate.js"></script>
 	<script type="text/javascript" src="js/validate/pwstrength.js"></script>
 	<script src="js/custom/script_manage_user.js"></script>
+	 <script type="text/javascript">
+/* Sarin */
+	<%
+	String usr = "", adm = "";
+
+	if (session.getAttribute("admin") != null) {
+		usr = session.getAttribute("admin").toString();
+		adm = session.getAttribute("userType").toString();
+	}
+%>
+
+<%
+if (adm.equals("editor") || adm.equals("visitor")) {
+	
+%>
+	window.location.href="index.jsp";
+		<%
+}
+%>
+	</script>
+ 
 
 </body>
 </html>
