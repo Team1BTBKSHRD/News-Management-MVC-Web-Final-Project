@@ -234,8 +234,9 @@ public class Front_Controller extends HttpServlet {
 		/* Add Article */
 		case "/Admin/addarticle.news":
 			action = new AddNews();
-			System.out.println("/Admin/addarticle.news");
+			
 			try {
+				System.out.println("------Add-------");
 				action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
