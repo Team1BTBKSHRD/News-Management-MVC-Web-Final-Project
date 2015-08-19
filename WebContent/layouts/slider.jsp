@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <div id="owl-demo" class="owl-carousel owl-theme">
 
-<% for(int i = 0; i < 10; i++) { %>
+<%-- <% for(int i = 0; i < 10; i++) { %>
 	<div class='item'>
 		<img src='data[i].news_img' alt='item slider'>
 		<div class='news-title-background'>
@@ -19,6 +19,6 @@
 			</a>
 		</div>
 	</div>
-<% } %>
+<% } %> --%>
 
 </div>
