@@ -263,6 +263,13 @@ public class CategoryDAO {
 
 		return null; /* Return null if error */
 	}
+	
+	
+	/* return resultset with cat_code and cat_name*/
+	public ResultSet listCatcodeCatName() throws SQLException {
+		Statement stm=con.createStatement();
+		return stm.executeQuery("select cat_code, cat_name from tbcategory");
+	}
 	public static void main(String[] args) throws SQLException, Exception {
 		System.out.println(Convertor.convertResultSetIntoJSON(new CategoryDAO().manageCatUser("sabay")).toString());
 	}

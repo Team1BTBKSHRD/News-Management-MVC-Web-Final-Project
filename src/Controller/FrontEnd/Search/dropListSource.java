@@ -1,4 +1,4 @@
-package Controller.BackEnd.Category;
+package Controller.FrontEnd.Search;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

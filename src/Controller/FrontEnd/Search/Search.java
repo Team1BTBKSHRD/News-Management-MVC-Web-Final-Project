@@ -1,4 +1,4 @@
-package Controller.FrontEnd;
+package Controller.FrontEnd.Search;
 
 
 import java.io.IOException;

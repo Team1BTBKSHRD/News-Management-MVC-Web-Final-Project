@@ -8,18 +8,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- #####################stylesheet#################### -->
 <!-- lib css -->
-<link rel="stylesheet" href="css/font-google-open-sans.css">
-<link rel="stylesheet" href="css/font-google-roboto-condensed.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 <link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/owl.transitions.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <!-- end lib css -->
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
 <link rel="stylesheet" type="text/css" href="css/custom/search.css">
-<link rel="stylesheet" type="text/css" href="css/custom/owl.css">
 <!-- end custom css -->
 <!-- #####################end stylesheet#################### -->
 </head>
@@ -47,13 +44,8 @@
 								data-toggle="dropdown" aria-expanded="false"><span
 								class="caret"></span></a>
 							<!-- category news-->
-							<ul class="dropdown-menu drop-category">
-								<li><a href="#">ជីវិត&amp;សង្គម</a></li>
-								<li><a href="#">សេដ្ឋកិច្ច</a></li>
-								<li><a href="#">កីឡា</a></li>
-								<li><a href="#">កំសាន្ត</a></li>
-								<li><a href="#">បច្ចេកវីទ្យា</a></li>
-								<li><a href="#">អាហារូបករណ៍</a></li>
+							<ul class="dropdown-menu drop-category" id="lstcategory">
+								
 
 							</ul>
 							<!--end category news-->
@@ -64,13 +56,21 @@
 								data-toggle="dropdown" aria-expanded="false"><span
 								class="caret"></span></a>
 							<!--news source-->
-							<ul class="dropdown-menu">
-								<li><a href="#">sabay news</a></li>
-								<li><a href="#">kohsantepheab</a></li>
-								<li><a href="#">daps-news</a></li>
-								<li><a href="#">news box</a></li>
+							<ul class="dropdown-menu" id="lstnewsources">
+								
 							</ul>
 							<!--end news source-->
+						</div>
+						<!-- --------------------------------------- -->
+						<div class="btn-group combo-news">
+							<a href="#" class="btn btn-default  search-filter">ពេលវេលា</a>
+							<a href="#" class="btn btn-default  dropdown-toggle"
+								data-toggle="dropdown" aria-expanded="false"><span
+								class="caret"></span></a>
+							<!-- category news-->
+							<ul class="dropdown-menu drop-category" id="lsttime">
+							</ul>
+							<!--end category news-->
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -125,10 +125,8 @@
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
-	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/search.js"></script>
 	<script src="js/custom/exchange.js"></script>
 	<!-- end custom js -->

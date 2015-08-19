@@ -49,7 +49,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ពត៌មានក្នុងស្រុក</h3>
 					<div class="btn-group">
-						<a class="btn btn-default  search-filter"></a>
+						<a class="btn btn-default  panel-date-filter"></a>
 						<a href="#" class="dropdown-toggle btn-date"
 							data-toggle="dropdown" aria-expanded="false"><span
 							class="glyphicon glyphicon-list"></span></a>
@@ -71,7 +71,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ព័ត៌មានបច្ចេកវិទ្យា</h3>
 					<div class="btn-group">
-						<a class="btn btn-default  search-filter"></a>
+						<a class="btn btn-default  panel-date-filter"></a>
 						<a href="#" class="dropdown-toggle btn-date"
 							data-toggle="dropdown" aria-expanded="false"><span
 							class="glyphicon glyphicon-list"></span></a>
@@ -92,7 +92,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">កីឡា	</h3>
 					<div class="btn-group">
-						<a class="btn btn-default  search-filter"></a>
+						<a class="btn btn-default  panel-date-filter"></a>
 						<a href="#" class="dropdown-toggle btn-date"
 							data-toggle="dropdown" aria-expanded="false"><span
 							class="glyphicon glyphicon-list"></span></a>
@@ -113,7 +113,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">សង្គម</h3>
 					<div class="btn-group">
-						<a class="btn btn-default  search-filter"></a>
+						<a class="btn btn-default  panel-date-filter"></a>
 						<a href="#" class="dropdown-toggle btn-date"
 							data-toggle="dropdown" aria-expanded="false"><span
 							class="glyphicon glyphicon-list"></span></a>
