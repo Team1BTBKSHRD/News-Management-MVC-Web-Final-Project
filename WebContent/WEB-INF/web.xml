@@ -7,7 +7,7 @@
 	<welcome-file-list>
 		<welcome-file>home</welcome-file>
 	</welcome-file-list>
-	
+
 	<!-- ###############################Home Page -->
 	<servlet>
 		<servlet-name>Home</servlet-name>
@@ -18,7 +18,7 @@
 		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
 	<!-- ###############################End Home Page -->
-	
+
 	<!-- ###############################Category Page -->
 	<servlet>
 		<servlet-name>Category</servlet-name>
@@ -29,7 +29,7 @@
 		<url-pattern>/category</url-pattern>
 	</servlet-mapping>
 	<!-- ###############################End Category Page -->
-	
+
 	<!-- ###############################Article Page -->
 	<servlet>
 		<servlet-name>Article</servlet-name>
@@ -40,7 +40,7 @@
 		<url-pattern>/article</url-pattern>
 	</servlet-mapping>
 	<!-- ###############################End Article Page -->
-	
+
 	<!-- ###############################Search Page -->
 	<servlet>
 		<servlet-name>Search</servlet-name>
@@ -51,9 +51,9 @@
 		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 	<!-- ###############################End Search Page -->
-	
+
 	<error-page>
-        <error-code>404</error-code>
-        <location>/404.jsp</location>
-  </error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
 </web-app>
