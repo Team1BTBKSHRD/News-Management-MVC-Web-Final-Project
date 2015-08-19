@@ -251,14 +251,6 @@ button.btn-sm {
 .search-wrapper input {
 	width: 60%;
 }
-.search-filter {
-	margin-right: 1px;
-	width: 135px;
-}
-.panel-date-filter{
-	margin-right: 1px;
-	width: 135px;
-}
 /*###################################clear style*/
 .clear-paddings {
 	padding: 0 ! important;
