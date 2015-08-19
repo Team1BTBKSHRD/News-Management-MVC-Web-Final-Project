@@ -10,7 +10,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import Controller.BackEnd.Action;
+import Controller.FrontEnd.Action;
 import Model.DTO.jobDTO;
 
 import com.google.gson.Gson;

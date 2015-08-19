@@ -10,7 +10,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import Controller.BackEnd.Action;
+import Controller.FrontEnd.Action;
 import Model.DTO.exchangeRateDTO;
 
 import com.google.gson.Gson;

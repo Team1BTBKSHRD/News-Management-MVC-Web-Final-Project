@@ -51,6 +51,17 @@
 		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 	<!-- ###############################End Search Page -->
+	
+	<!-- ###############################Json Controller for front end -->
+	<servlet>
+		<servlet-name>JsonController</servlet-name>
+		<servlet-class>Controller.FrontEnd.JsonController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JsonController</servlet-name>
+		<url-pattern>*.json</url-pattern>
+	</servlet-mapping>
+	<!-- ###############################End Json Controller for front end -->
 
 	<error-page>
 		<error-code>404</error-code>

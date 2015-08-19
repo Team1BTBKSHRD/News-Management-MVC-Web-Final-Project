@@ -8,7 +8,7 @@
 	 }); */
 
 $(document).ready(function(){
-		$.post("listexchange.news", function(data) {
+		$.post("listexchange.json", function(data) {
 			var str = "";
 			//alert(data.length);
 			for (var i = 0; i < data.length; i++) {

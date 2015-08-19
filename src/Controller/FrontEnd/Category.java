@@ -39,7 +39,7 @@ public class Category extends HttpServlet {
 		doProcess( request,  response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Category Controller");
+		System.out.println("###########################Category Controller");
 		RequestDispatcher view=request.getRequestDispatcher("category.jsp");
 		view.forward(request,response);
 	}

@@ -8,7 +8,7 @@
 	 }); */
 
 $(document).ready(function(){
-		$.post("joblist.news", function(data) {
+		$.post("joblist.json", function(data) {
 			var str = "";
 			for (var i = 0; i < data.length; i++) {
 

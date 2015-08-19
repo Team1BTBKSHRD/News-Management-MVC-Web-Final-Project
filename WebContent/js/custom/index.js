@@ -1,7 +1,7 @@
 		/*----------------------------List All News----------------------------------*/
 		$
 				.post(
-						"listallnews.news",
+						"listallnews.json",
 						function(news) {
 
 							var panel = "<div class='card-1' id='card-1' onclick='countview("+ news[0].news_id +")'>"

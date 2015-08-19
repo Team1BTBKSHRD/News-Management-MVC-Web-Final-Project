@@ -1,5 +1,5 @@
 	function countview(pnewid){
-		$.post("countview.news", {
+		$.post("countview.json", {
 			newid : pnewid
 		});
 	}

@@ -39,7 +39,7 @@ public class Article extends HttpServlet {
 		doProcess( request,  response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Article Controller");
+		System.out.println("###########################Article Controller");
 		RequestDispatcher view=request.getRequestDispatcher("article.jsp");
 		view.forward(request,response);
 	}

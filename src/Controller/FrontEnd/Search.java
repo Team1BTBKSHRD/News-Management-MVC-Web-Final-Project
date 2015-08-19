@@ -39,7 +39,7 @@ public class Search extends HttpServlet {
 		doProcess( request,  response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Search Controller");
+		System.out.println("###########################Search Controller");
 		RequestDispatcher view=request.getRequestDispatcher("search.jsp");
 		view.forward(request,response);
 	}

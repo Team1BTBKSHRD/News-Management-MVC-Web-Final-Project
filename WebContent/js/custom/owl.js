@@ -15,7 +15,7 @@ owl.owlCarousel({
 	itemsTablet : [ 750, 1 ]
 });
 
-$.post("recentnews.news", function(data) {
+$.post("recentnews.json", function(data) {
 	var allItem = "";
 	for ( var i in data) {
 		allItem += "<div class='item'> " + "<img src='" + data[i].news_img

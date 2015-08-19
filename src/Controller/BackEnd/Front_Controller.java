@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controller.FrontEnd.News.*;
 import Controller.BackEnd.Category.*;
 import Controller.BackEnd.User.*;
 import Controller.BackEnd.UserInfo.*;
 import Controller.Filter.*;
-import Controller.FrontEnd.News.*;
 
 //import Model.userDAO;
 
@@ -40,22 +40,21 @@ public class Front_Controller extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String RequestURI = request.getRequestURI();
-
-		System.out.println(RequestURI);
-		String contextPath = request.getContextPath();
-		System.out.println(contextPath);
+		String contextPath = request.getContextPath();		
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-
+		
+		System.out.println(RequestURI);
+		System.out.println(contextPath);
 		System.out.println("--" + command);
-
+		
 		switch (command) {
 		// access to user url
 		case "/Admin/useradd.news":
 			action = new AddUser();
-
 			try {
 				action.execute(request, response);
 			} catch (Exception e) {
@@ -70,8 +69,6 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		
-
 		// access to userinfo url
 		case "/Admin/userinfolist.news":
 			action = new ListUserInfo();
@@ -89,7 +86,6 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-
 		// access to category url
 		case "/Admin/pg_cate_tblistcategory.news":
 
@@ -99,8 +95,7 @@ public class Front_Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			break;
-		
+			break;		
 		/* End Case : Category Insert */
 		case "/Admin/categoryDropList.news":
 
@@ -111,20 +106,8 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-
 		case "/Admin/sourceDropList.news":
 			action = new dropListSource();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-
-		// Article Control news
-		case "/newsarticleadd.news":
-
-			action = new AddNews();
 			try {
 				action.execute(request, response);
 			} catch (Exception e) {
@@ -139,25 +122,7 @@ public class Front_Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			break;
-			
-		case "/Admin/listarticle.news":
-
-			action = new ListNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/Admin/counts.news":
-			action = new countNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
+			break;	
 		case "/Admin/selectTypeArticles.news":
 			action = new typeofarticlespost();
 			try {
@@ -178,8 +143,27 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-
-		case "/listexchange.news":
+		/*
+		 * case "/getUcategoryDropListserInfoName.news":
+		 * //System.out.println("getUserInfoName111"); action = new
+		 * returnUserInfoName(); try { action.execute(request, response); }
+		 * catch (Exception e) { e.printStackTrace(); } break; case
+		 * "/listpopular.news": action = new ListPopular(); try {
+		 * action.execute(request, response); } catch (Exception e) {
+		 * e.printStackTrace(); }
+		 */
+		/* File Upload */
+		case "/Admin/UploadServlet.news":
+			action = new FileUpload();
+			System.out.println("-------Upload Photo------");
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		/*############################deprecated controller*/
+	/*	case "/listexchange.news":
 			action = new listexchange();
 			try {
 				action.execute(request, response);
@@ -194,8 +178,7 @@ public class Front_Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			break;
-		/* list of all news */
+			break;		  
 		case "/listallnews.news":
 			action = new ListAllNews();
 			try {
@@ -203,8 +186,7 @@ public class Front_Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			break;
-		/* list recent news for slider */
+			break;		  
 		case "/recentnews.news":
 			action = new ListRecentNews();
 			try {
@@ -220,51 +202,60 @@ public class Front_Controller extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			break;
+			break;*/
 			
-		/*
-		 * case "/getUcategoryDropListserInfoName.news":
-		 * //System.out.println("getUserInfoName111"); action = new
-		 * returnUserInfoName(); try { action.execute(request, response); }
-		 * catch (Exception e) { e.printStackTrace(); } break; case
-		 * "/listpopular.news": action = new ListPopular(); try {
-		 * action.execute(request, response); } catch (Exception e) {
-		 * e.printStackTrace(); }
-		 */
-		/* Add Article */
-		case "/Admin/addarticle.news":
-			action = new AddNews();
-			
-			try {
-				System.out.println("------Add-------");
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			break;
-		
-			/* File Upload */
-		case "/Admin/UploadServlet.news":
-			action = new FileUpload();
-			System.out.println("-------Upload Photo------");
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		/*----------------------Bo New Case------------------------*/
-		case "/category.news":
-			action = new ListNewsByCategoryCode();
-			System.out.println("-------List New Category By Cat Code------");
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		/*---------------------End of Bo New Case----------------*/
+		/*###################################################*/
+		/*################################################other controller are not sure*/
+/*			// Article Control news
+			case "/newsarticleadd.news":
+
+				action = new AddNews();
+				try {
+					action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			case "/Admin/listarticle.news":
+
+				action = new ListNews();
+				try {
+					action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			case "/Admin/counts.news":
+				action = new countNews();
+				try {
+					action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			//Add Article 
+			case "/Admin/addarticle.news":
+				action = new AddNews();
+				System.out.println("/Admin/addarticle.news");
+				try {
+					System.out.println("------Add-------");
+					action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+				break;
+			//mi kBo New Case
+			case "/category.news":
+				action = new ListNewsByCategoryCode();
+				System.out.println("-------List New Category By Cat Code------");
+				try {
+					action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;*/
+		/*#########################################################################*/
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");

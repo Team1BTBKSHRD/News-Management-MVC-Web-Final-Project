@@ -39,7 +39,7 @@ public class Home extends HttpServlet {
 		doProcess( request,  response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Home Controller");
+		System.out.println("###########################Home Controller");
 		RequestDispatcher view=request.getRequestDispatcher("home.jsp");
 		view.forward(request,response);
 	}

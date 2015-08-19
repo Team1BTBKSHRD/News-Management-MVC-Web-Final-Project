@@ -5,7 +5,7 @@
 
 		$
 				.post(
-						"listallnews.news",
+						"listallnews.json",
 						function(news) {
 
 							var panel = "";
