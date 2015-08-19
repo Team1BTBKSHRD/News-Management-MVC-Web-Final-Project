@@ -260,7 +260,7 @@ public class NewsDAO {
 	}
 
 	public ResultSet listRecentNews(int data) throws SQLException {
-		// TODO Auto-generated method stub
+		
 		CallableStatement clstm = con.prepareCall("{call news_slider(?)}");
 		clstm.setInt(1, data);
 		ResultSet rs = clstm.executeQuery();
@@ -348,7 +348,7 @@ public class NewsDAO {
 		try {
 			/* Set PreparedStatement */
 			CallableStatement cstm = con.prepareCall("{call add_news_content(?, ?, ?, ?, ?, ?, ?, ?)}");
-			//pstm = con.prepareStatement("INSERT INTO tbnews(cat_code, user_info_code, news_title, news_desc, news_path, news_img, news_date) VALUES(?, ?, ?, ?, ?, ?, ?);");
+			/* Add News Model */
 			/* Initialize parameters for pstm object */
 			cstm.setString(1, news.getCat_code());
 			cstm.setString(2, news.getUser_info_code());
@@ -358,6 +358,7 @@ public class NewsDAO {
 			cstm.setString(6, news.getNews_img());
 			cstm.setString(7, news.getNews_date());
 			cstm.setString(8, content);
+			System.out.println("-----------------Add News---------------------");
 			System.out.println(cstm.toString());
 			return cstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
