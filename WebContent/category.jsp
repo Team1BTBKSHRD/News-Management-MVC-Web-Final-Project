@@ -22,7 +22,7 @@
 </head>
 <body>
 	<%
-		session.removeAttribute("admin");
+	  session.removeAttribute("admin");
 	%>
 	<!-- header -->
 	<jsp:include page="layouts/header.jsp" />
@@ -48,9 +48,7 @@
 			<div class="panel panel-primary clear-paddings"
 				style="margin-top: 16px;">
 
-				<div class="panel-body" id="panelCategory">
-
-				</div>
+				<div class="panel-body" id="panelCategory"></div>
 				<!-- End of panel body -->
 			</div>
 		</div>

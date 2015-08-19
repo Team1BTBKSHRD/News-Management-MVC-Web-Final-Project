@@ -17,12 +17,14 @@
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
 <link rel="stylesheet" type="text/css" href="css/custom/owl.css">
+<link rel="stylesheet" type="text/css" href="css/custom/bottom-slider.css">
 <!-- end custom css -->
 
 ​​
 </head>
 <body>
-	<%
+	<%	
+		System.out.println(session.getAttribute("admin"));
 		session.removeAttribute("admin");
 	%>​​
 	<!-- header -->
