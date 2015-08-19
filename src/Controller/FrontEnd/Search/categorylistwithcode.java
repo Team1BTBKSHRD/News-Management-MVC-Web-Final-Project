@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import Controller.FrontEnd.Action;
 import Model.BackEndDAO.CategoryDAO;
-import Model.BackEndDAO.UserInfoDAO;
 import Utilities.Convertor;
 
 public class categorylistwithcode implements Action {

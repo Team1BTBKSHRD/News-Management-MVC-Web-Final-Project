@@ -44,7 +44,7 @@ public class CategoryDAO {
 		try {
 			pstm = con
 					.prepareStatement("INSERT INTO tbcategory(cat_code, parent_id, cat_name, cat_desc) VALUES(?, ?, ?, ?)");
-			ResultSet rs = pstm.executeQuery();
+			pstm.executeQuery();
 			/* Initialize parameters for pstm object */
 			pstm.setString(1, category.getCat_code());
 			pstm.setInt(2, category.getParent_id());

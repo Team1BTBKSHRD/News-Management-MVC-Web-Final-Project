@@ -3,7 +3,6 @@ package Controller.FrontEnd.Search;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.BackEndDAO.UserDAO;
 import Model.BackEndDAO.UserInfoDAO;
 import Utilities.Convertor;
 import Controller.FrontEnd.Action;

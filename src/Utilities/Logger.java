@@ -1,13 +1,9 @@
 package Utilities;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 
 public class Logger {
 	private static Logger logger = null;

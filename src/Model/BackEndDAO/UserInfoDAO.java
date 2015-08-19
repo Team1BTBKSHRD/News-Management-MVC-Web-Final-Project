@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Model.DTO.UserInfo;
-import Utilities.Convertor;
 import Utilities.DatabaseConnection;
 
 /**

@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Model.DTO.News;
-import Utilities.Convertor;
 import Utilities.DatabaseConnection;
 
 /**
@@ -274,7 +273,7 @@ public class NewsDAO {
 		CallableStatement clstm = con.prepareCall("{call add_counter(?, ?)}");
 		clstm.setInt(1, newid);
 		clstm.setInt(2, count);
-		ResultSet rs = clstm.executeQuery();
+		clstm.executeQuery();
 	}
 
 	/* EEEEEE **/
