@@ -63,12 +63,7 @@ public class NewsDAO {
 		}
 		return null;
 	}
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		ResultSet rs = new NewsDAO().listNewsCategoryByDaily("B010302");
-		while(rs.next()){
-			System.out.println(rs.getString(1));
-		}
-	}
+	
 }// End of class;
 
 
