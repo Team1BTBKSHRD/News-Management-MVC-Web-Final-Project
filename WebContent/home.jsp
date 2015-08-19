@@ -107,6 +107,7 @@
 	<!-- custom js -->
 	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/exchange.js"></script>
+	<script src="js/custom/index.js"></script>
 	
 	<!-- end custom js -->
 	<!-- #####################end javascript#################### -->

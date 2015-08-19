@@ -32,7 +32,7 @@ public class AddNews implements Action{
 		String newsDate = new SimpleDateFormat().format(new Date());
 		
 		String newsConDetail = request.getParameter("news_con_detail");
-		
+		/* Add News Controller */
 		NewsDAO dao = new NewsDAO();
 		if(dao.insert(new News(0, catCode, userInfoCode,newsTittle, newsDesc, newsPath, newsImg, newsDate), newsConDetail)){
 			response.getWriter().write("News Added");  //Add Successful 
