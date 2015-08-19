@@ -63,12 +63,26 @@ public class NewsDAO {
 		}
 		return null;
 	}
-/*	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		ResultSet rs = new NewsDAO().listNewsCategoryByDaily("B010302");
-		while(rs.next()){
-			System.out.println(rs.getString(1));
+	
+	public ResultSet searchNewsFilterTime(String newsTitle, String categoryCode, String timeFilter) throws SQLException {
+		try{
+			CallableStatement clstm = con.prepareCall("{call s_search_news_filter_time(?, ?, ?)}");
+			clstm.setString(1, newsTitle);
+			clstm.setString(2, categoryCode);
+			clstm.setString(3, timeFilter);
+			System.out.println(clstm.toString());
+			ResultSet rs = clstm.executeQuery();
+			rs.next();
+			return rs;
+		}catch(SQLException ex){
+			ex.printStackTrace();
 		}
-	}*/
+		finally{
+			con.close();
+		}
+		return null;
+	}
+	
 }// End of class;
 
 
