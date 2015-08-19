@@ -35,9 +35,9 @@
 			class="col-sm-9 content-left clear-padding-left clear-margin-bottom left-panel">
 			<!-- search form -->
 			<div class="panel panel-primary container-fluid clear-margin-right">
-				<form role="search">
+				<form role="search" action="search" method="post">
 					<div class="col-sm-6 form-group clear-paddings search-wrapper">
-						<input type="text" placeholder="ស្វែងរក..." id="txtsearch-input">
+						<input type="text" placeholder="ស្វែងរក..." name="title" id="txtsearch-input" value="${param['title']}">
 						<button type="submit" class="btn btn-primary ">ស្វែងរក</button>
 					</div>
 					<div class=" form-group col-sm-6">
@@ -47,7 +47,7 @@
 								data-toggle="dropdown" aria-expanded="false"><span
 								class="caret"></span></a>
 							<!-- category news-->
-							<ul class="dropdown-menu">
+							<ul class="dropdown-menu drop-category">
 								<li><a href="#">ជីវិត&amp;សង្គម</a></li>
 								<li><a href="#">សេដ្ឋកិច្ច</a></li>
 								<li><a href="#">កីឡា</a></li>
@@ -58,7 +58,7 @@
 							</ul>
 							<!--end category news-->
 						</div>
-						<div class="btn-group combo-news">
+						<div class="btn-group combo-news drop-source">
 							<a href="#" class="btn btn-default search-filter">ប្រភពព័ត៌មាន</a>
 							<a href="#" class="btn btn-default dropdown-toggle"
 								data-toggle="dropdown" aria-expanded="false"><span
@@ -131,11 +131,6 @@
 	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/search.js"></script>
 	<script src="js/custom/exchange.js"></script>
-	<script>
-		document.write('<script src="http://'
-				+ (location.host || 'localhost').split(':')[0]
-				+ ':35729/livereload.js?snipver=2"></' + 'script>');
-	</script>
 	<!-- end custom js -->
 	<!-- #####################end javascript#################### -->
 	​​

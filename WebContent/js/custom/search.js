@@ -35,4 +35,17 @@
 							$("#panelRightDown").html(panelRecommend);
 						});
 		/*------------------------End of List All News-----------------------------*/
+		$.post("sourceDropList.news", function(data) {
+			$("#drop-source").html(userDropList(data));
+
+		});
+		function userDropList(data) {
+			var str = "";
+			for (var i = 0; i < data.length; i++) {
+				str += "<option value=" + data[i].full_name + ">"
+						+ data[i].full_name;
+			}
+			str += "</optiont>";
+			return str;
+		}
 		/* function add popular */
