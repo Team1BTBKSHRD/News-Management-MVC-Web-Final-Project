@@ -29,16 +29,15 @@
 			class="col-sm-9 content-left clear-padding-left clear-margin-bottom left-panel">
 			<!-- search form -->
 			<div class="panel panel-primary container-fluid clear-margin-right">
-				<form role="search" action="search" method="post">
+				<form role="search" >
 					<div class="col-sm-6 form-group clear-paddings search-wrapper">
-						<input type="text" placeholder="ស្វែងរក..." name="title"
+						<input type="text" placeholder="ស្វែងរក..." 
 							id="txtsearch-input" value="${param['title']}">
-						<button type="submit" class="btn btn-primary ">ស្វែងរក</button>						
+						<button type="submit" class="btn btn-primary" id="btnSubmit">ស្វែងរក</button>						
 					</div>
 					<div class=" form-group col-sm-6">
 						<div class="btn-group combo-news">
-							<a href="#" class="btn btn-default  search-filter" id="showNews">ប្រភពព័ត៌មាន</a>							
-							<input type="text" id="newsCode" name="newsCode" value="" style="display:none;"/>							
+							<a href="#" class="btn btn-default  search-filter" id="showNews" value="">ប្រភពព័ត៌មាន</a>														
 							<a href="#" class="btn btn-default  dropdown-toggle"
 								data-toggle="dropdown" aria-expanded="false"><span
 								class="caret"></span></a>
@@ -48,8 +47,7 @@
 						</div>
 						<div class="btn-group combo-news">
 							<a href="#" class="btn btn-default search-filter"
-								id="showCategory" name="categoryCode">ប្រភេទព័ត៌មាន</a>								
-							<input type="text" id="categoryCode" name="categoryCode" value="" style="display:none;"/>							 
+								id="showCategory" value="">ប្រភេទព័ត៌មាន</a>															 
 							<a href="#"	class="btn btn-default dropdown-toggle" 
 								data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
 							<!--news source-->
@@ -57,8 +55,7 @@
 							<!--end news source-->
 						</div>
 						<div class="btn-group combo-news">
-							<a href="#" class="btn btn-default search-filter" id="showTime">ពេលវេលា</a>
-							<input type="text" id="timeCode" name="timeCode" value="" style="display:none;"/>
+							<a href="#" class="btn btn-default search-filter" id="showTime" value="">ពេលវេលា</a>
 							<a href="#" class="btn btn-default dropdown-toggle"
 								data-toggle="dropdown" aria-expanded="false"><span
 								class="caret"></span></a>

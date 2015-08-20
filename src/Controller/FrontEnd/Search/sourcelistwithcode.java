@@ -17,7 +17,7 @@ public class sourcelistwithcode implements Action {
 		//String obj= new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
 		String obj=Convertor.convertResultSetIntoJSON(new UserInfoDAO().listuserCodeName()).toString();
 		response.getWriter().write(obj);		
-		System.out.println(obj);
+		System.out.println("sourcelistwithcode");
 			
 	}
 

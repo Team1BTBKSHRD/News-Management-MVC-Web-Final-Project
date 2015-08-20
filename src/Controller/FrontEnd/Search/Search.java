@@ -2,7 +2,6 @@ package Controller.FrontEnd.Search;
 
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -40,10 +39,24 @@ public class Search extends HttpServlet {
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("###########################Search Controller");
-		System.out.println(request.getParameter("title"));
+		/*System.out.println(request.getParameter("title"));
 		System.out.println(request.getParameter("timeCode"));
 		System.out.println(request.getParameter("categoryCode"));
-		System.out.println(request.getParameter("newsCode"));
+		System.out.println(request.getParameter("newsCode"));*/
+		//System.out.println(request.getParameter("pageCode"));
+		//int page = Integer.parseInt(request.getParameter("pageCode"));
+		//System.out.println(page);
+		/*String title = request.getParameter("title");
+		String timeCode = request.getParameter("timeCode");
+		String categoryCode = request.getParameter("categoryCode");
+		String newsCode = request.getParameter("newsCode");
+		int page = Integer.parseInt(request.getParameter("pageCode"));*/
+		
+/*		try {
+			new NewsDAO().searchNewsFilterTime(title,timeCode,categoryCode,newsCode, 15, page);
+		} catch (SQLException e) {		
+			e.printStackTrace();
+		}*/
 		RequestDispatcher view=request.getRequestDispatcher("search.jsp");
 		view.forward(request,response);
 	}

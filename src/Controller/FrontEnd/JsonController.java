@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Controller.FrontEnd.News.*;
 import Controller.FrontEnd.Search.categorylistwithcode;
+import Controller.FrontEnd.Search.listResult;
 import Controller.FrontEnd.Search.sourcelistwithcode;
 
 /**
@@ -60,64 +61,31 @@ public class JsonController extends HttpServlet {
 		System.out.println("--" + command);
 
 		switch (command) {
+		case "/listResult.json":
+			action = new listResult();			
+			break;
 		case "/listexchange.json":
 			action = new listexchange();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		case "/joblist.json":
 			action = new listjobs();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		case "/listallnews.json":
 			action = new ListAllNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		case "/recentnews.json":
 			action = new ListRecentNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		case "/countview.json":
 			action = new countView();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		/* sourcelistwithcode.json */
 		case "/sourcelistwithcode.json":
 			action = new sourcelistwithcode();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		/* categorylistwithcode */
-
 		case "/categorylistwithcode.json":
 			action = new categorylistwithcode();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		default:
 			forward = new ActionForward();
@@ -133,7 +101,11 @@ public class JsonController extends HttpServlet {
 						.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
-
+		}
+		try {
+			action.execute(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

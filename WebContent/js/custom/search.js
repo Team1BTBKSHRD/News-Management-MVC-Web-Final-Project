@@ -50,14 +50,15 @@ $("#lsttime").html(listTime());
 $.post("sourcelistwithcode.json", function(data) {
 	$("#lstnewsources").html(listSource(data));
 });
-$.post("categorylistwithcode.json",function(data){
+$.post("categorylistwithcode.json", function(data) {
 	$("#lstcategory").html(listCategory(data));
 });
 /* list Category Drop */
 function listCategory(data) {
 	var str = "<li id=''><a href=#>ប្រភេទព័ត៌មានទូទៅ</a></li>";
 	for (var i = 0; i < data.length; i++) {
-		str += "<li id=" + data[i].cat_code + "><a href=#>" + data[i].cat_name+"</a></li>";
+		str += "<li id=" + data[i].cat_code + "><a href=#>" + data[i].cat_name
+				+ "</a></li>";
 	}
 	return str;
 }
@@ -65,7 +66,8 @@ function listCategory(data) {
 function listSource(data) {
 	var str = "<li id=''><a href=#>ប្រភពព័ត៌មានទូទៅ</a></li>";
 	for (var i = 0; i < data.length; i++) {
-		str += "<li id=" + data[i].user_info_code + "><a href=#>" + data[i].full_name.toUpperCase()+"</a></li>";
+		str += "<li id=" + data[i].user_info_code + "><a href=#>"
+				+ data[i].full_name.toUpperCase() + "</a></li>";
 	}
 	return str;
 }
@@ -78,16 +80,27 @@ function listTime() {
 	return lst;
 }
 /* function add popular */
-//###################################select value drop down
-	$('body').on('click','#lstnewsources li', function(){
-	    $('#showNews').text($(this).text());
-	    $('#newsCode').attr('value', $(this).attr("id"));
+// ###################################select value drop down
+$('body').on('click', '#lstnewsources li', function() {
+	$('#showNews').text($(this).text());
+	$('#showNews').attr('value', $(this).attr("id"));
+});
+$('body').on('click', '#lstcategory li', function() {
+	$('#showCategory').text($(this).text());
+	$('#showCategory').attr('value', $(this).attr("id"));
+});
+$('#lsttime li').on('click', function() {
+	$('#showTime').text($(this).text());
+	$('#showTime').attr('value', $(this).attr("id"));
+});
+$('body').on('click', '#btnSubmit', function() {
+	$.post("listResult.json", {
+		title : $('#txtsearch-input').val(),
+		newsCode : $('#showNews').attr('value'),
+		categoryCode : $('#showCategory').attr('value'),
+		timeCode : $('#showTime').attr('value'),
+		pageCode : "0"
+	}, function(data, status) {
+		alert(status);
 	});
-	$('body').on('click','#lstcategory li', function(){
-	    $('#showCategory').text($(this).text());
-	    $('#categoryCode').attr('value', $(this).attr("id"));
-	});
-	$('#lsttime li').on('click', function(){
-	    $('#showTime').text($(this).text());
-	    $('#timeCode').attr('value', $(this).attr("id"));
-	});
+});

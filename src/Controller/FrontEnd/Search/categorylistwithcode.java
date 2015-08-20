@@ -16,7 +16,7 @@ public class categorylistwithcode implements Action {
 		response.setCharacterEncoding("UTF-8");
 		String obj=Convertor.convertResultSetIntoJSON(new CategoryDAO().listCatcodeCatName()).toString();
 		response.getWriter().write(obj);		
-		System.out.println(obj);
+		System.out.println("categorylistwithcode");
 
 	}
 
