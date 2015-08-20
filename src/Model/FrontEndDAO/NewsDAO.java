@@ -16,11 +16,10 @@ public class NewsDAO {
 			e.printStackTrace();
 		}
 	}
-	public ResultSet listNewsCategoryByDaily(String categoryCode, int limit) throws SQLException, ClassNotFoundException {
+	public ResultSet listNewsCategoryByDaily(String categoryCode) throws SQLException, ClassNotFoundException {
 		try{
-			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_daily(?, ?)}");
+			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_daily(?)}");
 			clstm.setString(1, categoryCode);
-			clstm.setInt(2, limit);
 			ResultSet rs = clstm.executeQuery();
 			rs.next();
 			return rs;
@@ -33,11 +32,10 @@ public class NewsDAO {
 		return null;
 	}
 	
-	public ResultSet listNewsCategoryByWeekly(String categoryCode, int limit) throws SQLException {
+	public ResultSet listNewsCategoryByWeekly(String categoryCode) throws SQLException {
 		try{
-			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_weekly(?, ?)}");
+			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_weekly(?)}");
 			clstm.setString(1, categoryCode);
-			clstm.setInt(2, limit);
 			ResultSet rs = clstm.executeQuery();
 			rs.next();
 			return rs;
@@ -50,11 +48,10 @@ public class NewsDAO {
 		return null;
 	}
 	
-	public ResultSet listNewsCategoryByMonthly(String categoryCode, int limit) throws SQLException {
+	public ResultSet listNewsCategoryByMonthly(String categoryCode) throws SQLException {
 		try{
-			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_monthly(?, ?)}");
+			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_monthly(?)}");
 			clstm.setString(1, categoryCode);
-			clstm.setInt(2, limit);
 			ResultSet rs = clstm.executeQuery();
 			rs.next();
 			return rs;
