@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controller.FrontEnd.Home.*;
 import Controller.FrontEnd.News.*;
 import Controller.FrontEnd.Search.categorylistwithcode;
 import Controller.FrontEnd.Search.listResult;
@@ -87,6 +88,15 @@ public class JsonController extends HttpServlet {
 		case "/categorylistwithcode.json":
 			action = new categorylistwithcode();
 			break;
+		case "/listnewscategorybydaily.json":
+			action = new ListNewsCategoryByDaily();
+			break;
+		case "/listnewscategorybyweekly.json":
+			action = new ListNewsCategoryByWeekly();
+			break;	
+		case "/listnewscategorybymonthly.json":
+			action = new ListNewsCategoryByMonthly();
+			break;	
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");

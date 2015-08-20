@@ -1,4 +1,4 @@
-package Controller.FrontEnd;
+package Controller.FrontEnd.Home;
 
 
 import java.io.IOException;
