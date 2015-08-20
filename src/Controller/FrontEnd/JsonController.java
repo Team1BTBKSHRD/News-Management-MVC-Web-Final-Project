@@ -4,17 +4,17 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.FrontEnd.News.*;
+import Controller.FrontEnd.Search.categorylistwithcode;
+import Controller.FrontEnd.Search.sourcelistwithcode;
 
 /**
  * Servlet implementation class JsonController
  */
-@WebServlet("*.json")
 public class JsonController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -100,6 +100,25 @@ public class JsonController extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+		/* sourcelistwithcode.json */
+		case "/sourcelistwithcode.json":
+			action = new sourcelistwithcode();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		/* categorylistwithcode */
+
+		case "/categorylistwithcode.json":
+			action = new categorylistwithcode();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");
@@ -110,7 +129,8 @@ public class JsonController extends HttpServlet {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
 			} else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
 

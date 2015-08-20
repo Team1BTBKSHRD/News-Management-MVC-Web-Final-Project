@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Model.DTO.UserInfo;
-import Utilities.Convertor;
 import Utilities.DatabaseConnection;
 
 /**
@@ -211,17 +210,24 @@ public class UserInfoDAO {
 	 */
 
 	
-	  public static void main(String[] args) throws SQLException, Exception {
 	 
-		  String str = "";
+	
+	 public static void main(String[] args) throws SQLException, Exception {
+		 
+		 /* String str = "";
 			CallableStatement clsm = DatabaseConnection.getConnection().prepareCall("{call user_info_code(?)}");
 			clsm.setString(1, "sabay");
 			ResultSet rs = clsm.executeQuery();
 			if (rs.next()) {
 				str = rs.getString(1).toString();
 			}
-			System.err.println(str);
+			System.err.println(str);*/
+		 //System.out.println(Convertor.convertResultSetIntoJSON(new UserInfoDAO().listCatcodeCatName()).toString());
 	  }
-	 
+
+	public ResultSet listuserCodeName() throws SQLException {
+		Statement stm=con.createStatement();
+		return stm.executeQuery("select user_info_code, full_name from tbuserinfo");
+	}
 
 }// End of class;

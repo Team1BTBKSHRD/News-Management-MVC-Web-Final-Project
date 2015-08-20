@@ -44,7 +44,7 @@
 	<!-- ###############################Search Page -->
 	<servlet>
 		<servlet-name>Search</servlet-name>
-		<servlet-class>Controller.FrontEnd.Search</servlet-class>
+		<servlet-class>Controller.FrontEnd.Search.Search</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Search</servlet-name>

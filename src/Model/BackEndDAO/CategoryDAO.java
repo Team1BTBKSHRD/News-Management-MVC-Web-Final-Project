@@ -44,7 +44,7 @@ public class CategoryDAO {
 		try {
 			pstm = con
 					.prepareStatement("INSERT INTO tbcategory(cat_code, parent_id, cat_name, cat_desc) VALUES(?, ?, ?, ?)");
-			ResultSet rs = pstm.executeQuery();
+			pstm.executeQuery();
 			/* Initialize parameters for pstm object */
 			pstm.setString(1, category.getCat_code());
 			pstm.setInt(2, category.getParent_id());
@@ -262,6 +262,13 @@ public class CategoryDAO {
 		}*/
 
 		return null; /* Return null if error */
+	}
+	
+	
+	/* return resultset with cat_code and cat_name*/
+	public ResultSet listCatcodeCatName() throws SQLException {
+		Statement stm=con.createStatement();
+		return stm.executeQuery("select cat_code, cat_name from tbcategory");
 	}
 	public static void main(String[] args) throws SQLException, Exception {
 		System.out.println(Convertor.convertResultSetIntoJSON(new CategoryDAO().manageCatUser("sabay")).toString());

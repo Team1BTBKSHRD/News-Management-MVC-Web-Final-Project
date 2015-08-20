@@ -3,6 +3,10 @@ package Model.DTO;
 import java.io.Serializable;
 
 public class article implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int news_id;
 	private String cat_code;
 	private String user_info_code;

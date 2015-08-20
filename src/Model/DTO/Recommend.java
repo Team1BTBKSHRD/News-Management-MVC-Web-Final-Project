@@ -3,7 +3,11 @@ package Model.DTO;
 import java.io.Serializable;
 
 public class Recommend implements Serializable{
- private int rec_id;
+ /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+private int rec_id;
  private int news_id;
 /**
  * @return the rec_id

@@ -1,8 +1,5 @@
 eclipse.preferences.version=1
 encoding//WebContent/js/custom/category.js=UTF-8
 encoding//WebContent/js/custom/index.js=UTF-8
-encoding//WebContent/js/custom/intnews.js=UTF-8
-encoding//WebContent/js/custom/localnews.js=UTF-8
 encoding//WebContent/js/custom/owl.js=UTF-8
-encoding//WebContent/js/custom/sport.js=UTF-8
-encoding//WebContent/js/custom/technology.js=UTF-8
+encoding//WebContent/js/custom/search.js=UTF-8
