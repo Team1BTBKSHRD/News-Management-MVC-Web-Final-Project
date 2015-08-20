@@ -55,27 +55,39 @@ $.post("categorylistwithcode.json",function(data){
 });
 /* list Category Drop */
 function listCategory(data) {
-	var str = "<li id="+data[0].cat_code+"><a href=#>"+data[0].cat_name+"</a></li>";
-	for (var i = 1; i < data.length; i++) {
+	var str = "<li id=''><a href=#>ប្រភេទព័ត៌មានទូទៅ</a></li>";
+	for (var i = 0; i < data.length; i++) {
 		str += "<li id=" + data[i].cat_code + "><a href=#>" + data[i].cat_name+"</a></li>";
 	}
 	return str;
 }
 /* list Source Drop */
 function listSource(data) {
-	var str = "<li id="+data[0].user_info_code+"><a href=#>"+data[0].full_name.toUpperCase()+"</a></li>";
-	for (var i = 1; i < data.length; i++) {
+	var str = "<li id=''><a href=#>ប្រភពព័ត៌មានទូទៅ</a></li>";
+	for (var i = 0; i < data.length; i++) {
 		str += "<li id=" + data[i].user_info_code + "><a href=#>" + data[i].full_name.toUpperCase()+"</a></li>";
 	}
 	return str;
 }
 /* list Time */
 function listTime() {
-	var lst = "";
-	lst += "<li><a href=#>២៤ ម៉ោងមុន</a></li>"
-			+ "<li><a href=#>សប្តាហ៍មុន</a></li>"
-			+ "<li><a href=#>ខែមុន</a></li>"
+	var lst = "<li id=''><a href=#>ពេលវេលាណាមួយ</a></li>";
+	lst += "<li id='daily'><a href=#>២៤ ម៉ោងមុន</a></li>"
+			+ "<li id='weekly'><a href=#>សប្តាហ៍មុន</a></li>"
+			+ "<li id='monthly'><a href=#>ខែមុន</a></li>"
 	return lst;
 }
-
 /* function add popular */
+//###################################select value drop down
+	$('body').on('click','#lstnewsources li', function(){
+	    $('#showNews').text($(this).text());
+	    $('#newsCode').attr('value', $(this).attr("id"));
+	});
+	$('body').on('click','#lstcategory li', function(){
+	    $('#showCategory').text($(this).text());
+	    $('#categoryCode').attr('value', $(this).attr("id"));
+	});
+	$('#lsttime li').on('click', function(){
+	    $('#showTime').text($(this).text());
+	    $('#timeCode').attr('value', $(this).attr("id"));
+	});
