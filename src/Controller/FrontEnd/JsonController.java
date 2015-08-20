@@ -14,7 +14,7 @@ import Controller.FrontEnd.News.*;
 /**
  * Servlet implementation class JsonController
  */
-
+@WebServlet("*.json")
 public class JsonController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
