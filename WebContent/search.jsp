@@ -29,11 +29,11 @@
 			class="col-sm-9 content-left clear-padding-left clear-margin-bottom left-panel">
 			<!-- search form -->
 			<div class="panel panel-primary container-fluid clear-margin-right">
-				<form role="search" >
+				
 					<div class="col-sm-6 form-group clear-paddings search-wrapper">
 						<input type="text" placeholder="ស្វែងរក..." 
 							id="txtsearch-input" value="${param['title']}">
-						<button type="submit" class="btn btn-primary" id="btnSubmit">ស្វែងរក</button>						
+						<button class="btn btn-primary" id="btnSubmit">ស្វែងរក</button>						
 					</div>
 					<div class=" form-group col-sm-6">
 						<div class="btn-group combo-news">
@@ -65,7 +65,7 @@
 						</div>
 					</div>
 					<div class="clearfix"></div>
-				</form>
+				
 			</div>
 			<!-- end search form -->
 

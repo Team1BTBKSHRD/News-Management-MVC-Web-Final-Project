@@ -21,7 +21,8 @@ public class listResult implements Action {
 		
 		System.out.println(page);
 		
-		String droplistsource = Convertor.convertResultSetIntoJSON(new NewsDAO().searchNewsFilterTime(title,timeCode,categoryCode,newsCode, 15, page)).toString(); 
+		String droplistsource = Convertor.convertResultSetIntoJSON(new NewsDAO().searchNewsFilterTime(title,timeCode,categoryCode,newsCode, 15, page)).toString();
+		System.out.println(droplistsource);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(droplistsource);		

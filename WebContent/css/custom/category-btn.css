@@ -7,6 +7,7 @@
 	
 }
 .category-icon a{
+	cursor: pointer;
 	position: relative;
     background-color: #50a253;
     height: 48px;

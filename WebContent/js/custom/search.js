@@ -100,7 +100,21 @@ $('body').on('click', '#btnSubmit', function() {
 		categoryCode : $('#showCategory').attr('value'),
 		timeCode : $('#showTime').attr('value'),
 		pageCode : "0"
-	}, function(data, status) {
-		alert(status);
+	}, function(data, status) {	
+		var str = "";
+		for (var i = 1; i < data.length; i++) {
+			str +=
+			"<div class='col-sm-12 search-result'><a href='"+ data[i].news_path +"'>"+
+			"<div class='col-md-3 col-sm-3 col-xs-3 clear-paddings'>"+
+			"<img src='"+ data[i].news_img +"' class='col-md-12 col-sm-12 col-xs-12 clear-paddings'"+ 
+			"height='119.5px' id='img-1'></div>"+
+			"<div class='col-md-9 col-sm-9 col-xs-9 clear-padding-right'>"+
+			"<h5 class='article-name clear-margin-top'>"+ data[i].news_title +"</h5>"+
+			"<strong>ផ្សាយ <kbd>"+ data[i].news_published_date +"</kbd></strong>"+
+			"<p class='clear-margin-bottom text-2'>"+ data[i].news_desc +"</p>"+
+			"<strong class='news-source'>ប្រភពពត៌មាន<kbd>"+ data[i].full_name +"</kbd></strong>"+
+			"</div><div class='clearfix'></div></a></div>";
+		}
+		$('.search-result-wrapper').html(str);
 	});
 });
