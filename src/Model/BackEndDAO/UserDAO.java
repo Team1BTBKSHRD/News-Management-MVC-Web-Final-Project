@@ -190,6 +190,22 @@ public class UserDAO {
 		//return rs.getRow()>0?true:false;
 		return null;
 	}
+	
+	
+	/*sarin editUserStatus*/
+	public boolean editUserStatus(int user_id, boolean user_status) throws SQLException {
+		pstm = con.prepareStatement("update tbuser SET user_status = ? where user_id = ? ");
+		pstm.setBoolean(1, user_status);
+		pstm.setInt(2, user_id);
+		System.out.println(user_id + " " + user_status);
+		if (pstm.executeUpdate() > 0) {
+			return true;
+		}
+		return false;
+		
+		
+		
+	}
 /*	public static void main(String[] args) throws SQLException, Exception {
 		System.out.println(Convertor.convertResultSetIntoJSON(new UserDAO().retrieveRS()));
 	}*/

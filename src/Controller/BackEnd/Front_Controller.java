@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controller.BackEnd.Article.AddNews;
+import Controller.BackEnd.Article.ListNewsDraft;
+import Controller.BackEnd.Article.update_full_article;
 import Controller.BackEnd.Category.*;
 import Controller.BackEnd.User.*;
 import Controller.BackEnd.UserInfo.*;
@@ -131,6 +134,20 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			
+		
+		
+			/*for update full Atricle sarin*/
+		case "/Admin/update_article.news":
+			action = new update_full_article();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		
+			
 			/*for update status sarin*/
 		case "/Admin/updateStatus.news":
 			action = new updateStatus();
@@ -141,9 +158,31 @@ public class Front_Controller extends HttpServlet {
 			}
 			break;
 			
+			/*sarin edit user status*/
+		case "/Admin/editUserstatus.news":
+			action = new EditStatus();
+			System.out.println("edit user");
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
 		case "/Admin/listarticle.news":
 
 			action = new ListNews();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		
+		/* sarin list_draft_news.news query from b_vw_draft_news */
+		case "/Admin/list_draft_news.news":
+
+			action = new ListNewsDraft();
 			try {
 				action.execute(request, response);
 			} catch (Exception e) {
@@ -235,8 +274,8 @@ public class Front_Controller extends HttpServlet {
 		case "/Admin/addarticle.news":
 			action = new AddNews();
 			
+			
 			try {
-				System.out.println("------Add-------");
 				action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -248,6 +287,24 @@ public class Front_Controller extends HttpServlet {
 		case "/Admin/UploadServlet.news":
 			action = new FileUpload();
 			System.out.println("-------Upload Photo------");
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			/* Statistic News */
+		case "/Admin/filterstatistic.news":
+			action = new filterstatistic();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		/* Statistic Number of view,like,dislike*/
+		case "/Admin/filterstatisticView.news":
+			action = new filterstatisticView();
 			try {
 				action.execute(request, response);
 			} catch (Exception e) {

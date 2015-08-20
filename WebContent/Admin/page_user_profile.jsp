@@ -22,9 +22,7 @@
 <title>Manage Profile</title>
 
 <style>
-#usermenu {
-	display: none;
-}
+
 
 input[type="text"]:disabled {
 	background: #FFFFFF;

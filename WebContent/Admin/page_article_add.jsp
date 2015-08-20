@@ -68,7 +68,7 @@ input[type=file] {
 							<div class="panel panel-info">
 								<div class="panel-heading">
 									ADD NEWS
-									<button class="btn btn-success btn-xs delete"
+									<button class="btn btn-success btn-xs delete" style="float:right;"
 										data-toggle="collapse" data-target="#demo">
 										<i class="fa fa-plus"></i>
 									</button>
@@ -79,7 +79,7 @@ input[type=file] {
 									<div class="row">
 										<!--  row  form -->
 
-										<div id="demo" class="collapse">
+										
 
 											<div class="panel-body">
 												<div class="row">
@@ -162,14 +162,15 @@ input[type=file] {
 														</div>
 														<!-- form-group -->
 
-														<div class="col-sm-6 col-sm-offset-5">
+														<div class="col-sm-6 col-sm-offset-2">
 															<br />
-															<div class="btn btn-group">
-																<span><button class="btn btn-primary"
-																		id="addArticle">Add</button></span> <span><button
+															 <div class="btn btn-group">
+																<span><button class="btn btn-success"
+																		id="save_to">SaveToDraft</button></span>
+																<span><input type="button" class="btn btn-primary" id="addArticle" name="addArticle" value="Post"/></span> <span><button
 																		class="btn btn-danger" data-toggle="collapse"
 																		data-target="#demo">Cancel</button></span>
-															</div>
+														 </div>
 														</div>
 													</div>
 													<div class="form-group">
@@ -197,7 +198,7 @@ input[type=file] {
 
 											</div>
 											<!-- row -->
-										</div>
+										
 										<!-- panel-body -->
 
 										<!-- collapse -->
@@ -206,26 +207,6 @@ input[type=file] {
 
 
 
-
-									<div class="table_respone">
-										<table id="listarticle"
-											class="table table-striped table-bordered table-primary mb30"
-											cellspacing="0" width="100%">
-											<thead>
-												<tr>
-													<th>NewsTitle</th>
-													<th>NewsCategory</th>
-													<th>NewsImage</th>
-													<th>NewsDate</th>
-													<th>Action</th>
-												</tr>
-											</thead>
-											<tbody id="show">
-
-											</tbody>
-										</table>
-									</div>
-									<!-- table_respone -->
 
 
 
@@ -288,107 +269,6 @@ input[type=file] {
 
 	<script type="text/javascript">
 		var name='<%=session.getAttribute("admin")%>';
-
-		$.post("listarticle.news", {
-			full_name : name
-		}, function(data) {
-			$('#listarticle').dataTable().fnDestroy();
-			$("#show").html(tblistArticle(data));
-			$('#listarticle').dataTable({
-				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
-			/* Sarin add datatable */
-			});
-			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
-		});
-
-		function tblistArticle(data) {
-			var str = "";
-			/* alert(data[i].news_status); */
-			/* alert(data.length); */
-			for (var i = 0; i < data.length; i++) {
-				/*compare full_name */
-				str += "<tr>"
-						+ "<td style='padding-top:29px' id=news_id" + data[i].news_id + ">"
-						+ "<a href="+data[i].news_path+" target='_blank' style='text-decoration:none;'>"
-						+ data[i].news_title + "</a></td>" + "<td>"
-						+ data[i].cat_name + "</td>" + "<td>"
-						+ getimage(data[i].news_img) + "</td>" + "<td>"
-						+ data[i].news_date + "</td>"
-						/*  + "<td style='text-align: center;'>" + btnAction(i)  */
-						+ "<td style='text-align: center;'>"
-						+ changestatus(data[i].news_status, data[i].news_id, i)
-						+ "</td>" + "</tr>";
-
-			}
-			return str;
-		}
-		/* method changestatus for change value to Icon Active  Or Deactive  sarin */
-
-		function changestatus(data, id, i) {
-			var str = "";
-			if (data) {
-				str += "<a style=' cursor:pointer;'><img src='img/t.png' style='width:30px;height:30px' id="
-						+ id
-						+ " status='"
-						+ data
-						+ "' news_id='"
-						+ id
-						+ "' onclick='checkstatus(this)' /></a>";
-
-			} else {
-				str += "<a style='cursor:pointer;'><img src='img/f.png' style='width:30px;height:30px' id="
-						+ id
-						+ " status='"
-						+ data
-						+ "'  news_id='"
-						+ id
-						+ "' onclick='checkstatus(this)' /></a>";
-
-			}
-			return str;
-		}
-
-		/*method checkstatus for  upadate status on databases*/
-		var statusAction = true;
-		function checkstatus(data) {
-
-			var status = $(data).attr("status");
-			var newsid = $(data).attr("news_id");
-			if (status == "true") {
-				$("#" + $(data).attr("id")).attr("src", "img/f.png");
-				$(data).attr("status", "false");
-				status = "flase";
-			} else {
-				$("#" + $(data).attr("id")).attr("src", "img/t.png");
-				$(data).attr("status", "true");
-				status = "true";
-			}
-			/* if(status){
-			 status=0;
-			}
-			else{
-			 status=1;
-			} */
-			//alert(statusAction);
-			$.post("updateStatus.news", {
-				news_id : newsid,
-				news_status : status,
-			}, function(data2, status) {
-
-			});
-		}
-
-		/* ------------Sarin fucntion get image-------- */
-		function getimage(data) {
-			var str = "";
-			if (data.indexOf("http") != -1) {
-				str += "<img src="+data+" width=100px/>";
-			} else {
-				str += "<img src=../img/"+data+" width=100px/>";
-			}
-			return str;
-		}
-
 		/* upload file */
 		$("#imguploads").click(function() {
 			var data;
@@ -418,35 +298,68 @@ input[type=file] {
 			str += "</optiont>";
 			return str;
 		}
-
+	
+		
+		
 		jQuery("#addArticle")
 				.click(
 						function() {
-							var img = jQuery("#file_image").val().split("\\");
-							jQuery
+							var img = jQuery("#file_image").val().split("\\");						
+							if(img==""){
+								img="no_image.png";
+							}  
+							else{
+								//img=jQuery("#file_image").val().split("\\");
+								img=img[img.length - 1];
+							}
+							 jQuery
 									.post(
 											"addarticle.news",
 											{
 												//  news_con_detail  
-												cat_name : jQuery(
-														"#newscategory").val(),
-												user_info_code :
-	<%=session.getAttribute("userinfo")%>
-		[0].user_info_code,
-												news_title : jQuery(
-														"#newstitle").val(),
-												news_desc : jQuery("#news_des")
-														.val(),
-												news_path : jQuery("#newspath")
-														.val(),
-												news_img : img[img.length - 1],
-												news_con_detail : jQuery(
-														"#news_con_detail")
-														.code()
+												cat_name : jQuery("#newscategory").val(),
+												user_info_code :<%=session.getAttribute("userinfo")%>[0].user_info_code,
+												news_title : jQuery("#newstitle").val(),
+												news_desc : jQuery("#news_des").val(),
+												news_path : jQuery("#newspath").val(),
+												news_img : img,
+												news_con_detail : jQuery("#news_con_detail").code(),
+												draft_status : false,
+												news_status : false,
 											}, function() {
 												alert("Add Success!");
+											}); 
+						});
+		
 
-											});
+		jQuery("#save_to")
+				.click(
+						function() {
+							var img = jQuery("#file_image").val().split("\\");						
+							if(img==""){
+								img="no_image.png";
+							}  
+							else{
+								//img=jQuery("#file_image").val().split("\\");
+								img=img[img.length - 1];
+							}
+
+								jQuery
+									.post("addarticle.news",
+											{
+												//  news_con_detail  
+												cat_name : jQuery("#newscategory").val(),
+												user_info_code :<%=session.getAttribute("userinfo")%>[0].user_info_code,
+												news_title : jQuery("#newstitle").val(),
+												news_desc : jQuery("#news_des").val(),
+												news_path : jQuery("#newspath").val(),
+												news_img : img,
+												news_con_detail : jQuery("#news_con_detail").code(),
+												draft_status : true,
+												news_status : false,
+											}, function() {
+												alert("Add Success!");
+											});  
 						});
 	</script>
 </body>

@@ -30,8 +30,10 @@
 		<li class="parent" id="main_menu_article"><a href="#"><i
 				class="fa fa-edit"></i> <span>Article</span></a>
 			<ul class="children">
-				<li id="sub_menu_managearticle"><a href="page_article_add.jsp">Manage
-						Article</a></li>
+					<!-- sarin update menu article -->
+				    <li id="sub_menu_managearticle"><a href="page_article_add.jsp">Add Article</a></li>
+					<li id="page_post_article_menu"><a href="page_post_article.jsp">List Post Article</a></li>
+					<li id="page_draft_article_menu"><a href="page_draft_article.jsp">List Draft Article</a></li>
 						<%
 			if (adm.equals("admin")) {
 		%>
@@ -47,8 +49,16 @@
 		%>
 		<li id="usermenu"><a href="page_user_add.jsp"><i
 				class="fa fa-user"></i> <span>User</span></a></li>
-		<li id="usermenu"><a href="page_user_add.jsp"><i
-				class="fa fa-user"></i> <span>User</span></a></li>
+				<li id="pg_statistic"><a href="page_statistic.jsp"><i
+				class="glyphicon glyphicon-signal"></i> <span>Statistic</span></a></li>
+		<li id="usermenu" class="parent"><a href=""><i
+				class="glyphicon glyphicon-cog"></i> <span>Setting</span></a>
+			<ul class="children">
+				<li id="sub_menu_managearticle"><a href="#">Sponsors</a></li>
+				<li id="sub_menu_managecategory"><a href="#">Categories</a></li>
+				<li id="sub_menu_managecategory"><a href="#">News</a></li>
+				<li id="sub_menu_managecategory"><a href="#">Panel</a></li>
+			</ul></li>
 		<!--  <li class="parent"><a href="#"><i class="fa fa-align-justify"></i> <span>Menus</span></a>
                             <ul class="children">
                                 <li><a href="#">Addmenu</a></li>

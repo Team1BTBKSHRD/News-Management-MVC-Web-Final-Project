@@ -1,4 +1,4 @@
-package Controller.FrontEnd.News;
+package Controller.BackEnd.Article;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
