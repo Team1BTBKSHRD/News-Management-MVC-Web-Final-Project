@@ -88,12 +88,39 @@ public class NewsDAO {
 		}
 		return null;
 	}
-	public static void main(String[] args) throws SQLException {
-		ResultSet rs = new NewsDAO().searchNewsFilterTime("ង", "B020201", "", "weekly", 20,0);
-		while(rs.next()){
-			System.out.println(rs.getString("news_title"));
+	public ResultSet getPopularNews() throws SQLException {
+		try{
+			CallableStatement clstm = con.prepareCall("{call s_vw_news_popular}");
+		
+			System.out.println(clstm.toString());
+			ResultSet rs = clstm.executeQuery();
+			//rs.next();
+			return rs;
+		}catch(SQLException ex){
+			ex.printStackTrace();
 		}
+		finally{
+			con.close();
+		}
+		return null;
 	}
+	public ResultSet getRecommendNews() throws SQLException {
+		try{
+			CallableStatement clstm = con.prepareCall("{call s_vw_news_recommend}");
+		
+			System.out.println(clstm.toString());
+			ResultSet rs = clstm.executeQuery();
+			//rs.next();
+			return rs;
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+		finally{
+			con.close();
+		}
+		return null;
+	}
+	
 }// End of class;
 
 

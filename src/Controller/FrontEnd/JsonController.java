@@ -97,6 +97,16 @@ public class JsonController extends HttpServlet {
 		case "/listnewscategorybymonthly.json":
 			action = new ListNewsCategoryByMonthly();
 			break;	
+			
+		/*-------------Bo Add New Case---------------*/
+		case "/getrecommendnews.json":
+			action = new RecommendNews();
+			break;
+		case "/getpopularnews.json":
+			action = new PopularNews();
+			break;
+			
+		/*--------------End of New Case--------------*/
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");
