@@ -2,12 +2,15 @@ package Controller.FrontEnd;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Model.FrontEndDAO.NewsDAO;
 
 /**
  * Servlet implementation class BeerAppServlet
@@ -40,8 +43,18 @@ public class Category extends HttpServlet {
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("###########################Category Controller");
-		RequestDispatcher view=request.getRequestDispatcher("category.jsp");
-		view.forward(request,response);
+			if(request.getParameter("id") != null){				
+				System.out.println(request.getParameter("id"));
+				String id = request.getParameter("id");
+				try {
+					request.setAttribute("rs", new NewsDAO().listNewsCategoryByWeekly(id, 15));
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				RequestDispatcher view=request.getRequestDispatcher("category.jsp");
+				view.forward(request,response);
+			}
 	}
 
 }

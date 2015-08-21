@@ -58,8 +58,8 @@ public class JsonController extends HttpServlet {
 		Action action = null;
 
 		System.out.println(RequestURI);
-		System.out.println(contextPath);
-		System.out.println("--" + command);
+/*		System.out.println(contextPath);
+		System.out.println("--" + command);*/
 
 		switch (command) {
 		case "/listResult.json":

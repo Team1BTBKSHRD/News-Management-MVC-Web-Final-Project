@@ -227,55 +227,55 @@
 	<script>
 		$("#btn-home").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#owl-demo").offset().top - 70
+				scrollTop : $("#owl-demo").offset().top - 75
 			}, 500);
 		});
 	
 		$("#btn-localnews").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#localnews-scroll").offset().top - 70
+				scrollTop : $("#localnews-scroll").offset().top - 75
 			}, 500);
 		});
 
 		$("#btn-technews").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#technews-scroll").offset().top - 70
+				scrollTop : $("#technews-scroll").offset().top - 75
 			}, 500);
 		});
 		$("#btn-sportnews").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#sportnews-scroll").offset().top - 70
+				scrollTop : $("#sportnews-scroll").offset().top - 75
 
 			}, 500);
 		});
 		
 		$("#btn-knowledgenews").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#knowledgenews-scroll").offset().top - 70
+				scrollTop : $("#knowledgenews-scroll").offset().top - 75
 
 			}, 500);
 		});
 		$("#btn-socialnews").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#socialnews-scroll").offset().top - 70
+				scrollTop : $("#socialnews-scroll").offset().top - 75
 
 			}, 500);
 		});
 		$("#btn-Economynews").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#economicnews-scroll").offset().top - 70
+				scrollTop : $("#economicnews-scroll").offset().top - 75
 
 			}, 500);
 		});
 		$("#btn-EntertainmentNews").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#entertainmentnews-scroll").offset().top - 70
+				scrollTop : $("#entertainmentnews-scroll").offset().top - 75
 
 			}, 500);
 		});
 		$("#btn-LifeAndJobs").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#lifeandjobsnews-scroll").offset().top - 70
+				scrollTop : $("#lifeandjobsnews-scroll").offset().top - 75
 
 			}, 500);
 		});
