@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>news box site...</title>
+<title>News Box</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<link rel="shortcut icon" href="img/box.png" />
 <!-- lib css -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
