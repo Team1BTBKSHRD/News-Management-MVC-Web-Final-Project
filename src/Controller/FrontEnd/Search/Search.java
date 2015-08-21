@@ -2,6 +2,8 @@ package Controller.FrontEnd.Search;
 
 
 import java.io.IOException;
+import java.net.URLDecoder;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -39,6 +41,8 @@ public class Search extends HttpServlet {
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("###########################Search Controller");
+		request.setCharacterEncoding("UTF-8") ;
+
 		/*System.out.println(request.getParameter("title"));
 		System.out.println(request.getParameter("timeCode"));
 		System.out.println(request.getParameter("categoryCode"));
@@ -57,8 +61,7 @@ public class Search extends HttpServlet {
 		} catch (SQLException e) {		
 			e.printStackTrace();
 		}*/
-		RequestDispatcher view=request.getRequestDispatcher("search.jsp");
-		view.forward(request,response);
+		request.getRequestDispatcher("search.jsp").forward(request,response);
 	}
 
 }

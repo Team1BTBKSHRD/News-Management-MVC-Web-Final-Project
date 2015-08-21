@@ -104,7 +104,7 @@ $('body').on('click', '#btnSubmit', function() {
 		var str = "";
 		for (var i = 1; i < data.length; i++) {
 			str +=
-			"<div class='col-sm-12 search-result'><a href='"+ data[i].news_path +"'>"+
+			"<div class='col-sm-12 search-result'><a href='"+ data[i].news_path +"' target='_blank'>"+
 			"<div class='col-md-3 col-sm-3 col-xs-3 clear-paddings'>"+
 			"<img src='"+ data[i].news_img +"' class='col-md-12 col-sm-12 col-xs-12 clear-paddings'"+ 
 			"height='119.5px' id='img-1'></div>"+
@@ -115,6 +115,13 @@ $('body').on('click', '#btnSubmit', function() {
 			"<strong class='news-source'>ប្រភពពត៌មាន<kbd>"+ data[i].full_name +"</kbd></strong>"+
 			"</div><div class='clearfix'></div></a></div>";
 		}
-		$('.search-result-wrapper').html(str);
+		if(data.length == 15){
+			str += 
+				"<ul class='pager  clear-padding-right'>"+
+			      "<li class='previous'><a href='#'>Previous</a></li>"+
+			      "<li class='next'><a href='#'>Next</a></li>"+
+			    "</ul>";
+		}
+		$('.search-result-wrapper').html(str);		
 	});
 });
