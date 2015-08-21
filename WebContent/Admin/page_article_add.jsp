@@ -78,7 +78,7 @@ input[type=file] {
 
 									<div class="row">
 										<!--  row  form -->
-
+											<form id="form_article_add" >
 										
 
 											<div class="panel-body">
@@ -118,7 +118,7 @@ input[type=file] {
 															<label class="col-sm-4 control-label">LinkPage</label>
 															<div class="col-sm-12">
 																<input type="text" id="newspath" name="newspath"
-																	class="form-control" placeholder="http://" required />
+																	class="form-control" placeholder="http://" />
 
 															</div>
 														</div>
@@ -140,7 +140,7 @@ input[type=file] {
 
 																<span class="input-group-btn btn btn-default btn-file"
 																	style="font-size: 14px;"> Browse ... <input
-																	type="file" name="photo" id="file_image" required />
+																	type="file" name="photo" id="file_image" />
 
 																</span>
 
@@ -157,7 +157,7 @@ input[type=file] {
 															<div class="col-sm-12">
 																<textarea class="form-control" id="news_des"
 																	name="news_des" rows="8" class="form-control"
-																	placeholder="Description" required></textarea>
+																	placeholder="Description" ></textarea>
 															</div>
 														</div>
 														<!-- form-group -->
@@ -165,11 +165,10 @@ input[type=file] {
 														<div class="col-sm-6 col-sm-offset-2">
 															<br />
 															 <div class="btn btn-group">
-																<span><button class="btn btn-success"
-																		id="save_to">SaveToDraft</button></span>
-																<span><input type="button" class="btn btn-primary" id="addArticle" name="addArticle" value="Post"/></span> <span><button
-																		class="btn btn-danger" data-toggle="collapse"
-																		data-target="#demo">Cancel</button></span>
+																<span><button  class="btn btn-success"
+																		id="save_to" >SaveToDraft</button></span>
+																<span><button  class="btn btn-primary" id="addArticle" name="addArticle" >Post</button></span>
+																 <span><input type="button" class="btn btn-danger" id="btncancel" value="Cancel" /></span>
 														 </div>
 														</div>
 													</div>
@@ -189,8 +188,6 @@ input[type=file] {
 
 													<div style="width: 100%; height: 2px; background-color: #BCE8F1;"></div>
 
-
-
 												</div>
 												<!-- form-group -->
 
@@ -202,6 +199,7 @@ input[type=file] {
 										<!-- panel-body -->
 
 										<!-- collapse -->
+										</form>
 									</div>
 									<!-- row form -->
 
@@ -239,7 +237,7 @@ input[type=file] {
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	<script src="js/custom/script_article_add.js"></script>
-	<script src="js/validate/page_article_validate.js"></script>
+	 <script src="js/validate/page_article_validate.js"></script> 
 	<!--  script for validate add aticle sarin -->
 
 	
@@ -299,6 +297,18 @@ input[type=file] {
 			return str;
 		}
 	
+		/* sarin clear text box */
+		jQuery("#btncancel").click(function(){
+			
+			 $("#newid").val("");
+			 $("#newstitle").val("");
+			 $("#newscategory").val("");
+			 $("#newspath").val("");
+			 $("#filename").val("");
+			 $("#news_des").val("");
+			 $("#file_image").val("");
+			 $("#news_con_detail").code("");
+		});
 		
 		
 		jQuery("#addArticle")
@@ -312,6 +322,8 @@ input[type=file] {
 								//img=jQuery("#file_image").val().split("\\");
 								img=img[img.length - 1];
 							}
+							if(jQuery("#newscategory").val()==""){return;}
+							else{
 							 jQuery
 									.post(
 											"addarticle.news",
@@ -329,23 +341,24 @@ input[type=file] {
 											}, function() {
 												alert("Add Success!");
 											}); 
+							}
 						});
 		
 
 		jQuery("#save_to")
 				.click(
 						function() {
-							var img = jQuery("#file_image").val().split("\\");						
+							 var img = jQuery("#file_image").val().split("\\");						
 							if(img==""){
 								img="no_image.png";
 							}  
 							else{
 								//img=jQuery("#file_image").val().split("\\");
 								img=img[img.length - 1];
-							}
-
-								jQuery
-									.post("addarticle.news",
+							} 
+							if(jQuery("#newscategory").val()==""){return;}
+							else{
+							 	jQuery.post("addarticle.news",
 											{
 												//  news_con_detail  
 												cat_name : jQuery("#newscategory").val(),
@@ -360,6 +373,7 @@ input[type=file] {
 											}, function() {
 												alert("Add Success!");
 											});  
+							}
 						});
 	</script>
 </body>

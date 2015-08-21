@@ -14,6 +14,7 @@ import org.jsoup.select.Elements;
 import Model.BackEndDAO.JsoupDAO;
 import Model.DTO.jobDTO;
 import Model.DTO.scholarshipDTO;
+import Utilities.Convertor;
 
 import com.google.gson.Gson;
 
@@ -25,8 +26,16 @@ public class listscholarship implements Action {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 
-		String obj = new Gson().toJson(new JsoupDAO().retrievScholarship());
+		String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString();
 		System.out.println(obj);
 		response.getWriter().write(obj);
 	}
+	/*public static void main(String[] args) {
+		try {
+			System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}*/
 }

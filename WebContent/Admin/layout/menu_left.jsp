@@ -24,7 +24,7 @@
 
 	<h5 class="leftpanel-title" id="d">Navigation</h5>
 	<ul class="nav nav-pills nav-stacked">
-		<li class="active"><a href="index.jsp"><i class="fa fa-home"></i>
+		<li id="index_dashboard_menu"><a href="index.jsp"><i class="fa fa-home"></i>
 				<span>Dashboard</span></a></li>
 		<!--  <li><a href="messages.html"><span class="pull-right badge">5</span><i class="fa fa-envelope-o"></i> <span>Messages</span></a></li> -->
 		<li class="parent" id="main_menu_article"><a href="#"><i
@@ -49,7 +49,7 @@
 		%>
 		<li id="usermenu"><a href="page_user_add.jsp"><i
 				class="fa fa-user"></i> <span>User</span></a></li>
-				<li id="pg_statistic"><a href="page_statistic.jsp"><i
+				<li id="pg_statistic_menu"><a href="page_statistic.jsp"><i
 				class="glyphicon glyphicon-signal"></i> <span>Statistic</span></a></li>
 		<li id="usermenu" class="parent"><a href=""><i
 				class="glyphicon glyphicon-cog"></i> <span>Setting</span></a>

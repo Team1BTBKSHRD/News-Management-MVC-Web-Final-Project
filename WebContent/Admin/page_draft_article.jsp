@@ -78,6 +78,7 @@ input[type=file] {
 
 									<div class="row">
 										<!--  row  form -->
+										<form>
 
 										<div id="demo" class="collapse">
 
@@ -93,11 +94,11 @@ input[type=file] {
 															<div class="col-sm-12">
 																<input type="text" id="newstitle" name="newstitle"
 																	class="form-control" placeholder="ចំណងជើងព័ត៏មាន"
-																	required />
+																	   />
 															</div>
 														</div>
 														<!-- form-group -->
-														<div class="form-group" >
+														<div class="form-group" style="display:none;" >
 															<div class="col-sm-12">
 																<input type="text" id="newsid" name="newsid"
 																	class="form-control" placeholder="ចំណងជើងព័ត៏មាន"
@@ -124,7 +125,7 @@ input[type=file] {
 															<label class="col-sm-4 control-label">LinkPage</label>
 															<div class="col-sm-12">
 																<input type="text" id="newspath" name="newspath"
-																	class="form-control" placeholder="http://" required />
+																	class="form-control" placeholder="http://"    />
 
 															</div>
 														</div>
@@ -132,9 +133,9 @@ input[type=file] {
 														<label class="col-sm-4 control-label">រូបភាពរបស់ព័ត៏មាន</label>
 														<div class="col-sm-12">
 															<div class="form-group input-group">
-																<span class="input-group-addon"><button
+																<span class="input-group-addon"><input type="button"
 																		id="imguploads"
-																		style="border: 0px; background-color: #EEEEEE;">upload</button></span>
+																		style="border: 0px; background-color: #EEEEEE;" value="Upload" /></span>
 																<input type="text" class="form-control" id="filename">
 																<!-- <span
 																class="input-group-btn">
@@ -146,7 +147,7 @@ input[type=file] {
 
 																<span class="input-group-btn btn btn-default btn-file"
 																	style="font-size: 14px;"> Browse ... <input
-																	type="file" name="photo" id="file_image" required />
+																	type="file" name="photo" id="file_image"    />
 
 																</span>
 
@@ -163,7 +164,7 @@ input[type=file] {
 															<div class="col-sm-12">
 																<textarea class="form-control" id="news_des"
 																	name="news_des" rows="8" class="form-control"
-																	placeholder="Description" required></textarea>
+																	placeholder="Description"   ></textarea>
 															</div>
 														</div>
 														<!-- form-group -->
@@ -171,12 +172,12 @@ input[type=file] {
 														<div class="col-sm-6 col-sm-offset-2">
 															<br />
 															<div class="btn btn-group">
-																<span><button class="btn btn-success"
-																		id="btn_update_draft">Update</button></span>
-																<span><button class="btn btn-primary"
-																		id="btn_update_post">Post</button></span> <span><button
+																<span><input type="submit" class="btn btn-success"
+																		id="btn_update_draft" value="Update"></span>
+																<span><input type="submit" class="btn btn-primary"
+																		id="btn_update_post" value="Post"></span> <span><input type="button"
 																		class="btn btn-danger" data-toggle="collapse"
-																		data-target="#demo" id="btncancel">Cancel</button></span>
+																		data-target="#demo" id="btncancel" value="Cancel" /></span>
 															</div>
 														</div>
 													</div>
@@ -209,6 +210,7 @@ input[type=file] {
 										<!-- panel-body -->
 
 										<!-- collapse -->
+										</form>
 									</div>
 									<!-- row form -->
 
@@ -268,7 +270,7 @@ input[type=file] {
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	
-	<script src="js/validate/page_article_validate.js"></script>
+	<!-- <script src="js/validate/page_article_validate.js"></script> -->
 	<!--  script for validate add aticle sarin -->
 
 	
@@ -378,8 +380,9 @@ input[type=file] {
 			 $("#add").val("Update");
 			 $("#add").attr("onclick","update()"); */
 		}
+		/* sarin clear text box */
 		jQuery("#btncancel").click(function(){
-			 $("#newid").val("");
+			 $("#newsid").val("");
 			 $("#newstitle").val("");
 			 $("#newscategory").val("");
 			 $("#newspath").val("");
@@ -388,57 +391,7 @@ input[type=file] {
 			 $("#news_con_detail").code("");
 		});
 		
-		/* method changestatus for change value to Icon Active  Or Deactive  sarin 
-
-		function changestatus(data, id, i) {
-			var str = "";
-			if (data) {
-				str += "<a style=' cursor:pointer;'><img src='img/t.png' style='width:30px;height:30px' id="
-						+ id
-						+ " status='"
-						+ data
-						+ "' news_id='"
-						+ id
-						+ "' onclick='checkstatus(this)' /></a>";
-
-			} else {
-				str += "<a style='cursor:pointer;'><img src='img/f.png' style='width:30px;height:30px' id="
-						+ id
-						+ " status='"
-						+ data
-						+ "'  news_id='"
-						+ id
-						+ "' onclick='checkstatus(this)' /></a>";
-
-			}
-			return str;
-		}
-		*/
-
-		/*method checkstatus for  upadate status on databases
-		var statusAction = true;
-		function checkstatus(data) {
-
-			var status = $(data).attr("status");
-			var newsid = $(data).attr("news_id");
-			if (status == "true") {
-				$("#" + $(data).attr("id")).attr("src", "img/f.png");
-				$(data).attr("status", "false");
-				status = "flase";
-			} else {
-				$("#" + $(data).attr("id")).attr("src", "img/t.png");
-				$(data).attr("status", "true");
-				status = "true";
-			}
-			
-			$.post("updateStatus.news", {
-				news_id : newsid,
-				news_status : status,
-			}, function(data2, status) {
-
-			});
-		}
-*/
+		
 		/* ------------Sarin fucntion get image-------- */
 		function getimage(data) {
 			var str = "";
@@ -488,7 +441,6 @@ input[type=file] {
 							//alert(jQuery("#newsid").val());
 							 var img = jQuery("#file_image").val().split("\\");
 							 if(img==""){
-								 alert(1);
 								 img = jQuery("#filename").val();
 							 }
 							 else{
@@ -509,7 +461,7 @@ input[type=file] {
 											draft_status : false,
 											
 										}, function() {
-											alert("Add Success!");
+											alert("Update Success!");
 										});
 							
 						
@@ -542,12 +494,12 @@ input[type=file] {
 									draft_status : true,
 									
 								}, function() {
-									alert("Add Success!");
+									alert("Update Success!");
 								}); 
 				});
 				
 		
-		$("#main_menu_article").removeClass("parent" ).addClass("parent parent-focus" );
+		$("#main_menu_article").removeClass("parent" ).addClass("active parent" );
 		$("#page_draft_article_menu").addClass( "active" );
 		
 	</script>

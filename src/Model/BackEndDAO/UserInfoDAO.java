@@ -191,13 +191,6 @@ public class UserInfoDAO {
 			return rs;
 		} catch (Exception e) {
 			// TODO: handle exception
-		}finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 		return null;
 	}
@@ -216,4 +209,19 @@ public class UserInfoDAO {
 	 * clsmt.setString(1, "sabay"); ResultSet rs = clsmt.executeQuery(); return
 	 * rs; }
 	 */
+
+	
+	  public static void main(String[] args) throws SQLException, Exception {
+	 
+		  String str = "";
+			CallableStatement clsm = DatabaseConnection.getConnection().prepareCall("{call user_info_code(?)}");
+			clsm.setString(1, "sabay");
+			ResultSet rs = clsm.executeQuery();
+			if (rs.next()) {
+				str = rs.getString(1).toString();
+			}
+			System.err.println(str);
+	  }
+	 
+
 }// End of class;

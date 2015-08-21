@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.mysql.jdbc.PreparedStatement;
 
+import Model.DTO.exchangeRateDTO;
 import Model.DTO.jobDTO;
 import Model.DTO.scholarshipDTO;
 import Utilities.Convertor;
@@ -31,7 +32,8 @@ public class JsoupDAO {
 	public boolean insertJob(ArrayList<jobDTO> alistjdto) {
 		java.sql.PreparedStatement pstm = null;
 		try {
-			pstm = con.prepareStatement("insert into tbmyjob(title,company,close_date,category,link) values(?,?,?,?,?)");
+			pstm = con
+					.prepareStatement("insert into tbmyjob(title,company,close_date,category,link) values(?,?,?,?,?)");
 			for (jobDTO jobDTO : alistjdto) {
 				pstm.setString(1, jobDTO.getTitle());
 				pstm.setString(2, jobDTO.getCompany());
@@ -73,7 +75,8 @@ public class JsoupDAO {
 	public boolean insertScholarship(ArrayList<scholarshipDTO> asdto) {
 		java.sql.PreparedStatement pstm = null;
 		try {
-			pstm = con.prepareStatement("insert into tbscholarship(title,description,posted,deadline,link) values(?,?,?,?,?)");
+			pstm = con.prepareStatement(
+					"insert into tbscholarship(title,description,posted,deadline,link) values(?,?,?,?,?)");
 			for (scholarshipDTO scholarshipDTO : asdto) {
 				pstm.setString(1, scholarshipDTO.getTitle());
 				pstm.setString(2, scholarshipDTO.getDescription());
@@ -95,8 +98,7 @@ public class JsoupDAO {
 		}
 		return false;
 	}
-	
-	
+
 	public ResultSet retrievScholarship() {
 		try {
 			Statement stm = con.createStatement();
@@ -112,7 +114,60 @@ public class JsoupDAO {
 		}
 		return null;
 	}
-	/*public static void main(String[] args) throws Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievJobs()).toString());
-	}*/
+	/*
+	 * public static void main(String[] args) throws Exception {
+	 * System.out.println(Convertor.convertResultSetIntoJSON(new
+	 * JsoupDAO().retrievJobs()).toString()); }
+	 */
+
+	public boolean insertExchange(ArrayList<exchangeRateDTO> e) {
+		java.sql.PreparedStatement pstm = null;
+		try {
+			pstm = con.prepareStatement("insert into tbexchange(currency,bid,ask) values(?,?,?)");
+			for (exchangeRateDTO exchangeRateDTO : e) {
+				pstm.setString(1, exchangeRateDTO.getCurrency());
+				pstm.setString(2, exchangeRateDTO.getBid());
+				pstm.setString(3, exchangeRateDTO.getAsk());
+				pstm.executeUpdate();
+			}
+			return true;
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean updateExchange(ArrayList<exchangeRateDTO> e) {
+		java.sql.PreparedStatement pstm = null;
+		try {
+			pstm = con.prepareStatement("update tbexchange set currency=?,bid=?,ask=? where id=?");
+			for (int i = 0; i < e.size(); i++) {
+				pstm.setString(1, e.get(i).getCurrency());
+				pstm.setString(2, e.get(i).getBid());
+				pstm.setString(3, e.get(i).getAsk());
+				pstm.setInt(4, i + 1);
+				pstm.executeUpdate();
+			}
+			return true;
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+		return false;
+	}
+
+	public ResultSet retrieveExchange() {
+		try {
+			Statement stm = con.createStatement();
+			return stm.executeQuery("select * from tbexchange");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return null;
+	}
 }

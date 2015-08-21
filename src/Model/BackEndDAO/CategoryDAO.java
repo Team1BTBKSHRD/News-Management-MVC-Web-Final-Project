@@ -42,8 +42,8 @@ public class CategoryDAO {
 	public boolean insert(Category category) throws SQLException {
 
 		try {
-			pstm = con.prepareStatement(
-					"INSERT INTO tbcategory(cat_code, parent_id, cat_name, cat_desc) VALUES(?, ?, ?, ?)");
+			pstm = con
+					.prepareStatement("INSERT INTO tbcategory(cat_code, parent_id, cat_name, cat_desc) VALUES(?, ?, ?, ?)");
 			ResultSet rs = pstm.executeQuery();
 			/* Initialize parameters for pstm object */
 			pstm.setString(1, category.getCat_code());
@@ -51,10 +51,11 @@ public class CategoryDAO {
 			pstm.setString(3, category.getCat_name());
 			pstm.setString(4, category.getCat_desc());
 
-			return pstm.executeUpdate() > 0 ? true
-					: false; /*
-								 * return true for success and false if fail
-								 */
+			return pstm.executeUpdate() > 0 ? true : false; /*
+															 * return true for
+															 * success and false
+															 * if fail
+															 */
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -77,14 +78,16 @@ public class CategoryDAO {
 	public boolean delete(int categoryId) throws SQLException {
 		try {
 			/* Set PreparedStatement */
-			pstm = con.prepareStatement("DELETE FROM tbcategory WHERE cat_id = ?;");
+			pstm = con
+					.prepareStatement("DELETE FROM tbcategory WHERE cat_id = ?;");
 			/* Initialize parameter for pstm object */
 			pstm.setInt(1, categoryId);
 
-			return pstm.executeUpdate() > 0 ? true
-					: false; /*
-								 * return true for success and false if fail
-								 */
+			return pstm.executeUpdate() > 0 ? true : false; /*
+															 * return true for
+															 * success and false
+															 * if fail
+															 */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -106,8 +109,8 @@ public class CategoryDAO {
 	public boolean update(Category category) throws SQLException {
 		try {
 			/* Set PreparedStatement */
-			pstm = con.prepareStatement(
-					"UPDATE tbcategory SET cat_code=?, parent_id=?, cat_name=?, cat_desc=? WHERE cat_id=?;");
+			pstm = con
+					.prepareStatement("UPDATE tbcategory SET cat_code=?, parent_id=?, cat_name=?, cat_desc=? WHERE cat_id=?;");
 
 			/* Initialize parameters for pstm object */
 			pstm.setString(1, category.getCat_code());
@@ -116,10 +119,11 @@ public class CategoryDAO {
 			pstm.setString(4, category.getCat_desc());
 			pstm.setInt(5, category.getCat_id());
 			System.out.println(pstm.toString());
-			return pstm.executeUpdate() > 0 ? true
-					: false; /*
-								 * return true for success and false if fail
-								 */
+			return pstm.executeUpdate() > 0 ? true : false; /*
+															 * return true for
+															 * success and false
+															 * if fail
+															 */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -144,15 +148,16 @@ public class CategoryDAO {
 												 */
 		try {
 			stm = con.createStatement(); /* Initialize stm */
-			rs = stm.executeQuery(
-					"SELECT * FROM tbcategory"); /*
-													 * Execute query and assigns
-													 * to rs
-													 */
+			rs = stm.executeQuery("SELECT * FROM tbcategory"); /*
+																 * Execute query
+																 * and assigns
+																 * to rs
+																 */
 			categories = new ArrayList<>(); /* Initialize categories */
 			while (rs.next()) { /* Add every record into categories */
-				categories.add(new Category(rs.getInt("cat_id"), rs.getString("cat_code"), rs.getInt("parent_id"),
-						rs.getString("cat_name"), rs.getString("cat_desc")));
+				categories.add(new Category(rs.getInt("cat_id"), rs
+						.getString("cat_code"), rs.getInt("parent_id"), rs
+						.getString("cat_name"), rs.getString("cat_desc")));
 			}
 
 			return categories; /* return categories object */
@@ -178,11 +183,11 @@ public class CategoryDAO {
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
 			stm = con.createStatement(); /* Initialize stm */
-			rs = stm.executeQuery(
-					"SELECT * FROM tbcategory"); /*
-													 * Execute query and assigns
-													 * to rs
-													 */
+			rs = stm.executeQuery("SELECT * FROM tbcategory"); /*
+																 * Execute query
+																 * and assigns
+																 * to rs
+																 */
 			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -198,73 +203,36 @@ public class CategoryDAO {
 
 	/**
 	 * @throws SQLException
-	 *             return full_name from tbuserinfo
-	 */
-	public ResultSet resourceList() {
-		try {
-			Statement stm = con.createStatement();
+	 * 
+	 * 
+	 * */
+	public ResultSet resourceList() throws SQLException {
+		Statement stm = con.createStatement();
+		ResultSet rs = stm.executeQuery("select full_name from tbuserinfo");
+		return rs;
 
-			return stm.executeQuery("select full_name from tbuserinfo");
-		} catch (SQLException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		return null;
 	}
 
-	public ResultSet categoryNameList() {
-		try {
-			Statement stm = con.createStatement();
-
-			return stm.executeQuery("select distinct(cat_name), cat_code from tbcategory");
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return null;
+	public ResultSet categoryNameList() throws SQLException {
+		Statement stm = con.createStatement();
+		ResultSet rs = stm.executeQuery("select distinct(cat_name), cat_code from tbcategory");
+		return rs;
 
 	}
 
 	/*
 	 * return category code
 	 */
-	public String returnCateCode(String data){ // ???????
-		try {
-			CallableStatement clstm = con.prepareCall("{call category_code(?)}");
-			clstm.setString(1, data);
-			ResultSet rs = clstm.executeQuery();
-			String catecode = null;
-			if (rs.next()) {
-				catecode = rs.getString(1).toString();
-			}
-			return catecode;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally{
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+	public String returnCateCode(String data) throws SQLException { // ???????
+		CallableStatement clstm = con.prepareCall("{call category_code(?)}");
+		clstm.setString(1, data);
+		ResultSet rs = clstm.executeQuery();
+		String catecode = null;
+		if (rs.next()) {
+			catecode = rs.getString(1).toString();
 		}
-		
-		return null;
+		return catecode;
+		// return data;
 	}
 	/*
 	 * public static void main(String[] args) throws Exception {
@@ -272,28 +240,56 @@ public class CategoryDAO {
 	 * CategoryDAO().resourceList())); }
 	 */
 
-	public ResultSet manageCatUser(String data){
+	public ResultSet manageCatUser(String data) throws SQLException {
 		CallableStatement clstm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
-			clstm = con.prepareCall(
-					"{call manage_cat_user(?)}"); /* Initialize stm */
+			clstm = con.prepareCall("{call manage_cat_user(?)}"); /* Initialize stm */
 			clstm.setString(1, data);
 			rs = clstm.executeQuery(); /*
-										 * Execute query and assigns to rs
-										 */
+																 * Execute query
+																 * and assigns
+																 * to rs
+																 */
 			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		} /*finally {
+			// Close stm, rs and con
+			clstm.close();
+			// rs.close();
+			//con.close();
+		}*/
+
 		return null; /* Return null if error */
 	}
+	public static void main(String[] args) throws SQLException, Exception {
+		System.out.println(Convertor.convertResultSetIntoJSON(new CategoryDAO().manageCatUser("sabay")).toString());
+	}
+	/*Sarin updatestatus category*/
+	public boolean updatCatstatus(String cat_code, boolean cat_status) {
+		try{
+			pstm = con.prepareStatement("update tbcategory SET cat_status = ? where cat_code = ? ");
 
+			pstm.setBoolean(1, cat_status);
+			pstm.setString(2, cat_code);
+			System.out.println(cat_code + " " + cat_status);
+			if (pstm.executeUpdate() > 0) {
+				return true;
+			}
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			finally{
+				
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return false;
+		
+	}
 }// End of class;

@@ -157,45 +157,7 @@ input[type=file] {
 		var name='<%=session.getAttribute("admin")%>';
 
 		
-		$.post("list_article_scrape.news", {
-			full_name : name
-		}, function(data) {
-			$('#t_list_data_scrape').dataTable().fnDestroy();
-			
-			$("#list_scrape").html(tblist_Article_scarpe(data));
-			
-
-			$('#t_list_data_scrape').dataTable({
-				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
-			/* Sarin add datatable */
-			});
-			
-			
-			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
-		});
 		
-		
-		function tblist_Article_scarpe(data) {
-			var str = "";
-			/* alert(data[i].news_status); */
-			/* alert(data.length); */
-			for (var i = 0; i < data.length; i++) {
-				/*compare full_name */
-				str += "<tr>"
-						+ "<td style='padding-top:29px' id=news_id" + data[i].news_id + ">"
-						+ "<a href="+data[i].news_path+" target='_blank' style='text-decoration:none;'>"
-						+ data[i].news_title + "</a></td>" + "<td>"
-						+ data[i].cat_name + "</td>" + "<td>"
-						+ getimage(data[i].news_img) + "</td>" + "<td>"
-						+ data[i].news_date + "</td>"
-						/*  + "<td style='text-align: center;'>" + btnAction(i)  */
-						+ "<td style='text-align: center;'>"
-						+ changestatus(data[i].news_status, data[i].news_id, i)
-						+ "</td>" + "</tr>";
-
-			}
-			return str;
-		}
 		
 		
 		
@@ -299,7 +261,7 @@ input[type=file] {
 		
 		
 		
-		 	$("#main_menu_article").removeClass("parent" ).addClass("parent parent-focus" );
+		 	$("#main_menu_article").removeClass("parent" ).addClass("active parent" );
 			$("#page_post_article_menu").addClass( "active" );
 		
 		

@@ -147,6 +147,16 @@ public class Front_Controller extends HttpServlet {
 			}
 			break;
 		
+			/*for update category Status sarin*/
+		case "/Admin/updateCategoryStatus.news":
+			action = new updateCategoryStatus();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
 			
 			/*for update status sarin*/
 		case "/Admin/updateStatus.news":

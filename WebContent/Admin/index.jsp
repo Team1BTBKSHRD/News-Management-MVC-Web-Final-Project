@@ -324,6 +324,8 @@
 
 			return str;
 		}
+		
+		$("#index_dashboard_menu").removeClass("parent" ).addClass("active" );
 	</script>
 </body>
 </html>

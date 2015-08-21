@@ -41,8 +41,10 @@ public class listjobs implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		String obj = new Gson().toJson(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievJobs()));
-		System.out.println(obj);
+		String obj=Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievJobs()).toString();
 		response.getWriter().write(obj);
 	}
+	/*public static void main(String[] args) throws Exception {
+		System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievJobs()).toString());
+	}*/
 }

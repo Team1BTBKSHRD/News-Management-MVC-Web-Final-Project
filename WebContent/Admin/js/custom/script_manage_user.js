@@ -1,6 +1,6 @@
 var name = '<%=session.getAttribute("admin")%>';
 /*------------script for focus on menu -------------- */
-$("#usermenu").removeClass("parent").addClass("parent parent-focus");
+$("#usermenu").removeClass("parent").addClass("active");
 /* $("#usermenu").addClass("active" ); */
 $.post("userinfolist.news", function(data) {
 	$("#listdetial").html(tblistArticle(data));
