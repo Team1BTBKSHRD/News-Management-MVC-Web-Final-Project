@@ -6,6 +6,7 @@
     <title>news box site...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="img/box.png" />
     <!-- lib css -->
     <link rel="stylesheet" href="css/font-google-open-sans.css">
     <link rel="stylesheet" href="css/font-google-roboto-condensed.css">
@@ -149,20 +150,14 @@
     <!-- footer -->
     <jsp:include page="layouts/footer.jsp" />
     <!-- end footer -->
-    <!-- javascript-->
+    <!-- #####################javascript#################### -->
     <!-- lib js -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
     <!-- end lib js -->
     <!-- custom js -->
-    <script src="js/custom/owl.js"></script>
     <script src="js/custom/index.js"></script>
-        <script src="js/custom/exchange.js"></script>
-    <script>
-      document.write('<script src="http://'+ (location.host || 'localhost')
-      	.split(':')[0]	+ ':35729/livereload.js?snipver=2"></' + 'script>');
-    </script>
+    <script src="js/custom/right-panel.js"></script>	
     <!-- end custom js -->
     <!-- #####################end javascript#################### -->	
   </body>

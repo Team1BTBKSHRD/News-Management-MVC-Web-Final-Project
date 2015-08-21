@@ -6,8 +6,8 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">ពត៌មានពេញនិយម</h3>
 	</div>
-	<div class="panel-body-right" id="panelRigth">
-		<ul class="list-group clear-margin-bottom" id="popular">
+	<div class="panel-body-right">
+		<ul class="list-group clear-margin-bottom" id="panel-body-popular">
 		</ul>
 		<div class="clearfix"></div>
 	</div>
@@ -17,8 +17,8 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">ពត៌មានដែលគួរអាន</h3>
 	</div>
-	<div class="panel-body-right" id="panelRightDown">
-		<ul class="list-group clear-margin-bottom" id="recommend">
+	<div class="panel-body-right">
+		<ul class="list-group clear-margin-bottom" id="panel-body-recommend">
 		</ul>
 		<div class="clearfix"></div>
 	</div>

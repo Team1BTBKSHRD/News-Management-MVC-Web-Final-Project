@@ -13,7 +13,7 @@ public class PopularNews implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		// TODO Auto-generated method stub
-		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().getRecommendNews()).toString();
+		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().getPopularNews()).toString();
 		/*System.out.println(newsList);*/
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

@@ -59,3 +59,4 @@
 						});
 		/*------------------------End of List All News-----------------------------*/
 		/* function add popular */
+		//var prmstr = window.location.search.substr(4);

@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.jstl.sql.Result;
+import javax.servlet.jsp.jstl.sql.ResultSupport;
 
 import Model.FrontEndDAO.NewsDAO;
 
@@ -47,7 +49,8 @@ public class Category extends HttpServlet {
 				System.out.println(request.getParameter("id"));
 				String id = request.getParameter("id");
 				try {
-					request.setAttribute("rs", new NewsDAO().listNewsCategoryByWeekly(id, 15));
+					Result rs = ResultSupport.toResult(new NewsDAO().listNewsCategoryByWeekly(id, 15));
+					request.setAttribute("rs", rs);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

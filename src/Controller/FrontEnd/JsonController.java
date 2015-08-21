@@ -71,9 +71,9 @@ public class JsonController extends HttpServlet {
 		case "/joblist.json":
 			action = new listjobs();
 			break;
-		case "/listallnews.json":
+/*		case "/listallnews.json":
 			action = new ListAllNews();
-			break;
+			break;*/
 		case "/recentnews.json":
 			action = new ListRecentNews();
 			break;

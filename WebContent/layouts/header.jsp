@@ -14,7 +14,7 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
         <ul class="nav navbar-nav navbar-right">
-          <li id="hdnews"><a href="home">ពត៌មានថ្មីៗ</a></li>
+          <li id="hdnews"><a href="home">ទំព័រដើម</a></li>
           <li id="hdlocalnews"><a href="category?id=B030101">ព័ត៌មានជាតិទូទៅ</a></li>
           <li id="hdtechnology"><a href="category?id=B010105">បចេ្ចកវិទ្យា</a></li>
           <li id="hdsport"><a href="category?id=B020201">កីឡា</a></li>
