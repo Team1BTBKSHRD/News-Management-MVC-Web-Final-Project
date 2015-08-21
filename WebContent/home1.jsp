@@ -26,7 +26,7 @@
 <body>
 	<%
 		session.removeAttribute("admin");
-	%>​​
+	%>
 	<!-- header -->
 	<jsp:include page="layouts/header.jsp" />
 	<!-- end header -->
@@ -214,8 +214,7 @@
 	<!-- footer -->
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
-	<!-- #####################javascript#################### -->
-	​​
+	<!-- #####################javascript#################### -->​​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -226,10 +225,15 @@
 	<script src="js/custom/exchange.js"></script>
 	<!-- <script src="js/custom/index.js"></script> -->
 	<script>
+		$("#btn-home").click(function() {
+			$('html, body').animate({
+				scrollTop : $("#owl-demo").offset().top - 70
+			}, 500);
+		});
+	
 		$("#btn-localnews").click(function() {
 			$('html, body').animate({
 				scrollTop : $("#localnews-scroll").offset().top - 70
-
 			}, 500);
 		});
 
@@ -241,6 +245,13 @@
 		$("#btn-sportnews").click(function() {
 			$('html, body').animate({
 				scrollTop : $("#sportnews-scroll").offset().top - 70
+
+			}, 500);
+		});
+		
+		$("#btn-knowledgenews").click(function() {
+			$('html, body').animate({
+				scrollTop : $("#knowledgenews-scroll").offset().top - 70
 
 			}, 500);
 		});
@@ -259,6 +270,12 @@
 		$("#btn-EntertainmentNews").click(function() {
 			$('html, body').animate({
 				scrollTop : $("#entertainmentnews-scroll").offset().top - 70
+
+			}, 500);
+		});
+		$("#btn-LifeAndJobs").click(function() {
+			$('html, body').animate({
+				scrollTop : $("#lifeandjobsnews-scroll").offset().top - 70
 
 			}, 500);
 		});
