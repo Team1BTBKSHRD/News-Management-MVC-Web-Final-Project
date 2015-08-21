@@ -21,7 +21,9 @@
           <li id="hdknowledge"><a  href="knowledge.jsp">ចំនេះដឺង</a></li>
           <li id="hdknowledge"><a  href="asd">សង្គម</a></li>
           <li id="hdscholarship"><a  href="404.jsp">សិល្បៈកម្សាន្ត</a></li>
-          <li id="hdjob"><a  href="job.jsp">សេដ្ឋកិច្ច</a></li>          
+          <li id="hdjob"><a  href="job.jsp">សេដ្ឋកិច្ច</a></li>
+          <li id="hdjob"><a  href="job.jsp">ការងារ</a></li>
+          <li id="hdjob"><a  href="job.jsp">អាហាររូបករណ៍</a></li>          
         </ul>
       </div>
     </div>

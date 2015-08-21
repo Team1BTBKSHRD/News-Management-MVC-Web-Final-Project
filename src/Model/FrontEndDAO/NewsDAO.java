@@ -67,12 +67,12 @@ public class NewsDAO {
 		return null;
 	}
 	
-	public ResultSet searchNewsFilterTime(String newsTitle, String categoryCode, String fullName, String timeFilter, int limit, int offset) throws SQLException {
+	public ResultSet searchNewsFilterTime(String newsTitle, String categoryCode, String userInfoCode, String timeFilter, int limit, int offset) throws SQLException {
 		try{
 			CallableStatement clstm = con.prepareCall("{call e_search_news_filter_time(?, ?, ?, ?, ?, ?)}");
 			clstm.setString(1, newsTitle);
 			clstm.setString(2, categoryCode);
-			clstm.setString(3, fullName);
+			clstm.setString(3, userInfoCode);
 			clstm.setString(4, timeFilter);
 			clstm.setInt(5, limit);
 			clstm.setInt(6, offset);

@@ -29,84 +29,65 @@
 			class="col-sm-9 content-left clear-padding-left clear-margin-bottom left-panel">
 			<!-- search form -->
 			<div class="panel panel-primary container-fluid clear-margin-right">
-				
-					<div class="col-sm-6 form-group clear-paddings search-wrapper">
-						<input type="text" placeholder="ស្វែងរក..." 
-							id="txtsearch-input" value="${param['title']}">
-						<button class="btn btn-primary" id="btnSubmit">ស្វែងរក</button>						
+
+				<div class="col-sm-6 form-group clear-paddings search-wrapper">
+					<input type="text" placeholder="ស្វែងរក..." id="txtsearch-input"
+						value="${param['title']}">
+					<button class="btn btn-primary" id="btnSubmit">ស្វែងរក</button>
+				</div>
+				<div class=" form-group col-sm-6">
+					<div class="btn-group combo-news">
+						<a class="btn btn-default  search-filter" id="showNews" value="">ប្រភពព័ត៌មាន</a>
+						<a class="btn btn-default  dropdown-toggle" data-toggle="dropdown"
+							aria-expanded="false"><span class="caret"></span></a>
+						<!-- category news-->
+						<ul class="dropdown-menu" id="lstnewsources"></ul>
+						<!--end category news-->
 					</div>
-					<div class=" form-group col-sm-6">
-						<div class="btn-group combo-news">
-							<a href="#" class="btn btn-default  search-filter" id="showNews" value="">ប្រភពព័ត៌មាន</a>														
-							<a href="#" class="btn btn-default  dropdown-toggle"
-								data-toggle="dropdown" aria-expanded="false"><span
-								class="caret"></span></a>
-							<!-- category news-->
-							<ul class="dropdown-menu" id="lstnewsources"></ul>
-							<!--end category news-->
-						</div>
-						<div class="btn-group combo-news">
-							<a href="#" class="btn btn-default search-filter"
-								id="showCategory" value="">ប្រភេទព័ត៌មាន</a>															 
-							<a href="#"	class="btn btn-default dropdown-toggle" 
-								data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
-							<!--news source-->
-							<ul class="dropdown-menu" id="lstcategory"></ul>
-							<!--end news source-->
-						</div>
-						<div class="btn-group combo-news">
-							<a href="#" class="btn btn-default search-filter" id="showTime" value="">ពេលវេលា</a>
-							<a href="#" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown" aria-expanded="false"><span
-								class="caret"></span></a>
-							<!--news source-->
-							<ul class="dropdown-menu" id="lsttime"></ul>
-							<!--end news source-->
-						</div>
+					<div class="btn-group combo-news">
+						<a class="btn btn-default search-filter" id="showCategory"
+							value="">ប្រភេទព័ត៌មាន</a> <a
+							class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+							aria-expanded="false"><span class="caret"></span></a>
+						<!--news source-->
+						<ul class="dropdown-menu" id="lstcategory"></ul>
+						<!--end news source-->
 					</div>
-					<div class="clearfix"></div>
-				
+					<div class="btn-group combo-news">
+						<a class="btn btn-default search-filter" id="showTime" value="">ពេលវេលា</a>
+						<a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+							aria-expanded="false"><span class="caret"></span></a>
+						<!--news source-->
+						<ul class="dropdown-menu" id="lsttime">
+							<li id=''><a href=#>ពេលវេលាណាមួយ</a></li>
+							<li id='daily'><a href=#>២៤ ម៉ោងមុន</a></li>
+							<li id='weekly'><a href=#>សប្តាហ៍មុន</a></li>
+							<li id='monthly'><a href=#>ខែនេះ</a></li>
+						</ul>
+						<!--end news source-->
+					</div>
+					<div class="btn-group combo-news">
+						<a class="btn btn-default search-filter" id="showItem" value="">ចំនួនលទ្ធផល​ ១០</a>
+						<a class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+							aria-expanded="false"><span class="caret"></span></a>
+						<!--news source-->
+						<ul class="dropdown-menu" id="lstItem">
+							<li id='10'><a href=#>១០</a></li>
+							<li id='20'><a href=#>២០</a></li>
+							<li id='50'><a href=#>៥០</a></li>
+							<li id='100'><a href=#>១០០</a></li>
+						</ul>
+						<!--end news source-->
+					</div>
+				</div>
+				<div class="clearfix"></div>
+
 			</div>
 			<!-- end search form -->
 
 			<!-- result list -->
 			<div class="panel panel-primary col-sm-12 search-result-wrapper">
-				<!-- search result -->
-				<div class="col-sm-12 search-result">
-					<a href="#">
-						<h5 class="article-name clear-margin-top">សេដ្ឋី​វ័យ​ក្មេង​ឥណ្ឌា​បញ្ជូន​កូន​ស្រី​ទៅ​ធ្វើ​ព្រះ​...</h5>
-						<strong>ផ្សាយ <kbd> 2015/03/07 </kbd></strong>
-						<p class="clear-margin-bottom text-2">Lorem ipsum dolor sit
-							amet, consectetur adipisicing elit. Unde exercitationem similique
-							ducimus iusto reprehenderit vitae, ab nihil, deleniti incidunt
-							optio ad illum aspernatur. Assumenda, officia, et! Est
-							repudiandae officiis dolore necessitatibus. Alias quod
-							consequatur nesciunt? Magnam ad odio commodi quasi assumenda quae
-							harum eaque quos, autem voluptates ab ipsa deleniti aliquam
-							eligendi nemo nobis illum excepturi delectus cupiditate adipisci
-							soluta rerum repellat corporis libero cumque. Eos harum incidunt
-							fuga, obcaecati, delectus eveniet pariatur voluptas mollitia
-							alias facere? Tenetur quibusdam quas voluptate quod sapiente
-							dolorem et tempora animi repellat quisquam, soluta esse facilis
-							est recusandae dicta, quae illum beatae nostrum ex!</p> <strong
-						class="news-source">ប្រភពពត៌មាន<kbd>Sabay</kbd></strong>
-						<div class="clearfix"></div>
-					</a>
-				</div>
-				<!--end search result -->
 
-
-				<!-- pagination navigation -->
-				<ul class="pager  clear-padding-right">
-					<li class="previous"><a href="#">Previous</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li class="next"><a href="#">Next</a></li>
-				</ul>
-				<!--end pagination navigation -->
 			</div>
 			<!--end result list -->
 		</div>

@@ -46,7 +46,6 @@ $
 				});
 /*------------------------End of List All News-----------------------------*/
 /* Load Time Drop */
-$("#lsttime").html(listTime());
 $.post("sourcelistwithcode.json", function(data) {
 	$("#lstnewsources").html(listSource(data));
 });
@@ -71,14 +70,6 @@ function listSource(data) {
 	}
 	return str;
 }
-/* list Time */
-function listTime() {
-	var lst = "<li id=''><a href=#>ពេលវេលាណាមួយ</a></li>";
-	lst += "<li id='daily'><a href=#>២៤ ម៉ោងមុន</a></li>"
-			+ "<li id='weekly'><a href=#>សប្តាហ៍មុន</a></li>"
-			+ "<li id='monthly'><a href=#>ខែមុន</a></li>"
-	return lst;
-}
 /* function add popular */
 // ###################################select value drop down
 $('body').on('click', '#lstnewsources li', function() {
@@ -93,35 +84,85 @@ $('#lsttime li').on('click', function() {
 	$('#showTime').text($(this).text());
 	$('#showTime').attr('value', $(this).attr("id"));
 });
-$('body').on('click', '#btnSubmit', function() {
-	$.post("listResult.json", {
-		title : $('#txtsearch-input').val(),
-		newsCode : $('#showNews').attr('value'),
-		categoryCode : $('#showCategory').attr('value'),
-		timeCode : $('#showTime').attr('value'),
-		pageCode : "0"
-	}, function(data, status) {	
-		var str = "";
-		for (var i = 1; i < data.length; i++) {
-			str +=
-			"<div class='col-sm-12 search-result'><a href='"+ data[i].news_path +"' target='_blank'>"+
-			"<div class='col-md-3 col-sm-3 col-xs-3 clear-paddings'>"+
-			"<img src='"+ data[i].news_img +"' class='col-md-12 col-sm-12 col-xs-12 clear-paddings'"+ 
-			"height='119.5px' id='img-1'></div>"+
-			"<div class='col-md-9 col-sm-9 col-xs-9 clear-padding-right'>"+
-			"<h5 class='article-name clear-margin-top'>"+ data[i].news_title +"</h5>"+
-			"<strong>ផ្សាយ <kbd>"+ data[i].news_published_date +"</kbd></strong>"+
-			"<p class='clear-margin-bottom text-2'>"+ data[i].news_desc +"</p>"+
-			"<strong class='news-source'>ប្រភពពត៌មាន<kbd>"+ data[i].full_name +"</kbd></strong>"+
-			"</div><div class='clearfix'></div></a></div>";
-		}
-		if(data.length == 15){
-			str += 
-				"<ul class='pager  clear-padding-right'>"+
-			      "<li class='previous'><a href='#'>Previous</a></li>"+
-			      "<li class='next'><a href='#'>Next</a></li>"+
-			    "</ul>";
-		}
-		$('.search-result-wrapper').html(str);		
-	});
+$('#lstItem li').on('click', function() {
+	$('#showItem').text('ចំនួនលទ្ធផល ' + $(this).text());	
+/*	countItems = parseInt($(this).attr("id"));
+	pageNumber = parseInt($(this).attr("id"));
+	alert(countItems);*/
 });
+var countItems = 15;
+var pageNumber = 0;
+function getResult(pageNumber) {
+	$
+			.post(
+					"listResult.json",
+					{
+						title : $('#txtsearch-input').val(),
+						newsCode : $('#showNews').attr('value'),
+						categoryCode : $('#showCategory').attr('value'),
+						timeCode : $('#showTime').attr('value'),
+						pageCode : pageNumber
+					},
+					function(data, status) {
+						if (data.length > 0) {
+							var str = "";
+							for (var i = 1; i < data.length; i++) {
+								str += "<div class='col-sm-12 search-result'><a href='"
+										+ data[i].news_path
+										+ "' target='_blank'>"
+										+ "<div class='col-md-3 col-sm-3 col-xs-3 clear-paddings'>"
+										+ "<img src='"
+										+ data[i].news_img
+										+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings'"
+										+ "height='119.5px' id='img-1'></div>"
+										+ "<div class='col-md-9 col-sm-9 col-xs-9 clear-padding-right'>"
+										+ "<h5 class='article-name clear-margin-top'>"
+										+ data[i].news_title
+										+ "</h5>"
+										+ "<strong>ផ្សាយ <kbd>"
+										+ data[i].news_published_date
+										+ "</kbd></strong>"
+										+ "<p class='clear-margin-bottom text-2'>"
+										+ data[i].news_desc
+										+ "</p>"
+										+ "<strong class='news-source'>ប្រភពពត៌មាន<kbd>"
+										+ data[i].full_name.toUpperCase()
+										+ "</kbd></strong>"
+										+ "</div><div class='clearfix'></div></a></div>";
+							}
+							str += "<ul class='pager clear-padding-right'>"
+									+ "<li class='previous'><a href='#' class='btn btn-lg btn-default'>ទំព័រក្រោយ</a></li>"
+									+ "<li class='next'><a href='#' class='btn btn-lg btn-default'>ទំព័របន្ទាប់</a></li>"
+									+ "</ul>";
+							$('.search-result-wrapper').html(str);
+							if (data.length < countItems) {
+								$('.next a').addClass('disabled');
+								$('body').off('click', '.next a');
+							}
+							if (pageNumber == 0) {
+								$('.previous a').addClass('disabled');
+								$('body').off('click', '.previous a');
+							}
+						} else {
+							
+						}
+					});
+}
+$('body').on('click ', '#btnSubmit', function() {
+	pageNumber = 0;
+	if ($('#txtsearch-input').val() != '')
+		getResult(pageNumber);
+	$('html, body').animate({
+		scrollTop : $(".search-result-wrapper").offset().top - 70
+	}, 500);
+});
+$('#txtsearch-input').keypress(function(e) {
+	if (e.which == 13)	$("#btnSubmit").trigger("click");
+});
+$('body').on('click', '.previous', function() {
+	getResult(pageNumber -= countItems);
+});
+$('body').on('click', '.next', function() {
+	getResult(pageNumber += countItems);
+});
+$("#btnSubmit").trigger("click");
