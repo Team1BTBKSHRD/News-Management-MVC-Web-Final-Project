@@ -1,17 +1,37 @@
 package Controller.BackEnd;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Enumeration;
+import java.util.Locale;
+import java.util.Map;
 
+import javax.servlet.AsyncContext;
+import javax.servlet.DispatcherType;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import Model.BackEndDAO.JsoupDAO;
 import Model.DTO.jobDTO;
+import Utilities.Convertor;
 
 import com.google.gson.Gson;
 
@@ -19,31 +39,9 @@ public class listjobs implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		Document document = Jsoup.connect("http://www.bongthom.com/Jobs/ipgejobslist.asp").timeout(10000).get();
-		Elements table = document.select("table#tblList tr");
-		ArrayList<jobDTO> joblist = new ArrayList<jobDTO>();
-		jobDTO job = null;
-		String Title = "";
-		String closingDate = "";
-		String Category = "";
-		String CompanyName = "";
-		for(int i=1; i<table.select("tr").size(); i++){
-			job=new jobDTO();
-			Title = table.select("tr").get(i).select("td.JobsCol").get(1).text();
-			CompanyName = table.select("tr").get(i).select("td.JobsCol").get(2).text();
-			closingDate = table.select("tr").get(i).select("td.JobsCol").get(3).text();
-			Category = table.select("tr").get(i).select("td.JobsCol").get(4).text();
-			job.setTitle(Title);
-			job.setCompany(CompanyName);
-			job.setCloseDate(closingDate);
-			job.setCategory(Category);
-			joblist.add(job);
-		}
-		 response.setContentType("application/json");
-			response.setCharacterEncoding("UTF-8");
-	      
-		String obj = new Gson().toJson(joblist);
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		String obj = new Gson().toJson(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievJobs()));
 		System.out.println(obj);
 		response.getWriter().write(obj);
 	}

@@ -347,7 +347,7 @@ public class DateConverter {
 		return sqlDate;
 	}
 
-	protected boolean convertStringToSqlDate() throws ClassNotFoundException,
+	public boolean convertStringToSqlDate() throws ClassNotFoundException,
 			SQLException {
 		java.sql.Connection con = DatabaseConnection.getConnection();
 		CallableStatement clstm = con.prepareCall("{call s_vw_convert_date}");

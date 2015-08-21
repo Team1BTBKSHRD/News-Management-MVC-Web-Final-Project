@@ -43,7 +43,7 @@ public class Login extends HttpServlet {
 				//request.getRequestDispatcher("/Login/page_login.jsp").forward(request, response);
 				response.sendRedirect("/articleManagement/Login/page_login.jsp");
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
