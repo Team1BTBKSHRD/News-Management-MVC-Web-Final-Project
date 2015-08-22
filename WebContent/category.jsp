@@ -38,16 +38,7 @@
 		<!-- right panel -->
 		<div class="col-md-9 col-sm-9 col-xs-9 clear-padding-left left-panel">
 			<!-- article header-->
-			<div class="category-header col-sm-12 clear-paddings"
-				style="overflow: hidden !important;">
-				<img
-					src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/08/CMFgIPLWIAAIZ_w.jpg?ebb82d"
-					height="300px" width="100%" alt="Mirror Edge">
-				<div class="category-title "
-					style="position: absolute; width: 94%; bottom: 7%; overflow: hidden; left: 3%; height: 89px; background-color: #50a253; opacity: 0.97;">
-					<h4 class="article-name" style="color: #FFE4F4; font-size: 30px;">ព័ត៌មានកីឡា</h4>
-				</div>
-			</div>
+			<jsp:include page="layouts/category-header.jsp" />
 			<div class="panel panel-primary clear-paddings"
 				style="margin-top: 16px;">
 

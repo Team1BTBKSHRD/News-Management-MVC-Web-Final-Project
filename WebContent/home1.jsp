@@ -47,7 +47,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ព័ត៌មានជាតិទូទៅ</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showLocal">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showLocal">ប្រចាំថ្ងៃ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
@@ -68,7 +68,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ព័ត៌មានបច្ចេកវិទ្យា</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showTech">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showTech">ប្រចាំថ្ងៃ</a> <a
 							class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
@@ -88,7 +88,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ព័ត៌មានកីឡា</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showSport">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showSport">ប្រចាំថ្ងៃ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
@@ -107,7 +107,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ចំនេះដឺងទូទៅ</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showKnowledge">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showKnowledge">ប្រចាំថ្ងៃ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
@@ -127,7 +127,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ព័ត៌មានសង្គម</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showSocial">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showSocial">ប្រចាំថ្ងៃ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
@@ -146,7 +146,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ព័ត៌មានសេដ្ឋកិច្ចទូទៅ</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showEconomy">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showEconomy">ប្រចាំថ្ងៃ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
@@ -166,7 +166,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ព័ត៌មានកម្សាន្ត</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showEnterain">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showEnterain">ប្រចាំថ្ងៃ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
@@ -187,7 +187,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title" id="title-panel">ជីវិត និងការងារ</h3>
 					<div class="btn-group">
-						<a class="btn search-filter" id="showLifeandJobs">ប្រចាំថ្ងៃ</a> <a
+						<a class="btn cate-date-filter" id="showLifeandJobs">ប្រចាំថ្ងៃ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
 							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
