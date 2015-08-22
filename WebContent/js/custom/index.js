@@ -126,9 +126,7 @@ $("#btn-home").click(function() {
 									alert("No Data");
 									return;
 								}
-								var data = "<div class='card-1' id='card-1' onclick='countview("
-										+ news[0].news_id
-										+ ")'>"
+								var data = "<div class='card-1' id='" + news[0].news_id + "'>"
 										+ "<a href=article.jsp target='_blank' id='link-1'>"
 										+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
 										+ "<img src='"
@@ -155,9 +153,7 @@ $("#btn-home").click(function() {
 										+ "</a>"
 										+ "</div><hr/>";
 								for (var i = 1; i < news.length; i++) {
-									data += "<div class='card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings' onclick='countview("
-											+ news[i].news_id
-											+ ")'>"
+									data += "<div class='card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings'id='" + news[i].news_id + "'>"
 											+ "<a href='"
 						+ news[i].news_path
 						+ "' target='_blank' id='link-2'>"

@@ -20,7 +20,7 @@ $.post("recentnews.json", function(data) {
 	for ( var i in data) {
 		allItem += "<div class='item'> " + "<img src='" + data[i].news_img
 				+ "' alt='item slider'>"
-				+ "<div class='news-title-background'>" + "<a href='"
+				+ "<div class='news-title-background' id='"+ data[i].news_id +"'>" + "<a href='"
 				+ data[i].news_path + "' target='_blank'>"
 				+ "<div class='owl-news-title'>"
 				+ "<h5 class='text-h5-2-slider clear-margin-top'>"

@@ -224,6 +224,7 @@
 	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/right-panel.js"></script>
 	<script src="js/custom/index.js"></script>
+	<script src="js/custom/count.js"></script>
 	<!-- end custom js -->
 	<!-- #####################end javascript#################### -->
 	​​

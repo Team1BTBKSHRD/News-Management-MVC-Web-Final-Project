@@ -19,8 +19,8 @@ $
 					for (var i = 0; i < news.length; i++) {
 						str += "<a href='"
 								+ news[i].news_path
-								+ "' class='list-group-item  clear-paddings' target='_blank' onclick='countview("
-								+ news[i].news_id + ")'>" + "<img src='"
+								+ "' class='list-group-item  clear-paddings' target='_blank' id='"
+								+ news[i].news_id + "'>" + "<img src='"
 								+ news[i].news_img
 								+ "' height='50px' width='64px'>"
 								+ "<h6 class='text-h6-2 article-title'>"
@@ -36,8 +36,8 @@ $
 			for (var i = 0; i < news.length; i++) {
 				str += "<a href='"
 						+ news[i].news_path
-						+ "' class='list-group-item  clear-paddings' target='_blank' onclick='countview("
-						+ news[i].news_id + ")'>" + "<img src='"
+						+ "' class='list-group-item  clear-paddings' target='_blank' id='"
+						+ news[i].news_id + "'>" + "<img src='"
 						+ news[i].news_img
 						+ "' height='50px' width='64px'>"
 						+ "<h6 class='text-h6-2 article-title'>"
