@@ -20,8 +20,8 @@
           <li id="hdsport"><a href="category?id=B020201">កីឡា</a></li>
           <li id="hdknowledge"><a href="category?id=B020501">ចំនេះដឺង</a></li>
           <li id="hdknowledge"><a href="category?id=B030102">សង្គម</a></li>
-          <li id="hdscholarship"><a href="category?id=B020302">សិល្បៈកម្សាន្ត</a></li>
           <li id="hdjob"><a href="category?id=B030401">សេដ្ឋកិច្ច</a></li>
+          <li id="hdscholarship"><a href="category?id=B020302">សិល្បៈកម្សាន្ត</a></li>
           <li id="hdjob"><a  href="job.jsp">ការងារ</a></li>
           <li id="hdjob"><a  href="job.jsp">អាហាររូបករណ៍</a></li>          
         </ul>

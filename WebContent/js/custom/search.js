@@ -116,7 +116,7 @@ function getResult(pageNumber) {
 										+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings'"
 										+ "height='119.5px' id='img-1'></div>"
 										+ "<div class='col-md-9 col-sm-9 col-xs-9 clear-padding-right'>"
-										+ "<h5 class='article-name clear-margin-top'>"
+										+ "<h5 class='article-name clear-margin-top text-h5-1'>"
 										+ data[i].news_title
 										+ "</h5>"
 										+ "<strong>ផ្សាយ <kbd>"
@@ -125,14 +125,14 @@ function getResult(pageNumber) {
 										+ "<p class='clear-margin-bottom text-2'>"
 										+ data[i].news_desc
 										+ "</p>"
-										+ "<strong class='news-source'>ប្រភពពត៌មាន<kbd>"
+										+ "<strong class='news-source'>ប្រភពពត៌មាន <kbd>"
 										+ data[i].full_name.toUpperCase()
 										+ "</kbd></strong>"
-										+ "</div><div class='clearfix'></div></a></div>";
+										+ "</div><div class='clearfix'></div></a></div><hr/>";
 							}
 							str += "<ul class='pager clear-padding-right'>"
-									+ "<li class='previous'><a href='#' class='btn btn-lg btn-default'>ទំព័រក្រោយ</a></li>"
-									+ "<li class='next'><a href='#' class='btn btn-lg btn-default'>ទំព័របន្ទាប់</a></li>"
+									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ទំព័រក្រោយ</a></li>"
+									+ "<li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័របន្ទាប់</a></li>"
 									+ "</ul>";
 							$('.search-result-wrapper').html(str);
 							if (data.length < countItems) {

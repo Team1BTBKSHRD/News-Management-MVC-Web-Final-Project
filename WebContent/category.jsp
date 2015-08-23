@@ -8,8 +8,8 @@
 <head>
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-​​<link rel="shortcut icon" href="img/box.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="shortcut icon" href="img/box.png">
 <!-- lib css -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
@@ -21,14 +21,11 @@
 <link rel="stylesheet" type="text/css" href="css/custom/owl.css">
 <link rel="stylesheet" type="text/css" href="css/custom/category-btn.css">
 <!-- end custom css -->
-​​
 </head>
 <body>
-	<%
-		session.removeAttribute("admin");
-	%>
-	<!-- header -->
-	<jsp:include page="layouts/header.jsp" />
+  <%session.removeAttribute("admin");%>
+  <!-- header -->
+  <jsp:include page="layouts/header.jsp" />
 	<!-- end header -->
 	<!-- content area -->
 	<div class="container content-area">
@@ -41,10 +38,8 @@
 			<jsp:include page="layouts/category-header.jsp" />
 			<div class="panel panel-primary clear-paddings"
 				style="margin-top: 16px;">
-
 				<div class="panel-body" id="panelCategory">
-					<!-- End of panel body -->
-					
+					<!-- End of panel body -->					
 					<%-- <%ResultSet rs=(ResultSet)request.getAttribute("rs"); %> --%>	
 					<c:forEach var="record" items="${rs.rows}">
 						<div class='card-1' id='card-1'>
@@ -75,8 +70,7 @@
 	<!-- footer -->
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
-	<!-- #####################javascript#################### -->
-	​
+	<!-- #####################javascript#################### -->​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

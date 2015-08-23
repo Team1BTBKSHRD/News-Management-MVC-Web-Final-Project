@@ -179,7 +179,7 @@ button.btn-sm {
    line-height: X;        
    height: X x N;     
 */
-.text-1, .text-2, .text-3, .text-4, .text-5, .text-h5-2,
+.text-1, .text-2, .text-3, .text-4, .text-5, .text-h5-2, .text-h5-1,
 	.text-h5-2-slider, .text-h5-2-14, .text-h6-2 {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -205,7 +205,12 @@ button.btn-sm {
 	-webkit-line-clamp: 2;
 	font-weight: bold;
 }
-
+.text-h5-1 {
+  line-height: 30px;
+  height: 30px;
+  -webkit-line-clamp: 1;
+  font-size: 18px;
+}
 .text-h5-2 {
 	font-weight: bold;
 	line-height: 25px;
@@ -335,7 +340,7 @@ button.btn-sm {
 }
 /*############################################card style*/
 .article-title {
-	margin: 0px 0px 10px 0px !important;
+	margin: 0px 0px 5px 0px !important;
 }
 
 .article-title:hover {
@@ -902,4 +907,18 @@ button.btn-sm {
 	.search-wrapper input {
 		width: 65%;
 	}
+}
+
+.panel-heading a{
+	  color: white;
+    font-size: 15px;
+    padding: 0;
+    font-weight: bold;
+}
+a:hover, .cate-date-filter:hover, .btn-date:hover{
+	color: white;
+}
+.cate-date-filter{
+    padding-left: 45px ! important;
+    cursor: context-menu ! important;
 }

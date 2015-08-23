@@ -8,7 +8,7 @@
 }
 
 .search-result-wrapper .search-result {
-	margin: 15px 0 20px 0;
+	margin: 0 0 10px 0;
 }
 
 .search-result h5 {
@@ -91,4 +91,8 @@
 	.search-wrapper input {
 		width: 70% ! important;
 	}
+}
+.pager li > a, .pager li > a:hover{
+     background-color: #50a253; 
+     border: 1px solid #50a253; 
 }

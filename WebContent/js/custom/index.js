@@ -126,12 +126,13 @@ $("#btn-home").click(function() {
 									alert("No Data");
 									return;
 								}
+								if(news[0].news_path=='') news[0].news_path = 'article?id=' + news[0].news_id;
 								var data = "<div class='card-1' id='" + news[0].news_id + "'>"
-										+ "<a href=article.jsp target='_blank' id='link-1'>"
+										+ "<a href='"+ news[0].news_path +"' target='_blank' id='link-1'>"
 										+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
 										+ "<img src='"
-					+ news[0].news_img
-					+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='153px' id='img-1'>"
+										+ news[0].news_img
+										+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='153px' id='img-1'>"
 										+ "</div>"
 										+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>"
 										+ "<h5 class='text-h5-2 article-title' id='title-1'>"
@@ -153,20 +154,21 @@ $("#btn-home").click(function() {
 										+ "</a>"
 										+ "</div><hr/>";
 								for (var i = 1; i < news.length; i++) {
+									if(news[i].news_path=='') news[i].news_path = 'article?id=' + news[i].news_id;
 									data += "<div class='card-2 col-md-6 col-sm-6 col-xs-6 clear-paddings'id='" + news[i].news_id + "'>"
 											+ "<a href='"
-						+ news[i].news_path
-						+ "' target='_blank' id='link-2'>"
+											+ news[i].news_path
+											+ "' target='_blank' id='link-2'>"
 											+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
 											+ "<img src='"
-						+ news[i].news_img
-						+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='85px' width='80px' id='img-2'>"
+											+ news[i].news_img
+											+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='85px' width='90px' id='img-2'>"
 											+ "</div>"
 											+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details'>"
 											+ "<h6 class='text-h6-2 article-title' id='title-2'>"
 											+ news[i].news_title
 											+ "</h6>"
-											+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-2'>អាន "
+											+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings text-2 news-info' id='info-2'>អាន "
 											+ news[i].count_visited
 											+ " | "
 											+ news[i].news_date

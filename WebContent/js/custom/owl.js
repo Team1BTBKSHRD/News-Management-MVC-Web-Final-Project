@@ -18,7 +18,8 @@ owl.owlCarousel({
 $.post("recentnews.json", function(data) {
 	var allItem = "";
 	for ( var i in data) {
-		allItem += "<div class='item'> " + "<img src='" + data[i].news_img
+		if(data[i].news_path=='') data[i].news_path = 'article?id=' + data[i].news_id;
+		allItem += "<div class='item clear-margins'> " + "<img src='" + data[i].news_img
 				+ "' alt='item slider'>"
 				+ "<div class='news-title-background' id='"+ data[i].news_id +"'>" + "<a href='"
 				+ data[i].news_path + "' target='_blank'>"
