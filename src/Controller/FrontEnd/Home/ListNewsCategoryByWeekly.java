@@ -14,7 +14,7 @@ public class ListNewsCategoryByWeekly implements Action {
 		// TODO Auto-generated method stub
 		String categoryCode = request.getParameter("c_code");
 		int limit = Integer.parseInt(request.getParameter("limit"));
-		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().listNewsCategoryByWeekly(categoryCode, limit)).toString();
+		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().listNewsCategoryByWeekly(categoryCode, limit, 0)).toString();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(newsList);

@@ -12,13 +12,11 @@
 <link rel="shortcut icon" href="img/box.png">
 <!-- lib css -->
 <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/owl.theme.css">
 <link rel="stylesheet" href="css/responsive.css">
 <!-- end lib css -->
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
-<link rel="stylesheet" type="text/css" href="css/custom/owl.css">
+<link rel="stylesheet" type="text/css" href="css/custom/category.css">
 <link rel="stylesheet" type="text/css" href="css/custom/category-btn.css">
 <!-- end custom css -->
 </head>
@@ -39,25 +37,32 @@
 			<div class="panel panel-primary clear-paddings"
 				style="margin-top: 16px;">
 				<div class="panel-body" id="panelCategory">
-					<!-- End of panel body -->					
-					<%-- <%ResultSet rs=(ResultSet)request.getAttribute("rs"); %> --%>	
-					<c:forEach var="record" items="${rs.rows}">
-						<div class='card-1' id='card-1'>
-							<a href='${record.news_path}' target='_blank' id='link-1'>
-								<div class='col-md-3 col-sm-3 col-xs-3 clear-paddings'>
-									<img src='${record.news_img}' class='img-responsive' height='153px' id='img-1'>
-								</div>
-								<div class='col-md-8 col-sm-8 col-xs-8 card-details'>
-									<h5 class='text-h5-2 article-title' id='title-1'> ${record.news_title}</h5>
-									<p class='text-3 news-description' id='des-1'> ${record.news_desc} </p>
-									<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>
-										អាន   ${record.count_visited} |   ${record.news_date}  |  ${record.full_name} 
-									</div> 
-								</div> 
-							</a>
+					<!-- End of panel body -->					 
+					<c:forEach var="record" items="${rs.rows}">					
+						<div class='card-1' id='${record.news_id}'>
+						  <a href='${record.news_path}' target='_blank' >
+						    <div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>
+						      <img src='${record.news_img}' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='153px' id='img-1'>
+						    </div>
+						    <div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>
+						      <h5 class='text-h5-2 article-title' >${record.news_title}</h5>
+						      <p class='text-3 news-description' >${record.news_desc}</p>
+						      <div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' >
+						        <center>អាន   ${record.count_visited} |   ${record.news_date}  |  ${record.full_name} </center>
+						      </div>
+						    </div>
+						  </a>
 						</div>
 						<hr/>
 					</c:forEach>
+				  <c:choose>
+            <c:when test="${rs.rowCount==15}">
+                <ul class='pager clear-padding-right'>
+                  <li class='previous'><a href='#' class='btn btn-lg btn-primary'>ទំព័រក្រោយ</a></li>
+                  <li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័របន្ទាប់</a></li>
+                </ul>
+            </c:when>
+          </c:choose>
 				</div>
 			</div>
 		</div>
@@ -73,13 +78,13 @@
 	<!-- #####################javascript#################### -->​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
-	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/right-panel.js"></script>
 	<script src="js/custom/count.js"></script>
+	<script src="js/custom/category.js"></script>
 	<!-- end custom js -->
 	<!-- #####################end javascript#################### -->
 </body>

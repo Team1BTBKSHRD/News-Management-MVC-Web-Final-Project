@@ -922,3 +922,7 @@ a:hover, .cate-date-filter:hover, .btn-date:hover{
     padding-left: 45px ! important;
     cursor: context-menu ! important;
 }
+.pager li > a, .pager li > a:hover{
+     background-color: #50a253; 
+     border: 1px solid #50a253; 
+}

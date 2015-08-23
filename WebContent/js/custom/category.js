@@ -1,4 +1,5 @@
-		/*----------------------------List All News----------------------------------*/
+
+/*		----------------------------List All News----------------------------------
 		$
 				.post(
 						"listallnews.json",
@@ -57,6 +58,6 @@
 							$("#panelRigth").html(panelRight);
 							$("#panelRightDown").html(panelRecommend);
 						});
-		/*------------------------End of List All News-----------------------------*/
-		/* function add popular */
-		//var prmstr = window.location.search.substr(4);
+		------------------------End of List All News-----------------------------
+		 function add popular 
+		//var prmstr = window.location.search.substr(4);*/
