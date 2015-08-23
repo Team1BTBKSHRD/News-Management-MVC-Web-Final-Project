@@ -92,7 +92,3 @@
 		width: 70% ! important;
 	}
 }
-.pager li > a, .pager li > a:hover{
-     background-color: #50a253; 
-     border: 1px solid #50a253; 
-}

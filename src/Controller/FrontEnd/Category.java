@@ -54,8 +54,10 @@ public class Category extends HttpServlet {
 			if (new CategoryDAO().checkCategory(request.getParameter("id"))) {
 				System.out.println(request.getParameter("id"));
 				String id = request.getParameter("id");
-				Result rs = ResultSupport.toResult(new NewsDAO()
-						.listNewsCategoryByMonthly(id, 15));
+				int offset = 0;
+				if(request.getParameter("offset") != null)  offset = Integer.parseInt(request.getParameter("offset"));
+        Result rs = ResultSupport.toResult(new NewsDAO()
+        .listNewsCategoryByMonthly(id, 15, offset));
 				request.setAttribute("rs", rs);
 				request.getRequestDispatcher("category.jsp").forward(request,
 						response);
