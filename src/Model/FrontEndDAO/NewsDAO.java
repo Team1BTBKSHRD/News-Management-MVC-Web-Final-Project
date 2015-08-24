@@ -181,7 +181,7 @@ public class NewsDAO {
 		CallableStatement clstm = con.prepareCall("{call news_slider(?)}");
 		clstm.setInt(1, data);
 		ResultSet rs = clstm.executeQuery();
-		rs.next();
+		//rs.next();
 		return rs;
 	}
 	public void countView(int newid, int count) throws SQLException {
