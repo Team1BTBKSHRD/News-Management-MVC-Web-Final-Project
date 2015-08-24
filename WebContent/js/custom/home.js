@@ -119,7 +119,7 @@ $("#btn-home").click(function() {
 							request,
 							{
 								c_code : code,
-								limit : 12
+								limit : 11
 							},
 							function(news) {
 								if (news.length <= 0) {
@@ -142,13 +142,12 @@ $("#btn-home").click(function() {
 										+ news[0].news_desc
 										+ "</p>"
 										+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
-										+ "<center>អាន "
+										+ "អាន "
 										+ news[0].count_visited
 										+ " | "
 										+ news[0].news_date
 										+ " | "
 										+ news[0].full_name
-										+ "</center>"
 										+ "</div>"
 										+ "</div>"
 										+ "</a>"
