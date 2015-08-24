@@ -75,7 +75,7 @@
 <script type="text/javascript">
 	var obj =
 <%=session.getAttribute("userinfo")%>
-	$("#pic_profile").attr("src", obj[0].logo);
+	$("#pic_profile").attr("src","../img/profile/"+obj[0].logo);
 	$("#img_thumnail").attr("src", obj[0].logo);
 	//alert(obj[0].logo);
 </script>

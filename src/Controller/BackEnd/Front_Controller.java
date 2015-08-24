@@ -135,8 +135,20 @@ public class Front_Controller extends HttpServlet {
 			}
 			break;
 			
-		
-		
+			
+			/*for update userinfo  sarin*/
+		case "/Admin/udateUserInfo.news":
+			System.out.println("ehehr");
+			
+			action = new EditUserInfo();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
+			
 			/*for update full Atricle sarin*/
 		case "/Admin/update_article.news":
 			action = new update_full_article();
@@ -199,6 +211,17 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			/* sarin listuserinfo */
+		case "/Admin/listUserInfo.news":
+			
+			action = new ListUserInfoByName();
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
 		case "/Admin/counts.news":
 			action = new countNews();
 			try {
@@ -303,6 +326,16 @@ public class Front_Controller extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+			/*sarin profile upload*/
+	/*	case "/Admin/UploadProfiel.news":
+			action = new FileUpload();
+			System.out.println("-------Upload Photo------");
+			try {
+				action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;*/
 			/* Statistic News */
 		case "/Admin/filterstatistic.news":
 			action = new filterstatistic();

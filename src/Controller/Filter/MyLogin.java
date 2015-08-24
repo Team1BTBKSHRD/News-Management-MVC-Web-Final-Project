@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 import Controller.BackEnd.Action;
 import Model.BackEndDAO.UserDAO;
 import Model.BackEndDAO.UserInfoDAO;
@@ -30,7 +32,7 @@ public class MyLogin implements Action {
 				String userinfo=Convertor.convertResultSetIntoJSON(new UserInfoDAO().returnUserInformation(userName)).toString();
 				session.setAttribute("userinfo", userinfo);
 				response.getWriter().write("Success");
-				System.out.println(userinfo);
+				System.out.println("MyLogin : "+userinfo);
 			}
 			
 			else{

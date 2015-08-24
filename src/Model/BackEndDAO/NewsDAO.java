@@ -36,7 +36,7 @@ public class NewsDAO {
 			System.out.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			/* When index.jsp started, */
 			int pcon = new postgresAccount().countUserPostgres();
-			if (pcon > 10) {
+			if (pcon > 80) {
 				System.err.println("Connection is over connection : " + pcon);
 				System.err.println(new postgresAccount().destroyConnection()+" Connection has been destroy");
 			}
@@ -226,7 +226,7 @@ public class NewsDAO {
 		// TODO Auto-generated method stub
 		PreparedStatement pstm = null; /* Statement for Query Data from DBMS */
 		try {
-			pstm = con.prepareStatement("SELECT * FROM b_vw_draft_news where full_name = ? and news_draft_status='false'");
+			pstm = con.prepareStatement("SELECT * FROM b_vw_news_scrape where full_name = ? ");
 			pstm.setString(1, full_name);
 			ResultSet rs = pstm.executeQuery();
 			/*

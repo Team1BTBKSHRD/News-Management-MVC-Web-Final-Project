@@ -30,12 +30,12 @@ public class listscholarship implements Action {
 		System.out.println(obj);
 		response.getWriter().write(obj);
 	}
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		try {
 			System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}*/
+	}
 }

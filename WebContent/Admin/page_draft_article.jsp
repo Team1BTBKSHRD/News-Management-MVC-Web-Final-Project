@@ -37,7 +37,9 @@ input[type=file] {
 </style>
 </head>
 <body>
-
+<%
+		session.removeAttribute("proimag");
+	%>
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
 
 	<section>
@@ -172,9 +174,9 @@ input[type=file] {
 														<div class="col-sm-6 col-sm-offset-2">
 															<br />
 															<div class="btn btn-group">
-																<span><input type="submit" class="btn btn-success"
+																<span><input type="button" class="btn btn-success"
 																		id="btn_update_draft" value="Update"></span>
-																<span><input type="submit" class="btn btn-primary"
+																<span><input type="button" class="btn btn-primary"
 																		id="btn_update_post" value="Post"></span> <span><input type="button"
 																		class="btn btn-danger" data-toggle="collapse"
 																		data-target="#demo" id="btncancel" value="Cancel" /></span>
@@ -460,8 +462,9 @@ input[type=file] {
 											news_con_detail : jQuery("#news_con_detail").code(),
 											draft_status : false,
 											
-										}, function() {
-											alert("Update Success!");
+										}, function(data,status) {
+											alert("Update "+status);
+											window.location.href ="page_post_article.jsp";
 										});
 							
 						
@@ -493,8 +496,9 @@ input[type=file] {
 									news_con_detail : jQuery("#news_con_detail").code(),
 									draft_status : true,
 									
-								}, function() {
-									alert("Update Success!");
+								}, function(data,status) {
+									alert("Update "+status);
+									 location.reload();
 								}); 
 				});
 				

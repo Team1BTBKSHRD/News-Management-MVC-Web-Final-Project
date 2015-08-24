@@ -37,7 +37,9 @@ input[type=file] {
 </style>
 </head>
 <body>
-
+<%
+		session.removeAttribute("proimag");
+	%>
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
 
 	<section>
@@ -130,21 +132,12 @@ input[type=file] {
 																		id="imguploads"
 																		style="border: 0px; background-color: #EEEEEE;">upload</button></span>
 																<input type="text" class="form-control" id="filename">
-																<!-- <span
-																class="input-group-btn">
-																<button class="btn btn-default" type="button">
-																	<i class="fa fa-search"></i>
-																	Browse File
-																</button>
-															</span> -->
+																
 
 																<span class="input-group-btn btn btn-default btn-file"
 																	style="font-size: 14px;"> Browse ... <input
 																	type="file" name="photo" id="file_image" />
-
 																</span>
-
-
 															</div>
 														</div>
 													</div>
@@ -338,8 +331,9 @@ input[type=file] {
 												news_con_detail : jQuery("#news_con_detail").code(),
 												draft_status : false,
 												news_status : false,
-											}, function() {
-												alert("Add Success!");
+											}, function(data,status) {
+												alert("Add " +status);
+												window.location.href ="page_post_article.jsp";
 											}); 
 							}
 						});
@@ -370,8 +364,9 @@ input[type=file] {
 												news_con_detail : jQuery("#news_con_detail").code(),
 												draft_status : true,
 												news_status : false,
-											}, function() {
-												alert("Add Success!");
+											}, function(data,status) {
+												alert("Add " +status);
+												window.location.href ="page_draft_article.jsp";
 											});  
 							}
 						});
