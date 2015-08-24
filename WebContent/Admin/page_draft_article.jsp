@@ -309,10 +309,10 @@ input[type=file] {
 	</script>
 
 	<script type="text/javascript">
-		var name='<%=session.getAttribute("admin")%>';
+		var name='<%=session.getAttribute("usr")%>';
 		var t=0;
-		/* sarin list_draft_news.news query from b_vw_draft_news */
-		$.post("list_draft_news.news", {
+		/* sarin list_draft_news.json query from b_vw_draft_news */
+		$.post("list_draft_news.json", {
 			full_name : name
 		}, function(data) {
 			$('#list_article_draft').dataTable().fnDestroy();			
@@ -321,16 +321,16 @@ input[type=file] {
 				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
 			/* Sarin add datatable */
 			});		
-			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
+			//alert(data[0].json_title+"/"+data[0].cat_code+"/"+data[0].json_img+"/"+data[0].json_date);
 		});
 
 		
 		function tblistArticle(data) {
 			var str = "";
-			/* alert(data[i].news_status); */
+			/* alert(data[i].json_status); */
 			/* alert(data.length); */
 			
-			 //alert(data[0].news_id + " "+data[0].news_title  + " "+ data[0].cat_name +" "+data[0].news_path +" "+data[0].news_img   + " "+data[0].news_desc + " "+data[0].news_content); 
+			 //alert(data[0].json_id + " "+data[0].json_title  + " "+ data[0].cat_name +" "+data[0].json_path +" "+data[0].json_img   + " "+data[0].json_desc + " "+data[0].json_content); 
 			for (var i = 0; i < data.length; i++) {
 				/*compare full_name */
 				if(data[i].news_draft_status){
@@ -411,7 +411,7 @@ input[type=file] {
 			data = new FormData();
 			data.append('file', $('#file_image')[0].files[0]);
 			$.ajax({
-				url : 'UploadServlet.news',
+				url : 'UploadServlet.json',
 				data : data,
 				type : 'POST',
 				processData : false,
@@ -422,7 +422,7 @@ input[type=file] {
 				}
 			});
 		});
-		$.post("categoryDropList.news", function(data) {
+		$.post("categoryDropList.json", function(data) {
 			$("#newscategory").html(categoryDropList(data));
 		});
 		function categoryDropList(data) {
@@ -449,7 +449,7 @@ input[type=file] {
 								 img=img[img.length - 1];
 							 }
 							  jQuery
-								.post("update_article.news",
+								.post("update_article.json",
 										{
 											//  news_con_detail  
 											cat_name : jQuery("#newscategory").val(),
@@ -483,7 +483,7 @@ input[type=file] {
 						 img=img[img.length - 1];
 					 }
 					 
-					 jQuery.post("update_article.news",
+					 jQuery.post("update_article.json",
 								{
 									//  news_con_detail  
 									cat_name : jQuery("#newscategory").val(),

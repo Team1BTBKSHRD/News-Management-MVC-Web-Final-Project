@@ -9,6 +9,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.FrontEnd.Home.*;
+import Controller.FrontEnd.News.ListNews;
+import Controller.FrontEnd.News.countNews;
+import Controller.FrontEnd.News.filterstatisticviewByAccount;
+import Controller.BackEnd.FileUpload;
+import Controller.BackEnd.filterstatistic;
+import Controller.BackEnd.filterstatisticView;
+import Controller.BackEnd.typeofarticlespost;
+import Controller.BackEnd.updateStatus;
+import Controller.BackEnd.Article.AddNews;
+import Controller.BackEnd.Article.ListNewsDraft;
+import Controller.BackEnd.Article.update_full_article;
+import Controller.BackEnd.Category.ListCategory;
+import Controller.BackEnd.Category.dropListCategory;
+import Controller.BackEnd.Category.dropListSource;
+import Controller.BackEnd.Category.updateCategoryStatus;
+import Controller.BackEnd.User.AddUser;
+import Controller.BackEnd.User.EditStatus;
+import Controller.BackEnd.User.ListUser;
+import Controller.BackEnd.UserInfo.EditUserInfo;
+import Controller.BackEnd.UserInfo.ListUserInfo;
+import Controller.BackEnd.UserInfo.ListUserInfoByName;
+import Controller.Filter.Login;
+//import Controller.Filter.Login;
 import Controller.FrontEnd.Category.*;
 import Controller.FrontEnd.Scrap.listexchange;
 import Controller.FrontEnd.Scrap.listjobs;
@@ -35,8 +58,8 @@ public class JsonController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doProcess(request, response);
 	}
@@ -45,14 +68,14 @@ public class JsonController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doProcess(request, response);
 	}
 
-	protected void doProcess(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("###########################Json Controller");
 		String RequestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
@@ -64,7 +87,7 @@ public class JsonController extends HttpServlet {
 		/*
 		 * System.out.println(contextPath); System.out.println("--" + command);
 		 */
-
+		System.err.println(command);
 		switch (command) {
 		case "/listResult.json":
 			action = new listResult();
@@ -128,10 +151,138 @@ public class JsonController extends HttpServlet {
 		case "/countNewsByCatCodeMonthly.json":
 			action = new CountNewsByCatCodeMonthly();
 			break;
-		case "/showNewsCategoryTop":
+		case "/showNewsCategoryTop.json":
 			action = new ShowNewsCategoryTop();
 			break;
 		/*-----------------End of New Case--------------------*/
+
+		/* Pisal */
+		case "/Admin/useradd.json":
+			action = new AddUser();
+			break;
+		case "/Admin/usertypelist.json":
+			action = new ListUser();
+
+			break;
+
+		// access to userinfo url
+		case "/Admin/userinfolist.json":
+			action = new ListUserInfo();
+
+			break;
+
+		// access to category url
+		case "/Admin/pg_cate_tblistcategory.json":
+
+			action = new ListCategory();
+
+			break;
+
+		 //End Case : Category Insert 
+		case "/Admin/categoryDropList.json":
+
+			action = new dropListCategory();
+
+			break;
+
+		case "/Admin/sourceDropList.json":
+			action = new dropListSource();
+
+			break;
+
+		// for update userinfo sarin 
+		case "/Admin/udateUserInfo.json":
+			action = new EditUserInfo();
+
+			break;
+
+		// for update full Atricle sarin 
+		case "/Admin/update_article.json":
+			action = new update_full_article();
+
+			break;
+
+		// for update category Status sarin 
+		case "/Admin/updateCategoryStatus.json":
+			action = new updateCategoryStatus();
+
+			break;
+
+		// for update status sarin 
+		case "/Admin/updateStatus.json":
+			action = new updateStatus();
+
+			break;
+
+		// sarin edit user status 
+		case "/Admin/editUserstatus.json":
+			action = new EditStatus();
+
+			break;
+
+		case "/Admin/listarticle.json":
+
+			action = new ListNews();
+
+			break;
+
+		// sarin list_draft_news.json query from b_vw_draft_news 
+		case "/Admin/list_draft_news.json":
+
+			action = new ListNewsDraft();
+
+			break;
+	//	 sarin listuserinfo 
+		case "/Admin/listUserInfo.json":
+
+			action = new ListUserInfoByName();
+
+			break;
+
+		case "/Admin/counts.json":
+			action = new countNews();
+
+			break;
+		case "/Admin/selectTypeArticles.json":
+			action = new typeofarticlespost();
+
+			break;
+		case "/Login.json":
+			
+			action = new Login();
+
+			break;
+
+	//	 Add Article 
+		case "/Admin/addarticle.json":
+			action = new AddNews();
+
+			break;
+
+		// File Upload 
+		case "/Admin/UploadServlet.json":
+			action = new FileUpload();
+			System.out.println("-------Upload Photo------");
+
+			break;
+
+		// Statistic News 
+		case "/Admin/filterstatistic.json":
+			action = new filterstatistic();
+
+			break;
+		// Statistic Number of view,like,dislike 
+		case "/Admin/filterstatisticView.json":
+			action = new filterstatisticView();
+
+			break;
+
+		// Statistic Number of view by Account 
+		case "/Admin/filterstatisticViewByAccount.json":
+			action = new filterstatisticviewByAccount();
+
+			break;
+		
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");
@@ -142,8 +293,7 @@ public class JsonController extends HttpServlet {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
 			} else {
-				RequestDispatcher dispatcher = request
-						.getRequestDispatcher(forward.getPath());
+				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
 		}

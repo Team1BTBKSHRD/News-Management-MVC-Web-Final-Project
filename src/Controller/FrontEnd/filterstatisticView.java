@@ -1,11 +1,10 @@
-package Controller.BackEnd;
+package Controller.FrontEnd;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.BackEndDAO.NewsDAO;
 import Utilities.Convertor;
-import Controller.FrontEnd.Action;
 
 public class filterstatisticView implements Action {
 

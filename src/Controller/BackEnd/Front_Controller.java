@@ -1,4 +1,4 @@
-package Controller.BackEnd;
+/*package Controller.BackEnd;
 
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ import Utilities.Logger;
 
 //import Model.userDAO;
 
-@WebServlet("*.news")
+@WebServlet("*.json")
 public class Front_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -57,128 +57,128 @@ public class Front_Controller extends HttpServlet {
 
 		switch (command) {
 		// access to user url
-		case "/Admin/useradd.news":
+		case "/Admin/useradd.json":
 			action = new AddUser();
 			break;
-		case "/Admin/usertypelist.news":
+		case "/Admin/usertypelist.json":
 			action = new ListUser();
 
 			break;
 
 		// access to userinfo url
-		case "/Admin/userinfolist.news":
+		case "/Admin/userinfolist.json":
 			action = new ListUserInfo();
 
 			break;
 
 		// access to category url
-		case "/Admin/pg_cate_tblistcategory.news":
+		case "/Admin/pg_cate_tblistcategory.json":
 
 			action = new ListCategory();
 
 			break;
 
-		/* End Case : Category Insert */
-		case "/Admin/categoryDropList.news":
+		 //End Case : Category Insert 
+		case "/Admin/categoryDropList.json":
 
 			action = new dropListCategory();
 
 			break;
 
-		case "/Admin/sourceDropList.news":
+		case "/Admin/sourceDropList.json":
 			action = new dropListSource();
 
 			break;
 
-		/* for update userinfo sarin */
-		case "/Admin/udateUserInfo.news":
+		// for update userinfo sarin 
+		case "/Admin/udateUserInfo.json":
 			action = new EditUserInfo();
 
 			break;
 
-		/* for update full Atricle sarin */
-		case "/Admin/update_article.news":
+		// for update full Atricle sarin 
+		case "/Admin/update_article.json":
 			action = new update_full_article();
 
 			break;
 
-		/* for update category Status sarin */
-		case "/Admin/updateCategoryStatus.news":
+		// for update category Status sarin 
+		case "/Admin/updateCategoryStatus.json":
 			action = new updateCategoryStatus();
 
 			break;
 
-		/* for update status sarin */
-		case "/Admin/updateStatus.news":
+		// for update status sarin 
+		case "/Admin/updateStatus.json":
 			action = new updateStatus();
 
 			break;
 
-		/* sarin edit user status */
-		case "/Admin/editUserstatus.news":
+		// sarin edit user status 
+		case "/Admin/editUserstatus.json":
 			action = new EditStatus();
 
 			break;
 
-		case "/Admin/listarticle.news":
+		case "/Admin/listarticle.json":
 
 			action = new ListNews();
 
 			break;
 
-		/* sarin list_draft_news.news query from b_vw_draft_news */
-		case "/Admin/list_draft_news.news":
+		// sarin list_draft_news.json query from b_vw_draft_news 
+		case "/Admin/list_draft_news.json":
 
 			action = new ListNewsDraft();
 
 			break;
-		/* sarin listuserinfo */
-		case "/Admin/listUserInfo.news":
+	//	 sarin listuserinfo 
+		case "/Admin/listUserInfo.json":
 
 			action = new ListUserInfoByName();
 
 			break;
 
-		case "/Admin/counts.news":
+		case "/Admin/counts.json":
 			action = new countNews();
 
 			break;
-		case "/Admin/selectTypeArticles.news":
+		case "/Admin/selectTypeArticles.json":
 			action = new typeofarticlespost();
 
 			break;
-		case "/Login/Login.news":
+		case "/Login/Login.json":
 
-			action = new MyLogin();
+			action = new Login();
 
 			break;
 
-		/* Add Article */
-		case "/Admin/addarticle.news":
+	//	 Add Article 
+		case "/Admin/addarticle.json":
 			action = new AddNews();
 
 			break;
 
-		/* File Upload */
-		case "/Admin/UploadServlet.news":
+		// File Upload 
+		case "/Admin/UploadServlet.json":
 			action = new FileUpload();
 			System.out.println("-------Upload Photo------");
 
 			break;
 
-		/* Statistic News */
-		case "/Admin/filterstatistic.news":
+		// Statistic News 
+		case "/Admin/filterstatistic.json":
 			action = new filterstatistic();
 
 			break;
-		/* Statistic Number of view,like,dislike */
-		case "/Admin/filterstatisticView.news":
+		// Statistic Number of view,like,dislike 
+		case "/Admin/filterstatisticView.json":
 			action = new filterstatisticView();
 
 			break;
 
-		/* Statistic Number of view by Account */
-		case "/Admin/filterstatisticViewByAccount.news":
+		// Statistic Number of view by Account 
+		case "/Admin/filterstatisticViewByAccount.json":
 			action = new filterstatisticviewByAccount();
 
 			break;
@@ -205,3 +205,4 @@ public class Front_Controller extends HttpServlet {
 		}
 	}
 }
+*/

@@ -51,7 +51,14 @@
 		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 	<!-- ###############################End Search Page -->
-	
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>Controller.FrontEnd.Home.login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
 	<!-- ###############################Json Controller for front end -->
 	<servlet>
 		<servlet-name>JsonController</servlet-name>
@@ -67,7 +74,7 @@
 		<error-code>404</error-code>
 		<location>/404.jsp</location>
 	</error-page>
-		<error-page>
+	<error-page>
 		<error-code>500</error-code>
 		<location>/500.jsp</location>
 	</error-page>

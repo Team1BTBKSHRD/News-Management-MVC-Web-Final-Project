@@ -1,8 +1,7 @@
-var name = '<%=session.getAttribute("admin")%>';
 /*------------script for focus on menu -------------- */
 $("#usermenu").removeClass("parent").addClass("active");
 /* $("#usermenu").addClass("active" ); */
-$.post("userinfolist.news", function(data) {
+$.post("userinfolist.json", function(data) {
 	$("#listdetial").html(tblistArticle(data));
 
 	/* sarin load data table */
@@ -11,7 +10,7 @@ $.post("userinfolist.news", function(data) {
 	});
 
 });
-$.post("usertypelist.news", function(data) {
+$.post("usertypelist.json", function(data) {
 	$("#usertype").html(usertypeDropList(data));
 });
 /* Function Add option to select tag */
@@ -51,7 +50,7 @@ $("#adduser").click(function() {
 	var usrtype = $("#usertype option:selected").val();
 	if(name == "" || pwd == "" || usrtype==""){return;}
 	else{
-	$.post("useradd.news", {
+	$.post("useradd.json", {
 		user_name : name,
 		user_pass : pwd,
 		user_type : usrtype
@@ -104,7 +103,7 @@ function checkstatus(data){
 		 status=1;
 	 } */
 	//alert(statusAction);
-	  $.post("editUserstatus.news", {
+	  $.post("editUserstatus.json", {
 		    user_id : userid,
 			user_status : status,
 		}, function(data2,status) {

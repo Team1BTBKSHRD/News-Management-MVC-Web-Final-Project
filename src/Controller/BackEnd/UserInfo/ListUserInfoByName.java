@@ -9,7 +9,7 @@ import Utilities.Convertor;
 
 import com.google.gson.Gson;
 
-import Controller.BackEnd.Action;
+import Controller.FrontEnd.Action;
 
 public class ListUserInfoByName implements Action {
 

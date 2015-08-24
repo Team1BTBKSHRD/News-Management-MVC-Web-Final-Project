@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import Controller.BackEnd.Action;
+import Controller.FrontEnd.Action;
 import Model.BackEndDAO.NewsDAO;
 import Utilities.Convertor;
 

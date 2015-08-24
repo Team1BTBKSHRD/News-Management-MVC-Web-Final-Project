@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-
-import Controller.BackEnd.Action;
+import Controller.FrontEnd.Action;
 import Model.BackEndDAO.UserDAO;
 import Utilities.Convertor;
 

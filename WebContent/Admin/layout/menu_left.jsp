@@ -2,9 +2,9 @@
 <%
 	String usr = "", adm = "";
 
-	if (session.getAttribute("admin") != null) {
-		usr = session.getAttribute("admin").toString();
-		adm = session.getAttribute("userType").toString();
+	if (session.getAttribute("usr") != null) {
+		usr = session.getAttribute("usr").toString();
+		adm = session.getAttribute("ust").toString();
 	}
 %>
 <script
@@ -88,7 +88,7 @@
 <!--  leftpanel -->
 <script type="text/javascript">
 	var obj =
-<%=session.getAttribute("userinfo")%>
+<%=session.getAttribute("uif")%>
 	$("#pic_profile").attr("src", "../img/profile/"+obj[0].logo);
 	$("#img_thumnail").attr("src", obj[0].logo);
 	//alert(obj[0].logo);

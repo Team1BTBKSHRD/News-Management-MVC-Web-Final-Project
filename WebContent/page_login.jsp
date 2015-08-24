@@ -62,15 +62,22 @@ body.signin {
 
 
 	<!---------------------------Load Script-------------------------->
-
-	<!--	 <script src="js/bootstrap.min.js"></script>
-		 <script src="js/custom.js"></script>
-		 <script src="js/dashboard.js"></script>
-		 <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		 <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
-		 <script type="text/javascript" src="js/bootstrapValidator.min.js"></script> -->
 	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/login.js"></script>
+	<script>
+	$("#btnSubmit").click(function() {
+		var usrname= $("#username").val();
+		$.post("Login.json", {
+			userName :usrname,
+			password : $("#password").val()
+		}, function(data,status) {
+			if(data!=null){
+				//$.session("admin",data);
+				window.open("/articleManagement/Admin/index.jsp","_self");
+				
+			}
+		});
+	});
+	</script>
 
 	<!-- -------------------------Custom Javascript---------------- -->
 

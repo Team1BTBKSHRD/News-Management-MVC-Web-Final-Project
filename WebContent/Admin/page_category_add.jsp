@@ -168,11 +168,11 @@
 	 <script src="js/custom/script_category_add.js"></script> 
 	<script src="js/validate/page_category_validate.js"></script><!--  script for validate form add category sarin -->
 	<script type="text/javascript">
-	var name='<%=session.getAttribute("admin")%>';
+	var name='<%=session.getAttribute("usr")%>';
 	//alert(name);
 	/* list categories on page_category_add.jsp */
 	
-		$.post("pg_cate_tblistcategory.news", {
+		$.post("pg_cate_tblistcategory.json", {
 			full_name : name
 		}, function(data) {
 			$('#t_list_category').dataTable().fnDestroy();						
@@ -254,7 +254,7 @@
 			status = "true";
 		}
 		
-		$.post("updateCategoryStatus.news", {
+		$.post("updateCategoryStatus.json", {
 			cat_code : catcode,
 			cat_status : status,
 		}, function(data2, status) {

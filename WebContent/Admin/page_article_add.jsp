@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.css" />
 <!-- #####################end stylesheet#################### -->
 
-<title>Manage Article</title>
+<title>Manage Article</title>f
 <link href="css/summernote.css" rel="stylesheet">
 <!-- style for laout profile -->
 <style>
@@ -259,14 +259,14 @@ input[type=file] {
 	</script>
 
 	<script type="text/javascript">
-		var name='<%=session.getAttribute("admin")%>';
+		var name='<%=session.getAttribute("usr")%>';
 		/* upload file */
 		$("#imguploads").click(function() {
 			var data;
 			data = new FormData();
 			data.append('file', $('#file_image')[0].files[0]);
 			$.ajax({
-				url : 'UploadServlet.news',
+				url : 'UploadServlet.json',
 				data : data,
 				type : 'POST',
 				processData : false,
@@ -277,7 +277,7 @@ input[type=file] {
 				}
 			});
 		});
-		$.post("categoryDropList.news", function(data) {
+		$.post("categoryDropList.json", function(data) {
 			$("#newscategory").html(categoryDropList(data));
 		});
 		function categoryDropList(data) {
@@ -319,7 +319,7 @@ input[type=file] {
 							else{
 							 jQuery
 									.post(
-											"addarticle.news",
+											"addarticle.json",
 											{
 												//  news_con_detail  
 												cat_name : jQuery("#newscategory").val(),
@@ -352,11 +352,11 @@ input[type=file] {
 							} 
 							if(jQuery("#newscategory").val()==""){return;}
 							else{
-							 	jQuery.post("addarticle.news",
+							 	jQuery.post("addarticle.json",
 											{
 												//  news_con_detail  
 												cat_name : jQuery("#newscategory").val(),
-												user_info_code :<%=session.getAttribute("userinfo")%>[0].user_info_code,
+												user_info_code :<%=session.getAttribute("uif")%>[0].user_info_code,
 												news_title : jQuery("#newstitle").val(),
 												news_desc : jQuery("#news_des").val(),
 												news_path : jQuery("#newspath").val(),

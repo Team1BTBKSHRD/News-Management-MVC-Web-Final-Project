@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page session="true"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -23,11 +24,15 @@
 </head>
 <body>
 	<%
-		String usr = "", adm = "";
+		String usr = "", adm = "", uif="";
 
 		if (session.getAttribute("admin") != null) {
 			usr = session.getAttribute("admin").toString();
 			adm = session.getAttribute("userType").toString();
+			uif = session.getAttribute("userinfo").toString();
+			session.setAttribute("usr", usr);
+			session.setAttribute("ust", adm);
+			session.setAttribute("uif", uif);
 		}
 	%>
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
@@ -36,7 +41,7 @@
 		<div class="mainwrapper">
 			<jsp:include page="layout/menu_left.jsp"></jsp:include>
 			<%
-				if (adm.equals("admin")) {
+				if (session.getAttribute("ust").equals("admin")) {
 			%>
 			<div class="mainpanel">
 				<div class="pageheader">
@@ -233,7 +238,7 @@
 				}
 			%>
 			<%
-				if (adm.equals("editor")) {
+				if (session.getAttribute("ust")=="editor") {
 			%>
 
 			<div class="mainpanel">
@@ -308,12 +313,11 @@
 		}); */
 	</script>
 	<script type="text/javascript">
-		//alert(099000);
 		/* $(document).ready(function(){
 		
 			
 		}); */
-		$.post("counts.news", function(data) {
+		$.post("counts.json", function(data) {
 			for (var i = 0; i < data.length; i++) {
 				if (data[i].tbnews == "news_id") {
 
@@ -327,7 +331,7 @@
 				}
 			}
 			/* DropList user */
-			$.post("sourceDropList.news", function(data) {
+			$.post("sourceDropList.json", function(data) {
 				$("#usertype").html(userDropList(data));
 
 			});
@@ -351,7 +355,7 @@
 
 			$('#article_list_dasborad').dataTable().fnDestroy();
 			var user = $("#usertype").val(); //Globel
-			$.post("selectTypeArticles.news", {
+			$.post("selectTypeArticles.json", {
 				full_name : user
 			}, function(data) {
 				if (data.length > 0) {
@@ -364,7 +368,7 @@
 				}
 
 			});
-			$.post("listarticle.news", {
+			$.post("listarticle.json", {
 				full_name : user
 			}, function(data) {
 				$("#list_user_article").html(listobjectdetails(data));
@@ -400,9 +404,9 @@
 	<script type="text/javascript">
 	filterView();
 		function filterView() {
-			var spn='<%=request.getSession().getAttribute("admin")%>';
+			var spn='<%=request.getSession().getAttribute("usr")%>';
 
-			$.post("filterstatisticViewByAccount.news", {
+			$.post("filterstatisticViewByAccount.json", {
 				sponsor : spn
 			}, function(data) {
 				//alert(data);

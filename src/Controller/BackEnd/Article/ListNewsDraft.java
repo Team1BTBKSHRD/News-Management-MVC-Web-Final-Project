@@ -3,7 +3,7 @@ package Controller.BackEnd.Article;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Controller.BackEnd.Action;
+import Controller.FrontEnd.Action;
 import Model.BackEndDAO.NewsDAO;
 import Utilities.Convertor;
 

@@ -1,4 +1,4 @@
-package Controller.Filter;
+/*package Controller.Filter;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -40,3 +40,4 @@ public class Authentication implements Filter {
 	}
 
 }//End of class;
+*/

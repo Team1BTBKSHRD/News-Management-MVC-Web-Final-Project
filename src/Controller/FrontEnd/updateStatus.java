@@ -1,4 +1,4 @@
-package Controller.BackEnd;
+package Controller.FrontEnd;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

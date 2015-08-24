@@ -106,14 +106,14 @@
 	<script type="text/javascript">
 		/*load function filterView for statistic number of views, like, dislike*/
 
-		$.post("sourceDropList.news", function(data) {
+		$.post("sourceDropList.json", function(data) {
 			$("#sl_source1").html(sponsorDropList(data));
 			$("#sl_source2").html(sponsorDropList(data));
 		});
 
 		function filterView() {
 			var source = $("#sl_source2 option:selected").val();
-			$.post("filterstatisticView.news", {
+			$.post("filterstatisticView.json", {
 				sponsor : source
 			}, function(data) {
 				countChart(data);
@@ -182,7 +182,7 @@
 		function filters() {
 			var source = $("#sl_source1 option:selected").val();
 			var time = $("#sl_time option:selected").val();
-			$.post("filterstatistic.news", {
+			$.post("filterstatistic.json", {
 				sponsor : source,
 				anytime : time
 			}, function(data) {
@@ -240,7 +240,7 @@
 			}%>
 		
 	<%if (adm.equals("editor") || adm.equals("visitor")) {%>
-		window.location.href = "index.jsp";
+		window.location.href = "../home.jsp";
 	<%}%>
 	$("#pg_statistic_menu").removeClass("parent").addClass("active");
 	

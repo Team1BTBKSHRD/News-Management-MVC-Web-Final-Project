@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <form method="post" action="UploadServlet.news" enctype="multipart/form-data">
+  <form method="post" action="UploadServlet.json" enctype="multipart/form-data">
 Select file to upload:
 <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
 <input type="submit" value="Upload" />

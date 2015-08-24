@@ -154,14 +154,14 @@ input[type=file] {
 	</script>
 
 	<script type="text/javascript">
-		var name='<%=session.getAttribute("admin")%>';
+		var name='<%=session.getAttribute("usr")%>';
 
 		
 		
 		
 		
 		
-		$.post("listarticle.news", {
+		$.post("listarticle.json", {
 			full_name : name
 		}, function(data) {
 			$('#t_list_data_post').dataTable().fnDestroy();
@@ -172,12 +172,12 @@ input[type=file] {
 				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
 			/* Sarin add datatable */
 			});
-			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
+			//alert(data[0].json_title+"/"+data[0].cat_code+"/"+data[0].json_img+"/"+data[0].json_date);
 		});
 
 		function tblistArticle(data) {
 			var str = "";
-			/* alert(data[i].news_status); */
+			/* alert(data[i].json_status); */
 			/* alert(data.length); */
 			for (var i = 0; i < data.length; i++) {
 				/*compare full_name */
@@ -238,7 +238,7 @@ input[type=file] {
 				status = "true";
 			}
 			
-			$.post("updateStatus.news", {
+			$.post("updateStatus.json", {
 				news_id : newsid,
 				news_status : status,
 			}, function(data2, status) {

@@ -187,7 +187,7 @@ input[type=file] {
 	<script type="text/javascript"
 		src="js/custom/profile_user_validate_and_edit.js"></script>
 	<script type="text/javascript">
-		var username='<%=session.getAttribute("admin")%>';
+		var username='<%=session.getAttribute("usr")%>';
 		var usercode;
 		var fileuploadname;
 		jQuery(document).ready(
@@ -225,7 +225,7 @@ input[type=file] {
 						$("#path_image").val($("#file_image").val());
 					}
 		
-					jQuery.post("listUserInfo.news",{name:username},function(userinfo){
+					jQuery.post("listUserInfo.json",{name:username},function(userinfo){
 						loadprofile(userinfo);
 
 					});
@@ -258,7 +258,7 @@ input[type=file] {
 			data = new FormData();
 			data.append('file', $('#file_image')[0].files[0]);
 		 	$.ajax({
-				url : 'UploadServlet.news',
+				url : 'UploadServlet.json',
 				//url : 'UploadProfiel.news',
 				data : data,
 				type : 'POST',
@@ -286,7 +286,7 @@ input[type=file] {
 				
 				jQuery
 						.post(
-								"udateUserInfo.news",
+								"udateUserInfo.json",
 								{
 									//  news_con_detail  
 									user_info_code: usercode,

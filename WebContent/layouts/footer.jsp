@@ -26,9 +26,8 @@
         </div>
         <div class="col-sm-4">
           <h5>ទំនាក់ទំនងយើង</h5>
-          < style="font-size: 1.2em;
-    color: white;">
-            Address: #12, St 323, Sangkat Boeung Kak II,
+          <span style="color:white;font-size:1.2em">
+          	Address: #12, St 323, Sangkat Boeung Kak II,
 KhanToul Kork, Phnom Penh, Cambodia.<br/>
 Tel: (855)23 99 13 14
 (855)77 77 12 36 (Khmer, English)
@@ -37,8 +36,17 @@ Tel: (855)23 99 13 14
 Email: info.kshrd@gmail.com
 phirum.gm@gmail.com
           </span>
+            
+         
         </div>
       </div>
-      <div class="row bottom-footer"></div>
     </div>
+  	<div class="row bottom-footer" style="
+    height: 100px;
+    margin-right: 0px;
+    margin-left: 0px;
+"><p>Copyright © 2015
+        <img src="img/logohrd.png" width="30px" />
+        <a href="http://www.kshrd.com.kh/jsp/index.hrd">KSHRD</a>
+      </p></div>
   </div>

@@ -1,11 +1,11 @@
 /**
  * 
  */
-package Controller.BackEnd;
+package Controller.FrontEnd;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Controller.FrontEnd.Action;
+
 import Model.BackEndDAO.NewsDAO;
 import Utilities.Convertor;
 

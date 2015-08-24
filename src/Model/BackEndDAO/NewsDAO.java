@@ -441,30 +441,31 @@ try {
 	/* Pisal */
 	// Filter number of news in each category by sponsor
 		public ResultSet filterbyTime(String sponsor, int i) {
+			PreparedStatement pstm1=null;
 			try {
 				switch (i) {
 				case 1: // Filter number of news in each category by sponsor
-					pstm = con
+					pstm1 = con
 							.prepareCall("{call s_admin_statistic_count_daily(?)}");
 					break;
 				case 2:
-					pstm = con
+					pstm1 = con
 							.prepareCall("{call s_admin_statistic_count_weekly(?)}");
 					break;
 				case 3:
-					pstm = con
+					pstm1 = con
 							.prepareCall("{call s_admin_statistic_count_monthly(?)}");
 					break;
 				case 4:
-					pstm = con
+					pstm1 = con
 							.prepareCall("{call s_admin_statistic_count_yearly(?)}");
 					break;
 
 				default:
 					break;
 				}
-				pstm.setString(1, sponsor);
-				return pstm.executeQuery();
+				pstm1.setString(1, sponsor);
+				return pstm1.executeQuery();
 			} catch (Exception e) {
 				Logger.writeLogException(e, "filterbyTime", "NewsDAO");
 			} finally {
@@ -518,5 +519,18 @@ try {
 				}
 			}
 			return null;
+		}
+		public static void main(String[] args) throws Exception {
+			try {
+				PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_weekly(?)}");
+				clstm.setString(1, "sabay");
+				ResultSet rs=clstm.executeQuery();
+				while(rs.next()){
+				System.out.println(rs.getString(1));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		}
 }// End of class;
