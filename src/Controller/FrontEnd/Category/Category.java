@@ -1,4 +1,4 @@
-package Controller.FrontEnd;
+package Controller.FrontEnd.Category;
 
 import java.io.IOException;
 import java.sql.SQLException;

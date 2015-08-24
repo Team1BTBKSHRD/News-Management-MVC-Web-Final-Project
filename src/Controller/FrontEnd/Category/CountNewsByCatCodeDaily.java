@@ -1,4 +1,4 @@
-package Controller.FrontEnd.News;
+package Controller.FrontEnd.Category;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,14 +7,14 @@ import Controller.FrontEnd.Action;
 import Model.FrontEndDAO.NewsDAO;
 import Utilities.Convertor;
 
-public class CountNewsByCatCodeWeekly implements Action {
+public class CountNewsByCatCodeDaily implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		String categoryCode = request.getParameter("categoryCode");
 		NewsDAO dao = new NewsDAO();
-		String newsList=Convertor.convertResultSetIntoJSON(dao.countNewsByCatCodeWeekly(categoryCode)).toString();
+		String newsList=Convertor.convertResultSetIntoJSON(dao.countNewsByCatCodeDaily(categoryCode)).toString();
 		dao.close();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

@@ -22,7 +22,7 @@
 	<!-- ###############################Category Page -->
 	<servlet>
 		<servlet-name>Category</servlet-name>
-		<servlet-class>Controller.FrontEnd.Category</servlet-class>
+		<servlet-class>Controller.FrontEnd.Category.Category</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Category</servlet-name>

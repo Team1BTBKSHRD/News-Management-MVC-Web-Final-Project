@@ -1,4 +1,4 @@
-package Controller.FrontEnd.Home;
+package Controller.FrontEnd.Category;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

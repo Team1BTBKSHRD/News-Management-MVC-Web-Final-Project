@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.FrontEnd.Home.*;
-import Controller.FrontEnd.News.*;
+import Controller.FrontEnd.Category.*;
 import Controller.FrontEnd.Scrap.listexchange;
 import Controller.FrontEnd.Scrap.listjobs;
 import Controller.FrontEnd.Scrap.listscholarship;
