@@ -4,6 +4,14 @@ $('body').on('click', '.previous', function() {
 $('body').on('click', '.next', function() {
 	getResult(pageNumber += countItems);
 });
+var cat_code = window.location.search.substr(4);
+
+/*$.post("countNewsByCatCodeMonthly.json",
+		{categoryCode:cat_code},
+	function(data){
+			alert(data[0].result);
+	$.cookie("items", data[0].result);
+});*/
 var countItems = 15;
 var pageNumber = 0;
 function getResult(pageNumber) {
