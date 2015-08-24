@@ -15,8 +15,9 @@ public class listexchange implements Action {
 		System.out.println("listexchange");
 	      response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
-		String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrieveExchange()).toString();
-		//System.out.println(obj);
+		JsoupDAO dao = new JsoupDAO();
+		String obj = Convertor.convertResultSetIntoJSON(dao.retrieveExchange()).toString();
+		dao.close();
 		response.getWriter().write(obj);
 
 	}

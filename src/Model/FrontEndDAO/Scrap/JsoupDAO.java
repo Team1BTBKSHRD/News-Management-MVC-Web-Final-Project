@@ -166,10 +166,8 @@ public class JsoupDAO {
 		return null;
 	}
 
-	public static void main(String[] args) throws Exception {
-	
-	StringBuilder s=new StringBuilder(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString());
-		System.err.println(s);
+	public void close() throws SQLException {
+		con.close();
 	}
 
 }

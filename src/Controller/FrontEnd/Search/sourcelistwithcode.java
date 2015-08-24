@@ -14,8 +14,9 @@ public class sourcelistwithcode implements Action {
 			throws Exception {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		//String obj= new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
-		String obj=Convertor.convertResultSetIntoJSON(new UserInfoDAO().listuserCodeName()).toString();
+		UserInfoDAO dao = new UserInfoDAO();
+		String obj=Convertor.convertResultSetIntoJSON(dao.listuserCodeName()).toString();
+		dao.close();
 		response.getWriter().write(obj);		
 		System.out.println("sourcelistwithcode");			
 	}

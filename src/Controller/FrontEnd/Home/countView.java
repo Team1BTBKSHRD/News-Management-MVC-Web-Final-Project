@@ -10,8 +10,9 @@ public class countView implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println(request.getParameter("newid"));
-		new NewsDAO().countView(Integer.parseInt(request.getParameter("newid")),1);
+		NewsDAO dao = new NewsDAO();
+		dao.countView(Integer.parseInt(request.getParameter("newid")),1);
+		dao.close();
 	}
 
 }

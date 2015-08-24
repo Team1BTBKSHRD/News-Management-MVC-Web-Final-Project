@@ -29,4 +29,7 @@ public class UserInfoDAO {
 		return stm
 				.executeQuery("select user_info_code, full_name from tbuserinfo");
 	}
+	public void close() throws SQLException {
+		con.close();
+	}
 }

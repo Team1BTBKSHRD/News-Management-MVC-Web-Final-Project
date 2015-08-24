@@ -72,9 +72,9 @@ public class CategoryDAO {
 
 		return null; /* Return null if error */
 	}
-/*	public static void main(String[] args) throws ClassNotFoundException,
-			SQLException {
-		System.out.println(new CategoryDAO().checkCategory(""));
-	}*/
+	public void close() throws SQLException {
+		con.close();
+	}
+
 }// End of class;
 

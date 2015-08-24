@@ -55,11 +55,6 @@ public class ArticleDAO {
 	public void close() throws SQLException{
 		con.close();
 	}
-	public static void main(String[] args) throws ClassNotFoundException,
-			SQLException {
-		//System.out.println(21212);
-	 System.out.println(new ArticleDAO().getArticle(724));
-	//	System.out.println(new ArticleDAO().checkArticle(724));
-	}
+	
 }// End of class;
 

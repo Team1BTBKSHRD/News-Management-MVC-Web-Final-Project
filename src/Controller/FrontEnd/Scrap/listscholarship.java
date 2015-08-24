@@ -14,17 +14,11 @@ public class listscholarship implements Action {
 		System.out.println("listscholarship");
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-
-		String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString();
+		JsoupDAO dao = new JsoupDAO();
+		String obj = Convertor.convertResultSetIntoJSON(dao.retrievScholarship()).toString();
+		dao.close();
 		//System.out.println(obj);
 		response.getWriter().write(obj);
 	}
-	/*public static void main(String[] args) {
-		try {
-			System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}*/
+
 }
