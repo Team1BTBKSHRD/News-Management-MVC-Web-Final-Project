@@ -14,7 +14,9 @@ public class ListNewsCategoryByDaily implements Action {
 		// TODO Auto-generated method stub
 		String categoryCode = request.getParameter("c_code");
 		int limit = Integer.parseInt(request.getParameter("limit"));
-		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().listNewsCategoryByDaily(categoryCode, limit, 0)).toString();
+		NewsDAO dao = new NewsDAO();
+		String newsList=Convertor.convertResultSetIntoJSON(dao.listNewsCategoryByDaily(categoryCode, limit, 0)).toString();
+		dao.close();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(newsList);

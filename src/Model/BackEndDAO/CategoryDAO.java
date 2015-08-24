@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import Model.DTO.Category;
-import Utilities.Convertor;
 import Utilities.DatabaseConnection;
 
 /**
@@ -270,7 +269,7 @@ public class CategoryDAO {
 		Statement stm=con.createStatement();
 		return stm.executeQuery("select cat_code, cat_name from tbcategory");
 	}
-	public static void main(String[] args) throws SQLException, Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new CategoryDAO().manageCatUser("sabay")).toString());
+	public void close() throws SQLException {
+		con.close();
 	}
 }// End of class;

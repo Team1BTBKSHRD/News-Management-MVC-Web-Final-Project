@@ -13,8 +13,9 @@ public class PopularNews implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		// TODO Auto-generated method stub
-		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().getPopularNews()).toString();
-		/*System.out.println(newsList);*/
+		NewsDAO dao = new NewsDAO();
+		String newsList=Convertor.convertResultSetIntoJSON(dao.getPopularNews()).toString();
+		dao.close();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(newsList);

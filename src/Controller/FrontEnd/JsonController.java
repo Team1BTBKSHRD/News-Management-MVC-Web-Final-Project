@@ -71,9 +71,7 @@ public class JsonController extends HttpServlet {
 		case "/joblist.json":
 			action = new listjobs();
 			break;
-/*		case "/listallnews.json":
-			action = new ListAllNews();
-			break;*/
+
 		case "/recentnews.json":
 			action = new ListRecentNews();
 			break;
@@ -98,7 +96,6 @@ public class JsonController extends HttpServlet {
 			action = new ListNewsCategoryByMonthly();
 			break;	
 			
-		/*-------------Bo Add New Case---------------*/
 		case "/getrecommendnews.json":
 			action = new RecommendNews();
 			break;
@@ -106,7 +103,17 @@ public class JsonController extends HttpServlet {
 			action = new PopularNews();
 			break;
 			
-		/*--------------End of New Case--------------*/
+		/*-------------------New Case Add----------------------*/
+		case "/countNewsByCatCodeDaily.json":
+			action = new CountNewsByCatCodeDaily();
+			break;
+		case "/countNewsByCatCodeWeekly.json":
+			action = new CountNewsByCatCodeWeekly();
+			break;	
+		case "/countNewsByCatCodeMonthly.json":
+			action = new CountNewsByCatCodeMonthly();
+			break;
+		/*-----------------End of New Case--------------------*/
 		default:
 			forward = new ActionForward();
 			forward.setPath("404.jsp");

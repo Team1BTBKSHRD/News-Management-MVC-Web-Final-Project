@@ -229,5 +229,7 @@ public class UserInfoDAO {
 		Statement stm=con.createStatement();
 		return stm.executeQuery("select user_info_code, full_name from tbuserinfo");
 	}
-
+	public void close() throws SQLException {
+		con.close();
+	}
 }// End of class;

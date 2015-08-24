@@ -124,6 +124,59 @@ public class NewsDAO {
 		return null;
 	}
 	
+	public ResultSet countNewsByCatCodeDaily(String categoryCode) throws SQLException {
+		try{
+			CallableStatement clstm = con.prepareCall("{CALL s_count_news_by_catcode_daily(?)}");
+			clstm.setString(1, categoryCode);
+			ResultSet rs = clstm.executeQuery();
+			
+			return rs;
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+		finally{
+			con.close();
+		}
+		return null;
+	}
+	
+	public ResultSet countNewsByCatCodeMonthly(String categoryCode) throws SQLException {
+		try{
+			CallableStatement clstm = con.prepareCall("{CALL s_count_news_by_catcode_monthly(?)}");
+			clstm.setString(1, categoryCode);
+			ResultSet rs = clstm.executeQuery();
+			
+			return rs;
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+		finally{
+			con.close();
+		}
+		return null;
+	}
+	
+	public ResultSet countNewsByCatCodeWeekly(String categoryCode) throws SQLException {
+		try{
+			CallableStatement clstm = con.prepareCall("{CALL s_count_news_by_catcode_weekly(?)}");
+			clstm.setString(1, categoryCode);
+			ResultSet rs = clstm.executeQuery();
+			
+			return rs;
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+		finally{
+			con.close();
+		}
+		return null;
+	}
+	
+	public void close() throws SQLException{
+		con.close();
+	}
+	
+
 }// End of class;
 
 
