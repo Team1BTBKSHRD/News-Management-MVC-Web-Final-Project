@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import Model.DTO.exchangeRateDTO;
 import Model.DTO.jobDTO;
 import Model.DTO.scholarshipDTO;
-import Utilities.Convertor;
 import Utilities.DatabaseConnection;
 
 public class JsoupDAO {
