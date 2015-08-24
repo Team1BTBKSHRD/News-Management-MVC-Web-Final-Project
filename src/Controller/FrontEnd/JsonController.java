@@ -128,6 +128,9 @@ public class JsonController extends HttpServlet {
 		case "/countNewsByCatCodeMonthly.json":
 			action = new CountNewsByCatCodeMonthly();
 			break;
+		case "/showNewsCategoryTop":
+			action = new ShowNewsCategoryTop();
+			break;
 		/*-----------------End of New Case--------------------*/
 		default:
 			forward = new ActionForward();

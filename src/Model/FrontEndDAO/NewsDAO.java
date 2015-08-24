@@ -171,10 +171,6 @@ public class NewsDAO {
 		return null;
 	}
 	
-	public void close() throws SQLException{
-		con.close();
-	}
-	
 	//add methods from backendDAO
 	public ResultSet listRecentNews(int data) throws SQLException {
 		// TODO Auto-generated method stub
@@ -191,6 +187,27 @@ public class NewsDAO {
 		clstm.setInt(2, count);
 		clstm.executeQuery();
 	}
+	
+	public ResultSet showNewsCategoryTop(String categoryCode) throws SQLException {
+		try{
+			CallableStatement clstm = con.prepareCall("{CALL s_show_news_category_top(?)}");
+			clstm.setString(1, categoryCode);
+			ResultSet rs = clstm.executeQuery();
+			
+			return rs;
+		}catch(SQLException ex){
+			ex.printStackTrace();
+		}
+		finally{
+			con.close();
+		}
+		return null;
+	}
+	
+	public void close() throws SQLException{
+		con.close();
+	}
+	
 }// End of class;
 
 
