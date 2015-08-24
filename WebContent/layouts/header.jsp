@@ -23,7 +23,7 @@
           <li id="hdjob"><a href="category?id=B030401">សេដ្ឋកិច្ច</a></li>
           <li id="hdscholarship"><a href="category?id=B020302">សិល្បៈកម្សាន្ត</a></li>
           <li id="hdjob"><a  href="job.jsp">ការងារ</a></li>
-          <li id="hdjob"><a  href="job.jsp">អាហាររូបករណ៍</a></li>          
+          <li id="hdjob"><a  href="schoolarship.jsp">អាហាររូបករណ៍</a></li>          
         </ul>
       </div>
     </div>

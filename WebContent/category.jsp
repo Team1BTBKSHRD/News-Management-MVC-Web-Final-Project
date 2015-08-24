@@ -47,9 +47,7 @@
 						    <div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>
 						      <h5 class='text-h5-2 article-title' >${record.news_title}</h5>
 						      <p class='text-3 news-description' >${record.news_desc}</p>
-						      <div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' >
-						        <center>អាន   ${record.count_visited} |   ${record.news_date}  |  ${record.full_name} </center>
-						      </div>
+						      <div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info'>អាន ${record.count_visited} | ${record.news_date} | ${record.full_name}</div>
 						    </div>
 						  </a>
 						</div>
