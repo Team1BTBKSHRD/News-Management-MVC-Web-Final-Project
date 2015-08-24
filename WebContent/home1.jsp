@@ -220,12 +220,14 @@
 	<script src="js/jquery.cookie.js"></script>
 	<script src="js/bootstrap.min.js"></script>	
 	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
 	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/right-panel.js"></script>
 	<script src="js/custom/home.js"></script>
 	<script src="js/custom/count.js"></script>
+	<script src="js/custom/collusion.js"></script>
 	<!-- end custom js -->
 	<!-- #####################end javascript#################### -->
 	​​

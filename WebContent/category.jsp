@@ -81,13 +81,35 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.cookie.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
 	<script src="js/custom/right-panel.js"></script>
 	<script src="js/custom/count.js"></script>
 	<script src="js/custom/category.js"></script>
 	<!-- end custom js -->
+  	<%--category slider js--%>
+  <script type="text/javascript">
+	  $(function () {
+		  var $div = $('.cate-title');
+		  var $parentDiv = $('.category-head-left');
+		  (function _loop(idx) {
+			  $div.removeClass('category-title-active').eq(idx).addClass('category-title-active');
+			  setTimeout(function () {
+				  _loop((idx + 1) % $div.length);
+
+			  }, 4000);
+			  /* alert($div.eq(idx).offset()); */
+			  $('.category-head-left','.cate-title').animate({
+				  scrollTop: $div.eq(idx).offset().top
+
+				  /* scrollTop: 0 */
+			  }, 500);
+		  }(0));
+	  });
+
+  </script>
+
 	<!-- #####################end javascript#################### -->
 </body>
 </html>

@@ -26,9 +26,14 @@
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	font-size: 1.4em;
-	left: 0px;
+	left: 0;
 	align-items: center;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+}
+.collision-btn{
+    height: 200px;
+    overflow: hidden;
+    top:15%;
 }
