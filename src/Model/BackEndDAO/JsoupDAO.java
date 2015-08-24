@@ -8,11 +8,13 @@ import java.util.ArrayList;
 
 import com.mysql.jdbc.PreparedStatement;
 
+import Controller.FrontEnd.listscholarship;
 import Model.DTO.exchangeRateDTO;
 import Model.DTO.jobDTO;
 import Model.DTO.scholarshipDTO;
 import Utilities.Convertor;
 import Utilities.DatabaseConnection;
+import Utilities.scrapeScholarship;
 
 public class JsoupDAO {
 	private Connection con;
@@ -106,17 +108,15 @@ public class JsoupDAO {
 		try {
 			stm = con.createStatement();
 			rs = stm.executeQuery("select * from tbscholarship");
+			
 			return rs;
+			
 		} catch (Exception e) {
+			
 			e.printStackTrace();
 		} 
 		return null;
 	}
-
-	public static void main(String[] args) throws Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString());
-	}
-
 	public boolean insertExchange(ArrayList<exchangeRateDTO> e) {
 		java.sql.PreparedStatement pstm = null;
 		try {
@@ -169,4 +169,11 @@ public class JsoupDAO {
 		}
 		return null;
 	}
+
+	public static void main(String[] args) throws Exception {
+	
+	StringBuilder s=new StringBuilder(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString());
+		System.err.println(s);
+	}
+
 }

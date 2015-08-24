@@ -19,6 +19,9 @@ public class scholarshipDTO {
 		this.deadline = deadline;
 		this.link = link;
 	}
+	public scholarshipDTO() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getLink() {
 		return link;
 	}

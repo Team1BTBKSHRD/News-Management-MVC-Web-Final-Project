@@ -9,7 +9,7 @@ $(document).ready(function(){
 						+ "</td></tr>";
 			}
 			$("#tbscholarship").html(str);
-			$('#tbscholarship').dataTable({
+			$('#listjob').dataTable({
 				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
 			/* Sarin add datatable */
 			});
