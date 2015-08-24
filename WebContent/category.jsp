@@ -1,31 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="Controller.FrontEnd.Category.Category"%>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-​​
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="shortcut icon" href="img/box.png">
 <!-- lib css -->
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 <link rel="stylesheet" href="css/owl.theme.css">
 <link rel="stylesheet" href="css/responsive.css">
 <!-- end lib css -->
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
-<link rel="stylesheet" type="text/css" href="css/custom/owl.css">
 <link rel="stylesheet" type="text/css" href="css/custom/category.css">
+<link rel="stylesheet" type="text/css" href="css/custom/category-btn.css">
 <!-- end custom css -->
-​​
 </head>
 <body>
-	<%
-		session.removeAttribute("admin");
-	%>
-	<!-- header -->
-	<jsp:include page="layouts/header.jsp" />
+  <%session.removeAttribute("admin");%>
+  <!-- header -->
+  <jsp:include page="layouts/header.jsp" />
 	<!-- end header -->
 	<!-- content area -->
 	<div class="container content-area">
@@ -35,23 +36,35 @@
 		<!-- right panel -->
 		<div class="col-md-9 col-sm-9 col-xs-9 clear-padding-left left-panel">
 			<!-- article header-->
-			<div class="category-header col-sm-12 clear-paddings"
-				style="overflow: hidden !important;">
-				<img
-					src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/08/CMFgIPLWIAAIZ_w.jpg?ebb82d"
-					height="300px" width="100%" alt="Mirror Edge">
-				<div class="category-title "
-					style="position: absolute; width: 94%; bottom: 7%; overflow: hidden; left: 3%; height: 89px; background-color: #50a253; opacity: 0.97;">
-					<h4 class="article-name" style="color: #FFE4F4; font-size: 30px;">ព័ត៌មានកីឡា</h4>
-				</div>
-			</div>
+			<jsp:include page="layouts/category-header.jsp" />
 			<div class="panel panel-primary clear-paddings"
 				style="margin-top: 16px;">
-
 				<div class="panel-body" id="panelCategory">
-
+					<!-- End of panel body -->					 
+					<c:forEach var="record" items="${rs.rows}">					
+						<div class='card-1' id='${record.news_id}'>
+						  <a href='${record.news_path}' target='_blank' >
+						    <div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>
+						      <img src='${record.news_img}' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='153px' id='img-1'>
+						    </div>
+						    <div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>
+						      <h5 class='text-h5-2 article-title' >${record.news_title}</h5>
+						      <p class='text-3 news-description' >${record.news_desc}</p>
+						      <div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info'>អាន ${record.count_visited} | ${record.news_date} | ${record.full_name}</div>
+						    </div>
+						  </a>
+						</div>
+						<hr/>
+					</c:forEach>
+				  <c:choose>
+            <c:when test="${rs.rowCount==15}">
+                <ul class='pager clear-padding-right'>
+                  <li class='previous'><a href='#' class='btn btn-lg btn-primary' disabled>ទំព័រក្រោយ</a></li>
+                  <li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័របន្ទាប់</a></li>
+                </ul>
+            </c:when>
+          </c:choose>
 				</div>
-				<!-- End of panel body -->
 			</div>
 		</div>
 		<!-- end right panel -->
@@ -63,18 +76,40 @@
 	<!-- footer -->
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
-	<!-- #####################javascript#################### -->
-	​
+	<!-- #####################javascript#################### -->​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
-	<script src="js/custom/owl.js"></script>
-	<script src="js/custom/exchange.js"></script>
+	<script src="js/custom/right-panel.js"></script>
+	<script src="js/custom/count.js"></script>
 	<script src="js/custom/category.js"></script>
 	<!-- end custom js -->
+  	<%--category slider js--%>
+  <script type="text/javascript">
+	  $(function () {
+		  var $div = $('.cate-title');
+		  var $parentDiv = $('.category-head-left');
+		  (function _loop(idx) {
+			  $div.removeClass('category-title-active').eq(idx).addClass('category-title-active');
+			  setTimeout(function () {
+				  _loop((idx + 1) % $div.length);
+
+			  }, 4000);
+			  /* alert($div.eq(idx).offset()); */
+			  $('.category-head-left','.cate-title').animate({
+				  scrollTop: $div.eq(idx).offset().top
+
+				  /* scrollTop: 0 */
+			  }, 500);
+		  }(0));
+	  });
+
+  </script>
+
 	<!-- #####################end javascript#################### -->
 </body>
 </html>

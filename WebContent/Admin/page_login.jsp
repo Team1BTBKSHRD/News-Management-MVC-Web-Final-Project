@@ -28,7 +28,7 @@ body {
 			<h4 class="text-center mb5">Login to your account</h4>
 			<hr />
 
-			<form role="form-horizontal" method="post">
+			<form role="form-horizontal" method="post" onsubmit="alert('Thank you for your feedback.');">
 				<div class="input-group mb15">
 					<span class="input-group-addon"><i
 						class="glyphicon glyphicon-user"></i></span> <input type="text"
@@ -64,13 +64,12 @@ body {
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="js/dashboard.js"></script>
+	<!-- <script src="js/dashboard.js"></script> -->
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
 	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
 
 	<!----------------------------Custom Javascript---------------- -->
-
 </body>
 
 </html>

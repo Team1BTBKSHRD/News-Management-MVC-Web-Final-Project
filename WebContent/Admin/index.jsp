@@ -15,18 +15,29 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/dataTables.bootstrap.css" />
 <!-- #####################end stylesheet#################### -->
-
+<!-- #####################end stylesheet#################### -->
+<script type="text/javascript" src="js/custom/jquery.min.js"></script>
+<script type="text/javascript" src="js/custom/jquery.canvasjs.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
 <title>index</title>
 </head>
 <body>
+	<%
+		String usr = "", adm = "";
 
+		if (session.getAttribute("admin") != null) {
+			usr = session.getAttribute("admin").toString();
+			adm = session.getAttribute("userType").toString();
+		}
+	%>
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
 
 	<section>
 		<div class="mainwrapper">
 			<jsp:include page="layout/menu_left.jsp"></jsp:include>
-
-
+			<%
+				if (adm.equals("admin")) {
+			%>
 			<div class="mainpanel">
 				<div class="pageheader">
 					<div class="media">
@@ -218,6 +229,64 @@
 
 			</div>
 			<!-- mainpanel -->
+			<%
+				}
+			%>
+			<%
+				if (adm.equals("editor")) {
+			%>
+
+			<div class="mainpanel">
+				<div class="pageheader">
+					<div class="media">
+						<div class="pageicon pull-left">
+							<i class="glyphicon glyphicon-indent-left"></i>
+						</div>
+						<div class="media-body">
+							<ul class="breadcrumb">
+								<li><a href="#"><i class="glyphicon glyphicon-signal"></i></a></li>
+								<li>Statistic</li>
+							</ul>
+							<h4>Statistic News</h4>
+						</div>
+					</div>
+					<!-- media -->
+				</div>
+				<!-- pageheader -->
+				<div class="contentpanel">
+
+					<div class="row row-stat">
+
+						<div class="col-md-12">
+
+							<div class="panel panel-info">
+								<h3 style="padding-left: 16px;">Number of reading, like,
+									dislike</h3>
+								<div class="panel-body">
+									</select> <select id="sl_count" onChange="filterView();">
+										<option value="visit" selected="selected">Visited</option>
+										<option value="like">Like</option>
+										<option value="dislike">Dislike</option>
+									</select>
+									<div id="chartContainerViewCount"
+										style="height: 300px; width: 100%;"></div>
+								</div>
+								<!--  panel-body -->
+							</div>
+							<!-- panel panel-info -->
+						</div>
+						<!-- col-md-12 -->
+					</div>
+					<!-- row row-stat -->
+
+				</div>
+				<!-- contentpanel -->
+			</div>
+			<!-- mainpanel -->
+
+			<%
+				}
+			%>
 		</div>
 		<!-- mainwrapper -->
 	</section>
@@ -233,6 +302,7 @@
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	<script type="text/javascript">
+	<%session.setAttribute("profileimg", "pimg");%>
 		/* $('#article_list_dasborad').dataTable({
 			"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
 		}); */
@@ -314,15 +384,64 @@
 		function listobjectdetails(data) {
 			var str = "";
 			for (var i = 0; i < data.length; i++) {
-			
+
 				str += "<tr>" + "	<td>" + (i + 1) + "</td>" + "<td>"
 						+ data[i].news_title + "</td>" + "<td>"
 						+ data[i].news_date + "</td>" + "</tr>";
-			
+
 			}
 			/* str += "</table>"; */
 
 			return str;
+		}
+
+		$("#index_dashboard_menu").removeClass("parent").addClass("active");
+	</script>
+	<script type="text/javascript">
+	filterView();
+		function filterView() {
+			var spn='<%=request.getSession().getAttribute("admin")%>';
+
+			$.post("filterstatisticViewByAccount.news", {
+				sponsor : spn
+			}, function(data) {
+				//alert(data);
+				countChart(data);
+			});
+		}
+
+		function countChart(data) {
+			var dataPoints = [];
+			var y = 0;
+			var view = $("#sl_count option:selected").val();
+			for (var i = 0; i < data.length; i++) {
+				if (view == "visit") {
+					dataPoints.push({
+						y : data[i].count_visited,
+						label : data[i].cat_name
+					});
+				} else if (view == "like") {
+					dataPoints.push({
+						y : data[i].count_news_like,
+						label : data[i].cat_name
+					});
+				} else if (view == "dislike") {
+					dataPoints.push({
+						y : data[i].count_news_dislike,
+						label : data[i].cat_name
+					});
+				}
+			}
+			var chart = new CanvasJS.Chart("chartContainerViewCount", {
+				animationEnabled : true,
+				theme : "theme4",
+				data : [ {
+					type : "column", //change type to bar, line, area, pie, etc
+					dataPoints : dataPoints
+				} ]
+			});
+
+			chart.render();
 		}
 	</script>
 </body>

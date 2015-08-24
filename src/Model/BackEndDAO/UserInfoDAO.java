@@ -104,28 +104,28 @@ public class UserInfoDAO {
 	 */
 	public boolean update(UserInfo userInfo) throws SQLException {
 		try {
+			System.out.println(222);
 			/* Set PreparedStatement */
 			pstm = con.prepareStatement(
-					"UPDATE tbuserinfo SET user_id=?, user_info_code=?, full_name=?, com_name=?, addr=?, email=?, website=?, phone=?, logo=? WHERE user_info_id=?;");
+					"UPDATE tbuserinfo   SET   full_name=?, com_name=?, addr=?, email=?, website=?, phone=?, logo=? WHERE user_info_code=?;");
 			/* Initialize parameters for pstm object */
-			pstm.setInt(1, userInfo.getUser_id());
-			pstm.setString(2, userInfo.getUser_info_code());
-			pstm.setString(3, userInfo.getFull_name());
-			pstm.setString(4, userInfo.getCom_name());
-			pstm.setString(5, userInfo.getAddr());
-			pstm.setString(6, userInfo.getEmail());
-			pstm.setString(7, userInfo.getWebsite());
-			pstm.setString(8, userInfo.getPhone());
-			pstm.setString(9, userInfo.getLogo());
-			pstm.setInt(10, userInfo.getUser_info_id());
+			
+			
+			pstm.setString(1, userInfo.getFull_name());
+			pstm.setString(2, userInfo.getCom_name());
+			pstm.setString(3, userInfo.getAddr());
+			pstm.setString(4, userInfo.getEmail());
+			pstm.setString(5, userInfo.getWebsite());
+			pstm.setString(6, userInfo.getPhone());
+			pstm.setString(7, userInfo.getLogo());
+			pstm.setString(8, userInfo.getUser_info_code());
 
-			return pstm.executeUpdate() > 0 ? true
-					: false; /* return true for success and false if fail */
+			return pstm.executeUpdate() > 0 ; /* return true for success and false if fail */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
+			//pstm.close();
 			con.close();
 		}
 		return false; /* return false if update unsuccessful */
@@ -213,14 +213,15 @@ public class UserInfoDAO {
 	
 	  public static void main(String[] args) throws SQLException, Exception {
 	 
-		  String str = "";
+		  /*String str = "";
 			CallableStatement clsm = DatabaseConnection.getConnection().prepareCall("{call user_info_code(?)}");
 			clsm.setString(1, "sabay");
 			ResultSet rs = clsm.executeQuery();
 			if (rs.next()) {
 				str = rs.getString(1).toString();
 			}
-			System.err.println(str);
+			System.err.println(str);*/
+		 System.out.println(Convertor.convertResultSetIntoJSON(new UserInfoDAO().returnUserInformation("kh")).toString());
 	  }
 	 
 

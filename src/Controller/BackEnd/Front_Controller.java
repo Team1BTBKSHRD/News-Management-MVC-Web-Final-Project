@@ -10,11 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Controller.BackEnd.Article.AddNews;
+import Controller.BackEnd.Article.ListNewsDraft;
+import Controller.BackEnd.Article.update_full_article;
 import Controller.BackEnd.Category.*;
 import Controller.BackEnd.User.*;
 import Controller.BackEnd.UserInfo.*;
 import Controller.Filter.*;
 import Controller.FrontEnd.News.*;
+import Utilities.Logger;
 
 //import Model.userDAO;
 
@@ -55,204 +59,128 @@ public class Front_Controller extends HttpServlet {
 		// access to user url
 		case "/Admin/useradd.news":
 			action = new AddUser();
-
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 		case "/Admin/usertypelist.news":
 			action = new ListUser();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
-		
 
 		// access to userinfo url
 		case "/Admin/userinfolist.news":
 			action = new ListUserInfo();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/userinfoedit.news":
-			action = new EditUserInfo();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
 
 		// access to category url
 		case "/Admin/pg_cate_tblistcategory.news":
 
 			action = new ListCategory();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
-		
+
 		/* End Case : Category Insert */
 		case "/Admin/categoryDropList.news":
 
 			action = new dropListCategory();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
 
 		case "/Admin/sourceDropList.news":
 			action = new dropListSource();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
 
-		// Article Control news
-		case "/newsarticleadd.news":
+		/* for update userinfo sarin */
+		case "/Admin/udateUserInfo.news":
+			action = new EditUserInfo();
 
-			action = new AddNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
-			/*for update status sarin*/
+
+		/* for update full Atricle sarin */
+		case "/Admin/update_article.news":
+			action = new update_full_article();
+
+			break;
+
+		/* for update category Status sarin */
+		case "/Admin/updateCategoryStatus.news":
+			action = new updateCategoryStatus();
+
+			break;
+
+		/* for update status sarin */
 		case "/Admin/updateStatus.news":
 			action = new updateStatus();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
-			
+
+		/* sarin edit user status */
+		case "/Admin/editUserstatus.news":
+			action = new EditStatus();
+
+			break;
+
 		case "/Admin/listarticle.news":
 
 			action = new ListNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
+
+		/* sarin list_draft_news.news query from b_vw_draft_news */
+		case "/Admin/list_draft_news.news":
+
+			action = new ListNewsDraft();
+
+			break;
+		/* sarin listuserinfo */
+		case "/Admin/listUserInfo.news":
+
+			action = new ListUserInfoByName();
+
+			break;
+
 		case "/Admin/counts.news":
 			action = new countNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
 		case "/Admin/selectTypeArticles.news":
 			action = new typeofarticlespost();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 			break;
 		case "/Login/Login.news":
 
 			action = new MyLogin();
 
-			System.out.println("He");
-			try {
-				System.out.println("in try");
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 
-		case "/listexchange.news":
-			action = new listexchange();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/joblist.news":
-			action = new listjobs();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		/* list of all news */
-		case "/listallnews.news":
-			action = new ListAllNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		/* list recent news for slider */
-		case "/recentnews.news":
-			action = new ListRecentNews();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-		case "/countview.news":
-			action = new countView();
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			break;
-			
-		/*
-		 * case "/getUcategoryDropListserInfoName.news":
-		 * //System.out.println("getUserInfoName111"); action = new
-		 * returnUserInfoName(); try { action.execute(request, response); }
-		 * catch (Exception e) { e.printStackTrace(); } break; case
-		 * "/listpopular.news": action = new ListPopular(); try {
-		 * action.execute(request, response); } catch (Exception e) {
-		 * e.printStackTrace(); }
-		 */
 		/* Add Article */
 		case "/Admin/addarticle.news":
 			action = new AddNews();
-			
-			try {
-				System.out.println("------Add-------");
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
+
 			break;
-		
-			/* File Upload */
+
+		/* File Upload */
 		case "/Admin/UploadServlet.news":
 			action = new FileUpload();
 			System.out.println("-------Upload Photo------");
-			try {
-				action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
+			break;
+
+		/* Statistic News */
+		case "/Admin/filterstatistic.news":
+			action = new filterstatistic();
+
+			break;
+		/* Statistic Number of view,like,dislike */
+		case "/Admin/filterstatisticView.news":
+			action = new filterstatisticView();
+
+			break;
+
+		/* Statistic Number of view by Account */
+		case "/Admin/filterstatisticViewByAccount.news":
+			action = new filterstatisticviewByAccount();
+
 			break;
 		default:
 			forward = new ActionForward();
@@ -260,6 +188,12 @@ public class Front_Controller extends HttpServlet {
 			forward.setRedirect(true);
 			break;
 		}// End of switch;
+
+		try {
+			action.execute(request, response);
+		} catch (Exception e) {
+			Logger.writeLogException(e, request.getContextPath(), response.getContentType());
+		}
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());

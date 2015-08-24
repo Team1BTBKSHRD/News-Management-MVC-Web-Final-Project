@@ -60,14 +60,15 @@
 						<div class="col-md-12">
 							<div class="panel panel-info">
 								<div class="panel-body" id="tablerepone">
-									<table id="listarticle"
+									<table id="t_list_category"
 										class="table table-striped table-bordered table-primary mb30"
 										cellspacing="0" width="100%">
 										<thead>
 											<tr>
 												<th>CategoryName</th>
 												<th>CategoryDescription</th>
-												<th>Action</th>
+												<th >Disable</th>
+												<th >Action</th>
 											</tr>
 										</thead>
 										<tbody id="show">
@@ -75,7 +76,7 @@
 										</tbody>
 									</table>
 									<button class="btn btn-success btn-xs delete"
-										data-toggle="collapse" data-target="#demo">
+										data-toggle="collapse" data-target="#demo" id="btntoggle">
 										<i class="fa fa-plus"></i>&nbsp;&nbsp;AddNewArticle
 									</button>
 
@@ -88,12 +89,22 @@
 											<form id="basicForm">
 												<div class="panel-body">
 													<div class="row">
+														<!-- sarin disable cate_code -->
+														<div class="form-group" style="display:none;">
+															<div class="col-sm-5">
+																<input type="text" id="cate_code" name="cate_code"
+																	class="form-control" 
+																	 />
+															</div>
+														</div>
+														<!-- form-group -->
+														
 														<div class="form-group">
 															<label class="col-sm-2 control-label">NewCategory
 																<span class="asterisk">*</span>
 															</label>
 															<div class="col-sm-5">
-																<input type="text" id="newcategory" name="newcategory"
+																<input type="text" id="cate_name" name="cate_name"
 																	class="form-control" placeholder="categoryname"
 																	required />
 															</div>
@@ -114,6 +125,9 @@
 														<div class="col-sm-9 col-sm-offset-2">
 															<button class="btn btn-primary mr5" id="adduser"
 																onClick="addNewCategory();">Add</button>
+																<span><input type="button" value="Cancel"
+																		class="btn btn-danger" data-toggle="collapse"
+																		data-target="#demo" id="btncancel"></span>
 														</div>
 													</div>
 													<!-- row -->
@@ -151,38 +165,107 @@
 	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
 	<!-- -------------------------Custom Javascript---------------- -->
 	
-	<script src="js/custom/script_category_add.js"></script>
+	 <script src="js/custom/script_category_add.js"></script> 
 	<script src="js/validate/page_category_validate.js"></script><!--  script for validate form add category sarin -->
 	<script type="text/javascript">
 	var name='<%=session.getAttribute("admin")%>';
 	//alert(name);
 	/* list categories on page_category_add.jsp */
-	$(document).ready(function() {
+	
 		$.post("pg_cate_tblistcategory.news", {
 			full_name : name
 		}, function(data) {
-			$("#show").html(tblistArticle(data));
-			//alert(data[0].c_desc);
+			$('#t_list_category').dataTable().fnDestroy();						
+			$("#show").html(tblistcategory(data));
+			$("#t_list_category").dataTable({
+				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
+			/* Sarin add datatable */
+			
+			});
 		});
-	});
-	function tblistArticle(data) {
-		var str = "";
+	
+	function tblistcategory(data) {
+		 var str = "";
 		for (var i = 0; i < data.length; i++) {
+			str += "<tr>" + "<td id=cat_code" + data[i].cat_desc + ">"
+					+ data[i].cat_name + "</td>" + "<td>" + data[i].cat_desc
+					+ "</td>"+"<td>"+ changestatus(data[i].cat_status,data[i].cat_code) + "</td>" + "<td>" + actionbutton(data[i].cat_code,data[i].cat_name,data[i].cat_desc) + "</td>" + "</tr>";
+		}
+		return str; 
+	}
+	
+	
+	/* sarin actionbutton */
+	function actionbutton(cat_code,cat_name,cat_des){
+		var btn="<div class='form-group'>";
+		btn+="<button type='button' class='btn btn-success' cat_code='"+cat_code+"'  cat_name='"+cat_name+"' cat_des='"+cat_des+"'  onclick='EditOption(this)'>";		
+		btn+="Edit</button>";
+		return btn;
+	}
+	
+	/* Sarin edit opton */
+	function EditOption(data){
+		 $("#cate_code").val($(data).attr("cat_code"));
+		 $("#cate_name").val($(data).attr("cat_name"));
+		 $("#cate_desc").val($(data).attr("cat_code"));
+		 
+		 $("#btntoggle").click();
+		 //$("#demo").addClass("");
+		 /* 
+		 $("#add").val("Update");
+		 $("#add").attr("onclick","update()"); */
+	}
+	/* sarin btncancel clear value from textbox */
+	jQuery("#btncancel").click(function(){
+		 $("#cate_code").val("");
+		 $("#cate_name").val("");
+		 $("#cate_desc").val("");
+	});
+	
+	
+	/* method changestatus for change value to Icon Active  Or Deactive  sarin */
 
-			str += "<tr>" + "<td id=cat_code" + data[i].c_desc + ">"
-					+ data[i].c_code + "</td>" + "<td>" + data[i].c_name
-					+ "</td>" + "<td>" + btnAction(i) + "</td>" + "</tr>";
+	
+	function changestatus(data, id) {
+		var str = "";
+		if (data) {
+			str += "<a style=' cursor:pointer;'><img src='img/t.png' style='width:30px;height:30px' id='"+ id + "' status='"+ data+ "' cat_code='"+ id+ "' onclick='checkstatus(this)' /></a>";
+
+		} else {
+			str += "<a style=' cursor:pointer;'><img src='img/f.png' style='width:30px;height:30px' id='"+ id + "' status='"+ data+ "' cat_code='"+ id+ "' onclick='checkstatus(this)' /></a>";
+
 		}
 		return str;
 	}
-	function btnAction(i) {
-		var btn = "<button class='btn btn-success btn-xs' id='btnedit"+i+"'>"
-				+ "<i class=fa fa-pencil-square-o></i>"
-				+ "&nbsp;&nbsp;Edit</button>"
-				+ "<button class='btn btn-danger btn-xs delete' id='btnremove"+i+"'>"
-				+ "<i class=fa fa-trash-o></i>&nbsp;&nbsp;Delete</button>";
-		return btn;
-	}
+
+	/*method checkstatus for  upadate status on databases sarin*/
+	
+	function checkstatus(data) {
+
+		var status = $(data).attr("status");
+		var catcode = $(data).attr("cat_code");
+		if (status == "true") {
+			$("#" + $(data).attr("id")).attr("src", "img/f.png");
+			$(data).attr("status", "false");
+			status = "flase";
+		} else {
+			$("#" + $(data).attr("id")).attr("src", "img/t.png");
+			$(data).attr("status", "true");
+			status = "true";
+		}
+		
+		$.post("updateCategoryStatus.news", {
+			cat_code : catcode,
+			cat_status : status,
+		}, function(data2, status) {
+
+		});
+	} 
+	
+	
+	
+	
+	
 	/* Action Add New Category */
 	function addNewCategory() {
 		alert("Add new Category")

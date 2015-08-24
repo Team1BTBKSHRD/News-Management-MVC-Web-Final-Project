@@ -174,10 +174,12 @@ public class UserDAO {
 		System.out.println("Get Rows:" + rs.getRow());
 		return rs.getRow()>0?true:false;
 	}*/
+	/* Sarin */
 	public String userLogin(String userName, String password) throws SQLException{
-		pstm = con.prepareStatement("SELECT * FROM tbuser WHERE user_name=? and user_pass=?;");
+		pstm = con.prepareStatement("SELECT * FROM tbuser WHERE user_name=? and user_pass=? and user_status='true';");
 		pstm.setString(1, userName);
 		pstm.setString(2, password);
+		
 		ResultSet rs = pstm.executeQuery();
 		rs.next();
 		if(rs.getRow()>0){
@@ -187,6 +189,22 @@ public class UserDAO {
 		//System.out.println("Get Rows:" + rs.getString("user_type"));
 		//return rs.getRow()>0?true:false;
 		return null;
+	}
+	
+	
+	/*sarin editUserStatus*/
+	public boolean editUserStatus(int user_id, boolean user_status) throws SQLException {
+		pstm = con.prepareStatement("update tbuser SET user_status = ? where user_id = ? ");
+		pstm.setBoolean(1, user_status);
+		pstm.setInt(2, user_id);
+		System.out.println(user_id + " " + user_status);
+		if (pstm.executeUpdate() > 0) {
+			return true;
+		}
+		return false;
+		
+		
+		
 	}
 /*	public static void main(String[] args) throws SQLException, Exception {
 		System.out.println(Convertor.convertResultSetIntoJSON(new UserDAO().retrieveRS()));

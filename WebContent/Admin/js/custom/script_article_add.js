@@ -17,5 +17,6 @@ $.getScript('js/summernote_text_editor.js',
 		
 		
 		/*------------script for focus on menu -------------- */
-		  $("#main_menu_article").removeClass("parent" ).addClass("parent parent-focus" );
+		 $("#main_menu_article").removeClass("parent" ).addClass("active parent" );
+		//$("#main_menu_article").removeClass("parent" ).addClass("active" );
 		$("#sub_menu_managearticle").addClass( "active" );

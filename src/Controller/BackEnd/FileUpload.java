@@ -14,7 +14,9 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 public class FileUpload implements Action {
 	//private final long serialVersionUID = 1L;
-	private final String DATA_DIRECTORY = "img";
+	/*sarin edit data_directory*/
+	//private final String DATA_DIRECTORY = "img";
+	private  String DATA_DIRECTORY = "img\\";
 	private final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
 	private final int MAX_REQUEST_SIZE = 1024 * 1024;
 
@@ -22,7 +24,23 @@ public class FileUpload implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-
+		String path = null;
+		//try{
+		/*
+		 * path=request.getSession().getAttribute("proimag").toString();
+		 * System.err.println(path); if(path.equals("profile")){
+		 * DATA_DIRECTORY+="profile";
+		 * 
+		 * }
+		 * 
+		 * }catch(NullPointerException e){
+		 * 
+		 * }
+		 */
+		if(request.getSession().getAttribute("proimag")!=null){
+			DATA_DIRECTORY+="profile";
+		}
+		
 		if (!isMultipart) {
 			return;
 		}

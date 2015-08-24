@@ -37,7 +37,9 @@ input[type=file] {
 </style>
 </head>
 <body>
-
+<%
+		session.removeAttribute("proimag");
+	%>
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
 
 	<section>
@@ -66,53 +68,45 @@ input[type=file] {
 					<div class="row row-stat">
 						<div class="col-md-12">
 							<div class="panel panel-info">
-								<div class="panel-body">
-									<div class="table_respone">
-										<table id="listarticle" class="table table-striped table-bordered table-primary mb30" cellspacing="0" width="100%">
-											<thead>
-												<tr>
-													<th>NewsTitle</th>
-													<th>NewsCategory</th>
-													<th>NewsImage</th>
-													<th>NewsDate</th>
-													<th>Action</th>
-												</tr>
-											</thead>
-											<tbody id="show">
-
-											</tbody>
-										</table>
-									</div>
-									<!-- table_respone -->
-									<button class="btn btn-success btn-xs delete"
+								<div class="panel-heading">
+									ADD NEWS
+									<button class="btn btn-success btn-xs delete" style="float:right;"
 										data-toggle="collapse" data-target="#demo">
-										<i class="fa fa-plus"></i>&nbsp;&nbsp;AddNewArticle
+										<i class="fa fa-plus"></i>
 									</button>
+									<br />
+								</div>
+								<div class="panel-body">
 
 									<div class="row">
 										<!--  row  form -->
-										<br />
-										<div
-											style="width: 100%; height: 1px; background-color: #BCE8F1;"></div>
-										<div id="demo" class="collapse">
-											
-												<div class="panel-body">
-													<div class="row">
+											<form id="form_article_add" >
+										
+
+											<div class="panel-body">
+												<div class="row">
+
+													<div class="col-sm-6">
+														<!-- 1..col-sm-6  -->
+
 														<div class="form-group">
-															<label class="col-sm-2 control-label">NewsTitle <span
-																class="asterisk">*</span></label>
-															<div class="col-sm-5">
+															<label class="col-sm-4 control-label">ចំណងជើងព័ត៏មាន
+																*</label>
+															<div class="col-sm-12">
 																<input type="text" id="newstitle" name="newstitle"
-																	class="form-control" placeholder="title" required />
+																	class="form-control" placeholder="ចំណងជើងព័ត៏មាន"
+																	required />
 															</div>
 														</div>
 														<!-- form-group -->
 
+
+
+
 														<div class="form-group">
-															<label class="col-sm-2 control-label">NewsCategory
-																<span class="asterisk">*</span>
-															</label>
-															<div class="col-sm-5">
+															<label class="col-sm-4 control-label">ប្រភេទនៃព័ត៏មាន​
+																*</label>
+															<div class="col-sm-12">
 																<select class="form-control" id="newscategory"
 																	name="newscategory">
 
@@ -121,97 +115,106 @@ input[type=file] {
 														</div>
 														<!-- form-group -->
 
-														<div class="form-group">
-															<label class="col-sm-2 control-label">NewsDescription
-																<span class="asterisk">*</span>
-															</label>
-															<div class="col-sm-5">
-																<input type="text" id="news_des" name="news_des"
-																	class="form-control" placeholder="Description" required />
-															</div>
-														</div>
-														<!-- form-group -->
 
 														<div class="form-group">
-															<label class="col-sm-2 control-label">NewsContentDetail
-																<span class="asterisk">*</span>
-															</label>
-															<div class="col-sm-10">
-																<!--  <textarea class="form-control ckeditor" name="news_con_detail" id="news_con_detail"></textarea> -->
-																<!--   <div id="summernote"></div> -->
-																<textarea class="form-control" name="news_con_detail"
-																	id="news_con_detail"></textarea>
-															</div>
-														</div>
-														<!-- form-group -->
-
-														<div class="form-group">
-															<label class="col-sm-2 control-label">NewsPath <span
-																class="asterisk">*</span></label>
-															<div class="col-sm-5">
+															<label class="col-sm-4 control-label">LinkPage</label>
+															<div class="col-sm-12">
 																<input type="text" id="newspath" name="newspath"
-																	class="form-control" value="http://" required />
+																	class="form-control" placeholder="http://" />
 
 															</div>
 														</div>
 														<!-- form-group -->
+														<label class="col-sm-4 control-label">រូបភាពរបស់ព័ត៏មាន</label>
+														<div class="col-sm-12">
+															<div class="form-group input-group">
+																<span class="input-group-addon"><button
+																		id="imguploads"
+																		style="border: 0px; background-color: #EEEEEE;">upload</button></span>
+																<input type="text" class="form-control" id="filename">
+																
 
-														<div class="form-group">
-															<label class="col-sm-2 control-label">Image
-																Thumnail <span class="asterisk">*</span>
-															</label>
-															<div class="col-sm-4">
-																<div class="col-sm-12">
-																	
-																	<img class="img-responsive" id="img_thumnail"
-																		src="img/no_img_available_atricle.png">
-																</div>
-																<div class="col-sm-9">
-																	<span style="display: inline-flex;"> <input
-																		type="text" class="form-control" /> <span
-																		class="btn btn-default btn-file"> Browse ... 
-																		<input type="file" name="photo" id="file_image" required/>
-																		
-																	</span>
-																	</span>
-																</div>	
-																<div class="col-sm-3">	
-																	<input id="imguploads" class="btn btn-primary btn-lg" type="button" value="Upload
-																Photo"/>
-																</div>
-																</div>
+																<span class="input-group-btn btn btn-default btn-file"
+																	style="font-size: 14px;"> Browse ... <input
+																	type="file" name="photo" id="file_image" />
+																</span>
 															</div>
-															<!-- col-sm-4 -->
-														</div>
-														<!-- form-group -->
-
-														<div class="col-sm-4 col-sm-offset-8">
-															<br />
-															
-															<button class="btn btn-primary btn-lg" id="addArticle">Add</button>
 														</div>
 													</div>
-													<!-- row -->
+													<!-- col-sm-6 -->
+													<div class="col-sm-6">
+														<!--2... col-sm-6 -->
+
+														<div class="form-group">
+															<label class="col-sm-4 control-label">ពិពណ័នាអំពីព័ត៏មាន</label>
+															<div class="col-sm-12">
+																<textarea class="form-control" id="news_des"
+																	name="news_des" rows="8" class="form-control"
+																	placeholder="Description" ></textarea>
+															</div>
+														</div>
+														<!-- form-group -->
+
+														<div class="col-sm-6 col-sm-offset-2">
+															<br />
+															 <div class="btn btn-group">
+																<span><button  class="btn btn-success"
+																		id="save_to" >SaveToDraft</button></span>
+																<span><button  class="btn btn-primary" id="addArticle" name="addArticle" >Post</button></span>
+																 <span><input type="button" class="btn btn-danger" id="btncancel" value="Cancel" /></span>
+														 </div>
+														</div>
+													</div>
+													<div class="form-group">
+														<br /> <label class="col-sm-12 control-label">អំពីព័ត៏មានលំអិត</label>
+														<div class="col-sm-12">
+															<!--  <textarea class="form-control ckeditor" name="news_con_detail" id="news_con_detail"></textarea> -->
+															<!--   <div id="summernote"></div> -->
+															<textarea class="form-control" name="news_con_detail"
+																id="news_con_detail"></textarea>
+														</div>
+														
+													</div>
+													<!-- form-group -->
+
+
+
+													<div style="width: 100%; height: 2px; background-color: #BCE8F1;"></div>
+
 												</div>
-												<!-- panel-body -->
+												<!-- form-group -->
+
+
+
+											</div>
+											<!-- row -->
 										
+										<!-- panel-body -->
+
 										<!-- collapse -->
-										</div>
-										<!-- row form -->
+										</form>
 									</div>
-									<!--  panel-body -->
+									<!-- row form -->
+
+
+
+
+
+
 								</div>
-								<!-- panel panel-info -->
+								<!--  panel-body -->
 							</div>
-							<!-- col-md-12 -->
+							<!-- panel panel-info -->
 						</div>
-						<!-- row -->
+						<!-- col-md-12 -->
 					</div>
-					<!-- contentpanel -->
+					<!-- row -->
 				</div>
-				<!-- mainpanel -->
+				<!-- contentpanel -->
 			</div>
-			<!-- mainwrapper -->
+			<!-- mainpanel -->
+		</div>
+		<!-- mainwrapper -->
 		</div>
 	</section>
 
@@ -227,81 +230,19 @@ input[type=file] {
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	<script src="js/custom/script_article_add.js"></script>
-	<script src="js/validate/page_article_validate.js"></script>
+	 <script src="js/validate/page_article_validate.js"></script> 
 	<!--  script for validate add aticle sarin -->
 
-	<%-- <script type="text/javascript">
-		jQuery("#file_image").change(function() {
-			readURL(this);
-			alert(jQuery('#img_thumnail').attr('src'));
-		});
-
-		function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-
-				reader.onload = function(e) {
-					jQuery('#img_thumnail').attr('src', e.target.result)
-							.fadeIn('slow');
-				};
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
-	</script>
-
-	<script type="text/javascript">
-		var name='<%=session.getAttribute("admin")%>';
-		$.post("listarticle.news", function(data) {
-			$('#listarticle').dataTable().fnDestroy();
-			$("#show").html(tblistArticle(data, name));
-			$('#listarticle').dataTable({
-				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
-			/* Sarin add datatable */
-			});
-			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
-		});
-
-		function tblistArticle(data, name) {
-			var str = "";
-			for (var i = 0; i < data.length; i++) {
-				if (data[i].full_name == name) {
-					str += "<tr>"
-							+ "<td style='padding-top:29px' id=news_id" + data[i].news_id + ">"
-							+ "<a href="+data[i].news_path+" target='_blank' style='text-decoration:none;'>"
-							+ data[i].news_title + "</a></td>" + "<td>"
-							+ data[i].cat_name + "</td>" + "<td>"
-							+ getimage(data[i].news_img) + "</td>" + "<td>"
-							+ data[i].news_date + "</td>"
-							+ "<td style='text-align: center;'>" + btnAction(i)
-							+ "</td>" + "</tr>";
-				}
-			}
-			return str;
-		}
-		function btnAction(i) {/* sarin edit button to disable and enable*/
-			var btn = "<button class='btn btn-success btn-xs' id='btnenable" + i + "'>"
-					+ "<i class='fa fa-thumbs-up'></i>"
-					+ "&nbsp;&nbsp;Enable</button>&nbsp;"
-					+ "<button class='btn btn-danger btn-xs delete' id='btndisable" + i
-					+ "'>"
-					+ "<i class='fa fa-thumbs-down'></i>&nbsp;&nbsp;Disable</button>";
-			return btn;
-		}
-
-		/* ------------Sarin fucntion get image-------- */
-		function getimage(data) {
-			var str = "";
-			str += "<img src="+data+" width=100px/>";
-			return str;
-		}
-	</script> --%>
 	
+
 	<!--  script for validate add aticle sarin -->
 
 	<script type="text/javascript">
 		jQuery("#file_image").change(function() {
 			readURL(this);
-			alert(jQuery('#img_thumnail').attr('src'));
+			/* alert(jQuery('#img_thumnail').attr('src'));/* sarin */ 
+			jQuery('#filename').val(jQuery("#file_image").val());/* sarin */
+			
 		});
 
 		function readURL(input) {
@@ -319,120 +260,28 @@ input[type=file] {
 
 	<script type="text/javascript">
 		var name='<%=session.getAttribute("admin")%>';
-		
-		
-		
-		$.post("listarticle.news",{full_name:name}, function(data) {
-			$('#listarticle').dataTable().fnDestroy();
-			$("#show").html(tblistArticle(data));
-			$('#listarticle').dataTable({
-				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
-			/* Sarin add datatable */
-			});
-			//alert(data[0].news_title+"/"+data[0].cat_code+"/"+data[0].news_img+"/"+data[0].news_date);
-		});
-		
-		
-		
-
-		function tblistArticle(data) {
-			var str = "";
-			/* alert(data[i].news_status); */
-			alert(data.length);
-			for (var i = 0; i < data.length; i++) {
-				/*compare full_name */
-					str += "<tr>"
-							+ "<td style='padding-top:29px' id=news_id" + data[i].news_id + ">"
-							+ "<a href="+data[i].news_path+" target='_blank' style='text-decoration:none;'>"
-							+ data[i].news_title + "</a></td>" + "<td>"
-							+ data[i].cat_name + "</td>" + "<td>"
-							+ getimage(data[i].news_img) + "</td>" + "<td>"
-							+ data[i].news_date + "</td>"
-							/*  + "<td style='text-align: center;'>" + btnAction(i)  */
-							+ "<td style='text-align: center;'>"  +changestatus(data[i].news_status,data[i].news_id,i) 
-							+ "</td>" + "</tr>";
-							
-			
-			}
-			return str;
-		}
-		/* method changestatus for change value to Icon Active  Or Deactive  sarin */	
-
-		 function changestatus(data,id,i){ 
-			var str="";
-			if(data){
-				str+="<a style=' cursor:pointer;'><img src='img/t.png' style='width:30px;height:30px' id="+id+" status='"+data+"' news_id='"+id+"' onclick='checkstatus(this)' /></a>";
-				
-			}
-			else{
-				str+="<a style='cursor:pointer;'><img src='img/f.png' style='width:30px;height:30px' id="+id+" status='"+data+"'  news_id='"+id+"' onclick='checkstatus(this)' /></a>";
-				
-			}
-			return str;
-		} 
-
-		
-		/*method checkstatus for  upadate status on databases*/
-		var statusAction=true;
- 	function checkstatus(data){
-			
-			 var status=$(data).attr("status");			 
-			  var newsid=$(data).attr("news_id");
-			  if(status=="true"){
-				  $("#"+$(data).attr("id")).attr("src","img/f.png"); 
-				  $(data).attr("status","false");	
-				  status="flase";
-			  }else{
-				  $("#"+$(data).attr("id")).attr("src","img/t.png");
-				  $(data).attr("status","true");
-				  status="true";
-			  }
-			 /* if(status){
-				 status=0;
-			 }
-			else{
-				 status=1;
-			 } */
-			//alert(statusAction);
-			  $.post("updateStatus.news", {
-				    news_id : newsid,
-					news_status : status,
-				}, function(data2,status) {
-					
-				});    
-		} 
-		
-		
-		
-		/* ------------Sarin fucntion get image-------- */
-		function getimage(data) {
-			var str = "";
-			str += "<img src="+data+" width=100px/>";
-			return str;
-		}
-		
 		/* upload file */
-		$("#imguploads").click(function(){
+		$("#imguploads").click(function() {
 			var data;
-		    data = new FormData();
-		    data.append('file', $('#file_image')[0].files[0]);   
-			 $.ajax({
-			        url: 'UploadServlet.news',
-			        data: data,
-			        type: 'POST', 
-			        processData: false,
-			        contentType: false,
-			        success:function(){
-			        	alert("Upload Success!");
-			        }
-			       
-			    });
+			data = new FormData();
+			data.append('file', $('#file_image')[0].files[0]);
+			$.ajax({
+				url : 'UploadServlet.news',
+				data : data,
+				type : 'POST',
+				processData : false,
+				contentType : false,
+				success : function(result) {
+					$('#filename').val("upload file success");
+					/* jQuery('#filename').val(jQuery("#file_image").val()); */
+				}
+			});
 		});
 		$.post("categoryDropList.news", function(data) {
 			$("#newscategory").html(categoryDropList(data));
 		});
 		function categoryDropList(data) {
-			var str = "";
+			var str = "<option value=''>-------សូមជ្រើសរើសប្រភេទនៃព័ត៏មាន------</option>";
 			for (var i = 0; i < data.length; i++) {
 				str += "<option value=" + data[i].cat_code + ">"
 						+ data[i].cat_name;
@@ -440,25 +289,87 @@ input[type=file] {
 			str += "</optiont>";
 			return str;
 		}
-		
-		jQuery("#addArticle").click(function(){
-			var img = jQuery("#file_image").val().split("\\");
-			jQuery.post("addarticle.news",
-				{
-				//  news_con_detail  
-				  cat_name:jQuery("#newscategory").val(),
-				  user_info_code:<%=session.getAttribute("userinfo")%>[0].user_info_code,
-				  news_title:jQuery("#newstitle").val(),
-				  news_desc:jQuery("#news_des").val(),
-				  news_path:jQuery("#newspath").val(),
-				  news_img:img[img.length-1],
-				  news_con_detail:jQuery("#news_con_detail").code()
-				}, 
-				function(){
-					alert("Add Success!");
-					
-			});
+	
+		/* sarin clear text box */
+		jQuery("#btncancel").click(function(){
+			
+			 $("#newid").val("");
+			 $("#newstitle").val("");
+			 $("#newscategory").val("");
+			 $("#newspath").val("");
+			 $("#filename").val("");
+			 $("#news_des").val("");
+			 $("#file_image").val("");
+			 $("#news_con_detail").code("");
 		});
+		
+		
+		jQuery("#addArticle")
+				.click(
+						function() {
+							var img = jQuery("#file_image").val().split("\\");						
+							if(img==""){
+								img="no_image.png";
+							}  
+							else{
+								//img=jQuery("#file_image").val().split("\\");
+								img=img[img.length - 1];
+							}
+							if(jQuery("#newscategory").val()==""){return;}
+							else{
+							 jQuery
+									.post(
+											"addarticle.news",
+											{
+												//  news_con_detail  
+												cat_name : jQuery("#newscategory").val(),
+												user_info_code :<%=session.getAttribute("userinfo")%>[0].user_info_code,
+												news_title : jQuery("#newstitle").val(),
+												news_desc : jQuery("#news_des").val(),
+												news_path : jQuery("#newspath").val(),
+												news_img : img,
+												news_con_detail : jQuery("#news_con_detail").code(),
+												draft_status : false,
+												news_status : false,
+											}, function(data,status) {
+												alert("Add " +status);
+												window.location.href ="page_post_article.jsp";
+											}); 
+							}
+						});
+		
+
+		jQuery("#save_to")
+				.click(
+						function() {
+							 var img = jQuery("#file_image").val().split("\\");						
+							if(img==""){
+								img="no_image.png";
+							}  
+							else{
+								//img=jQuery("#file_image").val().split("\\");
+								img=img[img.length - 1];
+							} 
+							if(jQuery("#newscategory").val()==""){return;}
+							else{
+							 	jQuery.post("addarticle.news",
+											{
+												//  news_con_detail  
+												cat_name : jQuery("#newscategory").val(),
+												user_info_code :<%=session.getAttribute("userinfo")%>[0].user_info_code,
+												news_title : jQuery("#newstitle").val(),
+												news_desc : jQuery("#news_des").val(),
+												news_path : jQuery("#newspath").val(),
+												news_img : img,
+												news_con_detail : jQuery("#news_con_detail").code(),
+												draft_status : true,
+												news_status : false,
+											}, function(data,status) {
+												alert("Add " +status);
+												window.location.href ="page_draft_article.jsp";
+											});  
+							}
+						});
 	</script>
 </body>
 </html>

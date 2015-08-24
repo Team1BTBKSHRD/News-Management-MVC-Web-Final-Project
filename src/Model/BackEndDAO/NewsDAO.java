@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import Model.DTO.News;
 import Utilities.Convertor;
 import Utilities.DatabaseConnection;
+import Utilities.DateConverter;
+import Utilities.Logger;
+import Utilities.postgresAccount;
 
 /**
  * Class NewsDAO Use For interact between Java and DBMS(tbnews).
@@ -26,6 +29,17 @@ public class NewsDAO {
 	public NewsDAO() {
 		try {
 			con = DatabaseConnection.getConnection();
+			/*
+			 * When index.jsp started, published_date will auto converted :
+			 * pisal
+			 */
+			System.out.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
+			/* When index.jsp started, */
+			int pcon = new postgresAccount().countUserPostgres();
+			if (pcon > 80) {
+				System.err.println("Connection is over connection : " + pcon);
+				System.err.println(new postgresAccount().destroyConnection()+" Connection has been destroy");
+			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -212,7 +226,7 @@ public class NewsDAO {
 		// TODO Auto-generated method stub
 		PreparedStatement pstm = null; /* Statement for Query Data from DBMS */
 		try {
-			pstm = con.prepareStatement("SELECT * FROM vw_show_all where full_name=?");
+			pstm = con.prepareStatement("SELECT * FROM b_vw_news_scrape where full_name = ? ");
 			pstm.setString(1, full_name);
 			ResultSet rs = pstm.executeQuery();
 			/*
@@ -321,7 +335,7 @@ public class NewsDAO {
 		}
 		return false;
 		// TODO Auto-generated method stub
-
+		
 	}
 	/*
 	 * public static void main(String[] args) throws Exception {
@@ -329,10 +343,10 @@ public class NewsDAO {
 	 * NewsDAO().articlepost("dap-news")).toString()); }
 	 */
 
-	public boolean insert(News news, String content) throws SQLException {
+	public boolean insert(News news, String content,boolean draft,boolean news_status) throws SQLException {
 		try {
-			/* Set PreparedStatement */
-			CallableStatement cstm = con.prepareCall("{call add_news_content(?, ?, ?, ?, ?, ?, ?, ?)}");
+			
+			CallableStatement cstm = con.prepareCall("{call add_news_content(?, ?, ?, ?, ?, ?, ?, ? , ?,?)}");
 			//pstm = con.prepareStatement("INSERT INTO tbnews(cat_code, user_info_code, news_title, news_desc, news_path, news_img, news_date) VALUES(?, ?, ?, ?, ?, ?, ?);");
 			/* Initialize parameters for pstm object */
 			cstm.setString(1, news.getCat_code());
@@ -342,7 +356,9 @@ public class NewsDAO {
 			cstm.setString(5, news.getNews_path());
 			cstm.setString(6, news.getNews_img());
 			cstm.setString(7, news.getNews_date());
-			cstm.setString(8, content);
+			cstm.setBoolean(8, draft);
+			cstm.setBoolean(9, news_status);
+			cstm.setString(10, content);
 			System.out.println(cstm.toString());
 			return cstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
@@ -358,4 +374,149 @@ public class NewsDAO {
 	/*public static void main(String[] args) throws SQLException, Exception {
 		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().listAllNews()));
 	}*/
+
+	
+	
+	/*sarin list_news_draft*/
+	public ResultSet list_News_draft(String full_name) {
+
+		PreparedStatement pstm = null; /* Statement for Query Data from DBMS */
+		try {
+			pstm = con.prepareStatement("select * from b_vw_draft_news where full_name = ? and news_draft_status='true'");
+			pstm.setString(1, full_name);
+			ResultSet rs = pstm.executeQuery();
+			/*
+			 * int i=0; while(rs.next()){ i++; } System.out.println(i);
+			 * rs.next(); System.out.println(rs.getString(1));
+			 */
+			return rs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
+		
+		
+	}
+
+
+
+	public boolean update_article(News news, String newsConDetail,boolean draft_status) throws SQLException {
+	
+		
+		//1181,'B020501','Test','testupdate','http://www.facebook.com','Jellyfish.jpg','8/30/15 8:27 AM','testupdatecontent','f'
+try {
+			
+			CallableStatement cstm = con.prepareCall("{call s_update_news_content( ? , ? , ? , ? , ? , ? , ? , ? , ? )}");
+			//pstm = con.prepareStatement("INSERT INTO tbnews(cat_code, user_info_code, news_title, news_desc, news_path, news_img, news_date) VALUES(?, ?, ?, ?, ?, ?, ?);");
+			cstm.setInt(1, news.getNews_id());
+			cstm.setString(2, news.getCat_code());
+			cstm.setString(3, news.getNews_title());
+			cstm.setString(4, news.getNews_desc());
+			cstm.setString(5, news.getNews_path());
+			cstm.setString(6, news.getNews_img());
+			cstm.setString(7, news.getNews_date());
+			cstm.setString(8, newsConDetail);
+			cstm.setBoolean(9, draft_status);
+			
+			System.out.println(cstm.toString());
+			return cstm.executeUpdate() > 0 ? true
+					: false; /* return true for success and false if fail */
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			/* Close pstm and con */
+			//pstm.close();
+			con.close();
+		}
+		return false; 
+	}
+	/* Pisal */
+	// Filter number of news in each category by sponsor
+		public ResultSet filterbyTime(String sponsor, int i) {
+			try {
+				switch (i) {
+				case 1: // Filter number of news in each category by sponsor
+					pstm = con
+							.prepareCall("{call s_admin_statistic_count_daily(?)}");
+					break;
+				case 2:
+					pstm = con
+							.prepareCall("{call s_admin_statistic_count_weekly(?)}");
+					break;
+				case 3:
+					pstm = con
+							.prepareCall("{call s_admin_statistic_count_monthly(?)}");
+					break;
+				case 4:
+					pstm = con
+							.prepareCall("{call s_admin_statistic_count_yearly(?)}");
+					break;
+
+				default:
+					break;
+				}
+				pstm.setString(1, sponsor);
+				return pstm.executeQuery();
+			} catch (Exception e) {
+				Logger.writeLogException(e, "filterbyTime", "NewsDAO");
+			} finally {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					Logger.writeLogException(e, "filterbyTime Connection",
+							"NewsDAO");
+				}
+			}
+			return null;
+		}
+
+		public ResultSet filterbyView(String sponsor) {
+			try {
+				pstm = con.prepareCall("{call s_admin_count_click(?)}");
+				pstm.setString(1, sponsor);
+				return pstm.executeQuery();
+			} catch (Exception e) {
+				Logger.writeLogException(e, "filterbyView", "NewsDAO");
+			} finally {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					Logger.writeLogException(e, "filterbyView Connection",
+							"NewsDAO");
+				}
+			}
+			return null;
+		}
+		/*
+		 * @param : sponsor
+		 * return number of count view, like, dislike for editor statistic chart
+		 * */
+		public ResultSet filterbyViewAccount(String sponsor) {
+			try {
+				pstm = con.prepareCall("{call s_admin_count_click(?)}");
+				pstm.setString(1, sponsor);
+				return pstm.executeQuery();
+			} catch (Exception e) {
+				Logger.writeLogException(e, "filterbyViewAccount", "NewsDAO");
+			} finally {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					Logger.writeLogException(e, "filterbyViewAccount Connection",
+							"NewsDAO");
+				}
+			}
+			return null;
+		}
 }// End of class;

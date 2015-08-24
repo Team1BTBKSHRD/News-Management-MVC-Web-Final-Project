@@ -266,4 +266,30 @@ public class CategoryDAO {
 	public static void main(String[] args) throws SQLException, Exception {
 		System.out.println(Convertor.convertResultSetIntoJSON(new CategoryDAO().manageCatUser("sabay")).toString());
 	}
+	/*Sarin updatestatus category*/
+	public boolean updatCatstatus(String cat_code, boolean cat_status) {
+		try{
+			pstm = con.prepareStatement("update tbcategory SET cat_status = ? where cat_code = ? ");
+
+			pstm.setBoolean(1, cat_status);
+			pstm.setString(2, cat_code);
+			System.out.println(cat_code + " " + cat_status);
+			if (pstm.executeUpdate() > 0) {
+				return true;
+			}
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+			finally{
+				
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return false;
+		
+	}
 }// End of class;

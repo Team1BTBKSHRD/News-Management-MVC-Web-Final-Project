@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+
+.category-btn {
+	position: fixed;
+	top: 20%;
+	z-index: 9999;
+}
+
+.category-icon {
+	
+}
+
+.category-icon a {
+	position: relative;
+	background-color: #50a253;
+	height: 48px;
+	width: 32px;
+	color: white;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 3px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-size: 1.4em;
+	left: 0;
+	align-items: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.collision-btn{
+    height: 200px;
+    overflow: hidden;
+    top:15%;
+}

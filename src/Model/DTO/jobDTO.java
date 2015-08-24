@@ -6,11 +6,18 @@ public class jobDTO {
 	private String company;
 	private String closeDate;
 	private String category;
+	private String link;
 	/**
 	 * @return the id
 	 */
 	public String getId() {
 		return id;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
 	}
 	/**
 	 * @param id the id to set
