@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div class="category-header">
     <!-- right side header -->
-    <div class="category-head-right">
+    <div id="owl-demo" class="category-head-right owl-carousel owl-theme">
         <div class="img-slider-items">
             <img
                     src="http://cdn.sabay.com/cdn/news.sabay.com.kh/wp-content/uploads/2015/08/Untitled-150.jpg?ebb82d"

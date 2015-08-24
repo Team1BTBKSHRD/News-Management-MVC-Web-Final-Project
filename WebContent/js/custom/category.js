@@ -72,65 +72,41 @@ function getResult(pageNumber) {
 						}
 					});
 }
-/*		----------------------------List All News----------------------------------
-		$
-				.post(
-						"listallnews.json",
-						function(news) {
 
-							var panel = "";
-							var panelRight = "";
-							var panelRecommend = "";
-							for (var i = 1; i < news.length; i++) {
-								
-								if (news[i].cat_name == "កីឡាជាតិ" || news[i].cat_name == "កីឡាអន្តរជាតិ"
-										&& news[i].count_visited >= 7000) {
-									
-									panel += "<div class='card-1' id='card-1'>"
-										+ "<a href="+news[i].news_path+" target='_blank' id='link-1'>"
-										+ "<div class='col-md-3 col-sm-3 col-xs-3 clear-paddings'>"
-										+ "<img src='"+news[i].news_img+"' class='img-responsive' height='153px' id='img-1'>"
-										+ "</div>"
-										+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details'>"
-										+ "<h5 class='text-h5-2 article-title' id='title-1'>"
-										+ news[i].news_title
-										+ "</h5>"
-										+ "<p class='text-3 news-description' id='des-1'>"
-										+ news[i].news_desc
-										+ "</p>"
-										+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
-										+ "អាន " + news[i].count_visited
-										+ " | " + news[i].news_date + " | "
-										+ news[i].full_name 
-										+ "</div>" + "</div>" + "</a>"
-										+ "</div><hr/>";
-								}
-								if (news[i].count_visited >= 10000) {
-									panelRight += "<ul class='list-group clear-margin-bottom'>"
-											+ "<a href='"+news[i].news_path+"' class='list-group-item  clear-paddings' target='_blank'>"
-											+ "<img src='"+news[i].news_img+"' height='50px' width='64px'>"
-											+ "<h6 class='text-h6-2 article-title'>"
-											+ news[i].news_title
-											+ "</h6>"
-											+ "</a>" + "</ul>";
-									//alert(panelRight);
-								}
-								if (news[i].news_like >= 10000) {
-									panelRecommend += "<ul class='list-group clear-margin-bottom'>"
-											+ "<a href='"+news[i].news_path+"' class='list-group-item  clear-paddings' target='_blank'>"
-											+ "<img src='"+news[i].news_img+"' height='50px' width='64px'>"
-											+ "<h6 class='text-h6-2 article-title'>"
-											+ news[i].news_title
-											+ "</h6>"
-											+ "</a>" + "</ul>";
-									//alert(panelRight);
-								}
-							}
-							panel += "<div class='clearfix'></div>";
-							$("#panelCategory").html(panel);
-							$("#panelRigth").html(panelRight);
-							$("#panelRightDown").html(panelRecommend);
-						});
-		------------------------End of List All News-----------------------------
-		 function add popular 
-		//var prmstr = window.location.search.substr(4);*/
+/*------------------------------------------------------------------*/
+
+var owl = $("#owl-demo"), i = 0, textholder, booleanValue = false;
+
+owl.owlCarousel({
+	// //Set AutoPlay to 3 seconds
+	autoPlay : 6000,
+	loop : true,
+	pagination : false,
+	slideSpeed : 300,
+	items : 1,
+	responsive : true,
+	responsiveRefreshRate : 200,
+	responsiveBaseWidth : window,
+	itemsDesktop : [ 1199, 1 ],
+	itemsDesktopSmall : [ 979, 1 ],
+	itemsTablet : [ 750, 1 ]
+});
+
+$.post("recentnews.json", function(data) {
+	var allItem = "";
+	for ( var i in data) {
+		if(data[i].news_path=='') data[i].news_path = 'article?id=' + data[i].news_id;
+		allItem += "<div class='item clear-margins'> " + "<img src='" + data[i].news_img
+				+ "' alt='item slider'>"
+				+ "<div class='news-title-background' id='"+ data[i].news_id +"'>" + "<a href='"
+				+ data[i].news_path + "' target='_blank'>"
+				+ "<div class='owl-news-title'>"
+				+ "<h5 class='text-h5-2-slider clear-margin-top'>"
+				+ data[i].news_title + "</h5>"
+				+ "<p class='text-5 clear-margin-bottom'>" + data[i].news_desc
+				+ "</p>" + "</div>" + "<div class='owl-news-source'>"
+				+ "<strong>ប្រភពពត៌មាន <kbd>" + data[i].full_name
+				+ "</kbd></strong>" + "</div>" + "</a>" + "</div>" + "</div>";
+	}
+	owl.data('owlCarousel').addItem(allItem);
+});

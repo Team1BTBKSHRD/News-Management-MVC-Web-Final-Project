@@ -13,6 +13,9 @@
 <!-- lib css -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/responsive.css">
 <!-- end lib css -->
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
@@ -78,6 +81,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.cookie.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
 	<script src="js/custom/right-panel.js"></script>
