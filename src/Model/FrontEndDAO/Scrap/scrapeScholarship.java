@@ -1,4 +1,4 @@
-package Utilities;
+package Model.FrontEndDAO.Scrap;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import Model.BackEndDAO.JsoupDAO;
 import Model.DTO.scholarshipDTO;
 
 public class scrapeScholarship {

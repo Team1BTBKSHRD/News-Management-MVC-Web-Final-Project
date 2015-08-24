@@ -1,20 +1,11 @@
-package Controller.FrontEnd;
-
-import java.util.ArrayList;
+package Controller.FrontEnd.Scrap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import Model.BackEndDAO.JsoupDAO;
-import Model.DTO.exchangeRateDTO;
+import Controller.FrontEnd.Action;
+import Model.FrontEndDAO.Scrap.JsoupDAO;
 import Utilities.Convertor;
-
-import com.google.gson.Gson;
 
 public class listexchange implements Action {
 

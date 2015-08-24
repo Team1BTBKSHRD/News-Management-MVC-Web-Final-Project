@@ -1,4 +1,4 @@
-package Utilities;
+package Model.FrontEndDAO.Scrap;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import Model.BackEndDAO.JsoupDAO;
 import Model.DTO.exchangeRateDTO;
 
 public class scrapeExchange {

@@ -4,10 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Statement;
-import com.sun.corba.se.spi.orbutil.fsm.State;
-import Model.DTO.exchangeRateDTO;
-
 public class postgresAccount {
 	private Connection con;
 

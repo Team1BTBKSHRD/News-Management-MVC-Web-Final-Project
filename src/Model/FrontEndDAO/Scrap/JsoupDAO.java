@@ -1,4 +1,4 @@
-package Model.BackEndDAO;
+package Model.FrontEndDAO.Scrap;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,15 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.PreparedStatement;
-
-import Controller.FrontEnd.listscholarship;
 import Model.DTO.exchangeRateDTO;
 import Model.DTO.jobDTO;
 import Model.DTO.scholarshipDTO;
 import Utilities.Convertor;
 import Utilities.DatabaseConnection;
-import Utilities.scrapeScholarship;
 
 public class JsoupDAO {
 	private Connection con;
