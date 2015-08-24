@@ -55,13 +55,13 @@
 											cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th>Job Title</th>
-								<th>Company Name</th>
-								<th>Closing Date</th>
-								<th>Job Category</th>
+								<th>Title</th>
+								<th>Description</th>
+								<th>Date Posted</th>
+								<th>Deadline</th>
 							</tr>
 						</thead>
-						<tbody id="tbjoblist">
+						<tbody id="tbscholarship">
 						</tbody>
 					</table>
 				</div>
@@ -87,7 +87,7 @@
 	<!-- custom js -->
 	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/right-panel.js"></script>
-	<script src="js/custom/jobscript.js"></script>
+	<script src="js/custom/scholarship.js"></script>
 	
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>

@@ -123,7 +123,6 @@ public class NewsDAO {
 		}
 		return null;
 	}
-	
 	public ResultSet countNewsByCatCodeDaily(String categoryCode) throws SQLException {
 		try{
 			CallableStatement clstm = con.prepareCall("{CALL s_count_news_by_catcode_daily(?)}");
@@ -176,7 +175,6 @@ public class NewsDAO {
 		con.close();
 	}
 	
-
 }// End of class;
 
 

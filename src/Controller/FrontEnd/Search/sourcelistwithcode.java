@@ -10,14 +10,14 @@ import Controller.FrontEnd.Action;
 public class sourcelistwithcode implements Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		UserInfoDAO dao = new UserInfoDAO();
-		String listUserCodeName = Convertor.convertResultSetIntoJSON(dao.listuserCodeName()).toString();
-		dao.close();
-		response.getWriter().write(listUserCodeName);
-		System.out.println("sourcelistwithcode");
+		//String obj= new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
+		String obj=Convertor.convertResultSetIntoJSON(new UserInfoDAO().listuserCodeName()).toString();
+		response.getWriter().write(obj);		
+		System.out.println("sourcelistwithcode");			
 	}
 
 }

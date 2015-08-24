@@ -119,7 +119,8 @@ $("#btn-home").click(function() {
 							request,
 							{
 								c_code : code,
-								limit : 11
+								limit : 11,
+								offset : 0
 							},
 							function(news) {
 								if (news.length <= 0) {

@@ -13,9 +13,8 @@ public class RecommendNews implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		// TODO Auto-generated method stub
-		NewsDAO dao = new NewsDAO();
-		String newsList=Convertor.convertResultSetIntoJSON(dao.getRecommendNews()).toString();
-		dao.close();
+		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().getRecommendNews()).toString();
+		/*System.out.println(newsList);*/
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(newsList);

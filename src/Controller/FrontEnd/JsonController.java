@@ -58,20 +58,30 @@ public class JsonController extends HttpServlet {
 		Action action = null;
 
 		System.out.println(RequestURI);
-/*		System.out.println(contextPath);
-		System.out.println("--" + command);*/
+		/*
+		 * System.out.println(contextPath); System.out.println("--" + command);
+		 */
 
 		switch (command) {
 		case "/listResult.json":
-			action = new listResult();			
+			action = new listResult();
 			break;
+		/* page_scholarship_list.jsp */
+
+		case "/scholarlist.json":
+			action = new listscholarship();
+			break;
+		/* panel list exchange */
 		case "/listexchange.json":
 			action = new listexchange();
 			break;
+		/* page_list_job.jsp */
 		case "/joblist.json":
 			action = new listjobs();
 			break;
-
+		/*
+		 * case "/listallnews.json": action = new ListAllNews(); break;
+		 */
 		case "/recentnews.json":
 			action = new ListRecentNews();
 			break;
@@ -91,25 +101,27 @@ public class JsonController extends HttpServlet {
 			break;
 		case "/listnewscategorybyweekly.json":
 			action = new ListNewsCategoryByWeekly();
-			break;	
+			break;
 		case "/listnewscategorybymonthly.json":
 			action = new ListNewsCategoryByMonthly();
-			break;	
-			
+			break;
+
+		/*-------------Bo Add New Case---------------*/
 		case "/getrecommendnews.json":
 			action = new RecommendNews();
 			break;
 		case "/getpopularnews.json":
 			action = new PopularNews();
 			break;
-			
+
+		/*--------------End of New Case--------------*/
 		/*-------------------New Case Add----------------------*/
 		case "/countNewsByCatCodeDaily.json":
 			action = new CountNewsByCatCodeDaily();
 			break;
 		case "/countNewsByCatCodeWeekly.json":
 			action = new CountNewsByCatCodeWeekly();
-			break;	
+			break;
 		case "/countNewsByCatCodeMonthly.json":
 			action = new CountNewsByCatCodeMonthly();
 			break;

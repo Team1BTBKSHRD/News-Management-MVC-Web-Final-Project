@@ -12,7 +12,7 @@ $(document).ready(function(){
 			var str = "";
 			for (var i = 0; i < data.length; i++) {
 
-				str += "<tr><td>" + data[i].title + "</td><td>"
+				str += "<tr><td><a href="+data[i].link+" target=_blank>" + data[i].title + "</a></td><td>"
 						+ data[i].company + "</td><td>" + data[i].closeDate
 						+ "</td><td>" + data[i].category
 						+ "</td></tr>";

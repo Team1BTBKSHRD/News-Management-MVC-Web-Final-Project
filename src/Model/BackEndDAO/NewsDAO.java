@@ -369,7 +369,7 @@ public class NewsDAO {
 		}
 		return false; /* return false if insert unsuccessful */
 	}
-	public void close() throws SQLException{
-		con.close();
-	}
+	/*public static void main(String[] args) throws SQLException, Exception {
+		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().listAllNews()));
+	}*/
 }// End of class;
