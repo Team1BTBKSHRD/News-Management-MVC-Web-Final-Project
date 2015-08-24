@@ -1,9 +1,11 @@
 package Model.FrontEndDAO;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import Utilities.DatabaseConnection;
 
@@ -35,10 +37,44 @@ public class CategoryDAO {
 		}
 		return false;
 	}
+	//add method from backendDAo
+	/* return resultset with cat_code and cat_name*/
+	public ResultSet listCatcodeCatName() throws SQLException {
+		Statement stm=con.createStatement();
+		return stm.executeQuery("select cat_code, cat_name from tbcategory");
+	}
+	public ResultSet resourceList() throws SQLException {
+		Statement stm = con.createStatement();
+		ResultSet rs = stm.executeQuery("select full_name from tbuserinfo");
+		return rs;
 
-	public static void main(String[] args) throws ClassNotFoundException,
+	}
+	public ResultSet manageCatUser(String data) throws SQLException {
+		CallableStatement clstm = null; /* Statement for Query Data from DBMS */
+		ResultSet rs = null; /* rs stores all records of query */
+		try {
+			clstm = con.prepareCall("{call manage_cat_user(?)}"); /* Initialize stm */
+			clstm.setString(1, data);
+			rs = clstm.executeQuery(); /*
+																 * Execute query
+																 * and assigns
+																 * to rs
+																 */
+			return rs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} /*finally {
+			// Close stm, rs and con
+			clstm.close();
+			// rs.close();
+			//con.close();
+		}*/
+
+		return null; /* Return null if error */
+	}
+/*	public static void main(String[] args) throws ClassNotFoundException,
 			SQLException {
 		System.out.println(new CategoryDAO().checkCategory(""));
-	}
+	}*/
 }// End of class;
 

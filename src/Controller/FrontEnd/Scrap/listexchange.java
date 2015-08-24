@@ -12,11 +12,11 @@ public class listexchange implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
-
+		System.out.println("listexchange");
 	      response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 		String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrieveExchange()).toString();
-		System.out.println(obj);
+		//System.out.println(obj);
 		response.getWriter().write(obj);
 
 	}

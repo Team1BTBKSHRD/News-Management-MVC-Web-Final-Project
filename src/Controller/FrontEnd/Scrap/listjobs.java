@@ -11,6 +11,7 @@ public class listjobs implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println("listjobs");
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		String obj=Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievJobs()).toString();

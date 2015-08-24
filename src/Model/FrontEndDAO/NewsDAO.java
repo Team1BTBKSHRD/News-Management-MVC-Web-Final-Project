@@ -175,6 +175,22 @@ public class NewsDAO {
 		con.close();
 	}
 	
+	//add methods from backendDAO
+	public ResultSet listRecentNews(int data) throws SQLException {
+		// TODO Auto-generated method stub
+		CallableStatement clstm = con.prepareCall("{call news_slider(?)}");
+		clstm.setInt(1, data);
+		ResultSet rs = clstm.executeQuery();
+		rs.next();
+		return rs;
+	}
+	public void countView(int newid, int count) throws SQLException {
+		// TODO Auto-generated method stub
+		CallableStatement clstm = con.prepareCall("{call add_counter(?, ?)}");
+		clstm.setInt(1, newid);
+		clstm.setInt(2, count);
+		clstm.executeQuery();
+	}
 }// End of class;
 
 

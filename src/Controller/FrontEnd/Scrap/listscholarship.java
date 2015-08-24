@@ -11,12 +11,12 @@ public class listscholarship implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		System.out.println("listscholarship");
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 
 		String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString();
-		System.out.println(obj);
+		//System.out.println(obj);
 		response.getWriter().write(obj);
 	}
 	/*public static void main(String[] args) {
