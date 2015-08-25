@@ -16,11 +16,11 @@
 <!-- end lib css -->
 <!-- custom css -->
 <link rel="stylesheet" type="text/css" href="css/custom/index.css">
-<link rel="stylesheet" type="text/css" href="css/custom/owl.css">
+<link rel="stylesheet" type="text/css" href="css/custom/slider.css">
 <link rel="stylesheet" type="text/css"
 	href="css/custom/bottom-slider.css">
 <link rel="stylesheet" type="text/css"
-	href="css/custom/category-btn.css">
+	href="css/custom/left-sidebar-button.css">
 <!-- end custom css -->
 </head>
 <body>
@@ -235,10 +235,10 @@
 	<script src="js/jquery-ui.min.js"></script>
 	<!-- end lib js -->
 	<!-- custom js -->
-	<script src="js/custom/owl.js"></script>
 	<script src="js/custom/right-panel.js"></script>
 	<script src="js/custom/home.js"></script>
 	<script src="js/custom/count.js"></script>
+	<script src="js/custom/default.js"></script>
 	<script src="js/custom/collusion.js"></script>
 	<!-- end custom js -->
 	<!-- #####################end javascript#################### -->
