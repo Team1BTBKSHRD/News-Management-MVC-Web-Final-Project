@@ -50,8 +50,7 @@
 				style="margin-top: 16px;">
 
 				<div class="panel-body" id="panelCategory">
-					<table id="listjob"
-											class="table table-striped table-bordered table-primary mb30"
+					<table id="listjob" class="table table-striped table-bordered table-primary mb30"
 											cellspacing="0" width="100%">
 						<thead>
 							<tr>

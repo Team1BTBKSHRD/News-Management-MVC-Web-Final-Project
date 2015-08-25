@@ -1,10 +1,17 @@
-$("#btn-home").click(function() {
+$('#hdhome').attr("class","active");
+		$("#btn-home").click(function() {
 			$('html, body').animate({
-				scrollTop : $("#owl-demo").offset().top - 75
+				scrollTop : $("#owl-demo").offset().top - 100
+			}, 350);
+		});
+		$("#btn-localnews").click(function() {
+			$('html, body').animate({
+				scrollTop : $("#localnews-scroll").offset().top - 75
 			}, 500);
 		});
-	
-		$("#btn-localnews").click(function() {
+
+				
+/*		$("#btn-localnews").click(function() {
 			$('html, body').animate({
 				scrollTop : $("#localnews-scroll").offset().top - 75
 			}, 500);
@@ -51,7 +58,7 @@ $("#btn-home").click(function() {
 				scrollTop : $("#lifeandjobsnews-scroll").offset().top - 75
 
 			}, 500);
-		});
+		});*/
 
 		/*Bo Response*/
 		setData("B020101", "month", "#panelBody_cam");

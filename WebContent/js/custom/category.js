@@ -1,3 +1,5 @@
+$("[id="+window.location.search.substr(4)+"]").attr('class', 'active');
+
 $('body').on('click', '.previous', function() {
 	getResult(pageNumber -= countItems);
 });

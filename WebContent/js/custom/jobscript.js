@@ -1,4 +1,5 @@
-	 /* $.post("listexchange.news",function(data){
+$('#hdjob').attr("class","active");	
+/* $.post("listexchange.news",function(data){
 		 var str="";
 		 //alert(data.length);
 		 for(var i=0;i<data.length;i++){

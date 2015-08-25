@@ -1,3 +1,4 @@
+$('#hdscholarship').attr("class","active");
 $(document).ready(function(){
 		$.post("scholarlist.json", function(data) {
 			var str = "";
