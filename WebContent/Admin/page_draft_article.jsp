@@ -400,7 +400,7 @@ input[type=file] {
 			if (data.indexOf("http") != -1) {
 				str += "<img src="+data+" width=100px/>";
 			} else {
-				str += "<img src=../img/"+data+" width=100px/>";
+				str += "<img src=../"+data+" width=100px/>";
 			}
 			return str;
 		}
@@ -446,7 +446,7 @@ input[type=file] {
 								 img = jQuery("#filename").val();
 							 }
 							 else{
-								 img=img[img.length - 1];
+								 img="img/"+img[img.length - 1];//sarin
 							 }
 							  jQuery
 								.post("update_article.json",
@@ -457,7 +457,7 @@ input[type=file] {
 											news_title : jQuery("#newstitle").val(),
 											news_desc : jQuery("#news_des").val(),
 											news_path : jQuery("#newspath").val(),
-											news_img : img,
+											news_img :img,
 											
 											news_con_detail : jQuery("#news_con_detail").code(),
 											draft_status : false,
@@ -480,7 +480,7 @@ input[type=file] {
 						 img = jQuery("#filename").val();
 					 }
 					 else{
-						 img=img[img.length - 1];
+						 img="img/"+img[img.length - 1];
 					 }
 					 
 					 jQuery.post("update_article.json",

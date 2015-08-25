@@ -43,7 +43,7 @@ function getResult(pageNumber) {
 										+ news[i].news_desc
 										+ "</p>"
 										+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
-										+ "Ã¡Å¾Â¢Ã¡Å¾Â¶Ã¡Å¾â€œ "
+										+ "ÃƒÂ¡Ã…Â¾Ã‚Â¢ÃƒÂ¡Ã…Â¾Ã‚Â¶ÃƒÂ¡Ã…Â¾Ã¢â‚¬Å“ "
 										+ news[i].count_visited
 										+ " | "
 										+ news[i].news_date
@@ -55,8 +55,8 @@ function getResult(pageNumber) {
 										+ "</div><hr/>";
 							}
 							str += "<ul class='pager clear-padding-right'>"
-									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>Ã¡Å¾â€˜Ã¡Å¸â€ Ã¡Å¾â€“Ã¡Å¸ï¿½Ã¡Å¾Å¡Ã¡Å¾â‚¬Ã¡Å¸â€™Ã¡Å¾Å¡Ã¡Å¸â€žÃ¡Å¾â„¢</a></li>"
-									+ "<li class='next'><a href='#' class='btn btn-lg btn-primary'>Ã¡Å¾â€˜Ã¡Å¸â€ Ã¡Å¾â€“Ã¡Å¸ï¿½Ã¡Å¾Å¡Ã¡Å¾â€�Ã¡Å¾â€œÃ¡Å¸â€™Ã¡Å¾â€˜Ã¡Å¾Â¶Ã¡Å¾â€�Ã¡Å¸â€¹</a></li>"
+									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ÃƒÂ¡Ã…Â¾Ã¢â‚¬ËœÃƒÂ¡Ã…Â¸Ã¢â‚¬Â ÃƒÂ¡Ã…Â¾Ã¢â‚¬â€œÃƒÂ¡Ã…Â¸Ã¯Â¿Â½ÃƒÂ¡Ã…Â¾Ã…Â¡ÃƒÂ¡Ã…Â¾Ã¢â€šÂ¬ÃƒÂ¡Ã…Â¸Ã¢â‚¬â„¢ÃƒÂ¡Ã…Â¾Ã…Â¡ÃƒÂ¡Ã…Â¸Ã¢â‚¬Å¾ÃƒÂ¡Ã…Â¾Ã¢â€žÂ¢</a></li>"
+									+ "<li class='next'><a href='#' class='btn btn-lg btn-primary'>ÃƒÂ¡Ã…Â¾Ã¢â‚¬ËœÃƒÂ¡Ã…Â¸Ã¢â‚¬Â ÃƒÂ¡Ã…Â¾Ã¢â‚¬â€œÃƒÂ¡Ã…Â¸Ã¯Â¿Â½ÃƒÂ¡Ã…Â¾Ã…Â¡ÃƒÂ¡Ã…Â¾Ã¢â‚¬ï¿½ÃƒÂ¡Ã…Â¾Ã¢â‚¬Å“ÃƒÂ¡Ã…Â¸Ã¢â‚¬â„¢ÃƒÂ¡Ã…Â¾Ã¢â‚¬ËœÃƒÂ¡Ã…Â¾Ã‚Â¶ÃƒÂ¡Ã…Â¾Ã¢â‚¬ï¿½ÃƒÂ¡Ã…Â¸Ã¢â‚¬Â¹</a></li>"
 									+ "</ul>";
 							$('#panelCategory').html(str);
 							if (news.length < countItems) {
@@ -94,10 +94,11 @@ owl.owlCarousel({
 
 $.post("showNewsCategoryTop.json", {c_code:window.location.search.substr(4)},
 	function(data) {
-	var allItem = "";
+	var left = "";
+	var right = "";
 	for (var i = 0; i < data.length; i++) {
 		//if(data[i].news_path=='') data[i].news_path = 'article?id=' + data[i].news_id;
-		allItem += "<a href='"+data[i].url+"'>"+
+	/*	allItem += "<a href='"+data[i].url+"'>"+
 		"<div class='img-slider-items'>"+
 		"<img src='"+ data[i].img +"' class='img-responsive'>"+
 		"<div class='items-background'></div>"+
@@ -106,7 +107,38 @@ $.post("showNewsCategoryTop.json", {c_code:window.location.search.substr(4)},
 		"<span class='desc-category'>"+ data[i].n_desc +"</span>"+
 		"</div>"+
 		"</div>"+
-		"</a>";
+		"</a>";*/
+		left+=
+		"<div class='item img-slider-items'>"+
+		"<img src='"+data[i].img+"' alt='item slider'>"+
+		"<div class='news-title-background'>"+			
+				"<div class='owl-news-title'>"+
+					"<p class='text-5 clear-margin-bottom'>"+data[i].n_desc+"</p>"+
+				"</div>"+			
+		"</div>"+
+		"</div>";
+		right+=
+	        "<div class='cate-title'>"+
+	        "<a href='"+data[i].url+"' class='text-h5-2'  target='_blank'>"+
+        	data[i].n_title+"</a>"+"</div>";
 	}
-	owl.data('owlCarousel').addItem(allItem);
+	$('.category-head-left').html(right);
+	owl.data('owlCarousel').addItem(left);
+});
+
+$(function () {
+	  var $div = $('.cate-title');
+	  var $parentDiv = $('.category-head-left');
+	  (function _loop(idx) {
+		  $div.removeClass('category-title-active').eq(idx).addClass('category-title-active');
+		  setTimeout(function () {
+			  _loop((idx + 1) % $div.length);
+
+		  }, 6000);
+		  /* alert($div.eq(idx).offset()); */
+		  $('.category-head-left','.cate-title').animate({
+			  scrollTop: $div.eq(idx).offset().top
+			  /* scrollTop: 0 */
+		  }, 500);
+	  }(0));
 });

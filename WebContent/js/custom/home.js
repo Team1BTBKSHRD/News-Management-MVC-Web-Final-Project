@@ -124,7 +124,7 @@ $("#btn-home").click(function() {
 							},
 							function(news) {
 								if (news.length <= 0) {
-									alert("No Data");
+									$(element).html("");
 									return;
 								}
 								if(news[0].news_path=='') news[0].news_path = 'article?id=' + news[0].news_id;

@@ -73,7 +73,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
+			//pstm.close();
 			con.close();
 		}
 		return false; /* return false if insert unsuccessful */
@@ -100,7 +100,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
+			//pstm.close();
 			con.close();
 		}
 		return false; /* return false if insert unsuccessful */
@@ -170,7 +170,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		} finally {
 			/* Close stm, rs and con */
-			stm.close();
+			//stm.close();
 			// rs.close();
 			con.close();
 		}
@@ -467,14 +467,13 @@ try {
 				pstm1.setString(1, sponsor);
 				return pstm1.executeQuery();
 			} catch (Exception e) {
-				Logger.writeLogException(e, "filterbyTime", "NewsDAO");
+				//Logger.writeLogException(e, "filterbyTime", "NewsDAO");
 			} finally {
 				try {
 					con.close();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
-					Logger.writeLogException(e, "filterbyTime Connection",
-							"NewsDAO");
+					//Logger.writeLogException(e, "filterbyTime Connection","NewsDAO");
 				}
 			}
 			return null;
@@ -486,14 +485,13 @@ try {
 				pstm.setString(1, sponsor);
 				return pstm.executeQuery();
 			} catch (Exception e) {
-				Logger.writeLogException(e, "filterbyView", "NewsDAO");
+				//Logger.writeLogException(e, "filterbyView", "NewsDAO");
 			} finally {
 				try {
 					con.close();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
-					Logger.writeLogException(e, "filterbyView Connection",
-							"NewsDAO");
+					//Logger.writeLogException(e, "filterbyView Connection","NewsDAO");
 				}
 			}
 			return null;
@@ -508,21 +506,21 @@ try {
 				pstm.setString(1, sponsor);
 				return pstm.executeQuery();
 			} catch (Exception e) {
-				Logger.writeLogException(e, "filterbyViewAccount", "NewsDAO");
+				//Logger.writeLogException(e, "filterbyViewAccount", "NewsDAO");
 			} finally {
 				try {
 					con.close();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
-					Logger.writeLogException(e, "filterbyViewAccount Connection",
-							"NewsDAO");
+				//	Logger.writeLogException(e, "filterbyViewAccount Connection",
+						//	"NewsDAO");
 				}
 			}
 			return null;
 		}
 		public static void main(String[] args) throws Exception {
 			try {
-				PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_weekly(?)}");
+				PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_monthly(?)}");
 				clstm.setString(1, "sabay");
 				ResultSet rs=clstm.executeQuery();
 				while(rs.next()){

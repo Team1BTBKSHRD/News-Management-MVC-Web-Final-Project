@@ -25,7 +25,9 @@
 </head>
 <body>
 	<%
-		session.removeAttribute("admin");
+		session.removeAttribute("usr");
+		session.removeAttribute("ust");
+		session.removeAttribute("uif");
 	%>
 	<!-- header -->
 	<jsp:include page="layouts/header.jsp" />
@@ -45,7 +47,8 @@
 			<!-- Social News -->
 			<div class="panel panel-primary" id="localnews-scroll">
 				<div class="panel-heading">
-					<a href="category?id=B030101"><h3 class="panel-title" id="title-panel">ព័ត៌មានជាតិទូទៅ</h3></a>
+					<a href="category?id=B030101"><h3 class="panel-title"
+							id="title-panel">ព័ត៌មានជាតិទូទៅ</h3></a>
 					<div class="btn-group">
 						<a class="btn cate-date-filter" id="showLocal">ប្រចាំខែ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
@@ -66,7 +69,8 @@
 
 			<div class="panel panel-primary" id="technews-scroll">
 				<div class="panel-heading">
-					<a href="category?id=B010105"><h3 class="panel-title" id="title-panel"> បច្ចេកវិទ្យា</h3></a>
+					<a href="category?id=B010105"><h3 class="panel-title"
+							id="title-panel">បច្ចេកវិទ្យា</h3></a>
 					<div class="btn-group">
 						<a class="btn cate-date-filter" id="showTech">ប្រចាំខែ</a> <a
 							class="dropdown-toggle btn-date" data-toggle="dropdown"
@@ -86,7 +90,8 @@
 
 			<div class="panel panel-primary" id="sportnews-scroll">
 				<div class="panel-heading">
-					<a href="category?id=B020201"><h3 class="panel-title" id="title-panel"> កីឡា</h3></a>
+					<a href="category?id=B020201"><h3 class="panel-title"
+							id="title-panel">កីឡា</h3></a>
 					<div class="btn-group">
 						<a class="btn cate-date-filter" id="showSport">ប្រចាំខែ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
@@ -105,7 +110,8 @@
 			</div>
 			<div class="panel panel-primary" id="knowledgenews-scroll">
 				<div class="panel-heading">
-					<a href="category?id=B020501"><h3 class="panel-title" id="title-panel">ចំនេះដឺង </h3></a>
+					<a href="category?id=B020501"><h3 class="panel-title"
+							id="title-panel">ចំនេះដឺង</h3></a>
 					<div class="btn-group">
 						<a class="btn cate-date-filter" id="showKnowledge">ប្រចាំខែ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
@@ -125,7 +131,8 @@
 
 			<div class="panel panel-primary" id="socialnews-scroll">
 				<div class="panel-heading">
-					<a href="category?id=B030102"><h3 class="panel-title" id="title-panel"> សង្គម</h3></a>
+					<a href="category?id=B030102"><h3 class="panel-title"
+							id="title-panel">សង្គម</h3></a>
 					<div class="btn-group">
 						<a class="btn cate-date-filter" id="showSocial">ប្រចាំខែ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
@@ -144,7 +151,8 @@
 			</div>
 			<div class="panel panel-primary" id="economicnews-scroll">
 				<div class="panel-heading">
-					<a href="category?id=B030401"><h3 class="panel-title" id="title-panel"> សេដ្ឋកិច្ច </h3></a>
+					<a href="category?id=B030401"><h3 class="panel-title"
+							id="title-panel">សេដ្ឋកិច្ច</h3></a>
 					<div class="btn-group">
 						<a class="btn cate-date-filter" id="showEconomy">ប្រចាំខែ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
@@ -164,7 +172,8 @@
 
 			<div class="panel panel-primary" id="entertainmentnews-scroll">
 				<div class="panel-heading">
-					<a href="category?id=B020302"><h3 class="panel-title" id="title-panel">សិល្បៈកម្សាន្ត</h3></a>
+					<a href="category?id=B020302"><h3 class="panel-title"
+							id="title-panel">សិល្បៈកម្សាន្ត</h3></a>
 					<div class="btn-group">
 						<a class="btn cate-date-filter" id="showEnterain">ប្រចាំខែ</a> <a
 							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
@@ -185,13 +194,15 @@
 
 			<div class="panel panel-primary" id="lifeandjobsnews-scroll">
 				<div class="panel-heading">
-					<a href="#"><h3 class="panel-title" id="title-panel">ជីវិត និងការងារ</h3></a>
+					<a href="#"><h3 class="panel-title" id="title-panel">ជីវិត
+							និងការងារ</h3></a>
 					<div class="btn-group">
-						<a class="btn cate-date-filter" id="showLifeandJobs">ប្រចាំខែ</a> <a
-							href="#" class="dropdown-toggle btn-date" data-toggle="dropdown"
-							aria-expanded="false"><span class="glyphicon glyphicon-list"></span></a>
+						<a class="btn cate-date-filter" id="showLifeandJobs">ប្រចាំខែ</a>
+						<a href="#" class="dropdown-toggle btn-date"
+							data-toggle="dropdown" aria-expanded="false"><span
+							class="glyphicon glyphicon-list"></span></a>
 						<!-- category news-->
-						<ul class="dropdown-menu" id="listlifeandjobs"> 
+						<ul class="dropdown-menu" id="listlifeandjobs">
 							<li value="day"><a>ប្រចាំថ្ងៃ</a></li>
 							<li value="week"><a>ប្រចាំសប្តាស៍</a></li>
 							<li value="month"><a>ប្រចាំខែ</a></li>
@@ -214,11 +225,12 @@
 	<!-- footer -->
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
-	<!-- #####################javascript#################### -->​​
+	<!-- #####################javascript#################### -->
+	​​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.cookie.js"></script>
-	<script src="js/bootstrap.min.js"></script>	
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<!-- end lib js -->

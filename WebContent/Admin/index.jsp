@@ -238,7 +238,7 @@
 				}
 			%>
 			<%
-				if (session.getAttribute("ust")=="editor") {
+				if (session.getAttribute("ust").equals("editor")) {
 			%>
 
 			<div class="mainpanel">

@@ -252,7 +252,7 @@ input[type=file] {
 			if (data.indexOf("http") != -1) {
 				str += "<img src="+data+" width=100px/>";
 			} else {
-				str += "<img src=../img/"+data+" width=100px/>";
+				str += "<img src=../"+data+" width=100px/>"; //sarin
 			}
 			return str;
 		}

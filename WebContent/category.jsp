@@ -89,8 +89,8 @@
 	<script src="js/custom/category.js"></script>
 	<!-- end custom js -->
   	<%--category slider js--%>
-  <script type="text/javascript">
-	  $(function () {
+ <!--  <script type="text/javascript">
+	 /*  $(function () {
 		  var $div = $('.cate-title');
 		  var $parentDiv = $('.category-head-left');
 		  (function _loop(idx) {
@@ -98,7 +98,7 @@
 			  setTimeout(function () {
 				  _loop((idx + 1) % $div.length);
 
-			  }, 4000);
+			  }, 6000);
 			  /* alert($div.eq(idx).offset()); */
 			  $('.category-head-left','.cate-title').animate({
 				  scrollTop: $div.eq(idx).offset().top
@@ -106,9 +106,9 @@
 				  /* scrollTop: 0 */
 			  }, 500);
 		  }(0));
-	  });
+	  }); */
 
-  </script>
+  </script> -->
 
 	<!-- #####################end javascript#################### -->
 </body>

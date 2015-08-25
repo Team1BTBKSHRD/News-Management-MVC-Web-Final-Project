@@ -327,7 +327,7 @@ input[type=file] {
 												news_title : jQuery("#newstitle").val(),
 												news_desc : jQuery("#news_des").val(),
 												news_path : jQuery("#newspath").val(),
-												news_img : img,
+												news_img : "img/"+img, //sarin
 												news_con_detail : jQuery("#news_con_detail").code(),
 												draft_status : false,
 												news_status : false,
@@ -360,7 +360,7 @@ input[type=file] {
 												news_title : jQuery("#newstitle").val(),
 												news_desc : jQuery("#news_des").val(),
 												news_path : jQuery("#newspath").val(),
-												news_img : img,
+												news_img : "img/"+img, //sarin
 												news_con_detail : jQuery("#news_con_detail").code(),
 												draft_status : true,
 												news_status : false,

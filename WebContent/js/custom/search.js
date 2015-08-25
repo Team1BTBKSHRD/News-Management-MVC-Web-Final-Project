@@ -97,7 +97,7 @@ function getResult(pageNumber) {
 								$('body').off('click', '.previous a');
 							}
 						} else {
-							
+							$('.search-result-wrapper').html("");
 						}
 					});
 }
