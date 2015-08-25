@@ -446,6 +446,7 @@ button.btn-sm {
 
 .left-panel {
     width: 75% !important;
+    margin-bottom: 20px;
 }
 
 .right-panel {
@@ -1011,4 +1012,7 @@ a:hover, .cate-date-filter:hover, .btn-date:hover {
 .pager li > a, .pager li > a:hover{
      background-color: #50a253; 
      border: 1px solid #50a253; 
+}
+ul.nav.navbar-nav.navbar-right li a{
+	color: white;
 }

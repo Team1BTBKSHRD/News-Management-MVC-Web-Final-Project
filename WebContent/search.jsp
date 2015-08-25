@@ -27,7 +27,7 @@
 
 		<!-- left panel -->
 		<div
-			class="col-sm-9 content-left clear-padding-left clear-margin-bottom left-panel">
+			class="col-sm-9 content-left clear-padding-left left-panel">
 			<!-- search form -->
 			<div class="panel panel-primary container-fluid clear-margin-right">
 
