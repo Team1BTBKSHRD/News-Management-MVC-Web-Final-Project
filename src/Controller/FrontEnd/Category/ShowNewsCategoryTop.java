@@ -6,19 +6,25 @@ import javax.servlet.http.HttpServletResponse;
 import Controller.FrontEnd.Action;
 import Model.FrontEndDAO.NewsDAO;
 import Utilities.Convertor;
+import Utilities.Logger;
 
 public class ShowNewsCategoryTop implements Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response){
 		// TODO Auto-generated method stub
-		NewsDAO dao = new NewsDAO();
-		String categoryCode = request.getParameter("c_code");
-		String newsList=Convertor.convertResultSetIntoJSON(dao.showNewsCategoryTop(categoryCode)).toString();
-		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");
-		response.getWriter().write(newsList);
-		dao.close();
+		try{
+			NewsDAO dao = new NewsDAO();
+			String categoryCode = request.getParameter("c_code");
+			String newsList=Convertor.convertResultSetIntoJSON(dao.showNewsCategoryTop(categoryCode)).toString();
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(newsList);
+			dao.close();
+		}catch(Exception e){
+			Logger.writeLogException(e, "ShowNewsCategoryTop", "ShowNewsCategoryTop");
+		}
+		
 	}
 
 }

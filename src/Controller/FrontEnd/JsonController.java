@@ -39,13 +39,16 @@ import Controller.FrontEnd.Scrap.listscholarship;
 import Controller.FrontEnd.Search.categorylistwithcode;
 import Controller.FrontEnd.Search.listResult;
 import Controller.FrontEnd.Search.sourcelistwithcode;
+import Utilities.Logger;
 
 /**
  * Servlet implementation class JsonController
  */
 public class JsonController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	public void init(HttpServletRequest request, HttpServletResponse response){
+		
+	}
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -76,7 +79,7 @@ public class JsonController extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//System.out.println("###########################Json Controller");
+		Logger.setPath(request.getSession().getServletContext().getRealPath("/"));
 		String RequestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String command = RequestURI.substring(contextPath.length());
@@ -300,7 +303,7 @@ public class JsonController extends HttpServlet {
 		try {
 			action.execute(request, response);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, "Switch Case", "JsonController");
 		}
 	}
 }

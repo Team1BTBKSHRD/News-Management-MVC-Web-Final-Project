@@ -13,14 +13,14 @@ public class Logger {
 	private static Logger logger = null;
 	public static String logFileName = "article.log";
 	public static String errorLogFileName = "error.log";
-	private static String path = null;
+	private static String path;
 
 	private Logger() {
 	}
 
-	public static void setPath(String paths) {
-		path = paths;
-	}
+	
+	 public static void setPath(String paths) { path = paths+"\\Logs"; }
+	 
 
 	public static Logger getLogger() {
 		if (logger == null)
@@ -92,11 +92,11 @@ public class Logger {
 	}
 
 	public static void writeLogException(Exception ex, String methodName, String className) {
-		System.out.println(path+ errorLogFileName);
-		try (BufferedWriter output = new BufferedWriter(new FileWriter(path + errorLogFileName, true))) {
+		System.err.println("Error : "+ path);
+		try (BufferedWriter output = new BufferedWriter(new FileWriter(path+"//"+errorLogFileName, true))) {
 			output.write(currentDate() + ":\t" + ex + " in METHOD \"" + methodName + "\" CLASS \"" + className + "\"");
 			output.write(System.getProperty("line.separator"));
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -106,10 +106,14 @@ public class Logger {
 		return new SimpleDateFormat("dd/MM/YYYY HH:mm:ss").format(new Date());
 	}
 
-	/*
-	 * public static void main(String args[]) {
-	 * 
-	 * try { throw new Exception(); } catch (Exception ex) {
-	 * writeLogException(ex, "sdf", "asdafdsf"); } }
-	 */
+	/*public static void main(String args[]) {
+
+		try {
+			System.out.println(1221);
+			throw new Exception();
+		} catch (Exception ex) {
+			writeLogException(ex, "sdf", "asdafdsf");
+		}
+	}*/
+
 }

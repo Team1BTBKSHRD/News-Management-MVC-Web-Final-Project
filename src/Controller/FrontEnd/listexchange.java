@@ -13,23 +13,29 @@ import org.jsoup.select.Elements;
 import Model.BackEndDAO.JsoupDAO;
 import Model.DTO.exchangeRateDTO;
 import Utilities.Convertor;
+import Utilities.Logger;
 
 import com.google.gson.Gson;
 
 public class listexchange implements Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-
-	      response.setContentType("application/json");
+		try {
+			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
-		String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrieveExchange()).toString();
-		//System.out.println(obj);
-		response.getWriter().write(obj);
+			String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrieveExchange()).toString();
+			// System.out.println(obj);
+			response.getWriter().write(obj);
+		} catch (Exception e) {
+			Logger.writeLogException(e, "List Exchange", "List Exchange");
+		}
 
 	}
-	/*public static void main(String[] args) throws Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrieveExchange()).toString());
-	}*/
+	/*
+	 * public static void main(String[] args) throws Exception {
+	 * System.out.println(Convertor.convertResultSetIntoJSON(new
+	 * JsoupDAO().retrieveExchange()).toString()); }
+	 */
 }

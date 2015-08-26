@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Controller.FrontEnd.Action;
+import Utilities.Logger;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -21,7 +23,7 @@ public class FileUpload implements Action {
 	private final int MAX_REQUEST_SIZE = 1024 * 1024;
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void execute(HttpServletRequest request, HttpServletResponse response){
 		// TODO Auto-generated method stub
 		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 		String path = null;
@@ -90,10 +92,8 @@ public class FileUpload implements Action {
 			// displays done.jsp page after upload finished
 			request.getServletContext().getRequestDispatcher("/Admin/page_user_profile.jsp").forward(request, response);
 
-		} catch (FileUploadException ex) {
-			throw new ServletException(ex);
 		} catch (Exception ex) {
-			throw new ServletException(ex);
+			Logger.writeLogException(ex, "FileUpload", ex.getMessage());
 		}
 	}
 

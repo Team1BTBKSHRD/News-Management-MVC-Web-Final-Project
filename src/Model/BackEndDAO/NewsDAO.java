@@ -243,7 +243,14 @@ public class NewsDAO {
 			 */
 			return rs;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, "Show aticle by name", e.getMessage());
+		}finally{
+			try {
+				con.close();	
+			} catch (Exception e2) {
+				Logger.writeLogException(e2, "Connection", e2.getMessage());
+			}
+			
 		}
 		return null;
 	}
