@@ -57,9 +57,12 @@ function getResult(pageNumber) {
 						pageCode : pageNumber
 					},
 					function(data, status) {
+						//alert(data.length);
+						//if (data.length == null || data.length == '') alert("sdfsd");
 						if (data.length > 0) {
 							var str = "";
 							for (var i = 0; i < data.length; i++) {
+								if(data[i].news_path=='')	data[i].news_path = 'article?id=' + data[i].news_id;
 								str += "<div class='col-sm-12 search-result'><a href='"
 										+ data[i].news_path
 										+ "' target='_blank'>"
@@ -96,9 +99,12 @@ function getResult(pageNumber) {
 								$('.previous a').addClass('disabled');
 								$('body').off('click', '.previous a');
 							}
+							//return;
 						} else {
 							$('.search-result-wrapper').html("");
 						}
+					//	alert('sdfsd');
+					//	$('.search-result-wrapper').html("");
 					});
 }
 $('body').on('click ', '#btnSubmit', function() {

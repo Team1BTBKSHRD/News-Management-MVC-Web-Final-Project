@@ -1015,3 +1015,6 @@ a:hover, .cate-date-filter:hover, .btn-date:hover {
 ul.nav.navbar-nav.navbar-right li a{
 	color: white;
 }
+iframe{
+	width: 80% ! important;
+}
