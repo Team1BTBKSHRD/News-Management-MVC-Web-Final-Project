@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<%
+	if (session.getAttribute("usr") != null) {
+%>
 <body>
   <form method="post" action="UploadServlet.json" enctype="multipart/form-data">
 Select file to upload:
@@ -13,4 +16,13 @@ Select file to upload:
 <input type="submit" value="Upload" />
 </form>
 </body>
+<%
+	} else {
+%>
+<script type="text/javascript">
+	window.open("/articleManagement/Admin/index.jsp","_self");
+	</script>
+<%
+	}
+%>
 </html>

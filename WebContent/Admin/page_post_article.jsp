@@ -36,6 +36,9 @@ input[type=file] {
 } /* class for responsive table scrollbar */
 </style>
 </head>
+<%
+	if (session.getAttribute("usr") != null) {
+%>
 <body>
 
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
@@ -267,4 +270,13 @@ input[type=file] {
 		
 	</script>
 </body>
+<%
+	} else {
+%>
+<script type="text/javascript">
+	window.open("/articleManagement/Admin/index.jsp","_self");
+	</script>
+<%
+	}
+%>
 </html>

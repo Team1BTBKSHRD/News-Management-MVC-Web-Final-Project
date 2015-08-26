@@ -36,8 +36,11 @@ input[type=file] {
 } /* class for responsive table scrollbar */
 </style>
 </head>
-<body>
 <%
+	if (session.getAttribute("usr") != null) {
+%>
+<body>
+	<%
 		session.removeAttribute("proimag");
 	%>
 	<jsp:include page="layout/header_navibar.jsp"></jsp:include>
@@ -70,8 +73,9 @@ input[type=file] {
 							<div class="panel panel-info">
 								<div class="panel-heading">
 									ADD NEWS
-									<button class="btn btn-success btn-xs delete" style="float:right;"
-										data-toggle="collapse" data-target="#demo">
+									<button class="btn btn-success btn-xs delete"
+										style="float: right;" data-toggle="collapse"
+										data-target="#demo">
 										<i class="fa fa-plus"></i>
 									</button>
 									<br />
@@ -80,8 +84,8 @@ input[type=file] {
 
 									<div class="row">
 										<!--  row  form -->
-											<form id="form_article_add" >
-										
+										<form id="form_article_add">
+
 
 											<div class="panel-body">
 												<div class="row">
@@ -132,7 +136,7 @@ input[type=file] {
 																		id="imguploads"
 																		style="border: 0px; background-color: #EEEEEE;">upload</button></span>
 																<input type="text" class="form-control" id="filename">
-																
+
 
 																<span class="input-group-btn btn btn-default btn-file"
 																	style="font-size: 14px;"> Browse ... <input
@@ -150,19 +154,21 @@ input[type=file] {
 															<div class="col-sm-12">
 																<textarea class="form-control" id="news_des"
 																	name="news_des" rows="8" class="form-control"
-																	placeholder="Description" ></textarea>
+																	placeholder="Description"></textarea>
 															</div>
 														</div>
 														<!-- form-group -->
 
 														<div class="col-sm-6 col-sm-offset-2">
 															<br />
-															 <div class="btn btn-group">
-																<span><button  class="btn btn-success"
-																		id="save_to" >SaveToDraft</button></span>
-																<span><button  class="btn btn-primary" id="addArticle" name="addArticle" >Post</button></span>
-																 <span><input type="button" class="btn btn-danger" id="btncancel" value="Cancel" /></span>
-														 </div>
+															<div class="btn btn-group">
+																<span><button class="btn btn-success"
+																		id="save_to">SaveToDraft</button></span> <span><button
+																		class="btn btn-primary" id="addArticle"
+																		name="addArticle">Post</button></span> <span><input
+																	type="button" class="btn btn-danger" id="btncancel"
+																	value="Cancel" /></span>
+															</div>
 														</div>
 													</div>
 													<div class="form-group">
@@ -173,13 +179,14 @@ input[type=file] {
 															<textarea class="form-control" name="news_con_detail"
 																id="news_con_detail"></textarea>
 														</div>
-														
+
 													</div>
 													<!-- form-group -->
 
 
 
-													<div style="width: 100%; height: 2px; background-color: #BCE8F1;"></div>
+													<div
+														style="width: 100%; height: 2px; background-color: #BCE8F1;"></div>
 
 												</div>
 												<!-- form-group -->
@@ -188,10 +195,10 @@ input[type=file] {
 
 											</div>
 											<!-- row -->
-										
-										<!-- panel-body -->
 
-										<!-- collapse -->
+											<!-- panel-body -->
+
+											<!-- collapse -->
 										</form>
 									</div>
 									<!-- row form -->
@@ -230,13 +237,12 @@ input[type=file] {
 	<!-- -------------------------Custom Javascript---------------- -->
 
 	<script src="js/custom/script_article_add.js"></script>
-	 <script src="js/validate/page_article_validate.js"></script> 
+	<script src="js/validate/page_article_validate.js"></script>
 	<!--  script for validate add aticle sarin -->
 
-	
+
 
 	<!--  script for validate add aticle sarin -->
-
 	<script type="text/javascript">
 		jQuery("#file_image").change(function() {
 			readURL(this);
@@ -259,7 +265,8 @@ input[type=file] {
 	</script>
 
 	<script type="text/javascript">
-		var name='<%=session.getAttribute("usr")%>';
+		var name='<%=session.getAttribute("usr")%>
+		';
 		/* upload file */
 		$("#imguploads").click(function() {
 			var data;
@@ -289,87 +296,115 @@ input[type=file] {
 			str += "</optiont>";
 			return str;
 		}
-	
+
 		/* sarin clear text box */
-		jQuery("#btncancel").click(function(){
-			
-			 $("#newid").val("");
-			 $("#newstitle").val("");
-			 $("#newscategory").val("");
-			 $("#newspath").val("");
-			 $("#filename").val("");
-			 $("#news_des").val("");
-			 $("#file_image").val("");
-			 $("#news_con_detail").code("");
+		jQuery("#btncancel").click(function() {
+
+			$("#newid").val("");
+			$("#newstitle").val("");
+			$("#newscategory").val("");
+			$("#newspath").val("");
+			$("#filename").val("");
+			$("#news_des").val("");
+			$("#file_image").val("");
+			$("#news_con_detail").code("");
 		});
-		
-		
+
 		jQuery("#addArticle")
 				.click(
 						function() {
-							var img = jQuery("#file_image").val().split("\\");						
-							if(img==""){
-								img="no_image.png";
-							}  
-							else{
+							var img = jQuery("#file_image").val().split("\\");
+							if (img == "") {
+								img = "no_image.png";
+							} else {
 								//img=jQuery("#file_image").val().split("\\");
-								img=img[img.length - 1];
+								img = img[img.length - 1];
 							}
-							if(jQuery("#newscategory").val()==""){return;}
-							else{
-							 jQuery
-									.post(
-											"addarticle.json",
-											{
-												//  news_con_detail  
-												cat_name : jQuery("#newscategory").val(),
-												user_info_code :<%=session.getAttribute("userinfo")%>[0].user_info_code,
-												news_title : jQuery("#newstitle").val(),
-												news_desc : jQuery("#news_des").val(),
-												news_path : jQuery("#newspath").val(),
-												news_img : "img/"+img, //sarin
-												news_con_detail : jQuery("#news_con_detail").code(),
-												draft_status : false,
-												news_status : false,
-											}, function(data,status) {
-												alert("Add " +status);
-												window.location.href ="page_post_article.jsp";
-											}); 
+							if (jQuery("#newscategory").val() == "") {
+								return;
+							} else {
+								jQuery
+										.post(
+												"addarticle.json",
+												{
+													//  news_con_detail  
+													cat_name : jQuery(
+															"#newscategory")
+															.val(),
+													user_info_code :
+	<%=session.getAttribute("userinfo")%>
+		[0].user_info_code,
+													news_title : jQuery(
+															"#newstitle").val(),
+													news_desc : jQuery(
+															"#news_des").val(),
+													news_path : jQuery(
+															"#newspath").val(),
+													news_img : "img/" + img, //sarin
+													news_con_detail : jQuery(
+															"#news_con_detail")
+															.code(),
+													draft_status : false,
+													news_status : false,
+												},
+												function(data, status) {
+													alert("Add " + status);
+													window.location.href = "page_post_article.jsp";
+												});
 							}
 						});
-		
 
 		jQuery("#save_to")
 				.click(
 						function() {
-							 var img = jQuery("#file_image").val().split("\\");						
-							if(img==""){
-								img="no_image.png";
-							}  
-							else{
+							var img = jQuery("#file_image").val().split("\\");
+							if (img == "") {
+								img = "no_image.png";
+							} else {
 								//img=jQuery("#file_image").val().split("\\");
-								img=img[img.length - 1];
-							} 
-							if(jQuery("#newscategory").val()==""){return;}
-							else{
-							 	jQuery.post("addarticle.json",
-											{
-												//  news_con_detail  
-												cat_name : jQuery("#newscategory").val(),
-												user_info_code :<%=session.getAttribute("uif")%>[0].user_info_code,
-												news_title : jQuery("#newstitle").val(),
-												news_desc : jQuery("#news_des").val(),
-												news_path : jQuery("#newspath").val(),
-												news_img : "img/"+img, //sarin
-												news_con_detail : jQuery("#news_con_detail").code(),
-												draft_status : true,
-												news_status : false,
-											}, function(data,status) {
-												alert("Add " +status);
-												window.location.href ="page_draft_article.jsp";
-											});  
+								img = img[img.length - 1];
+							}
+							if (jQuery("#newscategory").val() == "") {
+								return;
+							} else {
+								jQuery
+										.post(
+												"addarticle.json",
+												{
+													//  news_con_detail  
+													cat_name : jQuery(
+															"#newscategory")
+															.val(),
+													user_info_code :
+	<%=session.getAttribute("uif")%>[0].user_info_code,
+													news_title : jQuery(
+															"#newstitle").val(),
+													news_desc : jQuery(
+															"#news_des").val(),
+													news_path : jQuery(
+															"#newspath").val(),
+													news_img : "img/" + img, //sarin
+													news_con_detail : jQuery(
+															"#news_con_detail")
+															.code(),
+													draft_status : true,
+													news_status : false,
+												},
+												function(data, status) {
+													alert("Add " + status);
+													window.location.href = "page_draft_article.jsp";
+												});
 							}
 						});
 	</script>
 </body>
+<%
+	} else {
+%>
+<script type="text/javascript">
+	window.open("/articleManagement/Admin/index.jsp","_self");
+	</script>
+<%
+	}
+%>
 </html>
