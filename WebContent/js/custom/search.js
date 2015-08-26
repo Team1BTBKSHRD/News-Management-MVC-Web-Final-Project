@@ -59,7 +59,7 @@ function getResult(pageNumber) {
 					function(data, status) {
 						if (data.length > 0) {
 							var str = "";
-							for (var i = 1; i < data.length; i++) {
+							for (var i = 0; i < data.length; i++) {
 								str += "<div class='col-sm-12 search-result'><a href='"
 										+ data[i].news_path
 										+ "' target='_blank'>"
