@@ -464,6 +464,7 @@ button.btn-sm {
 
 /*---------page-category-news-css--------*/
 .category-header {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     position: relative;
     height: 265px;
     display: -webkit-box;
@@ -481,7 +482,6 @@ button.btn-sm {
     position: relative;
     display: flex;
     overflow: hidden;
-    margin-right: 3px;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -519,9 +519,11 @@ button.btn-sm {
 }
 .cate-title{
 	padding: 10px !important;
+
 }
 .category-head-left {
-	
+	border-top: 1px dashed gray;
+	border-top-right-radius: 4px;
     width: 40%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -577,7 +579,7 @@ button.btn-sm {
 
 .category-head-left div:hover {
     background-color: #69A66D;
-
+	border: none;
 }
 
 .category-head-left div:hover > a {

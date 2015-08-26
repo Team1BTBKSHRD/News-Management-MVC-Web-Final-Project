@@ -48,7 +48,7 @@ function getResult(pageNumber) {
 										+ "អាន "
 										+ news[i].count_visited
 										+ " | "
-										+ news[i].news_date
+										+ news[i].news_published_date
 										+ " | "
 										+ news[i].full_name
 										+ "</div>"

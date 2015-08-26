@@ -145,7 +145,7 @@ function setData(code, time_limit, element) {
 								+ "អាន "
 								+ news[0].count_visited
 								+ " | "
-								+ news[0].news_date
+								+ news[0].news_published_date
 								+ " | "
 								+ news[0].full_name
 								+ "</div>"
@@ -170,7 +170,7 @@ function setData(code, time_limit, element) {
 									+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings text-2 news-info' id='info-2'>អាន "
 									+ news[i].count_visited
 									+ " | "
-									+ news[i].news_date
+									+ news[i].news_published_date
 									+ " | "
 									+ news[i].full_name
 									+ "</div>"
