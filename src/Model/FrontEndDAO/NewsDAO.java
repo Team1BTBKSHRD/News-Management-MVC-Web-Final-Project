@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import Utilities.Convertor;
 import Utilities.DatabaseConnection;
 import Utilities.Logger;
 
@@ -277,6 +278,9 @@ public class NewsDAO {
 	
 	public void close() throws SQLException{
 		con.close();
+	}
+	public static void main(String[] args) throws Exception {
+		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().showNewsCategoryTop("B030101")));
 	}
 	
 }// End of class;

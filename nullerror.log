@@ -1,8 +1,0 @@
-24/08/2015 23:07:33:	org.postgresql.util.PSQLException: ERROR: a column definition list is required for functions returning "record"
-  Position: 15 in METHOD "filterbyTime" CLASS "NewsDAO"
-24/08/2015 23:07:44:	org.postgresql.util.PSQLException: ERROR: a column definition list is required for functions returning "record"
-  Position: 15 in METHOD "filterbyTime" CLASS "NewsDAO"
-24/08/2015 23:10:38:	org.postgresql.util.PSQLException: ERROR: a column definition list is required for functions returning "record"
-  Position: 15 in METHOD "filterbyTime" CLASS "NewsDAO"
-24/08/2015 23:10:57:	org.postgresql.util.PSQLException: ERROR: a column definition list is required for functions returning "record"
-  Position: 15 in METHOD "filterbyTime" CLASS "NewsDAO"
