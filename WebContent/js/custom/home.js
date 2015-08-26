@@ -142,7 +142,7 @@ function setData(code, time_limit, element) {
 								+ news[0].news_desc
 								+ "</p>"
 								+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
-								+ "áž¢áž¶áž“ "
+								+ "អាន "
 								+ news[0].count_visited
 								+ " | "
 								+ news[0].news_date
@@ -167,7 +167,7 @@ function setData(code, time_limit, element) {
 									+ "<h6 class='text-h6-2 article-title' id='title-2'>"
 									+ news[i].news_title
 									+ "</h6>"
-									+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings text-2 news-info' id='info-2'>áž¢áž¶áž“ "
+									+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings text-2 news-info' id='info-2'>អាន "
 									+ news[i].count_visited
 									+ " | "
 									+ news[i].news_date

@@ -45,7 +45,7 @@ function getResult(pageNumber) {
 										+ news[i].news_desc
 										+ "</p>"
 										+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
-										+ "ÃƒÂ¡Ã…Â¾Ã‚Â¢ÃƒÂ¡Ã…Â¾Ã‚Â¶ÃƒÂ¡Ã…Â¾Ã¢â‚¬Å“ "
+										+ "អាន "
 										+ news[i].count_visited
 										+ " | "
 										+ news[i].news_date
@@ -57,8 +57,8 @@ function getResult(pageNumber) {
 										+ "</div><hr/>";
 							}
 							str += "<ul class='pager clear-padding-right'>"
-									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ÃƒÂ¡Ã…Â¾Ã¢â‚¬ËœÃƒÂ¡Ã…Â¸Ã¢â‚¬Â ÃƒÂ¡Ã…Â¾Ã¢â‚¬â€œÃƒÂ¡Ã…Â¸Ã¯Â¿Â½ÃƒÂ¡Ã…Â¾Ã…Â¡ÃƒÂ¡Ã…Â¾Ã¢â€šÂ¬ÃƒÂ¡Ã…Â¸Ã¢â‚¬â„¢ÃƒÂ¡Ã…Â¾Ã…Â¡ÃƒÂ¡Ã…Â¸Ã¢â‚¬Å¾ÃƒÂ¡Ã…Â¾Ã¢â€žÂ¢</a></li>"
-									+ "<li class='next'><a href='#' class='btn btn-lg btn-primary'>ÃƒÂ¡Ã…Â¾Ã¢â‚¬ËœÃƒÂ¡Ã…Â¸Ã¢â‚¬Â ÃƒÂ¡Ã…Â¾Ã¢â‚¬â€œÃƒÂ¡Ã…Â¸Ã¯Â¿Â½ÃƒÂ¡Ã…Â¾Ã…Â¡ÃƒÂ¡Ã…Â¾Ã¢â‚¬ï¿½ÃƒÂ¡Ã…Â¾Ã¢â‚¬Å“ÃƒÂ¡Ã…Â¸Ã¢â‚¬â„¢ÃƒÂ¡Ã…Â¾Ã¢â‚¬ËœÃƒÂ¡Ã…Â¾Ã‚Â¶ÃƒÂ¡Ã…Â¾Ã¢â‚¬ï¿½ÃƒÂ¡Ã…Â¸Ã¢â‚¬Â¹</a></li>"
+									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ទំព័រមុខ</a></li>"
+									+ "<li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័រក្រោយ</a></li>"
 									+ "</ul>";
 							$('#panelCategory').html(str);
 							if (news.length < countItems) {
