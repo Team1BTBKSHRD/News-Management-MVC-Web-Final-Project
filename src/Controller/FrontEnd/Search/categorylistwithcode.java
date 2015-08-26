@@ -18,7 +18,7 @@ public class categorylistwithcode implements Action {
 		String obj=Convertor.convertResultSetIntoJSON(dao.listCatcodeCatName()).toString();
 		dao.close();
 		response.getWriter().write(obj);		
-		System.out.println("categorylistwithcode");
+		//System.out.println("categorylistwithcode");
 
 	}
 

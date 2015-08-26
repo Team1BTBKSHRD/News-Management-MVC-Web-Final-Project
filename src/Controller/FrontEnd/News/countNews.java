@@ -12,7 +12,7 @@ public class countNews implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String countList=Convertor.convertResultSetIntoJSON(new NewsDAO().countOfRecords()).toString();
-		System.out.println(countList);
+		//System.out.println(countList);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(countList);

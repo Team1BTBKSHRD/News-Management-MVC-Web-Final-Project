@@ -99,7 +99,7 @@ public class NewsDetailDAO {
 			pstm.setInt(1, newsDetail.getNews_id());
 			pstm.setString(2, newsDetail.getNew_content());
 			pstm.setInt(3, newsDetail.getNews_detail_id());			
-			System.out.println(pstm.toString());
+			//System.out.println(pstm.toString());
 		
 			return pstm.executeUpdate()>0?true:false; /* return true for success and false if fail */
 		} catch (SQLException e) {			

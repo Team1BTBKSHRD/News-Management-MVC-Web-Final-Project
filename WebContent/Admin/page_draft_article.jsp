@@ -327,8 +327,9 @@ input[type=file] {
 			//alert(data[0].json_title+"/"+data[0].cat_code+"/"+data[0].json_img+"/"+data[0].json_date);
 		});
 
-		
+		var mydata;
 		function tblistArticle(data) {
+			mydata=data;
 			var str = "";
 			/* alert(data[i].json_status); */
 			/* alert(data.length); */
@@ -346,7 +347,7 @@ input[type=file] {
 						+ data[i].news_date + "</td>"
 						+ "<td style='text-align: center;'>"
 						/* + changestatus(data[i].news_status, data[i].news_id, i) */
-						+ actionbutton(data[i].news_id,data[i].news_title,data[i].cat_code,data[i].news_path,data[i].news_img,data[i].news_desc,data[i].news_content)
+						+ actionbutton(data[i].news_id)//,data[i].news_title,data[i].cat_code,data[i].news_path,data[i].news_img,data[i].news_desc,data[i].news_content)
 						+ "</td>" + "</tr>";
 				}
 				
@@ -360,24 +361,30 @@ input[type=file] {
 		
 		
 		/* sarin actionbutton */
-		function actionbutton(news_id,title,cat_code,path,img,des,content){
+		
+		function actionbutton(news_id){
+			//alert(data.news_title);
 			var btn="<div class='form-group'>";
-			btn+="<button type='button' class='btn btn-success' news_id='"+news_id+"' title='"+title+"' cat_code='"+cat_code+"'  path='"+path+"' img='"+img+"' des='"+des+"' content='"+content+"' onclick='EditOption(this)'>";		
+			btn+="<button type='button' class='btn btn-success' id='"+news_id+"' onclick='EditOption("+news_id+")'>"; 		
 			btn+="<span class='glyphicon glyphicon-edit'></span></button><span style='margin-left:10px'></span>";
 			
 			return btn;
 		}
 		
 		
-		function EditOption(data){
-			t=t+1;
-			 $("#newsid").val($(data).attr("news_id"));
-			 $("#newstitle").val($(data).attr("title"));
-			 $("#newscategory").val($(data).attr("cat_code"));
-			 $("#newspath").val($(data).attr("path"));
-			 $("#filename").val($(data).attr("img"));
-			 $("#news_des").val($(data).attr("des"));
-			 $("#news_con_detail").code($(data).attr("content"));
+		function EditOption(id){
+			for(var k=0; k<mydata.length; k++){
+				if(id==mydata[k].news_id){
+					 $("#newsid").val(mydata[k].news_id);
+					 $("#newstitle").val(mydata[k].news_title);
+					 $("#newscategory").val(mydata[k].cat_code);
+					 $("#newspath").val(mydata[k].news_path);
+					 $("#filename").val(mydata[k].news_img);
+					 $("#news_des").val(mydata[k].news_desc);
+					 $("#news_con_detail").code(mydata[k].news_content); 
+				}
+			}
+			 
 			 
 			 $("#btntoggle").click();
 			 //$("#demo").addClass("");

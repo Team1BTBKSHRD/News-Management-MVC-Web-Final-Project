@@ -21,7 +21,7 @@ public class ListUserInfoByName implements Action {
 		response.setCharacterEncoding("UTF-8");
 		String obj=Convertor.convertResultSetIntoJSON(new UserInfoDAO().returnUserInformation(name)).toString();
 		response.getWriter().write(obj);
-		System.err.println(obj);
+		//System.err.println(obj);
 
 	}
 

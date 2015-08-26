@@ -46,12 +46,12 @@ public class Article extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("###########################Article Controller");
+		//System.out.println("###########################Article Controller");
 		try {
 			if (request.getParameter("id") != null) {
 				int id = Integer.parseInt(request.getParameter("id"));
 				if (new ArticleDAO().checkArticle(id)) {
-					System.out.println(request.getParameter("id"));
+					//System.out.println(request.getParameter("id"));
 					ResultSet rs = new ArticleDAO().getArticle(id);
 					request.setAttribute("rs", rs);
 					request.getRequestDispatcher("article.jsp").forward(

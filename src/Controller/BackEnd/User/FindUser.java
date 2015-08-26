@@ -21,7 +21,7 @@ public class FindUser implements Action  {
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */
 		response.getWriter().write(obj);
-		System.out.println(obj);
+		//System.out.println(obj);
 	}
 
 }

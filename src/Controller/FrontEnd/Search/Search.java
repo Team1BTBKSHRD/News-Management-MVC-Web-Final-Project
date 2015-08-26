@@ -37,7 +37,7 @@ public class Search extends HttpServlet {
 		doProcess( request,  response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("###########################Search Controller");
+		//System.out.println("###########################Search Controller");
 		request.setCharacterEncoding("UTF-8") ;
 
 		/*System.out.println(request.getParameter("title"));

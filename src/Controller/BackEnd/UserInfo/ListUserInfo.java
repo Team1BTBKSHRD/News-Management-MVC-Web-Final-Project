@@ -28,7 +28,7 @@ public class ListUserInfo implements Action {
 		//String obj= new Convertor().convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
 		String obj=Convertor.convertResultSetIntoJSON(new UserDAO().retrieveRS()).toString();
 		response.getWriter().write(obj);		
-		System.out.println(obj);
+		//System.out.println(obj);
 	}
 
 }

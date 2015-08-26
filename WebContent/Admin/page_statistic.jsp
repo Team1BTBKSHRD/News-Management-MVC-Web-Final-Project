@@ -124,6 +124,7 @@
 		}
 
 		/* Load Chart Graph For view of news */
+		
 		function countChart(data) {
 			var dataPoints = [];
 			var sc = $("#sl_source2 option:selected").val();
@@ -194,14 +195,15 @@
 		}
 
 		/* Load Chart Graph For Number of news */
+		//[{"cat_name":"???????????????","count":1}
 		function CreatingChart(data) {
 			var dataPoints = [];
 			var sc = $("#sl_source1 option:selected").val();
 			var y = 0;
 			for (var i = 0; i < data.length; i++) {
 				dataPoints.push({
-					y : data[i].total_news,
-					label : data[i].cname
+					y : data[i].count,
+					label : data[i].cat_name
 				});
 			}
 			var chart = new CanvasJS.Chart("chartContainerNews", {

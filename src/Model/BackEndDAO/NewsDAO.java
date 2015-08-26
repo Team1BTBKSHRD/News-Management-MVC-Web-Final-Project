@@ -21,7 +21,6 @@ import Utilities.postgresAccount;
 public class NewsDAO {
 	Connection con; /* Connection object */
 	PreparedStatement pstm; /* Prepared Statement object */
-
 	/**
 	 * Default Constructor Initialize object con by using class
 	 * DatabaseConnection.
@@ -33,10 +32,10 @@ public class NewsDAO {
 			 * When index.jsp started, published_date will auto converted :
 			 * pisal
 			 */
-			System.out.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
+					
 			/* When index.jsp started, */
 			int pcon = new postgresAccount().countUserPostgres();
-			if (pcon > 80) {
+			if (pcon > 15) {
 				System.err.println("Connection is over connection : " + pcon);
 				System.err.println(new postgresAccount().destroyConnection()+" Connection has been destroy");
 			}
@@ -44,7 +43,16 @@ public class NewsDAO {
 			e.printStackTrace();
 		}
 	}
-
+	static{
+		try {
+			
+				System.out.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
+						
+		} catch (ClassNotFoundException |SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * Method insert() Use for insert data into tbnews
 	 * 
@@ -299,7 +307,7 @@ public class NewsDAO {
 	}
 
 	public ResultSet listAllNews(String parameter) {
-		System.out.println(parameter);
+		//System.out.println(parameter);
 		CallableStatement clstm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
@@ -329,7 +337,7 @@ public class NewsDAO {
 
 		pstm.setBoolean(1, news_status);
 		pstm.setInt(2, news_id);
-		System.out.println(news_id + " " + news_status);
+		//System.out.println(news_id + " " + news_status);
 		if (pstm.executeUpdate() > 0) {
 			return true;
 		}
@@ -359,7 +367,7 @@ public class NewsDAO {
 			cstm.setBoolean(8, draft);
 			cstm.setBoolean(9, news_status);
 			cstm.setString(10, content);
-			System.out.println(cstm.toString());
+			//System.out.println(cstm.toString());
 			return cstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
 		} catch (SQLException e) {
@@ -426,7 +434,7 @@ try {
 			cstm.setString(8, newsConDetail);
 			cstm.setBoolean(9, draft_status);
 			
-			System.out.println(cstm.toString());
+			//System.out.println(cstm.toString());
 			return cstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
 		} catch (SQLException e) {
@@ -446,19 +454,19 @@ try {
 				switch (i) {
 				case 1: // Filter number of news in each category by sponsor
 					pstm1 = con
-							.prepareCall("{call s_admin_statistic_count_daily(?)}");
+							.prepareCall("{call s_admin_statistic_count_daily_test(?)}");
 					break;
 				case 2:
 					pstm1 = con
-							.prepareCall("{call s_admin_statistic_count_weekly(?)}");
+							.prepareCall("{call s_admin_statistic_count_weekly_test(?)}");
 					break;
 				case 3:
 					pstm1 = con
-							.prepareCall("{call s_admin_statistic_count_monthly(?)}");
+							.prepareCall("{call s_admin_statistic_count_monthly_test(?)}");
 					break;
 				case 4:
 					pstm1 = con
-							.prepareCall("{call s_admin_statistic_count_yearly(?)}");
+							.prepareCall("{call s_admin_statistic_count_yearly_test(?)}");
 					break;
 
 				default:
@@ -520,12 +528,13 @@ try {
 		}
 		public static void main(String[] args) throws Exception {
 			try {
-				PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_monthly(?)}");
+				//PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_yearly_test(?)}");
+				//PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_monthly_test(?)}");
+				//PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_weekly_test(?)}");
+				PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_daily_test(?)}");
 				clstm.setString(1, "sabay");
 				ResultSet rs=clstm.executeQuery();
-				while(rs.next()){
-				System.out.println(rs.getString(1));
-				}
+				System.out.println(Convertor.convertResultSetIntoJSON(rs).toString());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -49,10 +49,10 @@ public class Category extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("###########################Category Controller");
+		//System.out.println("###########################Category Controller");
 		try {
 			if (new CategoryDAO().checkCategory(request.getParameter("id"))) {
-				System.out.println(request.getParameter("id"));
+				//System.out.println(request.getParameter("id"));
 				String id = request.getParameter("id");
 				int offset = 0;
 				if(request.getParameter("offset") != null)  offset = Integer.parseInt(request.getParameter("offset"));

@@ -17,7 +17,7 @@ public class ListNews implements Action {
 		String name=request.getParameter("full_name");
 		
 		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().showartilcebyname(name)).toString();
-		System.out.println(newsList);
+		//System.out.println(newsList);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(newsList);

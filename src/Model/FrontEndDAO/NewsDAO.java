@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Utilities.DatabaseConnection;
+import Utilities.Logger;
 
 public class NewsDAO {
 	Connection con; /* Connection object */
@@ -16,7 +17,7 @@ public class NewsDAO {
 			e.printStackTrace();
 		}
 	}
-	public ResultSet listNewsCategoryByDaily(String categoryCode, int limit, int offset) throws SQLException, ClassNotFoundException {
+	public ResultSet listNewsCategoryByDaily(String categoryCode, int limit, int offset){
 		try{
 			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_daily(?, ?, ?)}");
 			clstm.setString(1, categoryCode);
@@ -26,15 +27,20 @@ public class NewsDAO {
 			//rs.next();
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "listNewsCategoryByDaily", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
 	
-	public ResultSet listNewsCategoryByWeekly(String categoryCode, int limit, int offset) throws SQLException {
+	public ResultSet listNewsCategoryByWeekly(String categoryCode, int limit, int offset){
 		try{
 			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_weekly(?, ?, ?)}");
 			clstm.setString(1, categoryCode);
@@ -44,15 +50,20 @@ public class NewsDAO {
 			//rs.next();
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "listNewsCategoryByWeekly", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
 	
-	public ResultSet listNewsCategoryByMonthly(String categoryCode, int limit, int offset) throws SQLException {
+	public ResultSet listNewsCategoryByMonthly(String categoryCode, int limit, int offset){
 		try{
 			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_monthly(?, ?, ?)}");
 			clstm.setString(1, categoryCode);
@@ -62,15 +73,20 @@ public class NewsDAO {
 			//rs.next();
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "listNewsCategoryByMonthly", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
 	
-	public ResultSet searchNewsFilterTime(String newsTitle, String categoryCode, String userInfoCode, String timeFilter, int limit, int offset) throws SQLException {
+	public ResultSet searchNewsFilterTime(String newsTitle, String categoryCode, String userInfoCode, String timeFilter, int limit, int offset){
 		try{
 			CallableStatement clstm = con.prepareCall("{call e_search_news_filter_time(?, ?, ?, ?, ?, ?)}");
 			clstm.setString(1, newsTitle);
@@ -79,51 +95,63 @@ public class NewsDAO {
 			clstm.setString(4, timeFilter);
 			clstm.setInt(5, limit);
 			clstm.setInt(6, offset);
-			System.out.println(clstm.toString());
+			//System.out.println(clstm.toString());
 			ResultSet rs = clstm.executeQuery();
 			//rs.next();
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "searchNewsFilterTime", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
-	public ResultSet getPopularNews() throws SQLException {
+	public ResultSet getPopularNews(){
 		try{
 			CallableStatement clstm = con.prepareCall("{call s_vw_news_popular}");
 		
-			System.out.println(clstm.toString());
+			//System.out.println(clstm.toString());
 			ResultSet rs = clstm.executeQuery();
 			//rs.next();
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "getPopularNews", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
-	public ResultSet getRecommendNews() throws SQLException {
+	public ResultSet getRecommendNews(){
 		try{
 			CallableStatement clstm = con.prepareCall("{call s_vw_news_recommend}");
-		
-			System.out.println(clstm.toString());
 			ResultSet rs = clstm.executeQuery();
-			//rs.next();
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "getRecommendNews", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "getRecommendNews", "NewsDAO");
+			}
 		}
 		return null;
 	}
-	public ResultSet countNewsByCatCodeDaily(String categoryCode) throws SQLException {
+	public ResultSet countNewsByCatCodeDaily(String categoryCode){
 		try{
 			CallableStatement clstm = con.prepareCall("{CALL s_count_news_by_catcode_daily(?)}");
 			clstm.setString(1, categoryCode);
@@ -131,15 +159,20 @@ public class NewsDAO {
 			
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "countNewsByCatCodeDaily", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
 	
-	public ResultSet countNewsByCatCodeMonthly(String categoryCode) throws SQLException {
+	public ResultSet countNewsByCatCodeMonthly(String categoryCode){
 		try{
 			CallableStatement clstm = con.prepareCall("{CALL s_count_news_by_catcode_monthly(?)}");
 			clstm.setString(1, categoryCode);
@@ -147,15 +180,20 @@ public class NewsDAO {
 			
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "countNewsByCatCodeMontly", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
 	
-	public ResultSet countNewsByCatCodeWeekly(String categoryCode) throws SQLException {
+	public ResultSet countNewsByCatCodeWeekly(String categoryCode){
 		try{
 			CallableStatement clstm = con.prepareCall("{CALL s_count_news_by_catcode_weekly(?)}");
 			clstm.setString(1, categoryCode);
@@ -163,32 +201,60 @@ public class NewsDAO {
 			
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "countNewsByCatCodeWeekly", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}
 	
 	//add methods from backendDAO
-	public ResultSet listRecentNews(int data) throws SQLException {
+	public ResultSet listRecentNews(int data){
 		// TODO Auto-generated method stub
-		CallableStatement clstm = con.prepareCall("{call news_slider(?)}");
-		clstm.setInt(1, data);
-		ResultSet rs = clstm.executeQuery();
-		//rs.next();
-		return rs;
+		try {
+			CallableStatement clstm = con.prepareCall("{call news_slider(?)}");
+			clstm.setInt(1, data);
+			ResultSet rs = clstm.executeQuery();
+			//rs.next();
+			return rs;
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "ListRecentNews", "NewsDAO");
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
+		}
+		return null;
 	}
-	public void countView(int newid, int count) throws SQLException {
+	public void countView(int newid, int count){
 		// TODO Auto-generated method stub
+		try{
 		CallableStatement clstm = con.prepareCall("{call add_counter(?, ?)}");
 		clstm.setInt(1, newid);
 		clstm.setInt(2, count);
 		clstm.executeQuery();
+		}catch(Exception e){
+			Logger.writeLogException(e, "CountView", "NewsDAO");
+		}finally{
+			try{
+				con.close();
+			}catch(SQLException e){
+			Logger.writeLogException(e, "ListRecentNews", "NewsDAO");
+			}
+		}
 	}
 	
-	public ResultSet showNewsCategoryTop(String categoryCode) throws SQLException {
+	public ResultSet showNewsCategoryTop(String categoryCode){
 		try{
 			CallableStatement clstm = con.prepareCall("{CALL s_show_news_category_top(?)}");
 			clstm.setString(1, categoryCode);
@@ -196,10 +262,15 @@ public class NewsDAO {
 			
 			return rs;
 		}catch(SQLException ex){
-			ex.printStackTrace();
+			Logger.writeLogException(ex, "ShowNewsCategoryTop", "NewsDAO");
 		}
 		finally{
-			con.close();
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, "Connection", "NewsDAO");
+			}
 		}
 		return null;
 	}

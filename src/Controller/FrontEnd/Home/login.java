@@ -39,7 +39,7 @@ public class login extends HttpServlet {
 		doProcess( request,  response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("###########################Admin Controller");
+		//System.out.println("###########################Admin Controller");
 		RequestDispatcher view=request.getRequestDispatcher("page_login.jsp");
 		view.forward(request,response);
 	}

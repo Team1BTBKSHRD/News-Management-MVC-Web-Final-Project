@@ -114,11 +114,6 @@ public class JsoupDAO {
 		}
 		return null;
 	}
-
-	public static void main(String[] args) throws Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString());
-	}
-
 	public boolean insertExchange(ArrayList<exchangeRateDTO> e) {
 		java.sql.PreparedStatement pstm = null;
 		try {

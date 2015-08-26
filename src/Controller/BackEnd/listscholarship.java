@@ -27,7 +27,7 @@ public class listscholarship implements Action {
 		response.setCharacterEncoding("UTF-8");
 
 		String obj = Convertor.convertResultSetIntoJSON(new JsoupDAO().retrievScholarship()).toString();
-		System.out.println(obj);
+		//System.out.println(obj);
 		response.getWriter().write(obj);
 	}
 }

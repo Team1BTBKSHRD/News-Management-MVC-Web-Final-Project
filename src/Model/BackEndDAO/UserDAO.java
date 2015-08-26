@@ -47,7 +47,7 @@ public class UserDAO {
 			pstm.setString(1, user.getUser_name());
 			pstm.setString(2, user.getUser_pass());
 			pstm.setString(3, user.getUser_type());
-			System.out.println(pstm.toString());
+			//System.out.println(pstm.toString());
 			return pstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
 		} catch (SQLException e) {
@@ -192,7 +192,7 @@ public class UserDAO {
 		ResultSet rs = pstm.executeQuery();
 		rs.next();
 		if (rs.getRow() > 0) {
-			System.out.println("has row");
+			//System.out.println("has row");
 			return rs.getString("user_type");
 		}
 		// System.out.println("Get Rows:" + rs.getString("user_type"));
@@ -205,7 +205,7 @@ public class UserDAO {
 		pstm = con.prepareStatement("update tbuser SET user_status = ? where user_id = ? ");
 		pstm.setBoolean(1, user_status);
 		pstm.setInt(2, user_id);
-		System.out.println(user_id + " " + user_status);
+		//System.out.println(user_id + " " + user_status);
 		if (pstm.executeUpdate() > 0) {
 			return true;
 		}
@@ -214,6 +214,6 @@ public class UserDAO {
 	}
 
 	public static void main(String[] args) throws SQLException, Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new UserDAO().retrieveRS()));
+		//System.out.println(Convertor.convertResultSetIntoJSON(new UserDAO().retrieveRS()));
 	}
 }// End of class;

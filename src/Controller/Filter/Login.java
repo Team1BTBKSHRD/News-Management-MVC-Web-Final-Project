@@ -26,12 +26,12 @@ public class Login implements Action {
 				HttpSession session = request.getSession();
 				session.setAttribute("admin", userName);
 				session.setAttribute("userType", userType);
-				System.out.println("Send Redirect!");
+				//System.out.println("Send Redirect!");
 //				response.sendRedirect("/articleManagement/Admin/index.jsp");
 				String userinfo=Convertor.convertResultSetIntoJSON(new UserInfoDAO().returnUserInformation(userName)).toString();
 				session.setAttribute("userinfo", userinfo);
 				response.getWriter().write(userName);
-				System.out.println(userinfo);
+				//System.out.println(userinfo);
 				//response.sendRedirect("http://www.google.com");
 			}			
 			else{

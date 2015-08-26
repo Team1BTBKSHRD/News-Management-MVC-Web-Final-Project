@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.css" />
 <!-- #####################end stylesheet#################### -->
 
-<title>Manage Article</title>f
+<title>Manage Article</title>
 <link href="css/summernote.css" rel="stylesheet">
 <!-- style for laout profile -->
 <style>
@@ -265,8 +265,7 @@ input[type=file] {
 	</script>
 
 	<script type="text/javascript">
-		var name='<%=session.getAttribute("usr")%>
-		';
+		var name='<%=session.getAttribute("usr")%>';
 		/* upload file */
 		$("#imguploads").click(function() {
 			var data;

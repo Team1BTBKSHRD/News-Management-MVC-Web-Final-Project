@@ -18,7 +18,7 @@ public class dropListCategory implements Action {
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */
 		response.getWriter().write(categoryNameList);
-		System.out.println(categoryNameList);
+		//System.out.println(categoryNameList);
 	}
 
 }

@@ -14,7 +14,7 @@ public class ListRecentNews implements Action {
 			throws Exception {
 		// TODO Auto-generated method stub
 		String newsList=Convertor.convertResultSetIntoJSON(new NewsDAO().listRecentNews(7)).toString();
-		System.out.println(newsList);
+		//System.out.println(newsList);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(newsList);

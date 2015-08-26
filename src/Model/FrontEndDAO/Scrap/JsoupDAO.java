@@ -10,6 +10,7 @@ import Model.DTO.exchangeRateDTO;
 import Model.DTO.jobDTO;
 import Model.DTO.scholarshipDTO;
 import Utilities.DatabaseConnection;
+import Utilities.Logger;
 
 public class JsoupDAO {
 	private Connection con;
@@ -19,10 +20,10 @@ public class JsoupDAO {
 			con = DatabaseConnection.getConnection();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Logger.writeLogException(e, "Contructor", "JsoupDAO");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Logger.writeLogException(e, "Contrutor", "JsoupDAO");
 		}
 	}
 
@@ -41,13 +42,13 @@ public class JsoupDAO {
 			}
 			return true;
 		} catch (Exception e) {
-
+			Logger.writeLogException(e, "InsertJob", "JsoupDAO");
 		} finally {
 			try {
 				con.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Logger.writeLogException(e, "Connection", "JsoupDAO");
 			}
 		}
 		return false;
@@ -58,12 +59,12 @@ public class JsoupDAO {
 			Statement stm = con.createStatement();
 			return stm.executeQuery("select * from tbmyjob");
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, "retriveJob", "JsoupDAO");
 		} finally {
 			try {
 				con.close();
 			} catch (Exception e2) {
-				e2.printStackTrace();
+				Logger.writeLogException(e2, "Connection", "JsoupDAO");
 			}
 		}
 		return null;
@@ -85,13 +86,13 @@ public class JsoupDAO {
 			}
 			return true;
 		} catch (Exception e) {
-
+			Logger.writeLogException(e, "InsertScholarship", "JsoupDAO");
 		} finally {
 			try {
 				con.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Logger.writeLogException(e, "Connection", "JsoupDAO");
 			}
 		}
 		return false;
@@ -108,8 +109,15 @@ public class JsoupDAO {
 			
 		} catch (Exception e) {
 			
-			e.printStackTrace();
-		} 
+			Logger.writeLogException(e, "retrieveScholarship", "JsoupDAO");
+		}finally{
+			try {
+				con.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				Logger.writeLogException(e2, "connection", "JsoupDAO");
+			}
+		}
 		return null;
 	}
 	public boolean insertExchange(ArrayList<exchangeRateDTO> e) {
@@ -125,7 +133,13 @@ public class JsoupDAO {
 			}
 			return true;
 		} catch (Exception e2) {
-			e2.printStackTrace();
+			Logger.writeLogException(e2, "InsertExchange", "JsoupDAO");
+		}finally{
+			try {
+				con.close();
+			} catch (Exception e3) {
+				Logger.writeLogException(e3, "Connection", "JsoupDAO");
+			}
 		}
 		return false;
 	}
@@ -144,7 +158,14 @@ public class JsoupDAO {
 			}
 			return true;
 		} catch (Exception e2) {
-			e2.printStackTrace();
+			Logger.writeLogException(e2, "updateExchange", "JsoupDAO");
+		}finally{
+			try {
+				con.close();
+			} catch (Exception e3) {
+				// TODO: handle exception
+				Logger.writeLogException(e3, "Connection", "JsoupDAO");
+			}
 		}
 		return false;
 	}
@@ -154,12 +175,12 @@ public class JsoupDAO {
 			Statement stm = con.createStatement();
 			return stm.executeQuery("select * from tbexchange");
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, "retrieveExchange", "JsoupDAO");
 		} finally {
 			try {
 				con.close();
 			} catch (Exception e2) {
-				e2.printStackTrace();
+				Logger.writeLogException(e2, "Connection", "JsoupDAO");
 			}
 		}
 		return null;

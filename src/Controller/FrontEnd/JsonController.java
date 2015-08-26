@@ -76,18 +76,18 @@ public class JsonController extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("###########################Json Controller");
+		//System.out.println("###########################Json Controller");
 		String RequestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
 
-		System.out.println(RequestURI);
+		//System.out.println(RequestURI);
 		/*
 		 * System.out.println(contextPath); System.out.println("--" + command);
 		 */
-		System.err.println(command);
+		System.err.println("requesting : ["+command+"]");
 		switch (command) {
 		case "/listResult.json":
 			action = new listResult();

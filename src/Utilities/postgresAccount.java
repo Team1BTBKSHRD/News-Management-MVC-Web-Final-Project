@@ -64,7 +64,8 @@ public class postgresAccount {
 	}
 
 	public static void main(String[] args) {
+		
 		System.out.println(new postgresAccount().countUserPostgres());
-		System.out.println(new postgresAccount().destroyConnection());
+		//System.out.println(new postgresAccount().destroyConnection());
 	}
 }

@@ -14,7 +14,7 @@ $(document).ready(function(){
 			for (var i = 0; i < data.length; i++) {
 
 				str += "<tr><td><a href="+data[i].link+" target=_blank>" + data[i].title + "</a></td><td>"
-						+ data[i].company + "</td><td>" + data[i].closeDate
+						+ data[i].company + "</td><td>" + data[i].close_date
 						+ "</td><td>" + data[i].category
 						+ "</td></tr>";
 			}

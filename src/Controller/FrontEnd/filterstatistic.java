@@ -26,7 +26,7 @@ public class filterstatistic implements Action {
 				
 		String sponsor=request.getParameter("sponsor");
 		String time = request.getParameter("anytime");
-		System.out.println(time);
+		//System.out.println(time);
 		String statisticData=null;
 		switch (time.toLowerCase()) {
 		case "day":

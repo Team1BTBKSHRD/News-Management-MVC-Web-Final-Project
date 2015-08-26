@@ -14,7 +14,7 @@ public class ListNewsDraft implements Action {
 			throws Exception {
 		String name=request.getParameter("full_name");
 		String news_List_draft=Convertor.convertResultSetIntoJSON(new NewsDAO().list_News_draft(name)).toString();
-		System.out.println(news_List_draft);
+		//System.out.println(news_List_draft);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(news_List_draft);

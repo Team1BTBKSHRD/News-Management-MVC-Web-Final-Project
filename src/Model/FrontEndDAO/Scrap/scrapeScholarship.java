@@ -16,7 +16,7 @@ public class scrapeScholarship {
 			Elements nofs = document.select("div.general_result_cate");
 			Elements stb = document.select("div");
 			ArrayList<scholarshipDTO> asdto = new ArrayList<scholarshipDTO>();
-			System.out.println(nofs.select("h4").get(0).text());
+			//System.out.println(nofs.select("h4").get(0).text());
 			scholarshipDTO sdtfirst = new scholarshipDTO();
 
 			scholarshipDTO sdt = null;

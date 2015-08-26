@@ -1,3 +1,4 @@
+<%@page import="java.nio.channels.SeekableByteChannel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html >
@@ -68,9 +69,8 @@ input[type=file] {
 					<div class="row row-stat">
 						<div class="col-md-12">
 							<div class="panel panel-info">
-								<div class="panel-heading">LIST ARTICLE POST
-
-									<br />
+								<div class="panel-heading">
+									LIST ARTICLE POST <br />
 								</div>
 								<div class="panel-body">
 									<div class="table_respone">
@@ -81,15 +81,17 @@ input[type=file] {
 											cellspacing="0" width="100%">
 											<thead>
 												<tr>
-													<th style="width: 531px;" >NewsTitle</th>
+													<th style="width: 531px;">NewsTitle</th>
 													<th>NewsCategory</th>
 													<th>NewsImage</th>
 													<th>NewsDate</th>
+													<%--  <%if(session.getAttribute("ust").equals("admin")){ %> --%>
 													<th>Action</th>
+													<%-- <%} %>  --%>
 												</tr>
 											</thead>
 											<tbody id="list_post">
-									
+
 											</tbody>
 										</table>
 									</div>
@@ -125,11 +127,11 @@ input[type=file] {
 
 	<!-- -------------------------Custom Javascript---------------- -->
 
-	
+
 	<script src="js/validate/page_article_validate.js"></script>
 	<!--  script for validate add aticle sarin -->
 
-	
+
 
 	<!--  script for validate add aticle sarin -->
 
@@ -159,20 +161,27 @@ input[type=file] {
 	<script type="text/javascript">
 		var name='<%=session.getAttribute("usr")%>';
 
-		
-		
-		
-		
-		
 		$.post("listarticle.json", {
 			full_name : name
 		}, function(data) {
 			$('#t_list_data_post').dataTable().fnDestroy();
 			$("#list_post").html(tblistArticle(data));
-			
-			
+
 			$('#t_list_data_post').dataTable({
 				"lengthMenu" : [ [ 5, 10, 30, -1 ], [ 5, 10, 30, "All" ] ]
+			 <%if(session.getAttribute("ust").equals("admin")!=true){ %>
+				,
+				
+				"columnDefs": [
+				               {
+				                   "targets": [ 4 ],
+				                   "visible": false,
+				                   "searchable": false
+				               }
+				               
+				           ]
+				<%} %>
+				
 			/* Sarin add datatable */
 			});
 			//alert(data[0].json_title+"/"+data[0].cat_code+"/"+data[0].json_img+"/"+data[0].json_date);
@@ -193,8 +202,10 @@ input[type=file] {
 						+ data[i].news_date + "</td>"
 						/*  + "<td style='text-align: center;'>" + btnAction(i)  */
 						+ "<td style='text-align: center;'>"
-						+ changestatus(data[i].news_status, data[i].news_id, i)
-						+ "</td>" + "</tr>";
+
+		+ changestatus(data[i].news_status, data[i].news_id, i)
+
+		+ "</td>" + "</tr>";
 
 			}
 			return str;
@@ -240,7 +251,7 @@ input[type=file] {
 				$(data).attr("status", "true");
 				status = "true";
 			}
-			
+
 			$.post("updateStatus.json", {
 				news_id : newsid,
 				news_status : status,
@@ -260,22 +271,16 @@ input[type=file] {
 			return str;
 		}
 
-		
-		
-		
-		
-		 	$("#main_menu_article").removeClass("parent" ).addClass("active parent" );
-			$("#page_post_article_menu").addClass( "active" );
-		
-		
+		$("#main_menu_article").removeClass("parent").addClass("active parent");
+		$("#page_post_article_menu").addClass("active");
 	</script>
 </body>
 <%
 	} else {
 %>
 <script type="text/javascript">
-	window.open("/articleManagement/Admin/index.jsp","_self");
-	</script>
+	window.open("/articleManagement/Admin/index.jsp", "_self");
+</script>
 <%
 	}
 %>

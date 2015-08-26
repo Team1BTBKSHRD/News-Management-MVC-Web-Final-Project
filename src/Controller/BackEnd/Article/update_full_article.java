@@ -23,7 +23,7 @@ public class update_full_article implements Action {
 		String newsImg = request.getParameter("news_img");
 		boolean draft_status =Boolean.parseBoolean(request.getParameter("draft_status"));
 		
-		System.out.println(draft_status);
+		//System.out.println(draft_status);
 		String newsDate = new SimpleDateFormat().format(new Date());
 		
 		String newsConDetail = request.getParameter("news_con_detail");

@@ -104,7 +104,7 @@ public class UserInfoDAO {
 	 */
 	public boolean update(UserInfo userInfo) throws SQLException {
 		try {
-			System.out.println(222);
+			//System.out.println(222);
 			/* Set PreparedStatement */
 			pstm = con.prepareStatement(
 					"UPDATE tbuserinfo   SET   full_name=?, com_name=?, addr=?, email=?, website=?, phone=?, logo=? WHERE user_info_code=?;");
@@ -221,7 +221,7 @@ public class UserInfoDAO {
 				str = rs.getString(1).toString();
 			}
 			System.err.println(str);*/
-		 System.out.println(Convertor.convertResultSetIntoJSON(new UserInfoDAO().returnUserInformation("kh")).toString());
+		 //System.out.println(Convertor.convertResultSetIntoJSON(new UserInfoDAO().returnUserInformation("kh")).toString());
 	  }
 	 
 

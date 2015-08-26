@@ -28,7 +28,7 @@ public class ListUser implements Action {
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */
 		response.getWriter().write(userList);
-		System.out.println(userList);
+		//System.out.println(userList);
 	}
 
 }

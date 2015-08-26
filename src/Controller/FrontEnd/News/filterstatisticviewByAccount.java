@@ -17,7 +17,7 @@ public class filterstatisticviewByAccount implements Action {
 
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		System.out.println(statisticData);
+		//System.out.println(statisticData);
 		response.getWriter().write(statisticData);
 		
 	}

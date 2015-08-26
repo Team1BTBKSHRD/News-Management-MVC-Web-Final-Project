@@ -17,7 +17,7 @@ public class EditUserInfo implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("udateUserInfo");
+		//System.out.println("udateUserInfo");
 		UserInfo u_in = new UserInfo();
 		u_in.setFull_name(request.getParameter("full_name"));
 		u_in.setCom_name(request.getParameter("companyname"));
@@ -33,7 +33,7 @@ public class EditUserInfo implements Action {
 		response.setCharacterEncoding("UTF-8");
 		String obj=new Gson().toJson(u_in);
 		response.getWriter().write(obj);
-		System.out.println(obj);
+		//System.out.println(obj);
 		
 	}
 }

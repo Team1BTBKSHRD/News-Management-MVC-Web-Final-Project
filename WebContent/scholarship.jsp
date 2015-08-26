@@ -6,7 +6,7 @@
 <title>news box site...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-​​
+​​<link rel="shortcut icon" href="img/box.png">
 <!-- lib css -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
@@ -19,7 +19,11 @@
 <link rel="stylesheet" type="text/css" href="css/custom/category.css">
 <link rel="stylesheet" href="css/dataTables.bootstrap.css" />
 <!-- end custom css -->
-​​
+​​<style type="text/css">
+#listjob_length,#listjob_info{
+	padding-left:10px;
+}
+</style>
 </head>
 <body>
 	<%
@@ -51,8 +55,8 @@
 
 				<div class="panel-body" id="panelCategory">
 					<table id="listjob"
-											class="table table-striped table-bordered table-primary mb30"
-											cellspacing="0" width="100%">
+											class="table table-condensed table-responsive table-hover table-bordered table-primary mb30"
+											cellspacing="0" width="100%" style="margin:10px;">
 						<thead>
 							<tr>
 								<th>Title</th>

@@ -16,9 +16,9 @@ public class ListNewsCategoryByMonthly implements Action {
 		String categoryCode = request.getParameter("c_code");
 		int limit = Integer.parseInt(request.getParameter("limit"));
 		int offset = Integer.parseInt(request.getParameter("offset"));
-		System.out.println(categoryCode);
+		/*System.out.println(categoryCode);
 		System.out.println(limit);
-		System.out.println(offset);
+		System.out.println(offset);*/
 		String newsList=Convertor.convertResultSetIntoJSON(dao.listNewsCategoryByMonthly(categoryCode, limit, offset)).toString();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

@@ -18,7 +18,7 @@ public class dropListSource implements Action {
 		response.setCharacterEncoding("UTF-8");
 		/* Response JSON data to client */
 		response.getWriter().write(droplistsource);
-		System.out.println(droplistsource);
+		//System.out.println(droplistsource);
 
 	}
 
