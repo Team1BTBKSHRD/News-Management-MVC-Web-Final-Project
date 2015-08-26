@@ -30,31 +30,29 @@ function getResult(pageNumber) {
 							var str = "";
 							for (var i = 0; i < news.length; i++) {
 								if(news[i].news_path=='') news[i].news_path = 'article?id=' + news[i].news_id;
-									str += "<div class='card-1' id='" + news[i].news_id + "'>"
-										+ "<a href='"+ news[i].news_path +"' target='_blank' id='link-1'>"
-										+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
-										+ "<img src='"
-										+ news[i].news_img
-										+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='153px' id='img-1'>"
-										+ "</div>"
-										+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>"
-										+ "<h5 class='text-h5-2 article-title' id='title-1'>"
-										+ news[i].news_title
-										+ "</h5>"
-										+ "<p class='text-3 news-description' id='des-1'>"
-										+ news[i].news_desc
-										+ "</p>"
-										+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
-										+ "អាន "
-										+ news[i].count_visited
-										+ " | "
-										+ news[i].news_published_date
-										+ " | "
-										+ news[i].full_name
-										+ "</div>"
-										+ "</div>"
-										+ "</a>"
-										+ "</div><hr/>";
+									str += "<div class='card-1 col-sm-12 clear-paddings' id='" + news[i].news_id + "'>"
+									+ "<a href='"+ news[i].news_path +"' target='_blank' id='link-1'>"
+									+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
+									+ "<div class='card-1-image' style='background-image: url(" + news[i].news_img + ");' alt='item slider'></div>"
+									+ "</div>"
+									+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>"
+									+ "<h5 class='text-h5-2 article-title' id='title-1'>"
+									+ news[i].news_title
+									+ "</h5>"
+									+ "<p class='text-3 news-description' id='des-1'>"
+									+ news[i].news_desc
+									+ "</p>"
+									+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
+									+ "អាន "
+									+ news[i].count_visited
+									+ " | "
+									+ news[i].news_published_date
+									+ " | "
+									+ news[i].full_name
+									+ "</div>"
+									+ "</div>"
+									+ "</a>"
+									+ "</div>";
 							}
 							str += "<ul class='pager clear-padding-right'>"
 									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ទំព័រមុខ</a></li>"

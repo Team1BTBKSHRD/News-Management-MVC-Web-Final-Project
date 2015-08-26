@@ -41,10 +41,10 @@
 				<div class="panel-body" id="panelCategory">
 					<!-- End of panel body -->					 
 					<c:forEach var="record" items="${rs.rows}">					
-						<div class='card-1' id='${record.news_id}'>
+						<div class='card-1 col-sm-12 clear-paddings' id='${record.news_id}'>
 						  <a href='${record.news_path}' target='_blank' >
 						    <div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>
-						      <img src='${record.news_img}' class='col-md-12 col-sm-12 col-xs-12 clear-paddings' height='153px' id='img-1'>
+						      <div class='card-1-image' style='background-image: url(${record.news_img});' alt='item slider'></div>
 						    </div>
 						    <div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>
 						      <h5 class='text-h5-2 article-title' >${record.news_title}</h5>
@@ -53,7 +53,6 @@
 						    </div>
 						  </a>
 						</div>
-						<hr/>
 					</c:forEach>
 				  <c:choose>
             <c:when test="${rs.rowCount==15}">

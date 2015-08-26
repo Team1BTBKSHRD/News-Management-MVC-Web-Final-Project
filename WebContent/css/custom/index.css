@@ -392,14 +392,38 @@ button.btn-sm {
 }
 
 .card-1, .card-2 {
-    border-radius: 4px;
+    border-bottom: 2px solid #eeeeee;
+    margin-bottom: 15px;
 }
 
 .card-1 {
     margin-right: 10px;
     display: table;
 }
-
+.card-1-image{
+	height: 153px;
+	width: 100%;
+	-ms-background-position-x: center;
+	-ms-background-position-y: bottom;
+	background-position: center bottom;
+	background-size: cover;
+	-ms-behavior: url(backgroundsize.min.htc);
+	-ms-background-position-x: center;
+	-ms-background-position-y: center;
+	background-position: center center;
+}
+.card-2-image{
+	height: 85px;
+	width: 100%;
+	-ms-background-position-x: center;
+	-ms-background-position-y: bottom;
+	background-position: center bottom;
+	background-size: cover;
+	-ms-behavior: url(backgroundsize.min.htc);
+	-ms-background-position-x: center;
+	-ms-background-position-y: center;
+	background-position: center center;
+}
 .card-2 {
     width: 48.85%;
     display: table;
