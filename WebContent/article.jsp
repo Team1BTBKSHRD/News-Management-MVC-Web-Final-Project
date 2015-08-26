@@ -8,17 +8,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="img/box.png" />
     <!-- lib css -->
-    <link rel="stylesheet" href="css/font-google-open-sans.css">
-    <link rel="stylesheet" href="css/font-google-roboto-condensed.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
     <link rel="stylesheet" href="css/responsive.css">
     <!-- end lib css -->
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="css/custom/index.css">
-    <link rel="stylesheet" type="text/css" href="css/custom/owl.css">
+
     <link rel="stylesheet" type="text/css" href="css/custom/article.css">
     <!-- end custom css -->
   </head>
@@ -29,12 +24,15 @@
     <!-- content area article -->
     <div class="container content-area">
       <!-- article -->
-      <div class="content">
+		<!-- search panel -->
+		<jsp:include page="layouts/searchbar.jsp" />
+		<!-- end search panel -->
+		<!-- right panel -->
         <div class="col-sm-9 content-left clear-padding-left clear-margins left-panel">
           <div class="panel panel-primary clear-margins">
             <!-- article header-->
             <div class="slider-content-area">
-              <img src="img/${rs.getString(9)}" height="300px" width="100%"
+              <img src="${rs.getString(9)}" height="300px" width="100%"
                 alt="Mirror Edge">
               <div class="news-title-block">
                 <div class="myclear"></div>
@@ -81,7 +79,7 @@
           </div>
           <div class="clearfix"></div>
         </div>
-      </div>
+
       <!-- end article -->
       <!-- right panel -->
       <jsp:include page="layouts/right-panel.jsp" />
@@ -97,7 +95,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- end lib js -->
     <!-- custom js -->
-    <script src="js/custom/index.js"></script>
+    <script src="js/custom/home.js"></script>
     <script src="js/custom/right-panel.js"></script>	
     <!-- end custom js -->
     <!-- #####################end javascript#################### -->	
