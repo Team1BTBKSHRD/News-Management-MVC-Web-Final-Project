@@ -38,7 +38,7 @@
 		<jsp:include page="layouts/searchbar.jsp" />
 		<!-- end search panel -->
 		<!-- right panel -->
-		<div class="col-md-9 col-sm-9 col-xs-9 clear-padding-left ">
+		<div class="col-md-9 col-sm-9 col-xs-9 clear-padding-left left-panel">
 			<!-- article header-->
 			<div class="category-header col-sm-12 clear-paddings"
 				style="overflow: hidden !important;">
