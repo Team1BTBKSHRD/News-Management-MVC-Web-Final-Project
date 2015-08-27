@@ -263,14 +263,14 @@ public class NewsDAO {
 			
 			return rs;
 		}catch(SQLException ex){
-			Logger.writeLogException(ex, "ShowNewsCategoryTop", "NewsDAO");
+			//Logger.writeLogException(ex, "ShowNewsCategoryTop", "NewsDAO");
 		}
 		finally{
 			try {
 				con.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-				Logger.writeLogException(e, "Connection", "NewsDAO");
+				//Logger.writeLogException(e, "Connection", "NewsDAO");
 			}
 		}
 		return null;
