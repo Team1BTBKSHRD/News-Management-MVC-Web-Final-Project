@@ -265,7 +265,7 @@ button.btn-sm {
     background-color: #BBBBEB;
 }
 
-.content-area-aritcle, .content-area {
+.content-area {
     margin-top: 95px;
     width: 90%;
 }
@@ -411,6 +411,12 @@ button.btn-sm {
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
 	background-position: center center;
+}
+.card-1-image-404{
+    height: 153px;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
 }
 .card-2-image{
 	height: 85px;
@@ -898,6 +904,9 @@ button.btn-sm {
     .content-area {
         width: 100% !important;
         margin-top: 0 !important;
+    }
+    .content-area-search{
+        margin-top: 85px !important;
     }
 }
 
