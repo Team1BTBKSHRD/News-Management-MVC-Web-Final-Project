@@ -110,17 +110,17 @@ $.post("showNewsCategoryTop.json", {c_code:window.location.search.substr(4)},
 		"</a>";*/
 		left+=
 		"<div class='item img-slider-items'>"+
-		"<img src='"+getBigImage(data[i].img)+"' alt='item slider'>"+
+		"<img src='"+getBigImage(data[i].news_img)+"' alt='item slider'>"+
 		"<div class='news-title-background'>"+			
 				"<div class='owl-news-title'>"+
-					"<p class='text-5 clear-margin-bottom'>"+data[i].n_desc+"</p>"+
+					"<p class='text-5 clear-margin-bottom'>"+data[i].news_desc+"</p>"+
 				"</div>"+			
 		"</div>"+
 		"</div>";
 		right+=
-	        "<div class='cate-title'>"+
-	        "<a href='"+data[i].url+"' class='text-h5-2'  target='_blank'>"+
-        	data[i].n_title+"</a>"+"</div>";
+	        "<div class='cate-title' id='"+ data[i].news_id +"'>"+
+	        "<a href='"+data[i].news_path+"' class='text-h5-2'  target='_blank'>"+
+        	data[i].news_title+"</a>"+"</div>";
 	}
 	$('.category-head-left').html(right);
 	owl.data('owlCarousel').addItem(left);

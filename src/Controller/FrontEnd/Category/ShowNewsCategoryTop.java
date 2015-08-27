@@ -22,6 +22,7 @@ public class ShowNewsCategoryTop implements Action {
 			response.getWriter().write(newsList);
 			dao.close();
 		}catch(Exception e){
+		  e.printStackTrace();
 			Logger.writeLogException(e, "ShowNewsCategoryTop", "ShowNewsCategoryTop");
 		}
 		

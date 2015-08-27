@@ -16,7 +16,7 @@ public class ListRecentNews implements Action {
 		NewsDAO dao = new NewsDAO();
 		String newsList;
 		try {
-			newsList = Convertor.convertResultSetIntoJSON(dao.listRecentNews(7)).toString();
+			newsList = Convertor.convertResultSetIntoJSON(dao.listRecentNews(5)).toString();
 			dao.close();
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");

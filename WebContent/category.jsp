@@ -43,7 +43,7 @@
 					<c:forEach var="record" items="${rs.rows}">					
 						<div class='card-1 col-sm-12 clear-paddings' id='${record.news_id}'>
 						  <a href='${record.news_path}' target='_blank' >
-						    <div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>
+						    <div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>  						    
 						      <div class='card-1-image' style='background-image: url(${record.news_img});' alt='item slider'></div>
 						    </div>
 						    <div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>

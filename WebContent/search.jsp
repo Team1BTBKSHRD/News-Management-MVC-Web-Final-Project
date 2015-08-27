@@ -23,7 +23,7 @@
 	<jsp:include page="layouts/header.jsp" />
 	<!-- end header -->
 	<!-- content area -->
-	<div class="container content-area">
+	<div class="container content-area content-area-search">
 
 		<!-- left panel -->
 		<div
