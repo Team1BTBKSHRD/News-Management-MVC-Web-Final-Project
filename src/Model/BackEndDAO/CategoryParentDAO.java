@@ -37,7 +37,7 @@ public class CategoryParentDAO {
 	 * @throws SQLException
 	 * @return true for success and false for fail 
 	 * */
-	public boolean insert(CategoryParent categoryParent) throws SQLException{
+	public boolean insert(CategoryParent categoryParent){
 		try {
 			/* Set PreparedStatement */
 			pstm = con.prepareStatement("INSERT INTO tbcategoryparent(parent_desc) VALUES(?)");
@@ -51,8 +51,14 @@ public class CategoryParentDAO {
 		}
 		finally{
 			/* Close pstm and con */
-			pstm.close();
-			con.close();
+			try {
+				pstm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 		return false; /* return false if insert unsuccessful */
 	}
@@ -64,7 +70,7 @@ public class CategoryParentDAO {
 	 * @throws SQLException
 	 * @return true for success and false for fail 
 	 * */
-	public boolean delete(int parentId) throws SQLException{
+	public boolean delete(int parentId){
 		try {
 			/* Set PreparedStatement */
 			pstm = con.prepareStatement("DELETE FROM tbcategoryparent WHERE parent_id = ?;");
@@ -76,8 +82,14 @@ public class CategoryParentDAO {
 		}
 		finally{
 			/* Close pstm and con */
-			pstm.close();
-			con.close();
+			
+			try {
+				pstm.close();
+				con.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
 		}
 		return false; /* return false if insert unsuccessful */
 	}
@@ -89,7 +101,7 @@ public class CategoryParentDAO {
 	 * @throws SQLException
 	 * @return true for success and false for fail 
 	 * */
-	public boolean update(CategoryParent categoryParent) throws SQLException{
+	public boolean update(CategoryParent categoryParent){
 		try {
 			/* Set PreparedStatement */
 			pstm = con.prepareStatement("UPDATE tbcategoryparent SET parent_desc=? WHERE parent_id=?;");
@@ -103,8 +115,14 @@ public class CategoryParentDAO {
 		}
 		finally{
 			/* Close pstm and con */
-			pstm.close();
-			con.close();
+			try {
+				pstm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 		return false; /* return false if update unsuccessful */
 	}
@@ -115,7 +133,7 @@ public class CategoryParentDAO {
 	 * @throws SQLException
 	 * @return ArrayList<CategoryParent>
 	 * */
-	public ArrayList<CategoryParent> retrieve() throws SQLException{
+	public ArrayList<CategoryParent> retrieve(){
 		Statement stm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		ArrayList<CategoryParent> categoryParents = null; /* categoryParents stores data of rs */
@@ -133,9 +151,15 @@ public class CategoryParentDAO {
 		}
 		finally{
 			/* Close stm, rs and con */
-			stm.close();
+			try {
+				stm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			//rs.close();
-			con.close();
+			
 		}
 		return null; /* Return null if error */
 	}
@@ -146,7 +170,7 @@ public class CategoryParentDAO {
 	 * @throws SQLException
 	 * @return ResutlSet 
 	 * */
-	public ResultSet retrieveRS() throws SQLException{
+	public ResultSet retrieveRS(){
 		Statement stm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
@@ -158,9 +182,15 @@ public class CategoryParentDAO {
 		}
 		finally{
 			/* Close stm, rs and con */
-			stm.close();
-			//rs.close();
-			con.close();
+			try {
+				stm.close();
+				//rs.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 		return null; /* Return null if error */
 	}
