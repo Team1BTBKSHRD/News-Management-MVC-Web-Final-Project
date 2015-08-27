@@ -12,7 +12,7 @@
           <a href="home"><img src="img/logo.png" width="110px"></a>
         </div>
       </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" aria-expanded="true">
         <ul class="nav navbar-nav navbar-right">
           <li id="hdhome"><a href="home">ទំព័រដើម</a></li>
           <li id="B030101"><a href="category?id=B030101">ព័ត៌មានជាតិ</a></li>
