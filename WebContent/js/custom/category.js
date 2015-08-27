@@ -1,4 +1,4 @@
-$("[id="+window.location.search.substr(4)+"]").attr('class', 'active');
+$("[id=" + window.location.search.substr(4) + "]").attr('class', 'active');
 
 $('body').on('click', '.previous', function() {
 	getResult(pageNumber -= countItems);
@@ -8,12 +8,10 @@ $('body').on('click', '.next', function() {
 });
 var cat_code = window.location.search.substr(4);
 
-/*$.post("countNewsByCatCodeMonthly.json",
-		{categoryCode:cat_code},
-	function(data){
-			alert(data[0].result);
-	$.cookie("items", data[0].result);
-});*/
+/*
+ * $.post("countNewsByCatCodeMonthly.json", {categoryCode:cat_code},
+ * function(data){ alert(data[0].result); $.cookie("items", data[0].result); });
+ */
 var countItems = 15;
 var pageNumber = 0;
 function getResult(pageNumber) {
@@ -23,36 +21,42 @@ function getResult(pageNumber) {
 					{
 						c_code : window.location.search.substr(4),
 						limit : countItems,
-						offset: pageNumber
+						offset : pageNumber
 					},
 					function(news, status) {
-						if (news.length > 0) {							
+						if (news.length > 0) {
 							var str = "";
 							for (var i = 0; i < news.length; i++) {
-								if(news[i].news_path=='') news[i].news_path = 'article?id=' + news[i].news_id;
-									str += "<div class='card-1 col-sm-12 clear-paddings' id='" + news[i].news_id + "'>"
-									+ "<a href='"+ news[i].news_path +"' target='_blank' id='link-1'>"
-									+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
-									+ "<div class='card-1-image' style='background-image: url(" + news[i].news_img + ");' alt='item slider'></div>"
-									+ "</div>"
-									+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>"
-									+ "<h5 class='text-h5-2 article-title' id='title-1'>"
-									+ news[i].news_title
-									+ "</h5>"
-									+ "<p class='text-3 news-description' id='des-1'>"
-									+ news[i].news_desc
-									+ "</p>"
-									+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
-									+ "អាន "
-									+ news[i].count_visited
-									+ " | "
-									+ news[i].news_published_date
-									+ " | "
-									+ news[i].full_name
-									+ "</div>"
-									+ "</div>"
-									+ "</a>"
-									+ "</div>";
+								if (news[i].news_path == '')
+									news[i].news_path = 'article?id='
+											+ news[i].news_id;
+								str += "<div class='card-1 col-sm-12 clear-paddings' id='"
+										+ news[i].news_id
+										+ "'>"
+										+ "<a href='"
+										+ news[i].news_path
+										+ "' target='_blank' id='link-1'>"
+										+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
+										+ "<div class='card-1-image' style='background-image: url("
+										+ news[i].news_img
+										+ ");' alt='item slider'></div>"
+										+ "</div>"
+										+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>"
+										+ "<h5 class='text-h5-2 article-title' id='title-1'>"
+										+ news[i].news_title
+										+ "</h5>"
+										+ "<p class='text-3 news-description' id='des-1'>"
+										+ news[i].news_desc
+										+ "</p>"
+										+ "<div class='col-md-12 col-sm-12 col-xs-12 clear-paddings news-info' id='info-1'>"
+										+ "អាន "
+										+ news[i].count_visited
+										+ " | "
+										+ news[i].news_published_date
+										+ " | "
+										+ news[i].full_name
+										+ "</div>"
+										+ "</div>" + "</a>" + "</div>";
 							}
 							str += "<ul class='pager clear-padding-right'>"
 									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ទំព័រមុខ</a></li>"
@@ -68,18 +72,14 @@ function getResult(pageNumber) {
 								$('body').off('click', '.previous a');
 							}
 						} else {
-							
+
 						}
 					});
 }
-
 /*------------------------------------------------------------------*/
-
-var owl = $("#owl-demo"), i = 0, textholder, booleanValue = false;
-
+var owl = $("#owl-demo");
 owl.owlCarousel({
-	// //Set AutoPlay to 3 seconds
-	autoPlay : 6000,
+	autoPlay : 5000,
 	loop : true,
 	pagination : false,
 	slideSpeed : 300,
@@ -89,59 +89,33 @@ owl.owlCarousel({
 	responsiveBaseWidth : window,
 	itemsDesktop : [ 1199, 1 ],
 	itemsDesktopSmall : [ 979, 1 ],
-	itemsTablet : [ 750, 1 ]
+	itemsTablet : [ 750, 1 ],
+	afterMove : function() {
+		var cars = $('.cate-title');
+		$('.cate-title').removeClass('category-title-active');
+		$(cars[this.owl.currentItem]).addClass('category-title-active');
+	}
 });
-
-$.post("showNewsCategoryTop.json", {c_code:window.location.search.substr(4)},
-	function(data) {
+$.post("showNewsCategoryTop.json", {
+	c_code : window.location.search.substr(4)
+}, function(data) {
 	var left = "";
 	var right = "";
 	for (var i = 0; i < data.length; i++) {
-		//if(data[i].news_path=='') data[i].news_path = 'article?id=' + data[i].news_id;
-	/*	allItem += "<a href='"+data[i].url+"'>"+
-		"<div class='img-slider-items'>"+
-		"<img src='"+ data[i].img +"' class='img-responsive'>"+
-		"<div class='items-background'></div>"+
-		"<div class='items-category'>"+
-		"<h5 class='title-category'>"+ data[i].n_title +"</h5>"+
-		"<span class='desc-category'>"+ data[i].n_desc +"</span>"+
-		"</div>"+
-		"</div>"+
-		"</a>";*/
-		left+=
-			"<div class='item'>"+		
-			"<div class='owl-image' style='background-image: url("+ getBigImage(data[i].news_img) +")'></div>"+
-			"<p class='news-title-background clear-margin-bottom'>"+data[i].news_desc+"</p>"+
-			"</div>";
-		/*"<div class='item img-slider-items'>"+
-		"<img src='"+getBigImage(data[i].news_img)+"' alt='item slider'>"+
-		"<p class='text-5 news-title-background clear-margin-bottom'>"+data[i].news_desc+"</p>"+
-		"</div>";*/
-		
-
-		
-		right+=
-	        "<div class='cate-title' id='"+ data[i].news_id +"'>"+
-	        "<a href='"+data[i].news_path+"' class='text-h5-2'  target='_blank'>"+
-        	data[i].news_title+"</a>"+"</div>";
+		if (data[i].news_path == '')
+			data[i].news_path = 'article?id=' + data[i].news_id;
+		left += "<div class='item'>"
+				+ "<div class='owl-image' style='background-image: url("
+				+ getBigImage(data[i].news_img) + ")'></div>"
+				+ "<div class='news-title-background'><p class='owl-desc clear-margin-bottom'>"
+				+ data[i].news_desc +"</p></div>" + "</div>";		
+		right += "<div class='cate-title' id='" + data[i].news_id + "'>"
+				+ "<a href='" + data[i].news_path
+				+ "' class='text-h5-2'  target='_blank'>" + data[i].news_title
+				+ "</a>" + "</div>";
 	}
 	$('.category-head-left').html(right);
 	owl.data('owlCarousel').addItem(left);
+	var cars = $('.cate-title');
+	$(cars[0]).addClass('category-title-active');
 });
-
-/*$(function () {
-	  var $div = $('.cate-title');
-	  var $parentDiv = $('.category-head-left');
-	  (function _loop(idx) {
-		  $div.removeClass('category-title-active').eq(idx).addClass('category-title-active');
-		  setTimeout(function () {
-			  _loop((idx + 1) % $div.length);
-
-		  }, 6000);
-		   alert($div.eq(idx).offset()); 
-		  $('.category-head-left','.cate-title').animate({
-			  scrollTop: $div.eq(idx).offset().top
-			   scrollTop: 0 
-		  }, 500);
-	  }(0));
-});*/
