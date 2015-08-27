@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import Model.DTO.Category;
 import Utilities.Convertor;
 import Utilities.DatabaseConnection;
+import Utilities.Logger;
 
 /**
  * Class CategoryDAO Use For interact between Java and DBMS(tbcategory).
@@ -39,7 +40,7 @@ public class CategoryDAO {
 	 * @throws SQLException
 	 * @return true for success and false for fail
 	 */
-	public boolean insert(Category category) throws SQLException {
+	public boolean insert(Category category){
 
 		try {
 			pstm = con.prepareStatement(
@@ -57,10 +58,16 @@ public class CategoryDAO {
 								 */
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
 		} finally {
-			pstm.close();
-			con.close();
+			try {
+				pstm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, e.getMessage(), "CategoryDAO Connection");
+			}
+			
 
 		}
 		return false; /* return false if insert unsuccessful */
@@ -74,7 +81,7 @@ public class CategoryDAO {
 	 * @throws SQLException
 	 * @return true for success and false for fail
 	 */
-	public boolean delete(int categoryId) throws SQLException {
+	public boolean delete(int categoryId){
 		try {
 			/* Set PreparedStatement */
 			pstm = con.prepareStatement("DELETE FROM tbcategory WHERE cat_id = ?;");
@@ -86,11 +93,17 @@ public class CategoryDAO {
 								 * return true for success and false if fail
 								 */
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
-			con.close();
+			try {
+				pstm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+			}
+		
 		}
 		return false; /* return false if insert unsuccessful */
 	}
@@ -103,7 +116,7 @@ public class CategoryDAO {
 	 * @throws SQLException
 	 * @return true for success and false for fail
 	 */
-	public boolean update(Category category) throws SQLException {
+	public boolean update(Category category){
 		try {
 			/* Set PreparedStatement */
 			pstm = con.prepareStatement(
@@ -121,11 +134,17 @@ public class CategoryDAO {
 								 * return true for success and false if fail
 								 */
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
 		} finally {
 			/* Close pstm and con */
-			pstm.close();
-			con.close();
+			try {
+				pstm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+			}
+		
 		}
 		return false; /* return false if insert unsuccessful */
 	}
@@ -136,7 +155,7 @@ public class CategoryDAO {
 	 * @throws SQLException
 	 * @return ArrayList<Category>
 	 */
-	public ArrayList<Category> retrieve() throws SQLException {
+	public ArrayList<Category> retrieve(){
 		Statement stm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		ArrayList<Category> categories = null; /*
@@ -157,12 +176,18 @@ public class CategoryDAO {
 
 			return categories; /* return categories object */
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
 		} finally {
 			/* Close stm, rs and con */
-			stm.close();
+			try {
+				stm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+			}
 			// rs.close();
-			con.close();
+			
 		}
 		return null; /* Return null if error */
 	}
@@ -173,7 +198,7 @@ public class CategoryDAO {
 	 * @throws SQLException
 	 * @return ResultSet
 	 */
-	public ResultSet retrieveRS() throws SQLException {
+	public ResultSet retrieveRS(){
 		Statement stm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
@@ -185,12 +210,18 @@ public class CategoryDAO {
 													 */
 			return rs;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
 		} finally {
 			// Close stm, rs and con
-			stm.close();
+			try {
+				stm.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+			}
 			// rs.close();
-			con.close();
+			
 		}
 
 		return null; /* Return null if error */
@@ -201,16 +232,45 @@ public class CategoryDAO {
 	 * 
 	 * 
 	 */
-	public ResultSet resourceList() throws SQLException {
-		Statement stm = con.createStatement();
-		ResultSet rs = stm.executeQuery("select full_name from tbuserinfo");
+	public ResultSet resourceList(){
+		Statement stm =null;
+		ResultSet rs=null;
+		try {
+			stm= con.createStatement();
+			rs = stm.executeQuery("select full_name from tbuserinfo");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+			}
+		}
 		return rs;
 
 	}
 
-	public ResultSet categoryNameList() throws SQLException {
-		Statement stm = con.createStatement();
-		ResultSet rs = stm.executeQuery("select distinct(cat_name), cat_code from tbcategory");
+	public ResultSet categoryNameList(){
+		Statement stm=null;
+		ResultSet rs=null;
+		try {
+			stm = con.createStatement();
+			rs = stm.executeQuery("select distinct(cat_name), cat_code from tbcategory");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+		}finally {
+			try {
+				con.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				Logger.writeLogException(e2, e2.getMessage(), "CategoryDAO");
+			}
+		}
+		
 		return rs;
 
 	}
@@ -218,23 +278,33 @@ public class CategoryDAO {
 	/*
 	 * return category code
 	 */
-	public String returnCateCode(String data) throws SQLException { // ???????
-		CallableStatement clstm = con.prepareCall("{call category_code(?)}");
-		clstm.setString(1, data);
-		ResultSet rs = clstm.executeQuery();
+	public String returnCateCode(String data){ // ???????
 		String catecode = null;
-		if (rs.next()) {
-			catecode = rs.getString(1).toString();
+		try {
+			CallableStatement clstm = con.prepareCall("{call category_code(?)}");
+			clstm.setString(1, data);
+			ResultSet rs = clstm.executeQuery();
+			
+			if (rs.next()) {
+				catecode = rs.getString(1).toString();
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+		}finally {
+			try {
+				con.close();
+			} catch (Exception e2) {
+				Logger.writeLogException(e2, e2.getMessage(), "CategoryDAO");
+			}
 		}
+		
 		return catecode;
 		// return data;
 	}
 
-	public static void main(String[] args) throws Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new CategoryDAO().categoryNameList()));
-	}
-
-	public ResultSet manageCatUser(String data) throws SQLException {
+	public ResultSet manageCatUser(String data){
 		CallableStatement clstm = null; /* Statement for Query Data from DBMS */
 		ResultSet rs = null; /* rs stores all records of query */
 		try {
@@ -246,11 +316,14 @@ public class CategoryDAO {
 										 */
 			return rs;
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} /*
-			 * finally { // Close stm, rs and con clstm.close(); // rs.close();
-			 * //con.close(); }
-			 */
+			Logger.writeLogException(e, e.getMessage(), "CategoryDAO");
+		}finally {
+			try {
+				con.close();
+			} catch (Exception e2) {
+				Logger.writeLogException(e2, e2.getMessage(), "CategoryDAO");
+			}
+		}
 
 		return null; /* Return null if error */
 	}

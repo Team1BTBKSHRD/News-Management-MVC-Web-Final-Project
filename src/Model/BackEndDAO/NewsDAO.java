@@ -533,6 +533,36 @@ try {
 			}
 			return null;
 		}
+		
+		/*sarin showAtricleAdmin*/
+		public ResultSet showArticleAdmin(String full_name, String cate_code,String news_date) {
+			PreparedStatement pstm = null; /* Statement for Query Data from DBMS */
+			try {
+				//pstm = con.prepareStatement("SELECT * FROM b_vw_news_scrape where full_name like ? and cat_code like ? ");
+				 pstm=con.prepareCall("{call s_admin_approving_news(?,?,?)}");				 
+				pstm.setString(1, "%"+cate_code+"%");
+				pstm.setString(2, "%"+full_name+"%");
+				pstm.setString(3, news_date);
+				
+				ResultSet rs = pstm.executeQuery();
+				/*
+				 * int i=0; while(rs.next()){ i++; } System.out.println(i);
+				 * rs.next(); System.out.println(rs.getString(1));
+				 */
+				return rs;
+			} catch (SQLException e) {
+				Logger.writeLogException(e, "showArticlefAdmin", "NewsDAO");
+			}finally {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					Logger.writeLogException(e, "Connection", "NewsDAO");
+				}
+			}
+			return null;
+		}
+		
 		public static void main(String[] args) throws Exception {
 			try {
 				//PreparedStatement clstm=DatabaseConnection.getConnection().prepareCall("{call s_admin_statistic_count_yearly_test(?)}");
@@ -547,4 +577,5 @@ try {
 			}
 			
 		}
+		
 }// End of class;

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Controller.FrontEnd.Home.*;
+import Controller.FrontEnd.News.ListArticleAdmin;
 import Controller.FrontEnd.News.ListNews;
 import Controller.FrontEnd.News.countNews;
 import Controller.FrontEnd.News.filterstatisticviewByAccount;
@@ -220,6 +221,13 @@ public class JsonController extends HttpServlet {
 		// sarin edit user status 
 		case "/Admin/editUserstatus.json":
 			action = new EditStatus();
+
+			break;
+		
+			/*sarin listArticleAdmin.json */
+		case "/Admin/listArticleAdmin.json":
+
+			action = new ListArticleAdmin();
 
 			break;
 
