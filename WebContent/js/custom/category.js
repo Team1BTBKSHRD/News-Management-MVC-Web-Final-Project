@@ -109,14 +109,17 @@ $.post("showNewsCategoryTop.json", {c_code:window.location.search.substr(4)},
 		"</div>"+
 		"</a>";*/
 		left+=
-		"<div class='item img-slider-items'>"+
+			"<div class='item'>"+		
+			"<div class='owl-image' style='background-image: url("+ getBigImage(data[i].news_img) +")'></div>"+
+			"<p class='news-title-background clear-margin-bottom'>"+data[i].news_desc+"</p>"+
+			"</div>";
+		/*"<div class='item img-slider-items'>"+
 		"<img src='"+getBigImage(data[i].news_img)+"' alt='item slider'>"+
-		"<div class='news-title-background'>"+			
-				"<div class='owl-news-title'>"+
-					"<p class='text-5 clear-margin-bottom'>"+data[i].news_desc+"</p>"+
-				"</div>"+			
-		"</div>"+
-		"</div>";
+		"<p class='text-5 news-title-background clear-margin-bottom'>"+data[i].news_desc+"</p>"+
+		"</div>";*/
+		
+
+		
 		right+=
 	        "<div class='cate-title' id='"+ data[i].news_id +"'>"+
 	        "<a href='"+data[i].news_path+"' class='text-h5-2'  target='_blank'>"+
