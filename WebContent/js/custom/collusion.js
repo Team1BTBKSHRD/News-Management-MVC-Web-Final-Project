@@ -16,13 +16,27 @@ function collision($div1, $div2) {
     return true;
 }
 $(window).on("scroll", function () {
-    var s = collision($('.category-btn'), $('.footer'));
+    var s = collision($('#btn-show'), $('.footer'));
     if (s == true) {
-        $('.category-btn').addClass('collision-btn');
+        $('.category-btn').css("display","none");
     }
 });
-$('#btn-home').click(function(){
+/*$('#btn-home').click(function(){
     setTimeout(function(){
         $('.category-btn').removeClass('collision-btn');
     },300);
+});*/
+
+$('#btn-show').click(function(){
+    var temp = $(this).children("i").attr("class");
+    var show = "fa fa-caret-square-o-right";
+    var hide = "fa fa-caret-square-o-left";
+    if(temp == show) {
+        $('#btn-show').children("i").attr("class", "fa fa-caret-square-o-left");
+        $('.category-icon').animate({left: "0"}, 500);
+    }
+    else if(temp == hide){
+        $('#btn-show').children("i").attr("class", "fa fa-caret-square-o-right");
+        $('.category-icon').animate({left: "-32px"}, 500);
+    }
 });

@@ -87,7 +87,6 @@
 				<div class="panel-body" id="panelBody_tech"></div>
 				<!-- End of panel body -->
 			</div>
-
 			<div class="panel panel-primary" id="sportnews-scroll">
 				<div class="panel-heading">
 					<a href="category?id=B020201"><h3 class="panel-title"
@@ -128,7 +127,6 @@
 				<div class="panel-body" id="panelBody_knowledge"></div>
 				<!-- End of panel body -->
 			</div>
-
 			<div class="panel panel-primary" id="socialnews-scroll">
 				<div class="panel-heading">
 					<a href="category?id=B030102"><h3 class="panel-title"
@@ -169,7 +167,6 @@
 				<div class="panel-body" id="panelBody_economy"></div>
 				<!-- End of panel body -->
 			</div>
-
 			<div class="panel panel-primary" id="entertainmentnews-scroll">
 				<div class="panel-heading">
 					<a href="category?id=B020302"><h3 class="panel-title"
@@ -189,9 +186,7 @@
 				</div>
 				<div class="panel-body" id="panelBody_entertainment"></div>
 				<!-- End of panel body -->
-
 			</div>
-
 			<div class="panel panel-primary" id="lifeandjobsnews-scroll">
 				<div class="panel-heading">
 					<a href="#"><h3 class="panel-title" id="title-panel">ជីវិត
@@ -212,7 +207,6 @@
 				</div>
 				<div class="panel-body" id="panelBody_lifeandjob"></div>
 				<!-- End of panel body -->
-
 			</div>
 			<!-- end news sections -->
 		</div>
@@ -226,7 +220,6 @@
 	<jsp:include page="layouts/footer.jsp" />
 	<!-- end footer -->
 	<!-- #####################javascript#################### -->
-	​​
 	<!-- lib js -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.cookie.js"></script>
@@ -241,7 +234,5 @@
 	<script src="js/custom/default.js"></script>
 	<script src="js/custom/collusion.js"></script>
 	<!-- end custom js -->
-	<!-- #####################end javascript#################### -->
-	​​
-</body>
+	<!-- #####################end javascript#################### --></body>
 </html>
