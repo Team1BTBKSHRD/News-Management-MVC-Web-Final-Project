@@ -1060,3 +1060,6 @@ ul.nav.navbar-nav.navbar-right li a{
 iframe{
 	width: 80% ! important;
 }
+.navbar-fixed-top .navbar-collapse{
+	max-height: none; 
+}
