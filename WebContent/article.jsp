@@ -32,12 +32,12 @@
           <div class="panel panel-primary clear-margins">
             <!-- article header-->
             <div class="slider-content-area">
-              <img src="${rs.getString(9)}" height="300px" width="100%"
+              <img src='${rs.getString("news_img")}' height="300px" width="100%"
                 alt="Mirror Edge">
               <div class="news-title-block">
                 <div class="myclear"></div>
                 <div class="news-title">
-                  <h4 class="article-name">${rs.getString(5)}</h4>
+                  <h4 class="article-name">${rs.getString("news_title")}</h4>
                 </div>
               </div>
             </div>
@@ -51,12 +51,12 @@
                     <!-- news publish date -->
                     <p class="col-sm-6 article-info pull-left">
                       <strong >ចេញផ្សាយ 
-                      <kbd><time>${rs.getString(10)}</time></kbd>
+                      <kbd><time>${rs.getString("news_title")}</time></kbd>
                       </strong> 
                     </p>
                     <!-- news category -->
                     <p class="col-sm-6 article-info pull-right" style="text-align: right;">
-                      <strong>ប្រភេទព័ត៌មាន<kbd>${rs.getString(17)}</kbd> </strong>
+                      <strong>ប្រភេទព័ត៌មាន<kbd>${rs.getString("c")}</kbd> </strong>
                     </p>
                     <div class="clear-fix"></div>
                   </div>
@@ -64,7 +64,7 @@
                   <hr style="margin-top: 5px">
                   <!-- paragraph -->
                   <div class="col-sm-12 clear-margin-bottom news-content">
-					${rs.getString(2)}
+					${rs.getString("news_content")}
                   </div>
                   <!-- end paragraph -->
                 </div>
@@ -72,7 +72,7 @@
               <!-- news author -->
               <div class="col-sm-12">
                 <hr>
-               	<strong>បញ្ខូលអត្ថបទដោយ៖ </strong><kbd>${rs.getString(18)}</kbd>
+               	<strong>បញ្ខូលអត្ថបទដោយ៖ </strong><kbd>${rs.getString("ui")}</kbd>
               </div>
             </div>
             <!-- end article body -->
