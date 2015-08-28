@@ -1,36 +1,26 @@
 .panel-body{
   padding-right: 15px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 .card-1{
-	margin-right: 0px;
+	margin-right: 0;
 }
 #owl-demo .item .owl-image {
 	display: block;
 	height: 265px !important;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 4px;
 	border-radius: 4px;
-	background-color: #fff;
-	height: 265px;
 	width: 100%;
-	-ms-background-position-x: center;
-	-ms-background-position-y: bottom;
-	background-position: center bottom;
 	background-size: cover;
-	-ms-behavior: url(backgroundsize.min.htc);
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
-	background-position: top;
+	background: #fff top;
 }
 
 #owl-demo .item .news-title-background {
 	background-color: black;
 	opacity: 0.90;
 	position: absolute;
-	bottom: 0%;
+	bottom: 0;
 	color: white;
     padding: 15px;
     font-size: 1.2em;

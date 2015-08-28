@@ -1,28 +1,22 @@
 /* Load Time Drop */
-$.post("sourcelistwithcode.json", function(data) {
-	$("#lstnewsources").html(listSource(data));
-});
-$.post("categorylistwithcode.json", function(data) {
-	$("#lstcategory").html(listCategory(data));
-});
-/* list Category Drop */
-function listCategory(data) {
-	var str = "<li id=''><a href=#>ប្រភេទព័ត៌មានទូទៅ</a></li>";
-	for (var i = 0; i < data.length; i++) {
-		str += "<li id=" + data[i].cat_code + "><a href=#>" + data[i].cat_name
-				+ "</a></li>";
-	}
-	return str;
-}
-/* list Source Drop */
-function listSource(data) {
+$.post("sourcelistwithcode.json", function(data) {	
 	var str = "<li id=''><a href=#>ប្រភពព័ត៌មានទូទៅ</a></li>";
 	for (var i = 0; i < data.length; i++) {
 		str += "<li id=" + data[i].user_info_code + "><a href=#>"
 				+ data[i].full_name.toUpperCase() + "</a></li>";
 	}
 	return str;
-}
+	$("#lstnewsources").html(listSource(str));
+});
+$.post("categorylistwithcode.json", function(data) {
+	var str = "<li id=''><a href=#>ប្រភេទព័ត៌មានទូទៅ</a></li>";
+	for (var i = 0; i < data.length; i++) {
+		str += "<li id=" + data[i].cat_code + "><a href=#>" + data[i].cat_name
+				+ "</a></li>";
+	}
+	return str;
+	$("#lstcategory").html(listCategory(str));
+});
 /* function add popular */
 // ###################################select value drop down
 $('body').on('click', '#lstnewsources li', function() {
@@ -105,6 +99,13 @@ function getResult(pageNumber) {
 					//	$('.search-result-wrapper').html("");
 					});
 }
+$('body').on('click', '.previous', function() {
+	getResult(pageNumber -= countItems);
+});
+$('body').on('click', '.next', function() {
+	getResult(pageNumber += countItems);
+});
+
 $('body').on('click ', '#btnSubmit', function() {
 	pageNumber = 0;
 	if ($('#txtsearch-input').val() != '')
@@ -115,11 +116,5 @@ $('body').on('click ', '#btnSubmit', function() {
 });
 $('#txtsearch-input').keypress(function(e) {
 	if (e.which == 13)	$("#btnSubmit").trigger("click");
-});
-$('body').on('click', '.previous', function() {
-	getResult(pageNumber -= countItems);
-});
-$('body').on('click', '.next', function() {
-	getResult(pageNumber += countItems);
 });
 $("#btnSubmit").trigger("click");

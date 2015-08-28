@@ -128,11 +128,11 @@ body {
     height: 50px;
 	width: 64px;
 	border-radius: 2px;
-	-ms-background-position-x: center;
+/*	-ms-background-position-x: center;
 	-ms-background-position-y: bottom;
-	background-position: center bottom;
+	background-position: center bottom;*/
 	background-size: cover;
-	-ms-behavior: url(backgroundsize.min.htc);
+
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
 	background-position: top;
@@ -413,11 +413,7 @@ button.btn-sm {
 .card-1-image{
 	height: 153px;
 	width: 100%;
-	-ms-background-position-x: center;
-	-ms-background-position-y: bottom;
-	background-position: center bottom;
 	background-size: cover;
-	-ms-behavior: url(backgroundsize.min.htc);
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
 	background-position: top;
@@ -425,11 +421,7 @@ button.btn-sm {
 .card-2-image{
 	height: 85px;
 	width: 100%;
-	-ms-background-position-x: center;
-	-ms-background-position-y: bottom;
-	background-position: center bottom;
 	background-size: cover;
-	-ms-behavior: url(backgroundsize.min.htc);
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
 	background-position: top;
