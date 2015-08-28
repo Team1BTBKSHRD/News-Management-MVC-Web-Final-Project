@@ -1,5 +1,6 @@
 .panel-body{
   padding-right: 15px;
+  padding-bottom: 0px;
 }
 .card-1{
 	margin-right: 0px;
@@ -45,4 +46,7 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+}
+.pager {
+	margin: 15px;
 }

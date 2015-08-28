@@ -85,8 +85,8 @@ function getResult(pageNumber) {
 										+ "</div><div class='clearfix'></div></a></div><hr/>";
 							}
 							str += "<ul class='pager clear-padding-right'>"
-									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ទំព័រក្រោយ</a></li>"
-									+ "<li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័របន្ទាប់</a></li>"
+									+ "<li class='previous'><a href='#' class='btn btn-lg btn-primary'>ទំព័រមុខ</a></li>"
+									+ "<li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័រក្រោយ​</a></li>"
 									+ "</ul>";
 							$('.search-result-wrapper').html(str);
 							if (data.length < countItems) {

@@ -57,8 +57,8 @@
 				  <c:choose>
             <c:when test="${rs.rowCount==15}">
                 <ul class='pager clear-padding-right'>
-                  <li class='previous'><a href='#' class='btn btn-lg btn-primary' disabled>ទំព័រក្រោយ</a></li>
-                  <li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័របន្ទាប់</a></li>
+                  <li class='previous'><a href='#' class='btn btn-lg btn-primary' disabled>ទំព័រមុខ</a></li>
+                  <li class='next'><a href='#' class='btn btn-lg btn-primary'>ទំព័រក្រោយ</a></li>
                 </ul>
             </c:when>
           </c:choose>
