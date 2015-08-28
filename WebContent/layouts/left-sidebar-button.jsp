@@ -13,5 +13,4 @@
         <a id="btn-EntertainmentNews"><i class="glyphicon glyphicon-sunglasses"></i></a>
         <a id="btn-LifeAndJobs"><i class="fa fa-briefcase"></i></a>
     </div>
-    <a id="btn-show"><i class="fa fa-caret-square-o-right"></i></a>
 </div>

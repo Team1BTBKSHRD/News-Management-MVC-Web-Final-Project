@@ -33,7 +33,8 @@
 	color: white;
     padding: 15px;
     font-size: 1.2em;
-    height: 88px;    
+    height: 88px; 
+    width: 100% !important;   
 }
 
 .owl-desc{

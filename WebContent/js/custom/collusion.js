@@ -18,25 +18,38 @@ function collision($div1, $div2) {
 $(window).on("scroll", function () {
     var s = collision($('#btn-show'), $('.footer'));
     if (s == true) {
-        $('.category-btn').css("display","none");
+        /*$('.category-btn').css("display", "none");*/
     }
 });
+var test = true;
+$(window).on("scroll", function () {
+    if(test == false){
+        $('.category-icon').animate({left: "-32px"}, 500);
+        $('#btn-show').children("i").attr("class", "fa fa-caret-square-o-right");
+    }
+    test = true;
+});
 /*$('#btn-home').click(function(){
-    setTimeout(function(){
-        $('.category-btn').removeClass('collision-btn');
-    },300);
-});*/
-
-$('#btn-show').click(function(){
+ setTimeout(function(){
+ $('.category-btn').removeClass('collision-btn');
+ },300);
+ });*/
+$('#btn-show').click(function () {
+    test = false;
     var temp = $(this).children("i").attr("class");
     var show = "fa fa-caret-square-o-right";
     var hide = "fa fa-caret-square-o-left";
-    if(temp == show) {
+    if (temp == show) {
         $('#btn-show').children("i").attr("class", "fa fa-caret-square-o-left");
-        $('.category-icon').animate({left: "0"}, 500);
+        $('.category-icon').animate({left: "-2px"}, 500);
+        $('#bs-example-navbar-collapse-2').removeClass("in");
     }
-    else if(temp == hide){
+    else if (temp == hide) {
         $('#btn-show').children("i").attr("class", "fa fa-caret-square-o-right");
         $('.category-icon').animate({left: "-32px"}, 500);
     }
+});
+$('.navbar-toggle').click(function(){
+    $('#btn-show').children("i").attr("class", "fa fa-caret-square-o-right");
+    $('.category-icon').animate({left: "-32px"}, 500);
 });
