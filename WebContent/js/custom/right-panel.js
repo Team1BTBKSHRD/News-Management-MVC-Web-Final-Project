@@ -20,9 +20,8 @@ $
 						str += "<a href='"
 								+ news[i].news_path
 								+ "' class='list-group-item  clear-paddings' target='_blank' id='"
-								+ news[i].news_id + "'>" + "<img src='"
-								+ news[i].news_img
-								+ "' height='50px' width='64px'>"
+								+ news[i].news_id + "'>"
+								+ "<div style='background-image: url("+ news[i].news_img+"), url(img/404.jpg)'></div>"
 								+ "<h6 class='text-h6-2 article-title'>"
 								+ news[i].news_title + "</h6>" + "</a>";
 					}					
@@ -35,13 +34,12 @@ $
 			var str = "";					
 			for (var i = 0; i < news.length; i++) {
 				str += "<a href='"
-						+ news[i].news_path
-						+ "' class='list-group-item  clear-paddings' target='_blank' id='"
-						+ news[i].news_id + "'>" + "<img src='"
-						+ news[i].news_img
-						+ "' height='50px' width='64px'>"
-						+ "<h6 class='text-h6-2 article-title'>"
-						+ news[i].news_title + "</h6>" + "</a>";
+					+ news[i].news_path
+					+ "' class='list-group-item  clear-paddings' target='_blank' id='"
+					+ news[i].news_id + "'>"
+					+ "<div style='background-image: url("+ news[i].news_img+"), url(img/404.jpg)'></div>"
+					+ "<h6 class='text-h6-2 article-title'>"
+					+ news[i].news_title + "</h6>" + "</a>";
 			}					
 			$('#panel-body-recommend').html(str);
 		});

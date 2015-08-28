@@ -9,8 +9,8 @@
 }
 
 .news-title {
-	background-color: rgba(0, 0, 0, 0.65);
-	padding: 0.8%;
+	background-color: black;
+	padding: 0.9%;
 	border-radius: 4px;
 	text-align: center;
 }
@@ -30,6 +30,26 @@
 	display: inline-block;
 }
 .news-content p img{
-	width:700px;
-	margin:0 auto;
+	display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+.news-content p{
+	line-height: 30px !important;
+	font-family: Arial, sans-serif, 'NotoSansKhmer', serif !important;
+}
+.news-image {
+	border-radius: 4px;
+	background-color: #fff;
+	height: 300px;
+	width: 100%;
+	-ms-background-position-x: center;
+	-ms-background-position-y: bottom;
+	background-position: center bottom;
+	background-size: cover;
+	-ms-behavior: url(backgroundsize.min.htc);
+	-ms-background-position-x: center;
+	-ms-background-position-y: center;
+	background-position: top;
 }

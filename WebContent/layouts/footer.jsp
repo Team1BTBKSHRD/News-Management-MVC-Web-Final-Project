@@ -47,6 +47,6 @@ phirum.gm@gmail.com
     margin-left: 0px;
 "><p>Copyright © 2015
         <img src="img/logohrd.png" width="30px" />
-        <a href="http://www.kshrd.com.kh/jsp/index.hrd">KSHRD</a>
+        <a href="http://www.kshrd.com.kh/jsp/index.hrd" style='color: white;'>KSHRD</a>
       </p></div>
   </div>

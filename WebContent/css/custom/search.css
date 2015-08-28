@@ -1,6 +1,7 @@
 .search-result-wrapper {
 	margin-left: 0;
 	margin-right: 0;
+	padding-top: 15px;
 }
 
 .search-result-wrapper .search-result-count {
@@ -61,7 +62,19 @@
 #news-result-search {
 	padding-left: 0.5em;
 }
-
+.search-result-image{
+    height: 127px;
+    width: 100%;
+    -ms-background-position-x: center;
+    -ms-background-position-y: bottom;
+    background-position: center bottom;
+    background-size: cover;
+    -ms-behavior: url(backgroundsize.min.htc);
+    -ms-background-position-x: center;
+    -ms-background-position-y: center;
+    background-position: top;
+}
+    
 /* Responsive screen */
 @media ( max-width : 1200px) {
 	.search-wrapper input {

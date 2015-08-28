@@ -32,8 +32,7 @@
           <div class="panel panel-primary clear-margins">
             <!-- article header-->
             <div class="slider-content-area">
-              <img src='${rs.getString("news_img")}' height="300px" width="100%"
-                alt="Mirror Edge">
+            <div class="news-image" style='background-image: url(${rs.getString("news_img")}),  url(img/404.jpg)'></div>
               <div class="news-title-block">
                 <div class="myclear"></div>
                 <div class="news-title">
@@ -43,7 +42,7 @@
             </div>
             <!-- end article header-->
             <!-- article body -->
-            <div class="panel-body" style="margin-bottom: 15px;">
+            <div class="panel-body" style="margin-bottom: 30px;">
               <div class="card card-grey">
                 <div class="row card-header card-news clear-paddings clear-margins">
                   <!-- news-detail -->
@@ -70,9 +69,9 @@
                 </div>
               </div>
               <!-- news author -->
-              <div class="col-sm-12">
+              <div class="col-sm-12" style='margin-bottom:15px'>
                 <hr>
-               	<strong>បញ្ខូលអត្ថបទដោយ៖ </strong><kbd>${rs.getString("ui")}</kbd>
+               	<strong>អត្ថបទដោយ៖ </strong><kbd>${rs.getString("ui")}</kbd>
               </div>
             </div>
             <!-- end article body -->

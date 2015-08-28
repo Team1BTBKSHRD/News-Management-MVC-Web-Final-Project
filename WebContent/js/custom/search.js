@@ -63,14 +63,12 @@ function getResult(pageNumber) {
 							var str = "";
 							for (var i = 0; i < data.length; i++) {
 								if(data[i].news_path=='')	data[i].news_path = 'article?id=' + data[i].news_id;
-								str += "<div class='col-sm-12 search-result'><a href='"
+								str += "<div class='col-sm-12 search-result clear-paddings'><a href='"
 										+ data[i].news_path
 										+ "' target='_blank'>"
 										+ "<div class='col-md-3 col-sm-3 col-xs-3 clear-paddings'>"
-										+ "<img src='"
-										+ data[i].news_img
-										+ "' class='col-md-12 col-sm-12 col-xs-12 clear-paddings'"
-										+ "height='119.5px' id='img-1'></div>"
+										+ "<div class='search-result-image' style='background-image: url(" + data[i].news_img+ "), url(img/404.jpg);'></div>"
+										+ "</div>"
 										+ "<div class='col-md-9 col-sm-9 col-xs-9 clear-padding-right'>"
 										+ "<h5 class='article-name clear-margin-top text-h5-1'>"
 										+ data[i].news_title

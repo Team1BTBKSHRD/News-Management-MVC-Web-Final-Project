@@ -39,7 +39,7 @@ function getResult(pageNumber) {
 										+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
 										+ "<div class='card-1-image' style='background-image: url("
 										+ news[i].news_img
-										+ ");' alt='item slider'></div>"
+										+ "), url(img/404.jpg);' alt='item slider'></div>"
 										+ "</div>"
 										+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>"
 										+ "<h5 class='text-h5-2 article-title' id='title-1'>"
@@ -106,7 +106,7 @@ $.post("showNewsCategoryTop.json", {
 			data[i].news_path = 'article?id=' + data[i].news_id;
 		left += "<div class='item'>"
 				+ "<div class='owl-image' style='background-image: url("
-				+ getBigImage(data[i].news_img) + ")'></div>"
+				+ getBigImage(data[i].news_img) + "), url(img/404.jpg)'></div>"
 				+ "<div class='news-title-background'><p class='owl-desc clear-margin-bottom'>"
 				+ data[i].news_desc +"</p></div>" + "</div>";		
 		right += "<div class='cate-title' id='" + data[i].news_id + "'>"

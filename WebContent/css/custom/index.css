@@ -123,13 +123,23 @@ body {
     padding-left: 7px;
 }
 
-.list-group-item img {
+.list-group-item div {
     float: left;
+    height: 50px;
+	width: 64px;
+	border-radius: 2px;
+	-ms-background-position-x: center;
+	-ms-background-position-y: bottom;
+	background-position: center bottom;
+	background-size: cover;
+	-ms-behavior: url(backgroundsize.min.htc);
+	-ms-background-position-x: center;
+	-ms-background-position-y: center;
+	background-position: top;
 }
 
 button.btn-sm {
     /* width: 100px; */
-
 }
 
 /*#####################################background color class */
@@ -410,13 +420,7 @@ button.btn-sm {
 	-ms-behavior: url(backgroundsize.min.htc);
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
-	background-position: center center;
-}
-.card-1-image-404{
-    height: 153px;
-    z-index: -1;
-    width: 100%;
-    position: absolute;
+	background-position: top;
 }
 .card-2-image{
 	height: 85px;
@@ -428,7 +432,7 @@ button.btn-sm {
 	-ms-behavior: url(backgroundsize.min.htc);
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
-	background-position: center center;
+	background-position: top;
 }
 .card-2 {
     width: 48.85%;

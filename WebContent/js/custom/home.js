@@ -1,3 +1,37 @@
+//###################################slider
+var owl = $("#owl-demo"), i = 0, textholder, booleanValue = false;
+owl.owlCarousel({
+	// //Set AutoPlay to 3 seconds
+	autoPlay : 6000,
+	loop : true,
+	pagination : false,
+	slideSpeed : 300,
+	items : 1,
+	responsive : true,
+	responsiveRefreshRate : 200,
+	responsiveBaseWidth : window,
+	itemsDesktop : [ 1199, 1 ],
+	itemsDesktopSmall : [ 979, 1 ],
+	itemsTablet : [ 750, 1 ]
+});
+$.post("recentnews.json", function(data) {
+	var allItem = "";
+	for ( var i in data) {
+		if(data[i].news_path=='') data[i].news_path = 'article?id=' + data[i].news_id;
+		allItem += "<div class='item clear-margins'> " 
+				+ "<div class='owl-image' style='background-image: url(" + getBigImage(data[i].news_img)+ "), url(img/404.jpg);' alt='item slider'></div>"
+				+ "<div class='news-title-background' id='"+ data[i].news_id +"'>" + "<a href='"
+				+ data[i].news_path + "' target='_blank'>"
+				+ "<div class='owl-news-title'>"
+				+ "<h5 class='text-h5-2-slider clear-margin-top'>"
+				+ data[i].news_title + "</h5>"
+				+ "<p class='text-5 clear-margin-bottom'>" + data[i].news_desc
+				+ "</p>" + "</div>" + "<div class='owl-news-source'>"
+				+ "<strong>ប្រភពពត័មាន <kbd>" + data[i].full_name
+				+ "</kbd></strong>" + "</div>" + "</a>" + "</div>" + "</div>";
+	}
+	owl.data('owlCarousel').addItem(allItem);
+});
 //###################################header
 $('#hdhome').attr("class","active");
 //###################################side-bar-left
@@ -130,7 +164,7 @@ function setData(code, time_limit, element) {
 						var data = "<div class='card-1' id='" + news[0].news_id + "'>"
 								+ "<a href='"+ news[0].news_path +"' target='_blank' id='link-1'>"
 								+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
-								+ "<div class='card-1-image' style='background-image: url(" + news[0].news_img + ");' alt='item slider'></div>"
+								+ "<div class='card-1-image' style='background-image: url(" + news[0].news_img + "), url(img/404.jpg);' alt='item slider'></div>"
 								+ "</div>"
 								+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details pull-right '>"
 								+ "<h5 class='text-h5-2 article-title' id='title-1'>"
@@ -157,7 +191,7 @@ function setData(code, time_limit, element) {
 									+ news[i].news_path
 									+ "' target='_blank' id='link-2'>"
 									+ "<div class='col-md-4 col-sm-4 col-xs-4 clear-paddings'>"
-									+ "<div class='card-2-image' style='background-image: url(" + news[i].news_img + ");' alt='item slider'></div>"
+									+ "<div class='card-2-image' style='background-image: url(" + news[i].news_img + "), url(img/404.jpg);' alt='item slider'></div>"
 									+ "</div>"
 									+ "<div class='col-md-8 col-sm-8 col-xs-8 card-details'>"
 									+ "<h6 class='text-h6-2 article-title' id='title-2'>"
@@ -175,37 +209,3 @@ function setData(code, time_limit, element) {
 						$(element).html(data);
 					});
 }
-//###################################slider
-var owl = $("#owl-demo"), i = 0, textholder, booleanValue = false;
-owl.owlCarousel({
-	// //Set AutoPlay to 3 seconds
-	autoPlay : 6000,
-	loop : true,
-	pagination : false,
-	slideSpeed : 300,
-	items : 1,
-	responsive : true,
-	responsiveRefreshRate : 200,
-	responsiveBaseWidth : window,
-	itemsDesktop : [ 1199, 1 ],
-	itemsDesktopSmall : [ 979, 1 ],
-	itemsTablet : [ 750, 1 ]
-});
-$.post("recentnews.json", function(data) {
-	var allItem = "";
-	for ( var i in data) {
-		if(data[i].news_path=='') data[i].news_path = 'article?id=' + data[i].news_id;
-		allItem += "<div class='item clear-margins'> " 
-				+ "<div class='owl-image' style='background-image: url(" + getBigImage(data[i].news_img)+ ");' alt='item slider'></div>"
-				+ "<div class='news-title-background' id='"+ data[i].news_id +"'>" + "<a href='"
-				+ data[i].news_path + "' target='_blank'>"
-				+ "<div class='owl-news-title'>"
-				+ "<h5 class='text-h5-2-slider clear-margin-top'>"
-				+ data[i].news_title + "</h5>"
-				+ "<p class='text-5 clear-margin-bottom'>" + data[i].news_desc
-				+ "</p>" + "</div>" + "<div class='owl-news-source'>"
-				+ "<strong>ប្រភពពត័មាន <kbd>" + data[i].full_name
-				+ "</kbd></strong>" + "</div>" + "</a>" + "</div>" + "</div>";
-	}
-	owl.data('owlCarousel').addItem(allItem);
-});

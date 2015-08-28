@@ -5,3 +5,9 @@ function getBigImage(link){
 		return link.replace(/w=\d\d\d&h=\d\d\d/, "");
 	return link;
 }
+
+/*$(document).ready(function() {
+    $("body").on("contextmenu",function(){
+       return false;
+    }); 
+});*/
