@@ -55,7 +55,36 @@ public class JsoupDAO {
 		}
 		return false;
 	}
+	
+	public boolean updateJob(ArrayList<jobDTO> alistjdto) {
+		java.sql.PreparedStatement pstm = null;
+		try {
+			pstm = con
+					.prepareStatement("update tbmyjob set title=?,company=?,close_date=?,category=?,link=? where id=?");
+			int i=0;
+			for (jobDTO jobDTO : alistjdto) {
+				pstm.setString(1, jobDTO.getTitle());
+				pstm.setString(2, jobDTO.getCompany());
+				pstm.setString(3, jobDTO.getCloseDate());
+				pstm.setString(4, jobDTO.getCategory());
+				pstm.setString(5, jobDTO.getLink());
+				pstm.setInt(6, i++);
+				pstm.executeUpdate();
+			}
+			return true;
+		} catch (Exception e) {
 
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
 	public ResultSet retrievJobs() {
 		try {
 			Statement stm = con.createStatement();
@@ -114,6 +143,38 @@ public class JsoupDAO {
 		}
 		return null;
 	}
+	
+	public boolean updateScholarship(ArrayList<scholarshipDTO> asdto) {
+		java.sql.PreparedStatement pstm = null;
+		try {
+			pstm = con.prepareStatement(
+					"update tbscholarship set title=?,description=?,posted=?,deadline=?,link=? where id=?");
+			int i=0;
+			for (scholarshipDTO scholarshipDTO : asdto) {
+				pstm.setString(1, scholarshipDTO.getTitle());
+				pstm.setString(2, scholarshipDTO.getDescription());
+				pstm.setString(3, scholarshipDTO.getPosted());
+				pstm.setString(4, scholarshipDTO.getDeadline());
+				pstm.setString(5, scholarshipDTO.getLink());
+				pstm.setInt(6, 60+i);
+				pstm.executeUpdate();
+				i++;
+			}
+			return true;
+		} catch (Exception e) {
+
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
+	
 	public boolean insertExchange(ArrayList<exchangeRateDTO> e) {
 		java.sql.PreparedStatement pstm = null;
 		try {

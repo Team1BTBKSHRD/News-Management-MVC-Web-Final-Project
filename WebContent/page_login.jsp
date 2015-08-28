@@ -72,7 +72,7 @@ body.signin {
 		}, function(data,status) {
 			if(data!=null){
 				//$.session("admin",data);
-				window.open("/articleManagement/Admin/index.jsp","_self");
+				window.open("Admin/index.jsp","_self");
 				
 			}
 		});

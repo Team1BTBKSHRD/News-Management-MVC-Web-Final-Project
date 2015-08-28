@@ -36,4 +36,7 @@ public class scrapeExchange {
 		}
 		return false;
 	}
+	public static void main(String[] args) {
+		System.out.println(new scrapeExchange().scrapingExchange());
+	}
 }

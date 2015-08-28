@@ -148,7 +148,7 @@ input[type=file] {
 												class="btn btn-primary mr5 btn-file"> Browse ... <input
 													type="file" name="dataFile" id="file_image" />
 											</span> -->
-											<input type="submit" class="btn btn-primary mr5"
+											<input type="button" class="btn btn-primary mr5"
 												id="update_profile" value="Update"> <input
 												type="button" class="btn btn-danger mr5" id="cancle"
 												value="Cancle">

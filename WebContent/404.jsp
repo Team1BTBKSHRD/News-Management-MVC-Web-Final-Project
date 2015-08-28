@@ -36,7 +36,8 @@
 	<!-- end footer -->	
 	<script type="text/javascript">
 	setTimeout(function() { 
-	    window.location.href = "home"; 
+	    window.location.href = "/articleManagement/";
+	    
 	 }, 2000);
 	</script>​​
 </body>
