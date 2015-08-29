@@ -48,7 +48,7 @@ public class NewsDAO {
 		}
 	}
 
-	static {
+	public void Load() {
 		try {
 			System.err.println(new scrapeJob().updatescrapingJob());
 			System.err.println(new scrapeScholarship().updatescrapingScholarshipe());
@@ -82,10 +82,10 @@ public class NewsDAO {
 			pstm.setString(5, news.getNews_path());
 			pstm.setString(6, news.getNews_img());
 			pstm.setString(7, news.getNews_date());
-
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return pstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
@@ -96,7 +96,9 @@ public class NewsDAO {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		}
+		
 		return false; /* return false if insert unsuccessful */
 	}
 
@@ -129,6 +131,7 @@ public class NewsDAO {
 				e.printStackTrace();
 			}
 		}
+		
 		return false; /* return false if insert unsuccessful */
 	}
 
@@ -154,10 +157,10 @@ public class NewsDAO {
 			pstm.setString(6, news.getNews_img());
 			pstm.setString(7, news.getNews_date());
 			pstm.setInt(8, news.getNews_id());
-
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return pstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
@@ -170,6 +173,7 @@ public class NewsDAO {
 			}
 
 		}
+		
 		return false; /* return false if update unsuccessful */
 	}
 
@@ -196,9 +200,9 @@ public class NewsDAO {
 						rs.getString("news_title"), rs.getString("news_desc"), rs.getString("news_path"),
 						rs.getString("news_img"), rs.getString("news_date")));
 			}
-
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return news; /* return news object */
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			/* Close stm, rs and con */
@@ -211,6 +215,7 @@ public class NewsDAO {
 				e.printStackTrace();
 			}
 		}
+		
 		return null; /* Return null if error */
 	}
 
@@ -230,8 +235,9 @@ public class NewsDAO {
 															 * rs stores all
 															 * records of query
 															 */
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
@@ -244,6 +250,7 @@ public class NewsDAO {
 		 * finally{ Close stm, rs and con stm.close(); rs.close(); con.close();
 		 * }
 		 */
+		
 		return null; /* Return null if error */
 	}
 
@@ -258,8 +265,9 @@ public class NewsDAO {
 			 * int i=0; while(rs.next()){ i++; } System.out.println(i);
 			 * rs.next(); System.out.println(rs.getString(1));
 			 */
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
@@ -269,6 +277,7 @@ public class NewsDAO {
 				e2.printStackTrace();
 			}
 		}
+		
 		return null;
 	}
 
@@ -283,8 +292,9 @@ public class NewsDAO {
 			 * int i=0; while(rs.next()){ i++; } System.out.println(i);
 			 * rs.next(); System.out.println(rs.getString(1));
 			 */
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			Logger.writeLogException(e, "Show aticle by name", e.getMessage());
 		} finally {
 			try {
@@ -294,6 +304,7 @@ public class NewsDAO {
 			}
 
 		}
+		
 		return null;
 	}
 
@@ -303,8 +314,9 @@ public class NewsDAO {
 		try {
 			clstm = con.prepareCall("{call vw_count_news_cat_user}");
 			ResultSet rs = clstm.executeQuery();
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
@@ -315,7 +327,7 @@ public class NewsDAO {
 				e.printStackTrace();
 			}
 		}
-
+		
 		return null;
 	}
 
@@ -328,8 +340,9 @@ public class NewsDAO {
 			clstm = con.prepareStatement("SELECT user_type,count FROM vw_user_role_count WHERE full_name=?");
 			clstm.setString(1, data);
 			ResultSet rs = clstm.executeQuery();
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
@@ -339,7 +352,7 @@ public class NewsDAO {
 				e2.printStackTrace();
 			}
 		}
-
+		
 		return null;
 	}
 
@@ -350,6 +363,7 @@ public class NewsDAO {
 			clstm.setInt(1, data);
 			ResultSet rs = clstm.executeQuery();
 			rs.next();
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -361,7 +375,7 @@ public class NewsDAO {
 				e2.printStackTrace();
 			}
 		}
-
+		
 		return null;
 	}
 
@@ -401,9 +415,10 @@ public class NewsDAO {
 																							 * records
 																							 * of
 																							 * query
-																							 */
+																						 */
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
@@ -412,7 +427,7 @@ public class NewsDAO {
 				e2.printStackTrace();
 			}
 		}
-
+		
 		return null; /* Return null if error */
 	}
 
@@ -430,8 +445,9 @@ public class NewsDAO {
 			rs = clstm.executeQuery(); /*
 										 * rs stores all records of query
 										 */
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
@@ -459,7 +475,7 @@ public class NewsDAO {
 			if (pstm.executeUpdate() > 0) {
 				return true;
 			}
-
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -499,9 +515,10 @@ public class NewsDAO {
 			cstm.setBoolean(9, news_status);
 			cstm.setString(10, content);
 			// System.out.println(cstm.toString());
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return cstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
@@ -534,8 +551,9 @@ public class NewsDAO {
 			 * int i=0; while(rs.next()){ i++; } System.out.println(i);
 			 * rs.next(); System.out.println(rs.getString(1));
 			 */
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
@@ -571,9 +589,10 @@ public class NewsDAO {
 			cstm.setBoolean(9, draft_status);
 
 			// System.out.println(cstm.toString());
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return cstm.executeUpdate() > 0 ? true
 					: false; /* return true for success and false if fail */
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			/* Close pstm and con */
@@ -611,6 +630,7 @@ public class NewsDAO {
 				break;
 			}
 			pstm1.setString(1, sponsor);
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return pstm1.executeQuery();
 		} catch (Exception e) {
 			// Logger.writeLogException(e, "filterbyTime", "NewsDAO");
@@ -630,6 +650,7 @@ public class NewsDAO {
 		try {
 			pstm = con.prepareCall("{call s_admin_count_click(?)}");
 			pstm.setString(1, sponsor);
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return pstm.executeQuery();
 		} catch (Exception e) {
 			// Logger.writeLogException(e, "filterbyView", "NewsDAO");
@@ -653,6 +674,7 @@ public class NewsDAO {
 		try {
 			pstm = con.prepareCall("{call s_admin_count_click(?)}");
 			pstm.setString(1, sponsor);
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return pstm.executeQuery();
 		} catch (Exception e) {
 			// Logger.writeLogException(e, "filterbyViewAccount", "NewsDAO");
@@ -684,8 +706,9 @@ public class NewsDAO {
 			 * int i=0; while(rs.next()){ i++; } System.out.println(i);
 			 * rs.next(); System.out.println(rs.getString(1));
 			 */
+			System.err.println("Date Time has bean converted : " + new DateConverter().convertStringToSqlDate());
 			return rs;
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			Logger.writeLogException(e, "showArticlefAdmin", "NewsDAO");
 		} finally {
 			try {
