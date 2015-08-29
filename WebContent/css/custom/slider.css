@@ -83,10 +83,8 @@
 	border-radius: 4px;
 	height: 265px;
 	width: 100%;
-	background-size: cover;
 	-ms-background-position-x: center;
 	-ms-background-position-y: center;
-	background: #fff top;
 }
 .owl-carousel, .owl-wrapper-outer{
 	border-radius: 4px;
