@@ -6,7 +6,6 @@
     <title>news box site...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    ​​
     <link rel="shortcut icon" href="img/box.png">
     <!-- lib css -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -20,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="css/custom/category.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap.css"/>
     <!-- end custom css -->
-    ​​
     <style type="text/css">
         #listjob_length, #listjob_info {
             padding-left: 10px;
@@ -30,7 +28,7 @@
 <body>
 <%
     session.removeAttribute("usr");
-%>​​
+%>
 <!-- header -->
 <jsp:include page="layouts/header.jsp"/>
 <!-- end header -->
@@ -85,7 +83,6 @@
 <jsp:include page="layouts/footer.jsp"/>
 <!-- end footer -->
 <!-- #####################javascript#################### -->
-​
 <!-- lib js -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

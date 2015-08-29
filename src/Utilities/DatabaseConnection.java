@@ -7,15 +7,16 @@ public class DatabaseConnection {
 	
 	
 	/*HEROKU Db*/
-	private static String URL = "jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:";
+	/*private static String URL = "jdbc:postgresql://ec2-54-83-58-191.compute-1.amazonaws.com:";
 	private static String DB_NAME = "ddk1idr8ftn2ql";	
 	private static String USER_NAME = "hmmvpnwwetweud";
-	private static String PASSWORD = "843k_9eX2OJRdQA9WNHCgoeq5g";
+	private static String PASSWORD = "843k_9eX2OJRdQA9WNHCgoeq5g";*/
 	
 	/*HRD Db*/
-	//private static String URL = "jdbc:postgresql://192.168.178.155:";
-	//private static String DB_NAME = "newsmanagement";
-	//private static String PASSWORD = "123";
+	private static String URL = "jdbc:postgresql://192.168.178.155:";
+	private static String DB_NAME = "newsmanagement";
+	private static String USER_NAME = "postgres";
+	private static String PASSWORD = "123";
 	
 	/*Local Db*/
 	/*private static String URL = "jdbc:postgresql://localhost:";
