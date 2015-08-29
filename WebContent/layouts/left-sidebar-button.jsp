@@ -3,7 +3,6 @@
 <div class="category-btn">
     <div class="category-icon">
         <a id="btn-home"><i class="fa fa-home"></i></a>
-        <a id="btn-search"><i class="fa fa-search"></i></a>
         <a id="btn-localnews"><i class="fa fa-flag"></i></a>
         <a id="btn-technews"><i class="fa fa-laptop"></i></a>
         <a id="btn-sportnews"><i class="fa fa-futbol-o"></i></a>
