@@ -66,7 +66,7 @@ public class NewsDAO {
 	
 	public ResultSet listNewsCategoryByMonthly(String categoryCode, int limit, int offset){
 		try{
-			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_monthly(?, ?, ?)}");
+			CallableStatement clstm = con.prepareCall("{call s_show_news_category_by_all(?, ?, ?)}");
 			clstm.setString(1, categoryCode);
 			clstm.setInt(2, limit);
 			clstm.setInt(3, offset);
@@ -280,7 +280,7 @@ public class NewsDAO {
 		con.close();
 	}
 	public static void main(String[] args) throws Exception {
-		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().showNewsCategoryTop("B030101")));
+		System.out.println(Convertor.convertResultSetIntoJSON(new NewsDAO().listNewsCategoryByMonthly("B030101",11,0)));
 	}
 	
 }// End of class;

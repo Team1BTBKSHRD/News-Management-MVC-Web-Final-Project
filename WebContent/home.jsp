@@ -239,9 +239,9 @@
 <!-- end lib js -->
 <!-- custom js -->
 <script src="js/custom/right-panel.js"></script>
+<script src="js/custom/default.js"></script>
 <script src="js/custom/home.js"></script>
 <script src="js/custom/count.js"></script>
-<script src="js/custom/default.js"></script>
 <script src="js/custom/collusion.js"></script>
 <!-- end custom js -->
 <!-- #####################end javascript#################### --></body>
